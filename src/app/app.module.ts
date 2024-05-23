@@ -11,6 +11,9 @@ import { MenuPacienteComponent } from './components/menu-paciente/menu-paciente.
 import { GestionFichasMedicasComponent } from './components/gestion-fichas-medicas/gestion-fichas-medicas.component';
 import { MisHistoriasClnicasComponent } from './components/mis-historias-clnicas/mis-historias-clnicas.component';
 import { VerMisHistoriasClinicasComponent } from './components/ver-mis-historias-clinicas/ver-mis-historias-clinicas.component';
+import { DetalleHistoriaClinicaComponent } from './components/detalle-historia-clinica/detalle-historia-clinica.component';
+import { RegistroHistoriaClinicaComponent } from './components/registro-historia-clinica/registro-historia-clinica.component';
+import { ActualizacionHistoriaClinicaComponent } from './components/actualizacion-historia-clinica/actualizacion-historia-clinica.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { VerMisHistoriasClinicasComponent } from './components/ver-mis-historias
     MenuPacienteComponent,
     GestionFichasMedicasComponent,
     MisHistoriasClnicasComponent,
-    VerMisHistoriasClinicasComponent
+    VerMisHistoriasClinicasComponent,
+    DetalleHistoriaClinicaComponent,
+    RegistroHistoriaClinicaComponent,
+    ActualizacionHistoriaClinicaComponent,
   ],
   imports: [
     BrowserModule,
