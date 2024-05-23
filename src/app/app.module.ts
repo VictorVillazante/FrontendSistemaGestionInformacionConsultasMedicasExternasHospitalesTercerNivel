@@ -10,6 +10,7 @@ import { APP_ROUTING } from './app.routes';
 import { MenuPacienteComponent } from './components/menu-paciente/menu-paciente.component';
 import { GestionFichasMedicasComponent } from './components/gestion-fichas-medicas/gestion-fichas-medicas.component';
 import { MisHistoriasClnicasComponent } from './components/mis-historias-clnicas/mis-historias-clnicas.component';
+import { VerMisHistoriasClinicasComponent } from './components/ver-mis-historias-clinicas/ver-mis-historias-clinicas.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MisHistoriasClnicasComponent } from './components/mis-historias-clnicas
     HomeComponent,
     MenuPacienteComponent,
     GestionFichasMedicasComponent,
-    MisHistoriasClnicasComponent
+    MisHistoriasClnicasComponent,
+    VerMisHistoriasClinicasComponent
   ],
   imports: [
     BrowserModule,
