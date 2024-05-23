@@ -1,0 +1,18 @@
+.bg-dark {
+    background-color: #343a40;
+  }
+  
+  .bg-white {
+    background-color: #ffffff;
+  }
+  
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fa-edit, .fa-trash {
+    cursor: pointer;
+  }
+  

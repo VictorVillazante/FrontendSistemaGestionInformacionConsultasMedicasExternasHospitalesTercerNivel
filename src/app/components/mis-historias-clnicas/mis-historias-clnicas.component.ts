@@ -8,11 +8,7 @@ import { Component } from '@angular/core';
 export class MisHistoriasClnicasComponent {
   items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
-  editItem(item: string) {
-    console.log('Editar', item);
-  }
-
-  deleteItem(item: string) {
-    console.log('Eliminar', item);
+  viewDetails(id:any){
+    
   }
 }
