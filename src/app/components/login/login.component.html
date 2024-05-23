@@ -1,0 +1,17 @@
+<div class="container d-flex justify-content-center align-items-center vh-100 bg-primary">
+    <div class="card p-4 shadow" style="width: 20rem;">
+      <h3 class="card-title text-center text-white">Login</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="email" class="form-label text-white">Email address</label>
+          <input type="email" class="form-control border-dark" id="email" formControlName="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label text-white">Password</label>
+          <input type="password" class="form-control border-dark" id="password" formControlName="password" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Login</button>
+      </form>
+    </div>
+  </div>
+  
