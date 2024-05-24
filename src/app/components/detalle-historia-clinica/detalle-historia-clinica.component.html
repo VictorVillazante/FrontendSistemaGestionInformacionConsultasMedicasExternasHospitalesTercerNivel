@@ -1,1 +1,68 @@
-<p>detalle-historia-clinica works!</p>
+<div class="container mt-5">
+    <h1 class="text-center text-white bg-primary p-3">Detalle de Historia Clínica</h1>
+    <div class="container mt-5" [formGroup]="clinicalHistoryForm">
+      <div class="mb-3">
+        <label for="idHistoriaClinica" class="form-label">ID Historia Clínica</label>
+        <input type="text" id="idHistoriaClinica" class="form-control" formControlName="idHistoriaClinica" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="amnesis" class="form-label">Amnesis</label>
+        <textarea id="amnesis" class="form-control" formControlName="amnesis" readonly></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="antecedentesFamiliares" class="form-label">Antecedentes Familiares</label>
+        <textarea id="antecedentesFamiliares" class="form-control" formControlName="antecedentesFamiliares" readonly></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="antecedentesGinecoobstetricos" class="form-label">Antecedentes Ginecoobstétricos</label>
+        <textarea id="antecedentesGinecoobstetricos" class="form-control" formControlName="antecedentesGinecoobstetricos" readonly></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="antecedentesNoPatologicos" class="form-label">Antecedentes No Patológicos</label>
+        <textarea id="antecedentesNoPatologicos" class="form-control" formControlName="antecedentesNoPatologicos" readonly></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="antecedentesPatologicos" class="form-label">Antecedentes Patológicos</label>
+        <textarea id="antecedentesPatologicos" class="form-control" formControlName="antecedentesPatologicos" readonly></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="antecedentesPersonales" class="form-label">Antecedentes Personales</label>
+        <textarea id="antecedentesPersonales" class="form-control" formControlName="antecedentesPersonales" readonly></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="diagnosticoPresuntivo" class="form-label">Diagnóstico Presuntivo</label>
+        <textarea id="diagnosticoPresuntivo" class="form-control" formControlName="diagnosticoPresuntivo" readonly></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="diagnosticosDiferenciales" class="form-label">Diagnósticos Diferenciales</label>
+        <textarea id="diagnosticosDiferenciales" class="form-control" formControlName="diagnosticosDiferenciales" readonly></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="examenFisico" class="form-label">Examen Físico</label>
+        <textarea id="examenFisico" class="form-control" formControlName="examenFisico" readonly></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="examenFisicoEspecial" class="form-label">Examen Físico Especial</label>
+        <textarea id="examenFisicoEspecial" class="form-control" formControlName="examenFisicoEspecial" readonly></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="propuestaBasicaDeConducta" class="form-label">Propuesta Básica de Conducta</label>
+        <textarea id="propuestaBasicaDeConducta" class="form-control" formControlName="propuestaBasicaDeConducta" readonly></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="tratamiento" class="form-label">Tratamiento</label>
+        <textarea id="tratamiento" class="form-control" formControlName="tratamiento" readonly></textarea>
+      </div> 
+    </div>
+    
+     
+      
+ </div>     

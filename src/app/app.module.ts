@@ -14,6 +14,9 @@ import { VerMisHistoriasClinicasComponent } from './components/ver-mis-historias
 import { DetalleHistoriaClinicaComponent } from './components/detalle-historia-clinica/detalle-historia-clinica.component';
 import { RegistroHistoriaClinicaComponent } from './components/registro-historia-clinica/registro-historia-clinica.component';
 import { ActualizacionHistoriaClinicaComponent } from './components/actualizacion-historia-clinica/actualizacion-historia-clinica.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuMedicoComponent } from './menu-medico/menu-medico.component';
+import { GestionHistoriasClinicasComponent } from './gestion-historias-clinicas/gestion-historias-clinicas.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,15 @@ import { ActualizacionHistoriaClinicaComponent } from './components/actualizacio
     DetalleHistoriaClinicaComponent,
     RegistroHistoriaClinicaComponent,
     ActualizacionHistoriaClinicaComponent,
+    MenuMedicoComponent,
+    GestionHistoriasClinicasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

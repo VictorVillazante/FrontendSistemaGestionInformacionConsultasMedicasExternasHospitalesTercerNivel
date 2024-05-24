@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { HistoriasClinicasService } from 'src/app/services/historias-clinicas.service';
+import { FichasMedicasService } from '../../services/fichas-medicas.service';
 
 @Component({
   selector: 'app-gestion-fichas-medicas',
@@ -6,8 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./gestion-fichas-medicas.component.css']
 })
 export class GestionFichasMedicasComponent {
-  items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  misFichasMedicas: any[] = [];
 
+  constructor(private router:Router,private fichasMedicasService:FichasMedicasService) {
+    this.obtenerConsultasMedicas();
+   }
+   obtenerConsultasMedicas(){
+    this.fichasMedicasService.obtenerFichasMedicasDePaciente(1).subscribe((data:any)=>{
+      this.misFichasMedicas=data;
+    });
+  }
   editItem(item: string) {
     console.log('Editar', item);
   }

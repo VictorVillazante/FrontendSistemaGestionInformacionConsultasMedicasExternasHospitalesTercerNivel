@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { HistoriasClinicasService } from '../../services/historias-clinicas.service';
 
 @Component({
   selector: 'app-detalle-historia-clinica',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetalleHistoriaClinicaComponent {
   id:any;
   clinicalHistoryForm: FormGroup;
-  constructor(private activatedRoute: ActivatedRoute,private fb: FormBuilder) { 
+  constructor(private activatedRoute: ActivatedRoute,private fb: FormBuilder,private historiasClinicasService:HistoriasClinicasService) { 
     this.clinicalHistoryForm = this.fb.group({
       idHistoriaClinica: [''],
       amnesis: [''],
@@ -25,17 +26,31 @@ export class DetalleHistoriaClinicaComponent {
       examenFisicoEspecial: [''],
       propuestaBasicaDeConducta: [''],
       tratamiento: [''],
-      nombrePaciente: ['']
     });
   }
   ngOnInit(): void {
     this.activatedRoute.params.subscribe( params => {
       this.id = params['id'];
+      this.obtenerDetalleHistoriaClinica(this.id);
     });
   }
-
-  onSubmit() {
-    console.log('Formulario Enviado', this.clinicalHistoryForm.value);
-    alert('Formulario Enviado: ' + JSON.stringify(this.clinicalHistoryForm.value, null, 2));
+  obtenerDetalleHistoriaClinica(idHistoriaClinica:any){
+    this.historiasClinicasService.obtenerHistoriaClinicas(idHistoriaClinica).subscribe((data:any)=>{
+      this.clinicalHistoryForm.patchValue({
+        idHistoriaClinica: data.idHistoriaClinica,
+        amnesis: data.amnesis,
+        antecedentesFamiliares: data.antecedentesFamiliares,
+        antecedentesGinecoobstetricos: data.antecedentesGinecoobstetricos,
+        antecedentesNoPatologicos: data.antecedentesNoPatologicos,
+        antecedentesPatologicos: data.antecedentesPatologicos,
+        antecedentesPersonales: data.antecedentesPersonales,
+        diagnosticoPresuntivo: data.diagnosticoPresuntivo,
+        diagnosticosDiferenciales: data.diagnosticosDiferenciales,
+        examenFisico: data.examenFisico,
+        examenFisicoEspecial: data.examenFisicoEspecial,
+        propuestaBasicaDeConducta: data.propuestaBasicaDeConducta,
+        tratamiento: data.tratamiento
+      });
+    });
   }
 }

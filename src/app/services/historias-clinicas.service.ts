@@ -11,18 +11,18 @@ export class HistoriasClinicasService {
   }
 
   obtenerHistoriasClinicasDePaciente(idPaciente:any) {
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/historias-clinicas/paciente/`+idPaciente);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/paciente/${idPaciente}`);
   }
   obtenerHistoriasClinicas() {
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/historias-clinicas`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`);
   }
   obtenerHistoriaClinicas(idHistoriaClinica:any) {
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/historias-clinicas/`+idHistoriaClinica);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/`+idHistoriaClinica);
   }
   actualizarHistoriaClinica(idHistoriaClinica:any,historiaClinica:any) {
-    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/historias-clinicas/`+idHistoriaClinica,historiaClinica);
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/`+idHistoriaClinica,historiaClinica);
   }
   registrarHistoriaClinica(historiaClinica:any){
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/historias-clinicas`,historiaClinica);
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`,historiaClinica);
   }
 }

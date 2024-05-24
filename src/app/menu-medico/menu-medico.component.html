@@ -1,0 +1,13 @@
+<div class="container mt-5">
+    <h1 class="text-center text-white bg-primary p-3">Menú de medico</h1>
+    <div class="row">
+      <div *ngFor="let card of cards" class="col-md-6 mb-4">
+        <div [routerLink]="card.route" class="card text-white h-100" [ngStyle]="{'background-image': card.image, 'background-size': 'cover'}">
+          <div class="card-body bg-dark bg-opacity-75">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

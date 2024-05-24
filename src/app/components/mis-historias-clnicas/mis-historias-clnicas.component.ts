@@ -10,13 +10,16 @@ import { HistoriasClinicasService } from '../../services/historias-clinicas.serv
 export class MisHistoriasClnicasComponent {
   historiasClinicas: any[] = [];
 
-  constructor(private router:Router,private historiasClinicasService:HistoriasClinicasService) { }
+  constructor(private router:Router,private historiasClinicasService:HistoriasClinicasService) {
+    this.obtenerMisHistoriasClinicas(1);
+   }
   viewDetails(id:any){
     this.router.navigate(["/paciente/detalle-historia-clinica",id]);
   }
   idPaciente:any=1;
-  obtenerMisHistoriasClinicas(){
-    this.historiasClinicasService.obtenerHistoriasClinicasDePaciente(this.idPaciente).subscribe((data:any)=>{
+  obtenerMisHistoriasClinicas(idPaciente:any){
+    this.historiasClinicasService.obtenerHistoriasClinicasDePaciente(idPaciente).subscribe((data:any)=>{
+      console.log(data);
       this.historiasClinicas=data;
     });
   }
