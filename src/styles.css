@@ -26,3 +26,7 @@
     color: var(--color4);
     font-weight: 500;
 }
+
+.bg-color-blue-hospital{
+    background-color: var(--color4);
+  }

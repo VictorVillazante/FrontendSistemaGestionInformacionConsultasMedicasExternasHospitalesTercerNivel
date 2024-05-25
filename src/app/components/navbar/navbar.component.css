@@ -4,5 +4,12 @@
 }
 .nav-link{
     color: var(--color1);
-
+}
+.ver-mas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.single-line{
+    white-space: nowrap;
 }

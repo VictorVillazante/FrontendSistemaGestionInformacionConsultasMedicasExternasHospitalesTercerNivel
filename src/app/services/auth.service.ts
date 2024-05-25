@@ -29,12 +29,13 @@ export class AuthService {
 
   getUserRoles(token: string): Promise<string[]> {
     console.log(token);
-    return this.http.get<{ roles: string[] }>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/auth/user-details`, { headers: { Authorization: `Bearer ${token}` } })
+    return this.http.get<string[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/auth/user-details`, { headers: { Authorization: `Bearer ${token}` } })
       .toPromise()
-      .then((response: { roles: string[] }) => {
-        localStorage.setItem(this.credentialsKey, JSON.stringify({ roles: response?.roles??[] }));
-        this.roles$.next(response?.roles??[]);
-        return response?.roles??[];
+      .then(response => {
+        console.log(response??[]);
+        localStorage.setItem(this.credentialsKey, JSON.stringify({ roles: response??[] }));
+        this.roles$.next(response??[]);
+        return response??[];
       });
   }
 

@@ -23,3 +23,22 @@
   .bg-dark.bg-opacity-75 {
     background-color: rgba(52, 58, 64, 0.75);
   }
+  .div-menu{
+    background-color: var(--color2);
+    min-height: 100vh;
+  }
+  .card-body{
+    min-height: 150px;
+    background-image: url('../../../assets/images/fondo-opciones-menu.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  .card-body-fondo-negro{
+    background-color: #00000054;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color1);
+  }

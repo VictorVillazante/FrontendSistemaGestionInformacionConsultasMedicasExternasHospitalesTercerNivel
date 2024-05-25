@@ -23,10 +23,5 @@ const APP_ROUTES: Routes = [
     { path: 'medico/gestion-historias-clinicas', component:  GestionHistoriasClinicasComponent,canActivate: [AuthGuard],data:{roles:['MEDICO']}},
     { path: 'medico/modificar-historia-clinica/:id', component:  ActualizacionHistoriaClinicaComponent,canActivate: [AuthGuard],data:{roles:['MEDICO']}},
     { path: 'medico/registro-historia-clinica', component:  RegistroHistoriaClinicaComponent,canActivate: [AuthGuard],data:{roles:['MEDICO']}},
-
-
-
-
-    { path: '**', component:  HomeComponent}
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: false});

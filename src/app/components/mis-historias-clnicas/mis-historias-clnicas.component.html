@@ -1,11 +1,11 @@
 <div class="container mt-5">
-    <h1 class="text-center text-white bg-primary p-3">Mis historias clinicas</h1>
+    <h1 class="text-center p-3">Mis historias clinicas</h1>
 
     <ul class="list-group">
-        <li *ngFor="let item of historiasClinicas; let i = index" [class.bg-dark]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="list-group-item d-flex justify-content-between align-items-center">
+        <li *ngFor="let item of historiasClinicas; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
           Historia clinica {{ item.idHistoriaClinica }}
           <div>
-            <i class="fas fa-chevron-right text-primary me-2" (click)="viewDetails(item.idHistoriaClinica)"></i>
+            <i class="fas fa-chevron-right me-2" (click)="viewDetails(item.idHistoriaClinica)"></i>
           </div>
         </li>
       </ul>

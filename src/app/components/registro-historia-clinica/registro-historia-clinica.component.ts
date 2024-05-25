@@ -35,8 +35,8 @@ export class RegistroHistoriaClinicaComponent {
   onSubmit() {
     let historiaClinica=this.clinicalHistoryForm.value;
     console.log(historiaClinica);
-    // this.historiasClinicasService.registrarHistoriaClinica(historiaClinica).subscribe((data:any)=>{
-    //   console.log(data);
-    // });
+    this.historiasClinicasService.registrarHistoriaClinica(historiaClinica).subscribe((data:any)=>{
+      console.log(data);
+    });
   }
 }

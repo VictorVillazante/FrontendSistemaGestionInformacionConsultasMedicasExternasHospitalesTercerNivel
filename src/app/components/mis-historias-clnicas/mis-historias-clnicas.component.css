@@ -1,7 +1,4 @@
-.bg-dark {
-    background-color: #343a40;
-  }
-  
+
   .bg-white {
     background-color: #ffffff;
   }
@@ -16,3 +13,6 @@
     cursor: pointer;
   }
   
+  h1{
+    color:var(--color4)
+  }
