@@ -1,0 +1,8 @@
+#navbar-contenedor{
+    background-color: var(--color4);
+    color: var(--color1);
+}
+.nav-link{
+    color: var(--color1);
+
+}

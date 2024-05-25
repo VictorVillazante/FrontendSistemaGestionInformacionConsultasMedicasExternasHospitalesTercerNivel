@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    --color1:#fff;
+    --color2:#fffefa;
+    --color3:#28afb0;
+    --color4:#0a4a6e;
+    --color5:#000
+
+}
+.btn-success-hospital{
+    background-color: var(--color3);
+    color: var(--color1);
+    margin: 5px;
+}
+.btn-success-hospital:hover{
+    background-color: #329797;
+    color: var(--color1);
+}
+
+.btn-texto-hospital{
+    background-color: transparent;
+    color: var(--color4);
+    margin: 5px;
+}
+.btn-texto-hospital:hover{
+    color: var(--color4);
+    font-weight: 500;
+}

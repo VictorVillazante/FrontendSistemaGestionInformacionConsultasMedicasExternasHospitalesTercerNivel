@@ -1,16 +1,18 @@
-<div class="container d-flex justify-content-center align-items-center vh-100 bg-primary">
-    <div class="card p-4 shadow" style="width: 20rem;">
-      <h3 class="card-title text-center text-white">Login</h3>
+<div class="d-flex justify-content-center align-items-center vh-100 div-fondo">
+    <div class="card p-4 shadow form-login">
+      <h3 class="card-title text-lefth">Inicio de sesion</h3>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
-          <label for="email" class="form-label text-white">Email address</label>
+          <label for="email" class="form-label">Correo</label>
           <input type="email" class="form-control border-dark" id="email" formControlName="email" required>
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label text-white">Password</label>
+          <label for="password" class="form-label">Contraseña</label>
           <input type="password" class="form-control border-dark" id="password" formControlName="password" required>
         </div>
-        <button type="submit" class="btn btn-success w-100">Login</button>
+        <button type="submit" class="btn btn-success-hospital w-100">Iniciar sesion</button>
+        <button type="submit" class="btn btn-texto-hospital w-100">Recuperar contraseña</button>
+
       </form>
     </div>
   </div>

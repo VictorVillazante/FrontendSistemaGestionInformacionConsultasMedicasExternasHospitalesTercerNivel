@@ -9,18 +9,20 @@ import { MenuMedicoComponent } from "./menu-medico/menu-medico.component";
 import { GestionHistoriasClinicasComponent } from "./gestion-historias-clinicas/gestion-historias-clinicas.component";
 import { ActualizacionHistoriaClinicaComponent } from "./components/actualizacion-historia-clinica/actualizacion-historia-clinica.component";
 import { RegistroHistoriaClinicaComponent } from "./components/registro-historia-clinica/registro-historia-clinica.component";
+import { AuthGuard } from "./components/guard/app.auth";
+
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
     { path: 'login', component:  LoginComponent},
     { path: 'paciente/menu', component:  MenuPacienteComponent},
-    { path: 'paciente/gestion-ficha-medica', component:  GestionFichasMedicasComponent},
-    { path: 'paciente/ver-mis-historias-clinicas', component:  MisHistoriasClnicasComponent},
-    { path: 'paciente/detalle-historia-clinica/:id', component:  DetalleHistoriaClinicaComponent},
+    { path: 'paciente/gestion-ficha-medica', component:  GestionFichasMedicasComponent,canActivate: [AuthGuard],data:{roles:['PACIENTE']}},
+    { path: 'paciente/ver-mis-historias-clinicas', component:  MisHistoriasClnicasComponent,canActivate: [AuthGuard],data:{roles:['PACIENTE']}},
+    { path: 'paciente/detalle-historia-clinica/:id', component:  DetalleHistoriaClinicaComponent,canActivate: [AuthGuard],data:{roles:['PACIENTE']}},
 
     { path: 'medico/menu', component:  MenuMedicoComponent},
-    { path: 'medico/gestion-historias-clinicas', component:  GestionHistoriasClinicasComponent},
-    { path: 'medico/modificar-historia-clinica/:id', component:  ActualizacionHistoriaClinicaComponent},
-    { path: 'medico/registro-historia-clinica', component:  RegistroHistoriaClinicaComponent},
+    { path: 'medico/gestion-historias-clinicas', component:  GestionHistoriasClinicasComponent,canActivate: [AuthGuard],data:{roles:['MEDICO']}},
+    { path: 'medico/modificar-historia-clinica/:id', component:  ActualizacionHistoriaClinicaComponent,canActivate: [AuthGuard],data:{roles:['MEDICO']}},
+    { path: 'medico/registro-historia-clinica', component:  RegistroHistoriaClinicaComponent,canActivate: [AuthGuard],data:{roles:['MEDICO']}},
 
 
 

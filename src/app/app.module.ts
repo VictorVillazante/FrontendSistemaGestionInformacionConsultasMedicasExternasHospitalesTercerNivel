@@ -17,6 +17,8 @@ import { ActualizacionHistoriaClinicaComponent } from './components/actualizacio
 import { HttpClientModule } from '@angular/common/http';
 import { MenuMedicoComponent } from './menu-medico/menu-medico.component';
 import { GestionHistoriasClinicasComponent } from './gestion-historias-clinicas/gestion-historias-clinicas.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import { GestionHistoriasClinicasComponent } from './gestion-historias-clinicas/
     ActualizacionHistoriaClinicaComponent,
     MenuMedicoComponent,
     GestionHistoriasClinicasComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     APP_ROUTING,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

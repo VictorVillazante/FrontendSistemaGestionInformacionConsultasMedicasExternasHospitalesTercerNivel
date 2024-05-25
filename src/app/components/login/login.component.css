@@ -1,22 +1,18 @@
 .container {
     background-color: #007bff;
-  }
-  
-  .card {
-    background-color: #ffffff;
-  }
-  
-  .form-control {
-    background-color: #ffffff;
-    color: #000000;
-    border: 2px solid #000000;
-  }
-  
-  .btn-success {
-    background-color: #28a745;
-    border: none;
-  }
-  
-  .btn-success:hover {
-    background-color: #218838;
-  }
+  } 
+.card {
+  background-color: #ffffff;
+}
+
+.form-control {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+}
+.div-fondo{
+  background-color: var(--color2);
+}
+.form-login{
+  width: 50%;
+}
