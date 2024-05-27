@@ -19,7 +19,7 @@ export class GestionNotasReferenciaComponent {
     });
   }
   verDetalles(id:any){
-    this.router.navigate(["/paciente/detalle-nota-referencia",id]);
+    this.router.navigate(["/detalle-nota-referencia",id]);
   }
   editarDato(id: any) {
     this.router.navigate(["/medico/modificar-nota-referencia",id]);

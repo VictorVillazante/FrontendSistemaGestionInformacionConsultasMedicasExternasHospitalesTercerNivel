@@ -34,6 +34,7 @@ import { DetalleNotaReferenciaComponent } from './components/detalle-nota-refere
 import { ActualizacionNotaReferenciaComponent } from './components/actualizacion-nota-referencia/actualizacion-nota-referencia.component';
 import { RegistroRecetaComponent } from './components/registro-receta/registro-receta.component';
 import { ActualizacionRecetaComponent } from './components/actualizacion-receta/actualizacion-receta.component';
+import { DetalleRecetaComponent } from './components/detalle-receta/detalle-receta.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { ActualizacionRecetaComponent } from './components/actualizacion-receta/
     ActualizacionNotaReferenciaComponent,
     RegistroRecetaComponent,
     ActualizacionRecetaComponent,
+    DetalleRecetaComponent,
   ],
   imports: [
     BrowserModule,

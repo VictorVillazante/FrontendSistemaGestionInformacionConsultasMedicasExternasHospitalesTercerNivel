@@ -21,6 +21,7 @@ import { RegistroNotaReferenciaComponent } from "./components/registro-nota-refe
 import { ActualizacionNotaReferenciaComponent } from "./components/actualizacion-nota-referencia/actualizacion-nota-referencia.component";
 import { GestionRecetasComponent } from "./components/gestion-recetas/gestion-recetas.component";
 import { RegistroRecetaComponent } from "./components/registro-receta/registro-receta.component";
+import { DetalleRecetaComponent } from "./components/detalle-receta/detalle-receta.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -50,7 +51,7 @@ const APP_ROUTES: Routes = [
 
     { path: '/detalle-historia-clinica/:id', component:  DetalleHistoriaClinicaComponent},
     { path: '/detalle-nota-referencia/:id', component:  DetalleNotaReferenciaComponent},
-
+    { path: '/detalle-receta/:id', component:  DetalleRecetaComponent},
 
 
     { path: 'paciente/ver-mis-historias-clinicas', component:  MisHistoriasClnicasComponent},
@@ -73,7 +74,7 @@ const APP_ROUTES: Routes = [
        
     { path: 'medico/gestion-recetas', component:  GestionRecetasComponent},
     { path: 'medico/registro-receta', component:  RegistroRecetaComponent},
-    { path: 'medico/modificar-nota-referencia/:id', component:  ActualizacionNotaReferenciaComponent},
+    { path: 'medico/modificar-receta/:id', component:  ActualizacionNotaReferenciaComponent},
 
 
 
