@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HistoriasClinicasService } from 'src/app/services/historias-clinicas.service';
 import { FichasMedicasService } from '../../services/fichas-medicas.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-gestion-fichas-medicas',
@@ -19,11 +20,27 @@ export class GestionFichasMedicasComponent {
       this.misFichasMedicas=data;
     });
   }
-  editItem(item: string) {
-    console.log('Editar', item);
+  deleteItem(item: string) {
+    Swal.fire({
+      title: 'Estas seguro de realizar la accion',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      heightAuto:false,
+      
+      scrollbarPadding:true,
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.fichasMedicasService.eliminarFichaMedica(item).subscribe((data:any)=>{
+          this.obtenerConsultasMedicas();
+        });
+      }
+    });
+    
   }
 
-  deleteItem(item: string) {
-    console.log('Eliminar', item);
+  showDetails(arg0: any) {
+    this.router.navigate(['/paciente/detalle-ficha-medica', arg0]);
   }
 }

@@ -57,6 +57,29 @@
         <label for="tratamiento" class="form-label">Tratamiento</label>
         <textarea id="tratamiento" class="form-control" formControlName="tratamiento"></textarea>
       </div> 
+      <div class="mb-3">
+        <label for="pacientes" class="form-label">CI paciente {{pacienteSeleccionado.ci}}</label>
+        <input
+          (focus)="onFocusPaciente()"
+          (blur)="onBlurPaciente()"
+          type="text"
+          class="form-control"
+          id="pacientes"
+          (input)="filterSuggestionsPaciente($event)"
+          name="pacienteInput"
+        />
+        <ul
+          *ngIf="isAutocompletePacienteFocused && filteredSuggestionsPacientes.length > 0"
+          class="list-group mt-2"
+          id="lista-opciones-alumno"
+        >
+          <li class="list-group-item" *ngFor="let paciente of filteredSuggestionsPacientes" (click)="seleccionarPaciente(paciente)">
+            {{ paciente.ci }}
+          </li>
+        </ul>
+      </div>
+      
+      
       <button
         class="btn btn-success-hospital "
         type="submit"

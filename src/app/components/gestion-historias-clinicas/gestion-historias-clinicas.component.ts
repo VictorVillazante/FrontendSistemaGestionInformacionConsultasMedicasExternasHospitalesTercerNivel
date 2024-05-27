@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HistoriasClinicasService } from '../services/historias-clinicas.service';
+import { HistoriasClinicasService } from '../../services/historias-clinicas.service';
 
 @Component({
   selector: 'app-gestion-historias-clinicas',

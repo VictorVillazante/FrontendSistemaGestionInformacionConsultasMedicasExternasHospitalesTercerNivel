@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Injectable({
@@ -27,6 +27,7 @@ export class AuthGuard implements CanActivate {
               console.log(tienePermiso);
               console.log(token);
               if (tienePermiso) {
+                console.log("Tiene permiso");
                 return true;
               } else {
                 this.router.navigate(['/login']);

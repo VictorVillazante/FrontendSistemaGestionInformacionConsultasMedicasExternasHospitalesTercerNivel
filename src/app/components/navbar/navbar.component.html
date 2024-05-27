@@ -54,9 +54,9 @@
               >Admisiones</a
             >
           </li>
-          <li class="nav-item">
+          <li *ngIf="estaLogeado" class="nav-item" routerLink="/menu">
             <a class="nav-link single-line" aria-current="page" routerLink="/"
-              >Contactos</a
+              >Menu</a
             >
           </li>
           <li class="nav-item">
@@ -65,139 +65,18 @@
                 <i class="fas fa-chevron-down text-white me-2"></i>
             </a>
           </li>
-          <li
-            class="nav-item w-980"
-            *ngIf="this.roles.includes('ALUMNO') && estaLogeado"
-            [routerLink]="['/perfil-usuario']"
+          <button
+            *ngIf="!estaLogeado"
+            class="btn btn-success-hospital "
+            routerLink="/login"
           >
-            <a class="nav-link active" aria-current="page">Mi perfil alumno</a>
-          </li>
-          <li
-            class="nav-item w-980"
-            *ngIf="this.roles.includes('PROFESOR') && estaLogeado"
-            [routerLink]="['/mis-datos-profesor']"
-          >
-            <a class="nav-link active" aria-current="page">Mis datos profesor</a>
-          </li>
-          <li
-            class="nav-item w-980"
-            *ngIf="this.roles.includes('ALUMNO') && estaLogeado"
-            [routerLink]="['/mis-cursos']"
-          >
-            <a class="nav-link active" aria-current="page">Mis cursos</a>
-          </li>
-          <li
-            class="nav-item w-980"
-            *ngIf="this.roles.includes('ADMINISTRADOR') && estaLogeado"
-            [routerLink]="['/administracion-profesores']"
-          >
-            <a class="nav-link active" aria-current="page"
-              >Administracion profesores</a
-            >
-          </li>
-          <li
-            class="nav-item w-980"
-            *ngIf="this.roles.includes('ADMINISTRADOR') && estaLogeado"
-            [routerLink]="['/administracion-alumnos']"
-          >
-            <a class="nav-link active" aria-current="page"
-              >Administracion alumnos</a
-            >
-          </li>
-          <li
-            class="nav-item w-980"
-            *ngIf="
-              (this.roles.includes('ADMINISTRADOR') ||
-                this.roles.includes('PROFESOR')) &&
-              estaLogeado
-            "
-            [routerLink]="['/adm-cursos-maestro']"
-          >
-            <a class="nav-link active" aria-current="page">Administrar cursos</a>
-          </li>
+            Iniciar sesion
+          </button>
+          <button *ngIf="estaLogeado" (click)="logout()" class="btn btn-info">
+            Cerrar sesion
+          </button>
         </ul>
-        <button
-          class="btn btn-success-hospital "
-          type="submit"
-          routerLink="/login"
-        >
-          Iniciar sesion
-        </button>
-        <button
-          *ngIf="true"
-          class="btn btn-info"
-          type="submit"
-        >
-          Login
-        </button>
-        <button *ngIf="estaLogeado" (click)="logout()" class="btn btn-info">
-          Logout
-        </button>
-        <div *ngIf="estaLogeado" id="opciones_img_usuario">
-          <div id="img_usuario" width="100" height="100">
-            <img
-              src="../../../assets/images/imagen_usuario_defecto.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div id="opciones">
-            <ul>
-              <li
-                *ngIf="this.roles.includes('ALUMNO')"
-                [routerLink]="['/perfil-usuario']"
-              >
-                Mi perfil alumno
-              </li>
-              <li
-                *ngIf="this.roles.includes('PROFESOR')"
-                [routerLink]="['/mis-datos-profesor']"
-              >
-                Mis datos profesor
-              </li>
-              <li
-                *ngIf="this.roles.includes('ALUMNO')"
-                [routerLink]="['/mis-cursos']"
-              >
-                Mis cursos
-              </li>
-  
-              <li
-                *ngIf="this.roles.includes('ADMINISTRADOR')"
-                [routerLink]="['/administracion-profesores']"
-              >
-                Administracion profesores
-              </li>
-              <li
-                *ngIf="this.roles.includes('ADMINISTRADOR')"
-                [routerLink]="['/administracion-alumnos']"
-              >
-                Administracion alumnos
-              </li>
-              <li
-                *ngIf="
-                  this.roles.includes('ADMINISTRADOR') ||
-                  this.roles.includes('PROFESOR')
-                "
-                [routerLink]="['/adm-cursos-maestro']"
-              >
-                Administrar cursos
-              </li>
-              <li
-                *ngIf="this.roles.includes('ADMINISTRADOR')"
-                [routerLink]="['/adm-inscripcion']"
-              >
-                Inscripcion alumnos/cursos
-              </li>
-              <li
-                *ngIf="this.roles.includes('ALUMNO')"
-                [routerLink]="['/mis-notas']"
-              >
-                Mis notas
-              </li>
-            </ul>
-          </div>
-        </div>
+       
       </div>
     </div>
   </nav>

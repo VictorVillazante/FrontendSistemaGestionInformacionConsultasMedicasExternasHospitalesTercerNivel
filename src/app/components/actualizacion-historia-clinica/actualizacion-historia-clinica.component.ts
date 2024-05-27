@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HistoriasClinicasService } from 'src/app/services/historias-clinicas.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-actualizacion-historia-clinica',
@@ -56,8 +58,22 @@ export class ActualizacionHistoriaClinicaComponent {
   onSubmit() {
     let historiaClinica=this.clinicalHistoryForm.value;
     console.log(historiaClinica);
-    this.historiasClinicasService.actualizarHistoriaClinica(this.id,historiaClinica).subscribe((data:any)=>{
-      console.log(data);
+    Swal.fire({
+      title: 'Estas seguro de realizar la accion',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      heightAuto:false,
+      
+      scrollbarPadding:true,
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.historiasClinicasService.actualizarHistoriaClinica(this.id,historiaClinica).subscribe((data:any)=>{
+          console.log(data);
+        });
+      }
     });
+   
   }
 }

@@ -8,7 +8,8 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
 })
 export class AuthService {
   logout() {
-    throw new Error('Method not implemented.');
+    localStorage.clear();
+    this.roles$.next(null);
   }
 
   private credentialsKey = 'credentials';
@@ -16,6 +17,7 @@ export class AuthService {
 
 
   constructor(private http: HttpClient) { }
+
   roles$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   loginWithCredentials(email: string, password: string): Promise<string> {
     return this.http.post<{ message: string }>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/auth/sign-in`, { email, password })
@@ -23,6 +25,7 @@ export class AuthService {
       .then((response: { message: string }) => {
         const token = response?.message ?? '';
         localStorage.setItem(this.tokenKey, token);
+        localStorage.setItem("email",email);
         return token;
       });
   }

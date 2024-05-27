@@ -1,0 +1,28 @@
+#img-doctor{
+    background-image: url("../../../assets/images/doctor-home.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#div-home{
+    min-height: 60vh;
+}
+#div-home .row{
+    min-height: 60vh;
+}
+#div-texto-banner{
+    padding: 10px;
+    padding-left: 100px;
+    align-content: center;
+}
+
+#div-texto-banner .titulo-banner{
+    font-size: 48px;
+    color: var(--color4);
+    font-weight: bold;
+}
+
+#div-texto-banner .sub-titulo-banner{
+    font-size: 24px;
+    font-weight: bold;
+}

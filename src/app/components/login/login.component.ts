@@ -27,7 +27,7 @@ export class LoginComponent {
       console.log('Roles:', roles);
 
       if (roles.length > 0) {
-        this.router.navigate(['/paciente/menu']);
+        this.router.navigate(['/menu']);
       } else {
         // Manejar el caso donde no se obtuvieron roles
         console.error('No se obtuvieron roles para el usuario.');
