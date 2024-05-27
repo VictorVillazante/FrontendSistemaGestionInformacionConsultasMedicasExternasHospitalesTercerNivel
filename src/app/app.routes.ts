@@ -12,6 +12,9 @@ import { MenuComponent } from "./components/menu/menu.component";
 import { RegistroFichaMedicaComponent } from "./components/registro-ficha-medica/registro-ficha-medica.component";
 import { DetalleFichaMedicaComponent } from "./components/detalle-ficha-medica/detalle-ficha-medica.component";
 import { GestionPacientesComponent } from "./components/gestion-pacientes/gestion-pacientes.component";
+import { GestionMedicosComponent } from "./components/gestion-medicos/gestion-medicos.component";
+import { RegistroMedicoComponent } from "./components/registro-medico/registro-medico.component";
+import { RegistroPacienteComponent } from "./components/registro-paciente/registro-paciente.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -53,7 +56,9 @@ const APP_ROUTES: Routes = [
     { path: 'medico/registro-historia-clinica', component:  RegistroHistoriaClinicaComponent},
 
     { path: 'administrador/gestion-pacientes', component:  GestionPacientesComponent},
-    { path: 'administrador/registro-paciente', component:  GestionPacientesComponent},
+    { path: 'administrador/registro-paciente', component:  RegistroPacienteComponent},
+    { path: 'administrador/gestion-medicos', component:  GestionMedicosComponent},
+    { path: 'administrador/registro-medico', component:  RegistroMedicoComponent},
 
 
 ];
