@@ -20,7 +20,7 @@ export class GestionRecetasComponent {
     });
   }
   verDetalles(id:any){
-    this.router.navigate(["/paciente/detalle-receta",id]);
+    this.router.navigate(["/detalle-receta",id]);
   }
   editarDato(id: any) {
     this.router.navigate(["/medico/modificar-receta",id]);

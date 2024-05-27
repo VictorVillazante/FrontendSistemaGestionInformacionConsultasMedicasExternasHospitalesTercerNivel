@@ -22,7 +22,6 @@ import { RegistroFichaMedicaComponent } from './components/registro-ficha-medica
 import { DetalleFichaMedicaComponent } from './components/detalle-ficha-medica/detalle-ficha-medica.component';
 import { GestionPacientesComponent } from './components/gestion-pacientes/gestion-pacientes.component';
 import { RegistroPacienteComponent } from './components/registro-paciente/registro-paciente.component';
-import { GestionHorariosAtencionComponent } from './components/gestion-horarios-atencion/gestion-horarios-atencion.component';
 import { GestionRecetasComponent } from './components/gestion-recetas/gestion-recetas.component';
 import { GestionNotasReferenciaComponent } from './components/gestion-notas-referencia/gestion-notas-referencia.component';
 import { VerMisRecetasComponent } from './components/ver-mis-recetas/ver-mis-recetas.component';
@@ -35,6 +34,8 @@ import { ActualizacionNotaReferenciaComponent } from './components/actualizacion
 import { RegistroRecetaComponent } from './components/registro-receta/registro-receta.component';
 import { ActualizacionRecetaComponent } from './components/actualizacion-receta/actualizacion-receta.component';
 import { DetalleRecetaComponent } from './components/detalle-receta/detalle-receta.component';
+import { GestionTurnosAtencionMedicaComponent } from './components/gestion-turnos-atencion-medica/gestion-turnos-atencion-medica.component';
+import { RegitroTurnoAtencionComponent } from './components/regitro-turno-atencion/regitro-turno-atencion.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,6 @@ import { DetalleRecetaComponent } from './components/detalle-receta/detalle-rece
     DetalleFichaMedicaComponent,
     GestionPacientesComponent,
     RegistroPacienteComponent,
-    GestionHorariosAtencionComponent,
     GestionRecetasComponent,
     GestionNotasReferenciaComponent,
     VerMisRecetasComponent,
@@ -67,6 +67,8 @@ import { DetalleRecetaComponent } from './components/detalle-receta/detalle-rece
     RegistroRecetaComponent,
     ActualizacionRecetaComponent,
     DetalleRecetaComponent,
+    GestionTurnosAtencionMedicaComponent,
+    RegitroTurnoAtencionComponent,
   ],
   imports: [
     BrowserModule,
