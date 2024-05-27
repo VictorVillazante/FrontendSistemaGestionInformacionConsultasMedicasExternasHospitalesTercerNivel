@@ -34,7 +34,24 @@ export class GestionMedicosComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.medicosService.eliminarMedico(id).subscribe((data:any)=>{
-          this.obtenerPacientes();
+          Swal.fire({
+            icon: 'success',
+            text:"Se realizo la accion correctamente",
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#28afb0',
+            heightAuto:false,
+            scrollbarPadding:true,
+          })
+        },
+        (error: any) => {
+          Swal.fire({
+            icon: 'error',
+            text:"Error al realizar la accion",
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#28afb0',
+            heightAuto:false,
+            scrollbarPadding:true,
+          })
         });
       }
     });
