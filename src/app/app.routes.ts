@@ -15,6 +15,12 @@ import { GestionPacientesComponent } from "./components/gestion-pacientes/gestio
 import { GestionMedicosComponent } from "./components/gestion-medicos/gestion-medicos.component";
 import { RegistroMedicoComponent } from "./components/registro-medico/registro-medico.component";
 import { RegistroPacienteComponent } from "./components/registro-paciente/registro-paciente.component";
+import { DetalleNotaReferenciaComponent } from "./components/detalle-nota-referencia/detalle-nota-referencia.component";
+import { GestionNotasReferenciaComponent } from "./components/gestion-notas-referencia/gestion-notas-referencia.component";
+import { RegistroNotaReferenciaComponent } from "./components/registro-nota-referencia/registro-nota-referencia.component";
+import { ActualizacionNotaReferenciaComponent } from "./components/actualizacion-nota-referencia/actualizacion-nota-referencia.component";
+import { GestionRecetasComponent } from "./components/gestion-recetas/gestion-recetas.component";
+import { RegistroRecetaComponent } from "./components/registro-receta/registro-receta.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -42,8 +48,12 @@ const APP_ROUTES: Routes = [
 
     { path: 'menu', component:  MenuComponent},
 
+    { path: '/detalle-historia-clinica/:id', component:  DetalleHistoriaClinicaComponent},
+    { path: '/detalle-nota-referencia/:id', component:  DetalleNotaReferenciaComponent},
+
+
+
     { path: 'paciente/ver-mis-historias-clinicas', component:  MisHistoriasClnicasComponent},
-    { path: 'paciente/detalle-historia-clinica/:id', component:  DetalleHistoriaClinicaComponent},
     { path: 'paciente/gestion-ficha-medica', component:  GestionFichasMedicasComponent,},
     { path: 'paciente/registro-ficha-medica', component:  RegistroFichaMedicaComponent,},
     { path: 'paciente/detalle-ficha-medica/:id', component:  DetalleFichaMedicaComponent},
@@ -52,8 +62,21 @@ const APP_ROUTES: Routes = [
 
 
     { path: 'medico/gestion-historias-clinicas', component:  GestionHistoriasClinicasComponent},
-    { path: 'medico/modificar-historia-clinica/:id', component:  ActualizacionHistoriaClinicaComponent},
     { path: 'medico/registro-historia-clinica', component:  RegistroHistoriaClinicaComponent},
+    { path: 'medico/modificar-historia-clinica/:id', component:  ActualizacionHistoriaClinicaComponent},
+
+   
+    { path: 'medico/gestion-notas-referencia', component:  GestionNotasReferenciaComponent},
+    { path: 'medico/registro-nota-referencia', component:  RegistroNotaReferenciaComponent},
+    { path: 'medico/modificar-nota-referencia/:id', component:  ActualizacionNotaReferenciaComponent},
+
+       
+    { path: 'medico/gestion-recetas', component:  GestionRecetasComponent},
+    { path: 'medico/registro-receta', component:  RegistroRecetaComponent},
+    { path: 'medico/modificar-nota-referencia/:id', component:  ActualizacionNotaReferenciaComponent},
+
+
+
 
     { path: 'administrador/gestion-pacientes', component:  GestionPacientesComponent},
     { path: 'administrador/registro-paciente', component:  RegistroPacienteComponent},

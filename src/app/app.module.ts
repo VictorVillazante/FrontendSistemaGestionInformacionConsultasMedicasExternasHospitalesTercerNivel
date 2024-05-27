@@ -32,6 +32,8 @@ import { RegistroMedicoComponent } from './components/registro-medico/registro-m
 import { RegistroNotaReferenciaComponent } from './components/registro-nota-referencia/registro-nota-referencia.component';
 import { DetalleNotaReferenciaComponent } from './components/detalle-nota-referencia/detalle-nota-referencia.component';
 import { ActualizacionNotaReferenciaComponent } from './components/actualizacion-nota-referencia/actualizacion-nota-referencia.component';
+import { RegistroRecetaComponent } from './components/registro-receta/registro-receta.component';
+import { ActualizacionRecetaComponent } from './components/actualizacion-receta/actualizacion-receta.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { ActualizacionNotaReferenciaComponent } from './components/actualizacion
     RegistroNotaReferenciaComponent,
     DetalleNotaReferenciaComponent,
     ActualizacionNotaReferenciaComponent,
+    RegistroRecetaComponent,
+    ActualizacionRecetaComponent,
   ],
   imports: [
     BrowserModule,
