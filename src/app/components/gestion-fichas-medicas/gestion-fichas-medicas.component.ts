@@ -22,14 +22,17 @@ export class GestionFichasMedicasComponent {
   }
   deleteItem(item: string) {
     Swal.fire({
-      title: 'Estas seguro de realizar la accion',
+      title:'',
+      html: '<span font-weight: bold;">¿Estás seguro de realizar la acción?</span>',
+      
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: 'Save',
+      confirmButtonText: 'Si',
+      confirmButtonColor: '#3085d6',
       heightAuto:false,
       
       scrollbarPadding:true,
-      denyButtonText: `Don't save`,
+      denyButtonText: `No`,
     }).then((result) => {
       if (result.isConfirmed) {
         this.fichasMedicasService.eliminarFichaMedica(item).subscribe((data:any)=>{

@@ -21,6 +21,12 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RegistroFichaMedicaComponent } from './components/registro-ficha-medica/registro-ficha-medica.component';
 import { DetalleFichaMedicaComponent } from './components/detalle-ficha-medica/detalle-ficha-medica.component';
 import { GestionPacientesComponent } from './components/gestion-pacientes/gestion-pacientes.component';
+import { RegistroPacienteComponent } from './components/registro-paciente/registro-paciente.component';
+import { GestionHorariosAtencionComponent } from './components/gestion-horarios-atencion/gestion-horarios-atencion.component';
+import { GestionRecetasComponent } from './components/gestion-recetas/gestion-recetas.component';
+import { GestionNotasReferenciaComponent } from './components/gestion-notas-referencia/gestion-notas-referencia.component';
+import { VerMisRecetasComponent } from './components/ver-mis-recetas/ver-mis-recetas.component';
+import { VerMisNotasReferenciaComponent } from './components/ver-mis-notas-referencia/ver-mis-notas-referencia.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +45,12 @@ import { GestionPacientesComponent } from './components/gestion-pacientes/gestio
     RegistroFichaMedicaComponent,
     DetalleFichaMedicaComponent,
     GestionPacientesComponent,
+    RegistroPacienteComponent,
+    GestionHorariosAtencionComponent,
+    GestionRecetasComponent,
+    GestionNotasReferenciaComponent,
+    VerMisRecetasComponent,
+    VerMisNotasReferenciaComponent,
   ],
   imports: [
     BrowserModule,

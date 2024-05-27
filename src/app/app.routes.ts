@@ -53,6 +53,8 @@ const APP_ROUTES: Routes = [
     { path: 'medico/registro-historia-clinica', component:  RegistroHistoriaClinicaComponent},
 
     { path: 'administrador/gestion-pacientes', component:  GestionPacientesComponent},
+    { path: 'administrador/registro-paciente', component:  GestionPacientesComponent},
+
 
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash: false});
