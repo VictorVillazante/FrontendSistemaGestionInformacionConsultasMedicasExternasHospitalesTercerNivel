@@ -17,7 +17,9 @@ export class MedicosService {
     return of([
       {
         "idMedico": 1,
-        "nombre": "Juan Pérez",
+        "nombres": "Juan Pérez",
+        "apellidoPaterno": "García",
+        "apellidoMaterno": "López",
         "ci": "1234567",
         "direccion": "Calle Principal 123",
         "celular": "555-123456",
@@ -30,7 +32,9 @@ export class MedicosService {
       },
       {
         "idMedico": 2,
-        "nombre": "María González",
+        "nombres": "María González",
+        "apellidoPaterno": "García",
+        "apellidoMaterno": "López",
         "ci": "7654321",
         "direccion": "Avenida Central 456",
         "celular": "555-987654",
@@ -43,7 +47,9 @@ export class MedicosService {
       },
       {
         "idMedico": 3,
-        "nombre": "Luis Ramírez",
+        "nombres": "Luis Ramírez",
+        "apellidoPaterno": "García",
+        "apellidoMaterno": "López",
         "ci": "2468101",
         "direccion": "Calle Secundaria 789",
         "celular": "555-246810",

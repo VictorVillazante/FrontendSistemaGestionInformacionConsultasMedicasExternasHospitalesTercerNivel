@@ -9,7 +9,7 @@
     <ul class="list-group">
         <li *ngFor="let dato of medicos; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
           <p class="dato-info">
-            Paciente {{ dato.nombres }} {{ dato.apellidoPaterno }} {{ dato.apellidoMaterno }}<br/>
+            Medico {{ dato.nombres }} {{ dato.apellidoPaterno }} {{ dato.apellidoMaterno }}<br/>
             CI: {{ dato.ci }}
           </p>
           <div class="botones-opciones">
