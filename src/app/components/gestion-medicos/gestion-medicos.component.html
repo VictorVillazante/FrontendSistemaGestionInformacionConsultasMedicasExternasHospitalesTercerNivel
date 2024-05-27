@@ -1,1 +1,21 @@
-<p>gestion-medicos works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Gestion medicos</h1>
+    <button
+      class="btn btn-success-hospital"
+      routerLink="/administrador/registro-medico"
+    >
+      Registrar medico
+    </button>
+    <ul class="list-group">
+        <li *ngFor="let dato of medicos; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
+          <p class="dato-info">
+            Paciente {{ dato.nombres }} {{ dato.apellidoPaterno }} {{ dato.apellidoMaterno }}<br/>
+            CI: {{ dato.ci }}
+          </p>
+          <div class="botones-opciones">
+            <i class="fas fa-trash me-2" (click)="eliminarDatos(dato.idPaciente)"></i>
+            <i class="fas fa-edit me-2" (click)="editarDatos(dato.idPaciente)"></i>
+          </div>
+        </li>
+      </ul>
+  </div>

@@ -8,7 +8,9 @@ import { Observable, of } from 'rxjs';
 })
 export class PacientesService {
   eliminarPaciente(id: any) {
-    return of();
+    let token=localStorage.getItem('token');
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes/${id}`,{ headers: { Authorization: `Bearer ${token}` }});
+
   }
 
   constructor(private http: HttpClient) { }
