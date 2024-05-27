@@ -27,6 +27,7 @@ import { GestionRecetasComponent } from './components/gestion-recetas/gestion-re
 import { GestionNotasReferenciaComponent } from './components/gestion-notas-referencia/gestion-notas-referencia.component';
 import { VerMisRecetasComponent } from './components/ver-mis-recetas/ver-mis-recetas.component';
 import { VerMisNotasReferenciaComponent } from './components/ver-mis-notas-referencia/ver-mis-notas-referencia.component';
+import { GestionMedicosComponent } from './components/gestion-medicos/gestion-medicos.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { VerMisNotasReferenciaComponent } from './components/ver-mis-notas-refer
     GestionNotasReferenciaComponent,
     VerMisRecetasComponent,
     VerMisNotasReferenciaComponent,
+    GestionMedicosComponent,
   ],
   imports: [
     BrowserModule,
