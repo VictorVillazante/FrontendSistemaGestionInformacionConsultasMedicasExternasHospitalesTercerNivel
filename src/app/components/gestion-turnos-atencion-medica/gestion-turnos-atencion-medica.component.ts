@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TurnosAtencionMedicaService } from 'src/app/services/turnos-atencion-medica.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-gestion-turnos-atencion-medica',
@@ -8,7 +9,6 @@ import { TurnosAtencionMedicaService } from 'src/app/services/turnos-atencion-me
   styleUrls: ['./gestion-turnos-atencion-medica.component.css']
 })
 export class GestionTurnosAtencionMedicaComponent {
-
   turnosAtencionMedica: any[] = [];
   constructor(private router:Router,private turnosAtencionMedicaService:TurnosAtencionMedicaService) {
     this.obtenerTurnosAtencion();
@@ -23,5 +23,40 @@ export class GestionTurnosAtencionMedicaComponent {
   }
   editarDato(id: any) {
     this.router.navigate(["/medico/modificar-turno-atencion-medica",id]);
+  }
+  eliminarDato(id: any) {
+    Swal.fire({
+      text:"Estas seguro de realizar la accion?",
+      showDenyButton: true,
+      confirmButtonText: 'Si',
+      confirmButtonColor: '#28afb0',
+      denyButtonColor: '#0a4a6e',
+      denyButtonText: `Cancelar`,
+      heightAuto:false,
+      scrollbarPadding:true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.turnosAtencionMedicaService.eliminarMedico(id).subscribe((data:any)=>{
+          Swal.fire({
+            icon: 'success',
+            text:"Se realizo la accion correctamente",
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#28afb0',
+            heightAuto:false,
+            scrollbarPadding:true,
+          })
+        },
+        (error: any) => {
+          Swal.fire({
+            icon: 'error',
+            text:"Error al realizar la accion",
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#28afb0',
+            heightAuto:false,
+            scrollbarPadding:true,
+          })
+        });
+      }
+    });
   }
 }

@@ -24,6 +24,7 @@ import { RegistroRecetaComponent } from "./components/registro-receta/registro-r
 import { DetalleRecetaComponent } from "./components/detalle-receta/detalle-receta.component";
 import { MisRecetasComponent } from "./components/mis-recetas/mis-recetas.component";
 import { MisNotasReferenciaComponent } from "./components/mis-notas-referencia/mis-notas-referencia.component";
+import { GestionTurnosAtencionMedicaComponent } from "./components/gestion-turnos-atencion-medica/gestion-turnos-atencion-medica.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -51,9 +52,9 @@ const APP_ROUTES: Routes = [
 
     { path: 'menu', component:  MenuComponent},
 
-    { path: '/detalle-historia-clinica/:id', component:  DetalleHistoriaClinicaComponent},
-    { path: '/detalle-nota-referencia/:id', component:  DetalleNotaReferenciaComponent},
-    { path: '/detalle-receta/:id', component:  DetalleRecetaComponent},
+    { path: 'detalle-historia-clinica/:id', component:  DetalleHistoriaClinicaComponent},
+    { path: 'detalle-nota-referencia/:id', component:  DetalleNotaReferenciaComponent},
+    { path: 'detalle-receta/:id', component:  DetalleRecetaComponent},
 
 
     { path: 'paciente/ver-mis-historias-clinicas', component:  MisHistoriasClnicasComponent},
@@ -88,6 +89,8 @@ const APP_ROUTES: Routes = [
     { path: 'administrador/registro-paciente', component:  RegistroPacienteComponent},
     { path: 'administrador/gestion-medicos', component:  GestionMedicosComponent},
     { path: 'administrador/registro-medico', component:  RegistroMedicoComponent},
+    { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},
+
 
 
 ];
