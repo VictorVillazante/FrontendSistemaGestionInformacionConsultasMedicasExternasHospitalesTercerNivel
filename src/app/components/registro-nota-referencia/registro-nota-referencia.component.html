@@ -2,7 +2,7 @@
     <h1 class="text-center p-3">Detalle de Nota de Referencia</h1>
     <form [formGroup]="formularioNotaReferencia" (ngSubmit)="onSubmit()">
       <div class="mb-3">
-        <label for="datosClinicos" class="form-label">datosClinicos</label>
+        <label for="datosClinicos" class="form-label">Datos clinicos</label>
         <textarea id="datosClinicos" class="form-control" formControlName="datosClinicos"></textarea>
       </div>
       <div class="mb-3">
@@ -39,11 +39,6 @@
       </div>
       
       <div class="mb-3">
-        <label for="examenFisico" class="form-label">Examen Físico</label>
-        <textarea id="examenFisico" class="form-control" formControlName="examenFisico"></textarea>
-      </div>
-      
-      <div class="mb-3">
         <label for="advertenciasFactoresRiesgo" class="form-label">Advertencias factores de riesgo</label>
         <textarea id="advertenciasFactoresRiesgo" class="form-control" formControlName="advertenciasFactoresRiesgo"></textarea>
       </div>
@@ -56,7 +51,8 @@
       <div class="mb-3">
         <label for="monitoreo" class="form-label">Monitoreo</label>
         <textarea id="monitoreo" class="form-control" formControlName="monitoreo"></textarea>
-      </div> 
+      </div>
+      
       <div class="mb-3">
         <label for="informeTrabajoSocial" class="form-label">Informe de trabajo social</label>
         <textarea id="informeTrabajoSocial" class="form-control" formControlName="informeTrabajoSocial"></textarea>
