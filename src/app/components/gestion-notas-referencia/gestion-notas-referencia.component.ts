@@ -11,9 +11,9 @@ export class GestionNotasReferenciaComponent {
 
   notasReferencia: any[] = [];
   constructor(private router:Router,private notasReferenciaService:NotasReferenciaService) {
-    this.obtenerRecetas();
+    this.obtenerNotasReferencia();
    }
-   obtenerRecetas(){
+   obtenerNotasReferencia(){
     this.notasReferenciaService.obtenerNotasReferencia().subscribe((data:any)=>{
       this.notasReferencia=data;
     });
