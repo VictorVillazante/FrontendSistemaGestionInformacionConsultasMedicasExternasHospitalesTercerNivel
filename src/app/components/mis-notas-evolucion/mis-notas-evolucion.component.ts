@@ -8,6 +8,12 @@ import { NotaEvolucionService } from 'src/app/services/nota-evolucion.service';
   styleUrls: ['./mis-notas-evolucion.component.css']
 })
 export class MisNotasEvolucionComponent {
+  verDetalleHistoriaClinica(idHistoriaClinica: any) {
+    const url = this.router.serializeUrl(
+     this.router.createUrlTree(['/detalle-historia-clinica', idHistoriaClinica])
+   );
+   window.open(url, '_blank');
+   }
   notasEvolucion: any[] = [];
   constructor(private router:Router,private notaEvolucionService:NotaEvolucionService) {
     this.obtenerNotasEvolucion();

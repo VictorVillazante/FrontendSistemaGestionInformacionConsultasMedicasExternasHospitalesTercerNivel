@@ -32,6 +32,7 @@ import { ActualizacionNotaEvolucionComponent } from "./componnens/actualizacion-
 import { ActualizacionMedicoComponent } from "./components/actualizacion-medico/actualizacion-medico.component";
 import { RegistroTurnoAtencionComponent } from "./components/registro-turno-atencion/registro-turno-atencion.component";
 import { ActualizacionTurnoAtencionComponent } from "./components/actualizacion-turno-atencion/actualizacion-turno-atencion.component";
+import { MisNotasEvolucionComponent } from "./components/mis-notas-evolucion/mis-notas-evolucion.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -67,13 +68,14 @@ const APP_ROUTES: Routes = [
 
 
     { path: 'paciente/ver-mis-historias-clinicas', component:  MisHistoriasClnicasComponent},
+    { path: 'paciente/ver-mis-recetas', component:  MisRecetasComponent},
+    { path: 'paciente/ver-mis-notas-referencia', component:  MisNotasReferenciaComponent},
+    { path: 'paciente/ver-mis-notas-evolucion', component:  MisNotasEvolucionComponent},
+
+
     { path: 'paciente/gestion-ficha-medica', component:  GestionFichasMedicasComponent,},
     { path: 'paciente/registro-ficha-medica', component:  RegistroFichaMedicaComponent,},
     { path: 'paciente/detalle-ficha-medica/:id', component:  DetalleFichaMedicaComponent},
-    { path: 'paciente/ver-mis-recetas', component:  MisRecetasComponent},
-    { path: 'paciente/ver-mis-notas-referencia', component:  MisNotasReferenciaComponent},
-
-
 
 
 
