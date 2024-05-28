@@ -25,6 +25,10 @@ import { DetalleRecetaComponent } from "./components/detalle-receta/detalle-rece
 import { MisRecetasComponent } from "./components/mis-recetas/mis-recetas.component";
 import { MisNotasReferenciaComponent } from "./components/mis-notas-referencia/mis-notas-referencia.component";
 import { GestionTurnosAtencionMedicaComponent } from "./components/gestion-turnos-atencion-medica/gestion-turnos-atencion-medica.component";
+import { DetalleNotaEvolucionComponent } from "./components/detalle-nota-evolucion/detalle-nota-evolucion.component";
+import { GestionNotasEvolucionComponent } from "./components/gestion-notas-evolucion/gestion-notas-evolucion.component";
+import { RegistroNotaEvolucionComponent } from "./components/registro-nota-evolucion/registro-nota-evolucion.component";
+import { ActualizacionNotaEvolucionComponent } from "./componnens/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -55,6 +59,8 @@ const APP_ROUTES: Routes = [
     { path: 'detalle-historia-clinica/:id', component:  DetalleHistoriaClinicaComponent},
     { path: 'detalle-nota-referencia/:id', component:  DetalleNotaReferenciaComponent},
     { path: 'detalle-receta/:id', component:  DetalleRecetaComponent},
+    { path: 'detalle-nota-evolucion/:id', component:  DetalleNotaEvolucionComponent},
+
 
 
     { path: 'paciente/ver-mis-historias-clinicas', component:  MisHistoriasClnicasComponent},
@@ -81,6 +87,10 @@ const APP_ROUTES: Routes = [
     { path: 'medico/gestion-recetas', component:  GestionRecetasComponent},
     { path: 'medico/registro-receta', component:  RegistroRecetaComponent},
     { path: 'medico/modificar-receta/:id', component:  ActualizacionNotaReferenciaComponent},
+
+    { path: 'medico/gestion-notas-evolucion', component:  GestionNotasEvolucionComponent},
+    { path: 'medico/registro-nota-evolucion', component:  RegistroNotaEvolucionComponent},
+    { path: 'medico/modificar-nota-evolucion/:id', component:  ActualizacionNotaEvolucionComponent},
 
 
 

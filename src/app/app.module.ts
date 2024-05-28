@@ -38,6 +38,10 @@ import { GestionTurnosAtencionMedicaComponent } from './components/gestion-turno
 import { RegitroTurnoAtencionComponent } from './components/regitro-turno-atencion/regitro-turno-atencion.component';
 import { MisRecetasComponent } from './components/mis-recetas/mis-recetas.component';
 import { MisNotasReferenciaComponent } from './components/mis-notas-referencia/mis-notas-referencia.component';
+import { GestionNotasEvolucionComponent } from './components/gestion-notas-evolucion/gestion-notas-evolucion.component';
+import { ActualizacionNotaEvolucionComponent } from './componnens/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component';
+import { RegistroNotaEvolucionComponent } from './components/registro-nota-evolucion/registro-nota-evolucion.component';
+import { DetalleNotaEvolucionComponent } from './components/detalle-nota-evolucion/detalle-nota-evolucion.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +77,10 @@ import { MisNotasReferenciaComponent } from './components/mis-notas-referencia/m
     RegitroTurnoAtencionComponent,
     MisRecetasComponent,
     MisNotasReferenciaComponent,
+    GestionNotasEvolucionComponent,
+    ActualizacionNotaEvolucionComponent,
+    RegistroNotaEvolucionComponent,
+    DetalleNotaEvolucionComponent,
   ],
   imports: [
     BrowserModule,
