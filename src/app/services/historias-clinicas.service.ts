@@ -23,6 +23,21 @@ export class HistoriasClinicasService {
     return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/`+idHistoriaClinica,historiaClinica);
   }
   registrarHistoriaClinica(historiaClinica:any){
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`,historiaClinica);
+    let historiaClinicaAux=historiaClinica.value;
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`,{
+      amnesis: historiaClinicaAux.amnesis,
+      antecedentesFamiliares: historiaClinicaAux.antecedentesFamiliares,
+      antecedentesGinecoobstetricos: historiaClinicaAux.antecedentesGinecoobstetricos,
+      antecedentesNoPatologicos: historiaClinicaAux.antecedentesNoPatologicos,
+      antecedentesPatologicos: historiaClinicaAux.antecedentesPatologicos,
+      antecedentesPersonales: historiaClinicaAux.antecedentesPersonales,
+      diagnosticoPresuntivo: historiaClinicaAux.diagnosticoPresuntivo,
+      diagnosticosDiferenciales: historiaClinicaAux.diagnosticosDiferenciales,
+      examenFisico: historiaClinicaAux.examenFisico,
+      examenFisicoEspecial: historiaClinicaAux.examenFisicoEspecial,
+      propuestaBasicaDeConducta: historiaClinicaAux.propuestaBasicaDeConducta,
+      tratamiento: historiaClinicaAux.tratamiento,
+      idPaciente: historiaClinicaAux.idPaciente,
+    });
   }
 }

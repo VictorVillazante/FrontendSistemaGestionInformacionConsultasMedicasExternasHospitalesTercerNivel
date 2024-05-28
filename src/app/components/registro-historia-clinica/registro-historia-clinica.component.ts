@@ -30,7 +30,8 @@ export class RegistroHistoriaClinicaComponent {
       examenFisicoEspecial: [''],
       propuestaBasicaDeConducta: [''],
       tratamiento: [''],
-      idPaciente:['']
+      idPaciente:[''],
+      ciPaciente:['']
     });
   }
   ngOnInit(): void {
@@ -74,7 +75,24 @@ export class RegistroHistoriaClinicaComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.historiasClinicasService.registrarHistoriaClinica(historiaClinica).subscribe((data:any)=>{
-          console.log(data);
+          Swal.fire({
+            icon: 'success',
+            text:"Se realizo la accion correctamente",
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#28afb0',
+            heightAuto:false,
+            scrollbarPadding:true,
+          })
+        },
+        (error: any) => {
+          Swal.fire({
+            icon: 'error',
+            text:"Error al realizar la accion",
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#28afb0',
+            heightAuto:false,
+            scrollbarPadding:true,
+          })
         });
       }
     });
@@ -88,8 +106,9 @@ export class RegistroHistoriaClinicaComponent {
     });
   }
   seleccionarPaciente(paciente: any) {
-    this.pacienteSeleccionado = paciente;
     this.isAutocompletePacienteFocused = false;
     this.clinicalHistoryForm.controls['idPaciente'].setValue(paciente.idPaciente);
+    this.clinicalHistoryForm.controls['ciPaciente'].setValue(paciente.ci);
+
   }
 }
