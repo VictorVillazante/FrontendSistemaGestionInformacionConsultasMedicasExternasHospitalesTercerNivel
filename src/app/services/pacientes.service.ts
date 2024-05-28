@@ -7,6 +7,33 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class PacientesService {
+  obtenerPaciente(idMedico: any) {
+    return of( {
+      "idPaciente": 1,
+      "apellidoPaterno": "García",
+      "apellidoMaterno": "López",
+      "nombres": "Carlos Alberto",
+      "fechaNacimiento": "1985-06-15",
+      "sexo": "Masculino",
+      "procedencia": "Ciudad de México",
+      "fechaIngreso": "2023-01-10",
+      "idiomaHablado": "Español",
+      "autoprescedenciaCultural": "Mestizo",
+      "ocupacion": "Ingeniero",
+      "apoyoDecisionAsistenciaMedica": "Esposa",
+      "estadoCivil": "Casado",
+      "escolaridad": "Universitaria",
+      "grupoSanguineo": "O+",
+      "ci": "6543210",
+      "email": "carlos.garcia@example.com",
+      "celular": "+5215512345678",
+      "diasSancion": 0,
+      "edad": 38,
+      "residencia": "Ciudad de México",
+      "codigoExpedienteClinico": "CEX123456"
+    });
+    
+  }
   registrarPaciente(paciente: FormData) {
     return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/paciente`,paciente);
   }
