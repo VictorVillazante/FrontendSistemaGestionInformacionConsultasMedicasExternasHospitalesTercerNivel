@@ -7,6 +7,10 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class MedicosService {
+  registrarMedico(medico: FormData) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medico`,medico);
+  }
+
   constructor(private http: HttpClient) { }
   eliminarMedico(id: any) {
     let token=localStorage.getItem('token');

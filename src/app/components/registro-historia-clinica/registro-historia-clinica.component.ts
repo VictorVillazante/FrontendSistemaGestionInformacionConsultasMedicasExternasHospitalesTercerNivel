@@ -34,9 +34,7 @@ export class RegistroHistoriaClinicaComponent {
       ciPaciente:['']
     });
   }
-  ngOnInit(): void {
-    this.obtenerPacientes();
-  }
+
   isAutocompletePacienteFocused:boolean=false;
   onFocusPaciente() {
     this.isAutocompletePacienteFocused = true;
@@ -100,11 +98,7 @@ export class RegistroHistoriaClinicaComponent {
   }
 
 
-  obtenerPacientes(){
-    this.pacientesService.obtenerPacientes().subscribe((data)=>{
-      this.pacientes=data;
-    });
-  }
+
   seleccionarPaciente(paciente: any) {
     this.isAutocompletePacienteFocused = false;
     this.clinicalHistoryForm.controls['idPaciente'].setValue(paciente.idPaciente);
