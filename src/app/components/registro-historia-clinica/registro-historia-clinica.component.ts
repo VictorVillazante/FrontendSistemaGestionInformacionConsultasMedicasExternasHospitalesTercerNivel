@@ -11,7 +11,6 @@ import Swal from 'sweetalert2';
 })
 export class RegistroHistoriaClinicaComponent {
 
-  pacienteSeleccionado: any = { ci: '' };
   id:any;
   clinicalHistoryForm: FormGroup;
   pacientes:any[]=[];
@@ -34,7 +33,11 @@ export class RegistroHistoriaClinicaComponent {
       ciPaciente:['']
     });
   }
-
+  ngOnInit(){
+    this.pacientesService.obtenerPacientes().subscribe((data)=>{
+      this.pacientes=data;
+    });
+  }
   isAutocompletePacienteFocused:boolean=false;
   onFocusPaciente() {
     this.isAutocompletePacienteFocused = true;

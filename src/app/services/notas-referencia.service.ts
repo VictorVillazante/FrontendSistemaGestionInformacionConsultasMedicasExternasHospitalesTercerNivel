@@ -7,6 +7,23 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class NotasReferenciaService {
+  registrarNotaReferencia(notaReferencia: any) {
+    let notasReferenciaAux=notaReferencia.value;
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`,{
+      datosClinicos:notasReferenciaAux.datosClinicos,
+      datosIngreso:notasReferenciaAux.datosIngreso,
+      datosEgreso:notasReferenciaAux.datosEgreso,
+      condicionesPacienteMomentoTransferencia:notasReferenciaAux.condicionesPacienteMomentoTransferencia,
+      informeProcedimientosRealizados:notasReferenciaAux.informeProcedimientosRealizados,
+      tratamientoEfectuado:notasReferenciaAux.tratamientoEfectuado,
+      tratamientoPersistePaciente:notasReferenciaAux.tratamientoPersistePaciente,
+      fechaVencimiento:notasReferenciaAux.fechaVencimiento,
+      advertenciasFactoresRiesgo:notasReferenciaAux.advertenciasFactoresRiesgo,
+      comentarioAdicional:notasReferenciaAux.comentarioAdicional,
+      monitoreo:notasReferenciaAux.monitoreo,
+      informeTrabajoSocial:notasReferenciaAux.informeTrabajoSocial
+    });
+  }
   obtenerNotasReferenciaPaciente(idPaciente: any) {
     return of([
       {
