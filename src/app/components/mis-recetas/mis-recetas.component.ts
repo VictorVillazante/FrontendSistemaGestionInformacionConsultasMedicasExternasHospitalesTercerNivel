@@ -8,6 +8,12 @@ import { RecetasService } from '../../services/recetas.service';
   styleUrls: ['./mis-recetas.component.css']
 })
 export class MisRecetasComponent {
+  verDetalleHistoriaClinica(idHistoriaClinica: any) {
+   const url = this.router.serializeUrl(
+    this.router.createUrlTree(['/detalle-historia-clinica', idHistoriaClinica])
+  );
+  window.open(url, '_blank');
+  }
   recetas: any[] = [];
 
   constructor(private router:Router,private recetasService:RecetasService) {

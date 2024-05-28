@@ -53,6 +53,22 @@ export class HistoriasClinicasService {
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`);
   }
   obtenerHistoriaClinicas(idHistoriaClinica:any) {
+    return of({
+      "idHistoriaClinica": 1,
+      "amnesis": "Paciente con antecedentes de alergias leves a ciertos alimentos. Ha experimentado dolores de cabeza ocasionales.",
+      "antecedentesFamiliares": "Padre con historial de diabetes tipo 2. Madre con hipertensión arterial.",
+      "antecedentesGinecoobstetricos": "Mujer, G1P0A0, sin complicaciones en su embarazo previo.",
+      "antecedentesNoPatologicos": "No fumador, consume alcohol ocasionalmente, practica ejercicio moderado.",
+      "antecedentesPatologicos": "Alergia a la penicilina reportada.",
+      "antecedentesPersonales": "Operado de apendicitis en 2015. Sin otras intervenciones quirúrgicas.",
+      "diagnosticoPresuntivo": "Sinusitis aguda.",
+      "diagnosticosDiferenciales": "Cefalea tensional, migraña.",
+      "examenFisico": "Paciente consciente y orientado en las tres esferas. Sin signos de focalización neurológica.",
+      "examenFisicoEspecial": "Exploración de cabeza y cuello sin alteraciones. Pupilas isocóricas y reactivas.",
+      "propuestaBasicaDeConducta": "Tratamiento sintomático con descongestionantes nasales y analgésicos. Seguimiento si persisten síntomas.",
+      "tratamiento": "Paciente prescrito con ibuprofeno 400mg cada 8 horas por 3 días. Pseudoefedrina 60mg cada 12 horas por 5 días.",
+      "idPaciente": "b987654321"
+    });
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/`+idHistoriaClinica);
   }
   actualizarHistoriaClinica(idHistoriaClinica:any,historiaClinica:any) {

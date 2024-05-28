@@ -7,10 +7,10 @@
             Receta {{ item.idReceta }}<br/>
             Fecha creacion {{ item.createdAt }}<br/>
             Fecha modificacion {{ item.updatedAt }}<br/>
-            Historia clinica {{ item.idHistoriaClinica }}<br/>
+            Historia clinica {{ item.idHistoriaClinica }}   <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(item.idHistoriaClinica)"></i><br/>
           </p>
           <div class="botones-opciones">
-            <i class="fas fa-chevron-right me-2" (click)="verDetalle(item.idHistoriaClinica)"></i>
+            <i class="fas fa-chevron-right me-2" (click)="verDetalle(item.idReceta)"></i>
           </div>
         </li>
       </ul>

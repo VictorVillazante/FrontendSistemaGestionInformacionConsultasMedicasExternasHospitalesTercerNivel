@@ -20,7 +20,7 @@ export class RecetasService {
       "precaucionesEspeciales": "Evitar si es alérgico a penicilinas",
       "indicacionesEspeciales": "Completar el tratamiento completo",
       "idMedico": 3,
-      "idHistoriaClinica": 103,
+      "idHistoriaClinica": 1,
       "createdAt": "2024-03-10T09:00:00Z",
       "updatedAt": "2024-03-10T09:00:00Z",
       "deletedAt": null
@@ -44,7 +44,7 @@ export class RecetasService {
         "precaucionesEspeciales": "No consumir alcohol",
         "indicacionesEspeciales": "Tomar con comida",
         "idMedico": 1,
-        "idHistoriaClinica": 101,
+        "idHistoriaClinica": 1,
         "createdAt": "2024-01-01T10:00:00Z",
         "updatedAt": "2024-01-01T10:00:00Z",
         "deletedAt": null
@@ -60,25 +60,9 @@ export class RecetasService {
         "precaucionesEspeciales": "Evitar uso prolongado",
         "indicacionesEspeciales": "Tomar con agua",
         "idMedico": 2,
-        "idHistoriaClinica": 102,
+        "idHistoriaClinica": 2,
         "createdAt": "2024-02-15T11:00:00Z",
         "updatedAt": "2024-02-15T11:00:00Z",
-        "deletedAt": null
-      },
-      {
-        "idReceta": 3,
-        "nombreGenericoMedicamentoPreescrito": "Amoxicilina",
-        "viaCuidadoEspecialesAdministracion": "Oral",
-        "concentracionDosificacion": "250mg",
-        "frecuenciaAdministracion24hrs": "Cada 8 horas",
-        "duracionTratamiento": "10 días",
-        "fechaVencimiento": "2024-11-20",
-        "precaucionesEspeciales": "Evitar si es alérgico a penicilinas",
-        "indicacionesEspeciales": "Completar el tratamiento completo",
-        "idMedico": 3,
-        "idHistoriaClinica": 103,
-        "createdAt": "2024-03-10T09:00:00Z",
-        "updatedAt": "2024-03-10T09:00:00Z",
         "deletedAt": null
       }
     ]
@@ -103,7 +87,7 @@ export class RecetasService {
         "precaucionesEspeciales": "No consumir alcohol",
         "indicacionesEspeciales": "Tomar con comida",
         "idMedico": 1,
-        "idHistoriaClinica": 101,
+        "idHistoriaClinica": 1,
         "createdAt": "2024-01-01T10:00:00Z",
         "updatedAt": "2024-01-01T10:00:00Z",
         "deletedAt": null
@@ -119,7 +103,7 @@ export class RecetasService {
         "precaucionesEspeciales": "Evitar uso prolongado",
         "indicacionesEspeciales": "Tomar con agua",
         "idMedico": 2,
-        "idHistoriaClinica": 102,
+        "idHistoriaClinica": 2,
         "createdAt": "2024-02-15T11:00:00Z",
         "updatedAt": "2024-02-15T11:00:00Z",
         "deletedAt": null
@@ -135,7 +119,7 @@ export class RecetasService {
         "precaucionesEspeciales": "Evitar si es alérgico a penicilinas",
         "indicacionesEspeciales": "Completar el tratamiento completo",
         "idMedico": 3,
-        "idHistoriaClinica": 103,
+        "idHistoriaClinica": 3,
         "createdAt": "2024-03-10T09:00:00Z",
         "updatedAt": "2024-03-10T09:00:00Z",
         "deletedAt": null
