@@ -1,1 +1,95 @@
-<p>registro-medico works!</p>
+<!-- <div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Historia Clínica</h1>
+    <form [formGroup]="formularioRegistroMedico()" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="amnesis" class="form-label">Amnesis</label>
+        <input type="email" class="form-control border-dark" id="email" formControlName="email" required>
+
+        <textarea id="amnesis"   class="form-control" formControlName="amnesis"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="antecedentesFamiliares" class="form-label">Antecedentes Familiares</label>
+        <textarea id="antecedentesFamiliares" class="form-control" formControlName="antecedentesFamiliares"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="antecedentesGinecoobstetricos" class="form-label">Antecedentes Ginecoobstétricos</label>
+        <textarea id="antecedentesGinecoobstetricos" class="form-control" formControlName="antecedentesGinecoobstetricos"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="antecedentesNoPatologicos" class="form-label">Antecedentes No Patológicos</label>
+        <textarea id="antecedentesNoPatologicos" class="form-control" formControlName="antecedentesNoPatologicos"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="antecedentesPatologicos" class="form-label">Antecedentes Patológicos</label>
+        <textarea id="antecedentesPatologicos" class="form-control" formControlName="antecedentesPatologicos"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="antecedentesPersonales" class="form-label">Antecedentes Personales</label>
+        <textarea id="antecedentesPersonales" class="form-control" formControlName="antecedentesPersonales"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="diagnosticoPresuntivo" class="form-label">Diagnóstico Presuntivo</label>
+        <textarea id="diagnosticoPresuntivo" class="form-control" formControlName="diagnosticoPresuntivo"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="diagnosticosDiferenciales" class="form-label">Diagnósticos Diferenciales</label>
+        <textarea id="diagnosticosDiferenciales" class="form-control" formControlName="diagnosticosDiferenciales"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="examenFisico" class="form-label">Examen Físico</label>
+        <textarea id="examenFisico" class="form-control" formControlName="examenFisico"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="examenFisicoEspecial" class="form-label">Examen Físico Especial</label>
+        <textarea id="examenFisicoEspecial" class="form-control" formControlName="examenFisicoEspecial"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="propuestaBasicaDeConducta" class="form-label">Propuesta Básica de Conducta</label>
+        <textarea id="propuestaBasicaDeConducta" class="form-control" formControlName="propuestaBasicaDeConducta"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="tratamiento" class="form-label">Tratamiento</label>
+        <textarea id="tratamiento" class="form-control" formControlName="tratamiento"></textarea>
+      </div> 
+      <div class="mb-3">
+        <label for="pacientes" class="form-label">CI paciente {{pacienteSeleccionado.ci}}</label>
+        <input
+          (focus)="onFocusPaciente()"
+          (blur)="onBlurPaciente()"
+          type="text"
+          class="form-control"
+          id="pacientes"
+          (input)="filterSuggestionsPaciente($event)"
+          name="pacienteInput"
+        />
+        <ul
+          *ngIf="isAutocompletePacienteFocused && filteredSuggestionsPacientes.length > 0"
+          class="list-group mt-2"
+          id="lista-opciones-alumno"
+        >
+          <li class="list-group-item" *ngFor="let paciente of filteredSuggestionsPacientes" (click)="seleccionarPaciente(paciente)">
+            {{ paciente.ci }}
+          </li>
+        </ul>
+      </div>
+      
+      
+      <button
+        class="btn btn-success-hospital "
+        type="submit"
+      >
+        Registrar
+      </button>
+    </form>
+    
+     
+      
+ </div>      -->
