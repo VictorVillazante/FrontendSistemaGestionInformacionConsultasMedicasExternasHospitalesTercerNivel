@@ -3,10 +3,12 @@
 
     <ul class="list-group">
         <li *ngFor="let item of recetas; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
-          Receta {{ item.idReceta }}
-          Fecha creacion {{ item.idReceta }}
-          Fecha modificacion {{ item.idReceta }}
-          Historia clinica {{ item.idHistoriaClinica }}
+          <p class="dato-info">
+            Receta {{ item.idReceta }}<br/>
+            Fecha creacion {{ item.createdAt }}<br/>
+            Fecha modificacion {{ item.updatedAt }}<br/>
+            Historia clinica {{ item.idHistoriaClinica }}<br/>
+          </p>
           <div class="botones-opciones">
             <i class="fas fa-chevron-right me-2" (click)="verDetalle(item.idHistoriaClinica)"></i>
           </div>
