@@ -7,6 +7,9 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class PacientesService {
+  registrarPaciente(paciente: FormData) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/paciente`,paciente);
+  }
   eliminarPaciente(id: any) {
     let token=localStorage.getItem('token');
     return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes/${id}`,{ headers: { Authorization: `Bearer ${token}` }});
