@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NotasReferenciaService } from '../../services/notas-referencia.service';
 import { NotaEvolucionService } from 'src/app/services/nota-evolucion.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-nota-evolucion',
@@ -10,6 +10,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detalle-nota-evolucion.component.css']
 })
 export class DetalleNotaEvolucionComponent {
+  verDetalleHistoriaClinica(idHistoriaClinica: any) {
+    const url = this.router.serializeUrl(
+     this.router.createUrlTree(['/medico/modificar-historia-clinica', idHistoriaClinica])
+   );
+   window.open(url, '_blank');
+  }
   id:any;
   formularioNotaEvolucion: FormGroup;
   ngOnInit(){
@@ -18,10 +24,17 @@ export class DetalleNotaEvolucionComponent {
       this.obtenerNotaEvoucion(this.id);
     });
   }
-  constructor(private activatedRoute: ActivatedRoute,private fb:FormBuilder,private notaEvolucionService:NotaEvolucionService){
+  constructor(private router:Router,private activatedRoute: ActivatedRoute,private fb:FormBuilder,private notaEvolucionService:NotaEvolucionService){
     this.formularioNotaEvolucion = this.fb.group({
       cambiosPacienteResultadosTratamiento:[''],
       idHistoriaClinica:[''],
+      idNotaEvolucion:[''],
+      idMedico:[''],
+      idPropietario:[''],
+      ciPropietario:[''],
+      pacientePropietario:[''],
+      createdAt:[''],
+      updatedAt:['']
     });
   }
   obtenerNotaEvoucion(id:any){
@@ -29,6 +42,13 @@ export class DetalleNotaEvolucionComponent {
       this.formularioNotaEvolucion.patchValue({
         cambiosPacienteResultadosTratamiento:data.cambiosPacienteResultadosTratamiento,
         idHistoriaClinica:data.idHistoriaClinica,
+        idNotaEvolucion:data.idNotaEvolucion,
+        idMedico:data.idMedico,
+        idPropietario:data.idPropietario,
+        ciPropietario:data.ciPropietario,
+        pacientePropietario:data.pacientePropietario,
+        createdAt:data.createdAt,
+        updatedAt:data.updatedAt
       });
     });
   }

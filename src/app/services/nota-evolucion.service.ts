@@ -13,6 +13,7 @@ export class NotaEvolucionService {
       "idHistoriaClinica": 1,
       "cambiosPacienteResultadosTratamiento": "El paciente ha mostrado mejoría significativa después del cambio de medicación.",
       "idMedico": "medico123",
+      "idPropietario":1,
       "ciPropietario":"89327889",
       "pacientePropietario":"Juan Tellez",
       "createdAt": "2023-01-01T08:00:00Z",

@@ -1,13 +1,104 @@
 <div class="container mt-5">
-    <h1 class="text-center p-3">Detalle de Nota de Evolucion</h1>
-    <form [formGroup]="formularioNotaEvolucion">
-        <div class="mb-3">
-            <label for="idHistoriaClinica" class="form-label">ID historia clinica</label>
-            <textarea id="idHistoriaClinica" class="form-control" formControlName="idHistoriaClinica" readonly></textarea>
-        </div>
-      <div class="mb-3">
-        <label for="cambiosPacienteResultadosTratamiento" class="form-label">Cambios del pacientes por resultados de tratamiento</label>
-        <textarea id="cambiosPacienteResultadosTratamiento" class="form-control" formControlName="cambiosPacienteResultadosTratamiento" readonly></textarea>
-      </div>
-    </form>      
- </div>     
+  <h1 class="text-center p-3">Detalle de Nota de Evolucion</h1>
+  <form [formGroup]="formularioNotaEvolucion">
+    <div class="mb-3">
+      <label for="idNotaEvolucion" class="form-label"
+        >ID nota de evolucion</label
+      >
+      <textarea
+        id="idNotaEvolucion"
+        class="form-control"
+        formControlName="idNotaEvolucion"
+        readonly
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="cambiosPacienteResultadosTratamiento" class="form-label"
+        >Cambios del pacientes por resultados de tratamiento</label
+      >
+      <textarea
+        id="cambiosPacienteResultadosTratamiento"
+        class="form-control"
+        formControlName="cambiosPacienteResultadosTratamiento"
+        readonly
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="idHistoriaClinica" class="form-label"
+        >ID historia clinica <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(formularioNotaEvolucion.value.idHistoriaClinica)"></i></label
+      >
+      <textarea
+        id="idHistoriaClinica"
+        class="form-control"
+        formControlName="idHistoriaClinica"
+        readonly
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="idMedico" class="form-label"
+        >ID medico</label
+      >
+      <textarea
+        id="idMedico"
+        class="form-control"
+        formControlName="idMedico"
+        readonly
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="ciPropietario" class="form-label"
+        >CI propietario</label
+      >
+      <textarea
+        id="ciPropietario"
+        class="form-control"
+        formControlName="ciPropietario"
+        readonly
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="pacientePropietario" class="form-label"
+        >Paciente propietario</label
+      >
+      <textarea
+        id="pacientePropietario"
+        class="form-control"
+        formControlName="pacientePropietario"
+        readonly
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="idHistoriaClinica" class="form-label"
+        >Paciente propietario</label
+      >
+      <textarea
+        id="idHistoriaClinica"
+        class="form-control"
+        formControlName="idHistoriaClinica"
+        readonly
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="createdAt" class="form-label"
+        >Creacion</label
+      >
+      <textarea
+        id="createdAt"
+        class="form-control"
+        formControlName="createdAt"
+        readonly
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="updatedAt" class="form-label"
+        >Ultima modificacion</label
+      >
+      <textarea
+        id="updatedAt"
+        class="form-control"
+        formControlName="updatedAt"
+        readonly
+      ></textarea>
+    </div>
+  </form>
+</div>
