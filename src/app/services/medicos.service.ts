@@ -7,6 +7,27 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class MedicosService {
+  obtenerMedico(idMedico: any) {
+    let token=localStorage.getItem('token');
+    return of({
+      "idMedico": 1,
+      "nombres": "Juan Pérez",
+      "apellidoPaterno": "García",
+      "apellidoMaterno": "López",
+      "ci": "1234567",
+      "direccion": "Calle Principal 123",
+      "celular": "555-123456",
+      "email": "juan@example.com",
+      "anosExperiencia": 8,
+      "salario": 60000,
+      "foto": "juan_perez.jpg",
+      "descripcion": "Especialista en medicina interna",
+      "grupoSanguineo": "O+"
+    });
+    //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos/${idMedico}`,{ headers: { Authorization: `Bearer ${token}` }});
+    //return this.http.get<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/medicos/${idMedico}`,{ headers: { Authorization: `Bearer ${token}` } });
+
+  }
   registrarMedico(medico: FormData) {
     return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medico`,medico);
   }
@@ -67,7 +88,7 @@ export class MedicosService {
     ]
     );
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos`,{ headers: { Authorization: `Bearer ${token}` }});
-    //return this.http.get<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/pacientes`,{ headers: { Authorization: `Bearer ${token}` } });
+    //return this.http.get<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/medicos`,{ headers: { Authorization: `Bearer ${token}` } });
 
   }
 
