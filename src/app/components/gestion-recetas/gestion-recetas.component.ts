@@ -25,4 +25,10 @@ export class GestionRecetasComponent {
   editarDato(id: any) {
     this.router.navigate(["/medico/modificar-receta",id]);
   }
+  verDetalleHistoriaClinica(idHistoriaClinica: any) {
+    const url = this.router.serializeUrl(
+     this.router.createUrlTree(['/medico/modificar-historia-clinica', idHistoriaClinica])
+   );
+   window.open(url, '_blank');
+   }
 }

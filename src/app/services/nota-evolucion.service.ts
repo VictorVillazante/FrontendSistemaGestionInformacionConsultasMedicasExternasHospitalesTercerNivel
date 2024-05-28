@@ -13,6 +13,8 @@ export class NotaEvolucionService {
       "idHistoriaClinica": 1,
       "cambiosPacienteResultadosTratamiento": "El paciente ha mostrado mejoría significativa después del cambio de medicación.",
       "idMedico": "medico123",
+      "ciPropietario":"89327889",
+      "pacientePropietario":"Juan Tellez",
       "createdAt": "2023-01-01T08:00:00Z",
       "updatedAt": "2023-01-10T10:00:00Z",
       "deletedAt": null
@@ -34,6 +36,8 @@ export class NotaEvolucionService {
         "idHistoriaClinica": 1,
         "cambiosPacienteResultadosTratamiento": "El paciente ha mostrado mejoría significativa después del cambio de medicación.",
         "idMedico": "medico123",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "createdAt": "2023-01-01T08:00:00Z",
         "updatedAt": "2023-01-10T10:00:00Z",
         "deletedAt": null
@@ -43,6 +47,8 @@ export class NotaEvolucionService {
         "idHistoriaClinica": 2,
         "cambiosPacienteResultadosTratamiento": "No se observan cambios relevantes en el estado del paciente.",
         "idMedico": "medico456",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "createdAt": "2023-02-01T09:00:00Z",
         "updatedAt": "2023-02-15T11:00:00Z",
         "deletedAt": null
@@ -52,6 +58,8 @@ export class NotaEvolucionService {
         "idHistoriaClinica": 3,
         "cambiosPacienteResultadosTratamiento": "Se recomienda continuar con el tratamiento actual debido a los resultados positivos observados.",
         "idMedico": "medico789",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "createdAt": "2023-03-01T10:00:00Z",
         "updatedAt": "2023-03-20T12:00:00Z",
         "deletedAt": null
@@ -61,6 +69,8 @@ export class NotaEvolucionService {
         "idHistoriaClinica": 4,
         "cambiosPacienteResultadosTratamiento": "El paciente reporta efectos secundarios leves, se ajustará la dosis.",
         "idMedico": "medico101",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "createdAt": "2023-04-01T11:00:00Z",
         "updatedAt": "2023-04-18T13:00:00Z",
         "deletedAt": null
@@ -68,6 +78,8 @@ export class NotaEvolucionService {
       {
         "idNotaEvolucion": 5,
         "idHistoriaClinica": 5,
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "cambiosPacienteResultadosTratamiento": "Después de la cirugía, el paciente ha recuperado la movilidad sin complicaciones.",
         "idMedico": "medico102",
         "createdAt": "2023-05-01T12:00:00Z",

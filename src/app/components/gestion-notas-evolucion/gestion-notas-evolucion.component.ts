@@ -12,6 +12,12 @@ export class GestionNotasEvolucionComponent {
   constructor(private router:Router,private notaEvolucionService:NotaEvolucionService) {
     this.obtenerRecetas();
    }
+   verDetalleHistoriaClinica(idHistoriaClinica: any) {
+    const url = this.router.serializeUrl(
+     this.router.createUrlTree(['/medico/modificar-historia-clinica', idHistoriaClinica])
+   );
+   window.open(url, '_blank');
+   }
    obtenerRecetas(){
     this.notaEvolucionService.obtenerNotasEvolucion().subscribe((data:any)=>{
       this.notasEvolucion=data;

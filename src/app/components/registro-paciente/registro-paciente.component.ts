@@ -40,6 +40,7 @@ export class RegistroPacienteComponent {
 
   onSubmit() {
     const formValues = this.formularioRegistroPaciente.value;
+    console.log(formValues);
     const formData = new FormData();
     for (const key in formValues) {
       if (formValues.hasOwnProperty(key)) {
@@ -49,15 +50,17 @@ export class RegistroPacienteComponent {
     if (this.imagenSeleccionada) {
       formData.append('image', this.imagenSeleccionada, this.imagenSeleccionada.name);
     }
+    console.log(formData);
+
     Swal.fire({
-      title: 'Estas seguro de realizar la accion',
+      text:"Estas seguro de realizar la accion?",
       showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Save',
+      confirmButtonText: 'Si',
+      confirmButtonColor: '#28afb0',
+      denyButtonColor: '#0a4a6e',
+      denyButtonText: `Cancelar`,
       heightAuto:false,
-      
-      scrollbarPadding:true,
-      denyButtonText: `Don't save`,
+      scrollbarPadding:true
     }).then((result) => {
       if (result.isConfirmed) {
         this.pacientesService.registrarPaciente(formData).subscribe((data:any)=>{

@@ -7,6 +7,10 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class RecetasService {
+  registrarReceta(receta: any) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`,receta);
+    //return this.http.post<any>(`http://localhost:8090/api/microservicio-recetas/recetas`);
+  }
   obtenerReceta(id: any) {
     let token=localStorage.getItem('token');
     return of({
@@ -23,6 +27,8 @@ export class RecetasService {
       "idHistoriaClinica": 1,
       "createdAt": "2024-03-10T09:00:00Z",
       "updatedAt": "2024-03-10T09:00:00Z",
+      "ciPropietario":"89327889",
+      "pacientePropietario":"Juan Tellez",
       "deletedAt": null
     }
     );
@@ -47,6 +53,8 @@ export class RecetasService {
         "idHistoriaClinica": 1,
         "createdAt": "2024-01-01T10:00:00Z",
         "updatedAt": "2024-01-01T10:00:00Z",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "deletedAt": null
       },
       {
@@ -63,6 +71,8 @@ export class RecetasService {
         "idHistoriaClinica": 2,
         "createdAt": "2024-02-15T11:00:00Z",
         "updatedAt": "2024-02-15T11:00:00Z",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "deletedAt": null
       }
     ]
@@ -90,6 +100,8 @@ export class RecetasService {
         "idHistoriaClinica": 1,
         "createdAt": "2024-01-01T10:00:00Z",
         "updatedAt": "2024-01-01T10:00:00Z",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "deletedAt": null
       },
       {
@@ -106,6 +118,8 @@ export class RecetasService {
         "idHistoriaClinica": 2,
         "createdAt": "2024-02-15T11:00:00Z",
         "updatedAt": "2024-02-15T11:00:00Z",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "deletedAt": null
       },
       {
@@ -122,6 +136,8 @@ export class RecetasService {
         "idHistoriaClinica": 3,
         "createdAt": "2024-03-10T09:00:00Z",
         "updatedAt": "2024-03-10T09:00:00Z",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez",
         "deletedAt": null
       }
     ]

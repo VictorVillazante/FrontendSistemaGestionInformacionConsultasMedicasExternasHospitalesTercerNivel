@@ -12,7 +12,7 @@
             Nota de referencia {{ dato.idNotaReferencia }}<br/>
             Fecha creacion: {{ dato.createdAt }} <br/>
             Fecha actualizacion: {{ dato.updatedAt }}<br/>
-            Historia clinica: {{ dato.idHistoriaClinica }}<br/>
+            Historia clinica: {{ dato.idHistoriaClinica }} <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(dato.idHistoriaClinica)"></i><br/>
             Paciente propietario: {{ dato.pacientePropietario }}<br/>
             CI paciente propietario: {{ dato.ciPropietario }}<br/>
 

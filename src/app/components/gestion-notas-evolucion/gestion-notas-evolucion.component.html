@@ -9,12 +9,17 @@
     <ul class="list-group">
         <li *ngFor="let dato of notasEvolucion; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
           <p class="dato-info">
-            Medico {{ dato.nombres }} {{ dato.apellidoPaterno }} {{ dato.apellidoMaterno }}<br/>
-            CI: {{ dato.ci }}
+            Nota de evolucion {{ dato.idNotaEvolucion }}<br/>
+            Fecha creacion: {{ dato.createdAt }} <br/>
+            Fecha actualizacion: {{ dato.updatedAt }}<br/>
+            Historia clinica: {{ dato.idHistoriaClinica }} <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(dato.idHistoriaClinica)"></i><br/>
+            Paciente propietario: {{ dato.pacientePropietario }}<br/>
+            CI paciente propietario: {{ dato.ciPropietario }}<br/>
+          
           </p>
           <div class="botones-opciones">
-            <i class="fas fa-edit me-2" (click)="editarDato(dato.idNota)"></i>
-            <i class="fas fa-chevron-right me-2" (click)="verDetalles(dato.idReceta)"></i>
+            <i class="fas fa-edit me-2" (click)="editarDato(dato.idNotaEvolucion)"></i>
+            <i class="fas fa-chevron-right me-2" (click)="verDetalles(dato.idNotaEvolucion)"></i>
           </div>
         </li>
       </ul>

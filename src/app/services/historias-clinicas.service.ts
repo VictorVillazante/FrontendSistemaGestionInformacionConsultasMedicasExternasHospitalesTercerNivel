@@ -27,7 +27,9 @@ export class HistoriasClinicasService {
         "examenFisicoEspecial": "Exploración de cabeza y cuello sin alteraciones. Pupilas isocóricas y reactivas.",
         "propuestaBasicaDeConducta": "Tratamiento sintomático con descongestionantes nasales y analgésicos. Seguimiento si persisten síntomas.",
         "tratamiento": "Paciente prescrito con ibuprofeno 400mg cada 8 horas por 3 días. Pseudoefedrina 60mg cada 12 horas por 5 días.",
-        "idPaciente": "b987654321"
+        "idPaciente": "b987654321",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez"
       },
       {
         "idHistoriaClinica": 2,
@@ -43,7 +45,9 @@ export class HistoriasClinicasService {
         "examenFisicoEspecial": "N/A",
         "propuestaBasicaDeConducta": "Tratamiento con broncodilatadores y corticoides inhalados. Evaluar mejoría en 24 horas.",
         "tratamiento": "Salbutamol 100mcg inhalado cada 4 horas. Budesonida 200mcg inhalado cada 12 horas.",
-        "idPaciente": "c123456789"
+        "idPaciente": "c123456789",
+        "ciPropietario":"89327889",
+        "pacientePropietario":"Juan Tellez"
       }
     ]
     );
@@ -67,7 +71,9 @@ export class HistoriasClinicasService {
       "examenFisicoEspecial": "Exploración de cabeza y cuello sin alteraciones. Pupilas isocóricas y reactivas.",
       "propuestaBasicaDeConducta": "Tratamiento sintomático con descongestionantes nasales y analgésicos. Seguimiento si persisten síntomas.",
       "tratamiento": "Paciente prescrito con ibuprofeno 400mg cada 8 horas por 3 días. Pseudoefedrina 60mg cada 12 horas por 5 días.",
-      "idPaciente": "b987654321"
+      "idPaciente": "b987654321",
+      "ciPropietario":"89327889",
+      "pacientePropietario":"Juan Tellez",
     });
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/`+idHistoriaClinica);
   }

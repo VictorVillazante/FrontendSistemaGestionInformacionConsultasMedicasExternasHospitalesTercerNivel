@@ -32,11 +32,10 @@ import { RegistroRecetaComponent } from './components/registro-receta/registro-r
 import { ActualizacionRecetaComponent } from './components/actualizacion-receta/actualizacion-receta.component';
 import { DetalleRecetaComponent } from './components/detalle-receta/detalle-receta.component';
 import { GestionTurnosAtencionMedicaComponent } from './components/gestion-turnos-atencion-medica/gestion-turnos-atencion-medica.component';
-import { RegitroTurnoAtencionComponent } from './components/regitro-turno-atencion/regitro-turno-atencion.component';
 import { MisRecetasComponent } from './components/mis-recetas/mis-recetas.component';
 import { MisNotasReferenciaComponent } from './components/mis-notas-referencia/mis-notas-referencia.component';
 import { GestionNotasEvolucionComponent } from './components/gestion-notas-evolucion/gestion-notas-evolucion.component';
-import { ActualizacionNotaEvolucionComponent } from './componnens/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component';
+import { ActualizacionNotaEvolucionComponent } from './components/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component';
 import { RegistroNotaEvolucionComponent } from './components/registro-nota-evolucion/registro-nota-evolucion.component';
 import { DetalleNotaEvolucionComponent } from './components/detalle-nota-evolucion/detalle-nota-evolucion.component';
 import { ActualizacionMedicoComponent } from './components/actualizacion-medico/actualizacion-medico.component';
@@ -73,7 +72,6 @@ import { ActualizacionTurnoAtencionComponent } from './components/actualizacion-
     ActualizacionRecetaComponent,
     DetalleRecetaComponent,
     GestionTurnosAtencionMedicaComponent,
-    RegitroTurnoAtencionComponent,
     MisRecetasComponent,
     MisNotasReferenciaComponent,
     GestionNotasEvolucionComponent,

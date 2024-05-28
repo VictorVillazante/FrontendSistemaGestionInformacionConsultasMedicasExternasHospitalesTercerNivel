@@ -8,6 +8,12 @@ import { NotasReferenciaService } from 'src/app/services/notas-referencia.servic
   styleUrls: ['./gestion-notas-referencia.component.css']
 })
 export class GestionNotasReferenciaComponent {
+  verDetalleHistoriaClinica(idHistoriaClinica: any) {
+    const url = this.router.serializeUrl(
+     this.router.createUrlTree(['/medico/modificar-historia-clinica', idHistoriaClinica])
+   );
+   window.open(url, '_blank');
+   }
 
   notasReferencia: any[] = [];
   constructor(private router:Router,private notasReferenciaService:NotasReferenciaService) {

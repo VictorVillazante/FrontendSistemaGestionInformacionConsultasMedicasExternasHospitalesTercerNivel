@@ -28,7 +28,7 @@ import { GestionTurnosAtencionMedicaComponent } from "./components/gestion-turno
 import { DetalleNotaEvolucionComponent } from "./components/detalle-nota-evolucion/detalle-nota-evolucion.component";
 import { GestionNotasEvolucionComponent } from "./components/gestion-notas-evolucion/gestion-notas-evolucion.component";
 import { RegistroNotaEvolucionComponent } from "./components/registro-nota-evolucion/registro-nota-evolucion.component";
-import { ActualizacionNotaEvolucionComponent } from "./componnens/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component";
+import { ActualizacionNotaEvolucionComponent } from "./components/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component";
 import { ActualizacionMedicoComponent } from "./components/actualizacion-medico/actualizacion-medico.component";
 import { RegistroTurnoAtencionComponent } from "./components/registro-turno-atencion/registro-turno-atencion.component";
 import { ActualizacionTurnoAtencionComponent } from "./components/actualizacion-turno-atencion/actualizacion-turno-atencion.component";
