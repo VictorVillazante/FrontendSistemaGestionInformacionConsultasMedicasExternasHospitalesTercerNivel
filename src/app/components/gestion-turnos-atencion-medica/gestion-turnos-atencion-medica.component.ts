@@ -19,10 +19,10 @@ export class GestionTurnosAtencionMedicaComponent {
     });
   }
   verDetalles(id:any){
-    this.router.navigate(["/detalle-turno-atencion-medica",id]);
+    this.router.navigate(["/detalle-turno-atencion",id]);
   }
   editarDato(id: any) {
-    this.router.navigate(["/medico/modificar-turno-atencion-medica",id]);
+    this.router.navigate(["/administrador/modificar-turno-atencion",id]);
   }
   eliminarDato(id: any) {
     Swal.fire({

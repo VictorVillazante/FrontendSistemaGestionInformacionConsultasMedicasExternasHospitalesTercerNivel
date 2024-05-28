@@ -30,6 +30,8 @@ import { GestionNotasEvolucionComponent } from "./components/gestion-notas-evolu
 import { RegistroNotaEvolucionComponent } from "./components/registro-nota-evolucion/registro-nota-evolucion.component";
 import { ActualizacionNotaEvolucionComponent } from "./componnens/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component";
 import { ActualizacionMedicoComponent } from "./components/actualizacion-medico/actualizacion-medico.component";
+import { RegistroTurnoAtencionComponent } from "./components/registro-turno-atencion/registro-turno-atencion.component";
+import { ActualizacionTurnoAtencionComponent } from "./components/actualizacion-turno-atencion/actualizacion-turno-atencion.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -98,10 +100,13 @@ const APP_ROUTES: Routes = [
 
     { path: 'administrador/gestion-pacientes', component:  GestionPacientesComponent},
     { path: 'administrador/registro-paciente', component:  RegistroPacienteComponent},
+    { path: 'administrador/modificar-paciente/:id', component:  ActualizacionMedicoComponent},
     { path: 'administrador/gestion-medicos', component:  GestionMedicosComponent},
     { path: 'administrador/registro-medico', component:  RegistroMedicoComponent},
     { path: 'administrador/modificar-medico/:id', component:  ActualizacionMedicoComponent},
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},
+    { path: 'administrador/registro-turno-atencion', component:  RegistroTurnoAtencionComponent},
+    { path: 'administrador/modificar-turno-atencion/:id', component:  ActualizacionTurnoAtencionComponent},
 
 
 

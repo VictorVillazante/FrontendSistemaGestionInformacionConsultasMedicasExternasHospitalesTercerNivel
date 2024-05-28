@@ -42,6 +42,8 @@ import { DetalleNotaEvolucionComponent } from './components/detalle-nota-evoluci
 import { ActualizacionMedicoComponent } from './components/actualizacion-medico/actualizacion-medico.component';
 import { ActualizacionPacienteComponent } from './components/actualizacion-paciente/actualizacion-paciente.component';
 import { MisNotasEvolucionComponent } from './components/mis-notas-evolucion/mis-notas-evolucion.component';
+import { RegistroTurnoAtencionComponent } from './components/registro-turno-atencion/registro-turno-atencion.component';
+import { ActualizacionTurnoAtencionComponent } from './components/actualizacion-turno-atencion/actualizacion-turno-atencion.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,8 @@ import { MisNotasEvolucionComponent } from './components/mis-notas-evolucion/mis
     ActualizacionMedicoComponent,
     ActualizacionPacienteComponent,
     MisNotasEvolucionComponent,
+    RegistroTurnoAtencionComponent,
+    ActualizacionTurnoAtencionComponent,
   ],
   imports: [
     BrowserModule,
