@@ -19,8 +19,19 @@ export class DetalleRecetaComponent {
   }
   constructor(private activatedRoute: ActivatedRoute,private fb:FormBuilder,private recetasService:RecetasService){
     this.formularioReceta = this.fb.group({
-      cambiosPacienteResultadosTratamiento:[''],
+      nombreGenericoMedicamentoPreescrito:[''],
+      viaCuidadoEspecialesAdministracion:[''],
+      concentracionDosificacion:[''],
+      frecuenciaAdministracion24hrs:[''],
+      duracionTratamiento:[''],
+      fechaVencimiento:[''],
+      precaucionesEspeciales:[''],
+      indicacionesEspeciales:[''],
+      idMedico:[''],
       idHistoriaClinica:[''],
+      createdAt:[''],
+      updatedAt:[''],
+      deletedAt:['']
     });
   }
   obtenerReceta(id:any){
