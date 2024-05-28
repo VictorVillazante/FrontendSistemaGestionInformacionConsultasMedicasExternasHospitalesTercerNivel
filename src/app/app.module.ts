@@ -37,6 +37,7 @@ import { DetalleRecetaComponent } from './components/detalle-receta/detalle-rece
 import { GestionTurnosAtencionMedicaComponent } from './components/gestion-turnos-atencion-medica/gestion-turnos-atencion-medica.component';
 import { RegitroTurnoAtencionComponent } from './components/regitro-turno-atencion/regitro-turno-atencion.component';
 import { MisRecetasComponent } from './components/mis-recetas/mis-recetas.component';
+import { MisNotasReferenciaComponent } from './components/mis-notas-referencia/mis-notas-referencia.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { MisRecetasComponent } from './components/mis-recetas/mis-recetas.compon
     GestionTurnosAtencionMedicaComponent,
     RegitroTurnoAtencionComponent,
     MisRecetasComponent,
+    MisNotasReferenciaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+.dato-info{
+    width: 90%;
+    padding: 5px;
+}
+.botones-opciones{
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    border-right-width: 5px;
+    
+}
