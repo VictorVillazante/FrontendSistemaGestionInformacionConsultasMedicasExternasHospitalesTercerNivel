@@ -29,6 +29,7 @@ import { DetalleNotaEvolucionComponent } from "./components/detalle-nota-evoluci
 import { GestionNotasEvolucionComponent } from "./components/gestion-notas-evolucion/gestion-notas-evolucion.component";
 import { RegistroNotaEvolucionComponent } from "./components/registro-nota-evolucion/registro-nota-evolucion.component";
 import { ActualizacionNotaEvolucionComponent } from "./componnens/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component";
+import { ActualizacionMedicoComponent } from "./components/actualizacion-medico/actualizacion-medico.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -99,6 +100,7 @@ const APP_ROUTES: Routes = [
     { path: 'administrador/registro-paciente', component:  RegistroPacienteComponent},
     { path: 'administrador/gestion-medicos', component:  GestionMedicosComponent},
     { path: 'administrador/registro-medico', component:  RegistroMedicoComponent},
+    { path: 'administrador/modificar-medico/:id', component:  ActualizacionMedicoComponent},
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},
 
 

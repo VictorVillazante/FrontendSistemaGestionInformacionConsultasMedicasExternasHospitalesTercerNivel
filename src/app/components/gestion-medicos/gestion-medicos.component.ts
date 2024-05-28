@@ -19,7 +19,7 @@ export class GestionMedicosComponent {
     });
   }
   editarDatos(id: any) {
-    this.router.navigate(["/medico/modificar-historia-clinica",id]);
+    this.router.navigate(["/administrador/modificar-medico",id]);
   }
   eliminarDatos(id: any) {
     Swal.fire({
