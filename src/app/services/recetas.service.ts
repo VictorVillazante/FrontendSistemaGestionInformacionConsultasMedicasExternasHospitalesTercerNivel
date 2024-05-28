@@ -7,6 +7,29 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class RecetasService {
+  obtenerReceta(id: any) {
+    let token=localStorage.getItem('token');
+    return of({
+      "idReceta": 3,
+      "nombreGenericoMedicamentoPreescrito": "Amoxicilina",
+      "viaCuidadoEspecialesAdministracion": "Oral",
+      "concentracionDosificacion": "250mg",
+      "frecuenciaAdministracion24hrs": "Cada 8 horas",
+      "duracionTratamiento": "10 días",
+      "fechaVencimiento": "2024-11-20",
+      "precaucionesEspeciales": "Evitar si es alérgico a penicilinas",
+      "indicacionesEspeciales": "Completar el tratamiento completo",
+      "idMedico": 3,
+      "idHistoriaClinica": 103,
+      "createdAt": "2024-03-10T09:00:00Z",
+      "updatedAt": "2024-03-10T09:00:00Z",
+      "deletedAt": null
+    }
+    );
+    //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/${id}`);
+    //return this.http.get<any>(`http://localhost:8090/api/microservicio-recetas/recetas/${id}`);
+
+  }
   obtenerRecetasPaciente(idPaciente: any) {
     let token=localStorage.getItem('token');
     return of([

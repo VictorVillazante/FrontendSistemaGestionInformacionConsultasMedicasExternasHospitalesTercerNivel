@@ -1,1 +1,45 @@
-<p>detalle-receta works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Receta</h1>
+    <form [formGroup]="formularioReceta">
+      <div class="mb-3">
+        <label for="nombreGenericoMedicamentoPreescrito" class="form-label">Nombre generico del medicamento preescrito</label>
+        <textarea id="nombreGenericoMedicamentoPreescrito" class="form-control" formControlName="nombreGenericoMedicamentoPreescrito"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="viaCuidadoEspecialesAdministracion" class="form-label">Via cuidado especiales de administracion</label>
+        <textarea id="viaCuidadoEspecialesAdministracion" class="form-control" formControlName="viaCuidadoEspecialesAdministracion"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="concentracionDosificacion" class="form-label">Concentracion dosificacion</label>
+        <textarea id="concentracionDosificacion" class="form-control" formControlName="concentracionDosificacion"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="frecuenciaAdministracion24hrs" class="form-label">Frecuencia de administracion cada 24hrs</label>
+        <textarea id="frecuenciaAdministracion24hrs" class="form-control" formControlName="frecuenciaAdministracion24hrs"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="duracionTratamiento" class="form-label">Duracion de tratamiento</label>
+        <textarea id="duracionTratamiento" class="form-control" formControlName="duracionTratamiento"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="fechaVencimiento" class="form-label">Fecha de vencimiento</label>
+        <input type="date" class="form-control border-dark" id="fechaVencimiento" formControlName="fechaVencimiento" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="precaucionesEspeciales" class="form-label">Precauciones especiales</label>
+        <textarea id="precaucionesEspeciales" class="form-control" formControlName="precaucionesEspeciales"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="indicacionesEspeciales" class="form-label">Indicaciones especiales</label>
+        <textarea id="indicacionesEspeciales" class="form-control" formControlName="indicacionesEspeciales"></textarea>
+      </div>
+
+    </form>
+    
+     
+      
+ </div>     

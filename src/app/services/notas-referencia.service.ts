@@ -7,6 +7,32 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class NotasReferenciaService {
+  obtenerNotaReferencia(id: any) {
+    return of(  {
+      "idNotaReferencia": 3,
+      "datosClinicos": "Paciente con fractura de tibia.",
+      "datosIngreso": "Ingresado después de accidente automovilístico.",
+      "datosEgreso": "Egresado después de cirugía de reducción abierta y fijación interna.",
+      "condicionesPacienteMomentoTransferencia": "Estable, con yeso en la pierna.",
+      "informeProcedimientosRealizados": "Cirugía de reducción abierta y fijación interna.",
+      "tratamientoEfectuado": "Analgesia postoperatoria y antibióticos.",
+      "tratamientoPersistePaciente": "Rehabilitación y fisioterapia.",
+      "fechaVencimiento": "2024-11-20",
+      "advertenciasFactoresRiesgo": "Evitar apoyar peso en la pierna por 6 semanas.",
+      "comentarioAdicional": "Revisar en consulta externa en 10 días.",
+      "monitoreo": "Control de dolor y signos de infección cada 8 horas.",
+      "informeTrabajoSocial": "Paciente vive con familia que le brindará apoyo en la recuperación.",
+      "idHistoriaClinica": 103,
+      "idMedico": 3,
+      "createdAt": "2024-03-10T09:00:00Z",
+      "updatedAt": "2024-03-10T09:00:00Z",
+      "deletedAt": null
+    }
+    );
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia/${id}`);
+    // return this.http.get<any>(`http://localhost:9092/api/microservicio-notas-referencia/notas-referencia/${id}`);
+
+  }
   registrarNotaReferencia(notaReferencia: any) {
     let notasReferenciaAux=notaReferencia.value;
     return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`,{
