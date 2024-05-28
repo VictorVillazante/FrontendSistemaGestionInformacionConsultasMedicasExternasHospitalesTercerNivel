@@ -1,1 +1,13 @@
-<p>detalle-nota-evolucion works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Nota de Evolucion</h1>
+    <form [formGroup]="formularioNotaEvolucion">
+        <div class="mb-3">
+            <label for="idHistoriaClinica" class="form-label">ID historia clinica</label>
+            <textarea id="idHistoriaClinica" class="form-control" formControlName="idHistoriaClinica" readonly></textarea>
+        </div>
+      <div class="mb-3">
+        <label for="cambiosPacienteResultadosTratamiento" class="form-label">Cambios del pacientes por resultados de tratamiento</label>
+        <textarea id="cambiosPacienteResultadosTratamiento" class="form-control" formControlName="cambiosPacienteResultadosTratamiento" readonly></textarea>
+      </div>
+    </form>      
+ </div>     

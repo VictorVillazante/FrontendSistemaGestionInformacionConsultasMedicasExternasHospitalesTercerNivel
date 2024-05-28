@@ -9,7 +9,6 @@ import { HomeComponent } from './components/home/home.component';
 import { APP_ROUTING } from './app.routes';
 import { GestionFichasMedicasComponent } from './components/gestion-fichas-medicas/gestion-fichas-medicas.component';
 import { MisHistoriasClnicasComponent } from './components/mis-historias-clnicas/mis-historias-clnicas.component';
-import { VerMisHistoriasClinicasComponent } from './components/ver-mis-historias-clinicas/ver-mis-historias-clinicas.component';
 import { DetalleHistoriaClinicaComponent } from './components/detalle-historia-clinica/detalle-historia-clinica.component';
 import { RegistroHistoriaClinicaComponent } from './components/registro-historia-clinica/registro-historia-clinica.component';
 import { ActualizacionHistoriaClinicaComponent } from './components/actualizacion-historia-clinica/actualizacion-historia-clinica.component';
@@ -24,8 +23,6 @@ import { GestionPacientesComponent } from './components/gestion-pacientes/gestio
 import { RegistroPacienteComponent } from './components/registro-paciente/registro-paciente.component';
 import { GestionRecetasComponent } from './components/gestion-recetas/gestion-recetas.component';
 import { GestionNotasReferenciaComponent } from './components/gestion-notas-referencia/gestion-notas-referencia.component';
-import { VerMisRecetasComponent } from './components/ver-mis-recetas/ver-mis-recetas.component';
-import { VerMisNotasReferenciaComponent } from './components/ver-mis-notas-referencia/ver-mis-notas-referencia.component';
 import { GestionMedicosComponent } from './components/gestion-medicos/gestion-medicos.component';
 import { RegistroMedicoComponent } from './components/registro-medico/registro-medico.component';
 import { RegistroNotaReferenciaComponent } from './components/registro-nota-referencia/registro-nota-referencia.component';
@@ -53,7 +50,6 @@ import { MisNotasEvolucionComponent } from './components/mis-notas-evolucion/mis
     HomeComponent,
     GestionFichasMedicasComponent,
     MisHistoriasClnicasComponent,
-    VerMisHistoriasClinicasComponent,
     DetalleHistoriaClinicaComponent,
     RegistroHistoriaClinicaComponent,
     ActualizacionHistoriaClinicaComponent,
@@ -66,8 +62,6 @@ import { MisNotasEvolucionComponent } from './components/mis-notas-evolucion/mis
     RegistroPacienteComponent,
     GestionRecetasComponent,
     GestionNotasReferenciaComponent,
-    VerMisRecetasComponent,
-    VerMisNotasReferenciaComponent,
     GestionMedicosComponent,
     RegistroMedicoComponent,
     RegistroNotaReferenciaComponent,
