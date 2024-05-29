@@ -28,7 +28,10 @@ export class DetalleNotaReferenciaComponent {
       idPaciente:[''],
       ciPaciente:[''],
       idHistoriaClinica:[''],
-      diagnosticoPresuntivo:['']
+      diagnosticoPresuntivo:[''],
+      idMedico:[''],
+      createdAt:[''],
+      updatedAt:['']
     });
   }
   ngOnInit(){
@@ -57,7 +60,6 @@ export class DetalleNotaReferenciaComponent {
         idMedico:data.idMedico,
         createdAt:data.createdAt,
         updatedAt:data.updatedAt,
-        deletedAt:data.deletedAt
       });
     });
   }
