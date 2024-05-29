@@ -3,11 +3,11 @@
     <form [formGroup]="formularioReceta">
       <div class="mb-3">
         <label for="nombreGenericoMedicamentoPreescrito" class="form-label">Nombre generico del medicamento preescrito</label>
-        <textarea id="nombreGenericoMedicamentoPreescrito" class="form-control" formControlName="nombreGenericoMedicamentoPreescrito"></textarea>
+        <textarea id="nombreGenericoMedicamentoPreescrito" class="form-control" formControlName="nombreGenericoMedicamentoPreescrito" readonly></textarea>
       </div>
       <div class="mb-3">
         <label for="viaCuidadoEspecialesAdministracion" class="form-label">Via cuidado especiales de administracion</label>
-        <textarea id="viaCuidadoEspecialesAdministracion" class="form-control" formControlName="viaCuidadoEspecialesAdministracion"></textarea>
+        <textarea id="viaCuidadoEspecialesAdministracion" class="form-control" formControlName="viaCuidadoEspecialesAdministracion" readonly></textarea>
       </div>
       <div class="mb-3">
         <label for="concentracionDosificacion" class="form-label">Concentracion dosificacion</label>
@@ -15,29 +15,44 @@
       </div>
       <div class="mb-3">
         <label for="frecuenciaAdministracion24hrs" class="form-label">Frecuencia de administracion cada 24hrs</label>
-        <textarea id="frecuenciaAdministracion24hrs" class="form-control" formControlName="frecuenciaAdministracion24hrs"></textarea>
+        <textarea id="frecuenciaAdministracion24hrs" class="form-control" formControlName="frecuenciaAdministracion24hrs" readonly></textarea>
       </div>
       
       <div class="mb-3">
         <label for="duracionTratamiento" class="form-label">Duracion de tratamiento</label>
-        <textarea id="duracionTratamiento" class="form-control" formControlName="duracionTratamiento"></textarea>
+        <textarea id="duracionTratamiento" class="form-control" formControlName="duracionTratamiento" readonly></textarea>
       </div>
       
       <div class="mb-3">
         <label for="fechaVencimiento" class="form-label">Fecha de vencimiento</label>
-        <input type="date" class="form-control border-dark" id="fechaVencimiento" formControlName="fechaVencimiento" required>
+        <input type="date" class="form-control border-dark" id="fechaVencimiento" formControlName="fechaVencimiento" readonly>
       </div>
       
       <div class="mb-3">
         <label for="precaucionesEspeciales" class="form-label">Precauciones especiales</label>
-        <textarea id="precaucionesEspeciales" class="form-control" formControlName="precaucionesEspeciales"></textarea>
+        <textarea id="precaucionesEspeciales" class="form-control" formControlName="precaucionesEspeciales" readonly></textarea>
       </div>
       
       <div class="mb-3">
         <label for="indicacionesEspeciales" class="form-label">Indicaciones especiales</label>
-        <textarea id="indicacionesEspeciales" class="form-control" formControlName="indicacionesEspeciales"></textarea>
+        <textarea id="indicacionesEspeciales" class="form-control" formControlName="indicacionesEspeciales" readonly></textarea>
       </div>
-
+      <div class="mb-3">
+        <label for="idHistoriaClinica" class="form-label">ID historia clinica <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(formularioReceta.value.idHistoriaClinica)"></i></label>
+        <textarea id="idHistoriaClinica" class="form-control" formControlName="idHistoriaClinica" readonly></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="idMedico" class="form-label">ID medico</label>
+        <textarea id="idMedico" class="form-control" formControlName="idMedico" readonly></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="createdAt" class="form-label">Creado</label>
+        <textarea id="createdAt" class="form-control" formControlName="createdAt" readonly></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="updatedAt" class="form-label">Modificado</label>
+        <textarea id="updatedAt" class="form-control" formControlName="updatedAt" readonly></textarea>
+      </div>
     </form>
     
      
