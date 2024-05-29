@@ -7,6 +7,9 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class PacientesService {
+  actualizarPaciente(paciente: FormData, id: any) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/paciente/${id}`,paciente);
+  }
   obtenerPaciente(idMedico: any) {
     return of( {
       "idPaciente": 1,

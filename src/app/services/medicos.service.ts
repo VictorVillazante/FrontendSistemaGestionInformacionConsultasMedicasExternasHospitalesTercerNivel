@@ -7,6 +7,9 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class MedicosService {
+  actualizarMedico(medico: FormData, id: any) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medico/${id}`,medico);
+  }
   obtenerMedico(idMedico: any) {
     let token=localStorage.getItem('token');
     return of({
