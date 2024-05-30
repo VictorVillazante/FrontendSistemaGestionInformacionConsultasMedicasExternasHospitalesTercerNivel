@@ -7,7 +7,7 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class TurnosAtencionMedicaService {
-  eliminarMedico(id: any) {
+  eliminarTurnoAtencionMedico(id: any) {
     return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica/${id}`);
     return this.http.delete<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica/${id}`);
     

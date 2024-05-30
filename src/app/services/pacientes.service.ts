@@ -10,7 +10,7 @@ export class PacientesService {
   actualizarPaciente(paciente: FormData, id: any) {
     return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/paciente/${id}`,paciente);
   }
-  obtenerPaciente(idMedico: any) {
+  obtenerPaciente(idPaciente: any) {
     return of( {
       "idPaciente": 1,
       "apellidoPaterno": "García",

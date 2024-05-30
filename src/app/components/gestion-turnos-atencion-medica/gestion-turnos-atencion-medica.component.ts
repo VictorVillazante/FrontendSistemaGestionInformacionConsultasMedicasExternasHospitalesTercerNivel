@@ -36,7 +36,7 @@ export class GestionTurnosAtencionMedicaComponent {
       scrollbarPadding:true,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.turnosAtencionMedicaService.eliminarMedico(id).subscribe((data:any)=>{
+        this.turnosAtencionMedicaService.eliminarTurnoAtencionMedico(id).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",

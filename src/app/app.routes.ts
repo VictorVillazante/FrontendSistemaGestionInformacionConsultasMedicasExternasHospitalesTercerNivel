@@ -33,6 +33,7 @@ import { ActualizacionMedicoComponent } from "./components/actualizacion-medico/
 import { RegistroTurnoAtencionComponent } from "./components/registro-turno-atencion/registro-turno-atencion.component";
 import { ActualizacionTurnoAtencionComponent } from "./components/actualizacion-turno-atencion/actualizacion-turno-atencion.component";
 import { MisNotasEvolucionComponent } from "./components/mis-notas-evolucion/mis-notas-evolucion.component";
+import { MisConsultasMedicasComponent } from "./components/mis-consultas-medicas/mis-consultas-medicas.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -109,7 +110,7 @@ const APP_ROUTES: Routes = [
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},
     { path: 'administrador/registro-turno-atencion', component:  RegistroTurnoAtencionComponent},
     { path: 'administrador/modificar-turno-atencion/:id', component:  ActualizacionTurnoAtencionComponent},
-
+    { path: 'medico/ver-mis-consultas-medicas', component:  MisConsultasMedicasComponent},
 
 
 ];

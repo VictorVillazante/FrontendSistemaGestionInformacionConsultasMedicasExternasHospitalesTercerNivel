@@ -43,6 +43,7 @@ import { ActualizacionPacienteComponent } from './components/actualizacion-pacie
 import { MisNotasEvolucionComponent } from './components/mis-notas-evolucion/mis-notas-evolucion.component';
 import { RegistroTurnoAtencionComponent } from './components/registro-turno-atencion/registro-turno-atencion.component';
 import { ActualizacionTurnoAtencionComponent } from './components/actualizacion-turno-atencion/actualizacion-turno-atencion.component';
+import { MisConsultasMedicasComponent } from './components/mis-consultas-medicas/mis-consultas-medicas.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { ActualizacionTurnoAtencionComponent } from './components/actualizacion-
     MisNotasEvolucionComponent,
     RegistroTurnoAtencionComponent,
     ActualizacionTurnoAtencionComponent,
+    MisConsultasMedicasComponent,
   ],
   imports: [
     BrowserModule,
