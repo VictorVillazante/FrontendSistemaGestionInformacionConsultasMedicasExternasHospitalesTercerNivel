@@ -31,10 +31,11 @@ export class RegistroPacienteComponent {
       ci:[''],
       email:[''],
       celular:[''],
-      diasSancion:[''],
-      edad:[''],
+      diasSancion:[0],
+      edad:[20],
       residencia:[''],
-      codigoExpedienteClinico:['']
+      codigoExpedienteClinico:[''],
+      password:['']
     });
   }
 
@@ -63,7 +64,7 @@ export class RegistroPacienteComponent {
       scrollbarPadding:true
     }).then((result) => {
       if (result.isConfirmed) {
-        this.pacientesService.registrarPaciente(formData).subscribe((data:any)=>{
+        this.pacientesService.registrarPaciente(this.formularioRegistroPaciente).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",

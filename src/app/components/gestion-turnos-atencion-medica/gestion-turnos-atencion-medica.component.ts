@@ -45,6 +45,7 @@ export class GestionTurnosAtencionMedicaComponent {
             heightAuto:false,
             scrollbarPadding:true,
           })
+          this.obtenerTurnosAtencion();
         },
         (error: any) => {
           Swal.fire({

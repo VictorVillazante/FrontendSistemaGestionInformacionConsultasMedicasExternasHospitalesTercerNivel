@@ -1,1 +1,94 @@
-<p>registro-turno-atencion works!</p>
+<div class="container mt-5">
+  <h1 class="text-center p-3">Detalle de turno de atencion medica</h1>
+  <form [formGroup]="formularioTurnoAtencionMedica" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="historiasClinicas" class="form-label">Consultorio-especialidad</label>
+      <input
+        (focus)="onFocusConsultorioEspecialidad()"
+        (blur)="onBlurConsultorioEspecialidad()"
+        type="text"
+        class="form-control"
+        formControlName="diagnosticoPresuntivo"
+        id="historiasClinicas"
+        (input)="filterSuggestionsConsultorioEspecialidad($event)"
+        name="historiaClinicaInput"
+      />
+      <ul
+        *ngIf="
+          isAutocompleteConsultorioEspecialidadFocused &&
+          filteredSuggestionsConsultorioEspecialidad.length > 0
+        "
+        class="list-group mt-2"
+        id="lista-opciones-historia-clinica"
+      >
+        <li
+          class="list-group-item"
+          *ngFor="let consultorioEspecialidad of filteredSuggestionsConsultorioEspecialidad"
+          (click)="seleccionarConsultorioEspecialidad(consultorioEspecialidad)"
+        >
+          {{ consultorioEspecialidad[1] }}
+          {{ consultorioEspecialidad[4] }}
+        </li>
+      </ul>
+    </div>
+    <div class="mb-3">
+        <label for="historiasClinicas" class="form-label">Medico</label>
+        <input
+          (focus)="onFocusMedico()"
+          (blur)="onBlurMedico()"
+          type="text"
+          class="form-control"
+          formControlName="diagnosticoPresuntivo"
+          id="historiasClinicas"
+          (input)="filterSuggestionsMedico($event)"
+          name="historiaClinicaInput"
+        />
+        <ul
+          *ngIf="
+            isAutocompleteMedicoFocused &&
+            filteredSuggestionsMedicos.length > 0
+          "
+          class="list-group mt-2"
+          id="lista-opciones-historia-clinica"
+        >
+          <li
+            class="list-group-item"
+            *ngFor="let medico of filteredSuggestionsMedicos"
+            (click)="seleccionarMedico(medico)"
+          >
+            {{ medico.nombres+" "+medico.apellidoPaterno+" "+medico.apellidoMaterno }}
+          </li>
+        </ul>
+      </div>
+      <div class="mb-3">
+        <label for="historiasClinicas" class="form-label">Turno</label>
+        <input
+          (focus)="onFocusTurno()"
+          (blur)="onBlurTurno()"
+          type="text"
+          class="form-control"
+          formControlName="diagnosticoPresuntivo"
+          id="historiasClinicas"
+          (input)="filterSuggestionsTurno($event)"
+          name="historiaClinicaInput"
+        />
+        <ul
+          *ngIf="
+            isAutocompleteTurnoFocused &&
+            filteredSuggestionsTurnos.length > 0
+          "
+          class="list-group mt-2"
+          id="lista-opciones-historia-clinica"
+        >
+          <li
+            class="list-group-item"
+            *ngFor="let turno of filteredSuggestionsTurnos"
+            (click)="seleccionarTurno(turno)"
+          >
+            {{ turno.nombre }}
+          </li>
+        </ul>
+      </div>
+    <button class="btn btn-success-hospital" type="submit">Registrar</button>
+  </form>
+</div>

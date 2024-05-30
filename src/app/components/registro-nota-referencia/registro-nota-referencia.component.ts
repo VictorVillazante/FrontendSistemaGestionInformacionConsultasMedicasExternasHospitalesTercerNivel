@@ -89,8 +89,7 @@ export class RegistroNotaReferenciaComponent {
 
 
   onSubmit() {
-    let notaReferencia=this.formularioNotaReferencia.value;
-    console.log(notaReferencia);
+    console.log(this.formularioNotaReferencia);
     Swal.fire({
       text:"Estas seguro de realizar la accion?",
       showDenyButton: true,
@@ -102,7 +101,7 @@ export class RegistroNotaReferenciaComponent {
       scrollbarPadding:true,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.notasReferenciaService.registrarNotaReferencia(notaReferencia).subscribe((data:any)=>{
+        this.notasReferenciaService.registrarNotaReferencia(this.formularioNotaReferencia).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",

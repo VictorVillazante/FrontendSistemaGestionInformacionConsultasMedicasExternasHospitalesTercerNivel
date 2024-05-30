@@ -96,14 +96,12 @@ export class ActualizacionPacienteComponent {
       scrollbarPadding:true,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.pacientesService.actualizarPaciente(formData,this.id).subscribe((data:any)=>{
+        this.pacientesService.actualizarPaciente(this.formularioPaciente,this.id).subscribe((data:any)=>{
           Swal.fire({
-            text:"Estas seguro de realizar la accion?",
-            showDenyButton: true,
-            confirmButtonText: 'Si',
+            icon: 'success',
+            text:"Se realizo la accion correctamente",
+            confirmButtonText: 'Aceptar',
             confirmButtonColor: '#28afb0',
-            denyButtonColor: '#0a4a6e',
-            denyButtonText: `Cancelar`,
             heightAuto:false,
             scrollbarPadding:true,
           })

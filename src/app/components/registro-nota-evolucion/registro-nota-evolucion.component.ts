@@ -78,8 +78,7 @@ export class RegistroNotaEvolucionComponent {
 
 
   onSubmit() {
-    let notaEvolucion=this.formularioNotaEvolucion.value;
-    console.log(notaEvolucion);
+    console.log(this.formularioNotaEvolucion);
     Swal.fire({
       text:"Estas seguro de realizar la accion?",
       showDenyButton: true,
@@ -91,7 +90,7 @@ export class RegistroNotaEvolucionComponent {
       scrollbarPadding:true,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.notaEvolucionService.registrarNotaEvolucion(notaEvolucion).subscribe((data:any)=>{
+        this.notaEvolucionService.registrarNotaEvolucion(this.formularioNotaEvolucion).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",

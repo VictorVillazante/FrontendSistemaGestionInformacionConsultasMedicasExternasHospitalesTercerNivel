@@ -75,7 +75,7 @@ export class ActualizacionMedicoComponent {
       scrollbarPadding:true,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.medicosService.actualizarMedico(formData,this.id).subscribe((data:any)=>{
+        this.medicosService.actualizarMedico(this.formularioMedico,this.id).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",

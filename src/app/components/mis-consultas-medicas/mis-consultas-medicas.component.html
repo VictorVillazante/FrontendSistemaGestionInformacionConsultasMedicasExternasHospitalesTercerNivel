@@ -2,14 +2,14 @@
     <h1 class="text-center p-3">Ver mis consultas medicas</h1>
     <ul class="list-group">
       <li *ngFor="let item of misConsultasMedicas; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
-        Consulta medica {{item[0]}}
-        Codigo de ficha medica {{item[1]}}
-        Numero de ficha medica {{item[2]}}
-        Consultorio {{item[3]}}
-        Turno {{item[4]}}
-        Especialidad {{item[5]}}
-        Paciente {{item[6]}}
-        Fecha {{7}}
+        Consulta medica {{item[0]}}<br/>
+        Codigo de ficha medica {{item[1]}}<br/>
+        Numero de ficha medica {{item[2]}}<br/>
+        Consultorio {{item[3]}}<br/>
+        Turno {{item[4]}}<br/>
+        Especialidad {{item[5]}}<br/>
+        Paciente {{item[6]}}<br/>
+        Fecha {{item[7]}}<br/>
       </li>
     </ul>
   </div>

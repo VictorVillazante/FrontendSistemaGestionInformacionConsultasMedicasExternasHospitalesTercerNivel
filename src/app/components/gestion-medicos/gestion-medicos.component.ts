@@ -11,9 +11,9 @@ import Swal from 'sweetalert2';
 export class GestionMedicosComponent {
   medicos: any[] = [];
   constructor(private router:Router,private medicosService:MedicosService) {
-    this.obtenerPacientes();
+    this.obtenerMedicos();
    }
-   obtenerPacientes(){
+   obtenerMedicos(){
     this.medicosService.obtenerMedicos().subscribe((data:any)=>{
       this.medicos=data;
     });
@@ -34,6 +34,7 @@ export class GestionMedicosComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.medicosService.eliminarMedico(id).subscribe((data:any)=>{
+          this.obtenerMedicos();
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",

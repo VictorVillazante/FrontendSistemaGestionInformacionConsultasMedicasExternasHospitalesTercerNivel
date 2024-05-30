@@ -19,7 +19,7 @@ export class MisNotasEvolucionComponent {
     this.obtenerNotasEvolucion();
    }
    obtenerNotasEvolucion(){
-    this.notaEvolucionService.obtenerNotasEvolucion().subscribe((data:any)=>{
+    this.notaEvolucionService.obtenerNotasEvolucionPorIdPaciente(1).subscribe((data:any)=>{
       this.notasEvolucion=data;
     });
   }

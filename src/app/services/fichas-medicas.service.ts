@@ -6,8 +6,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class FichasMedicasService {
-  obtenerMisConsulasMedicas(idMedico: number, fecha: any) {
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos/mis-consultas-medicas`);
+  obtenerMisConsultasMedicas(idMedico: number) {
+    return this.http.get<any>(`http://localhost:8084/api/microservicio-fichas-medicas/fichas-medicas/medico/${idMedico}`);
+    //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-fichas-medicas/medico/${idMedico}`);
   }
   eliminarFichaMedica(id: string) {
     return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-fichas-medicas/fichas-medicas/${id}`);

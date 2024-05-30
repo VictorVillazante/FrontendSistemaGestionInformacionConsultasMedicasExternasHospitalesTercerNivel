@@ -84,8 +84,7 @@ export class RegistroRecetaComponent {
   }
 
   onSubmit() {
-    let receta=this.formularioReceta.value;
-    console.log(receta);
+    console.log(this.formularioReceta);
     Swal.fire({
       text:"Estas seguro de realizar la accion?",
       showDenyButton: true,
@@ -97,7 +96,7 @@ export class RegistroRecetaComponent {
       scrollbarPadding:true
     }).then((result) => {
       if (result.isConfirmed) {
-        this.recetasService.registrarReceta(receta).subscribe((data:any)=>{
+        this.recetasService.registrarReceta(this.formularioReceta).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",

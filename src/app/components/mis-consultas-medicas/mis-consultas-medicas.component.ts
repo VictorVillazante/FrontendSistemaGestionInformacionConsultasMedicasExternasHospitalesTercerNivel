@@ -16,8 +16,9 @@ export class MisConsultasMedicasComponent {
    }
    obtenerConsultasMedicas(){
     const idMedico=1;
-    this.fichasMedicasService.obtenerMisConsulasMedicas(idMedico,this.fecha).subscribe((data:any)=>{
+    this.fichasMedicasService.obtenerMisConsultasMedicas(idMedico).subscribe((data:any)=>{
       this.misConsultasMedicas=data;
     });
-  }
+   }
+
 }

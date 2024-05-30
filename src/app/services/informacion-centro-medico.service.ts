@@ -1,21 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { of } from 'rxjs';
-import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TurnosAtencionMedicaService {
-  eliminarTurnoAtencionMedico(id: any) {
-    //return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica/${id}`);
-    return this.http.delete<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica/${id}`);
-    
-  }
-
-  obtenerDetalleTurnoAtencionMedica(id:any) {
-    //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica/${id}`);
-    return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica/${id}`);
+export class InformacionCentroMedicoService {
+  registrarTurnoAtencion(formularioTurnoAtencionMedica: FormGroup<any>) {
+    return this.http.post("http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica",formularioTurnoAtencionMedica);
   }
   obtenerTurnosAtencionMedica() {
     // return of([
@@ -44,6 +37,18 @@ export class TurnosAtencionMedicaService {
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica`);
     return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica`);
   }
-  constructor(private http: HttpClient) { }
+  obtenerConsultorios() {
+    return of([]);
+    throw new Error('Method not implemented.');
+  }
+  obtenerTurnos() {
+    return of([]);
+    throw new Error('Method not implemented.');
+  }
+  obtenerMedicos() {
+    return of([]);
+    throw new Error('Method not implemented.');
+  }
 
+  constructor(private http:HttpClient) { }
 }

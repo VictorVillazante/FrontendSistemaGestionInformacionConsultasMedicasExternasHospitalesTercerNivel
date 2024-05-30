@@ -15,16 +15,16 @@ export class RegistroMedicoComponent {
   constructor(private medicosService:MedicosService,private fb: FormBuilder) { 
     this.formularioRegistroMedico = this.fb.group({
       nombres:[''],
-      apellidoPaterno:[''],
-      apellidoMaterno:[''],
       ci:[''],
       direccion:[''],
       celular:[''],
       email:[''],
-      anosExperiencia:[''],
+      añosExperiencia:[''],
+      descripcion:[''],
       salario:[''],
       foto:[''],
-      grupoSanguineo:['']
+      grupoSanguineo:[''],
+      password:['']
     });
   }
 
@@ -51,7 +51,7 @@ export class RegistroMedicoComponent {
       scrollbarPadding:true
     }).then((result) => {
       if (result.isConfirmed) {
-        this.medicosService.registrarMedico(formData).subscribe((data:any)=>{
+        this.medicosService.registrarMedico(this.formularioRegistroMedico).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",
