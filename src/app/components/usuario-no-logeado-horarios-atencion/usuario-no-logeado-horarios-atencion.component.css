@@ -1,0 +1,21 @@
+.horarios-atencion-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.horarios-atencion-container h1{
+    color: var(--color4);
+}
+table{
+    max-width: 800px;
+}
+table th{
+    background-color: var(--color4);
+    color: var(--color1);
+    text-align: center;
+    font-weight: 500;
+}
+table td{
+    text-align: center;
+}

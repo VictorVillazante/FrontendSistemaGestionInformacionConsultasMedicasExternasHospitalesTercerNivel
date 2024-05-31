@@ -1,0 +1,31 @@
+<div class="p-5 horarios-atencion-container">
+  <h1>Horarios de atencion</h1>
+  <div class="mb-3">
+    <input
+      type="date"
+      class="form-control border-dark"
+      id="fechaVencimiento"
+      [(ngModel)]="fecha"
+      (change)="filtrarPorFecha($event)"
+    />
+  </div>
+  <table class="table table-bordered">
+    <thead >
+      <tr>
+        <th scope="col">Turno</th>
+        <th scope="col">Medico</th>
+        <th scope="col">Especialidad</th>
+        <th scope="col">Fecha</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let turnoAtencionMedica of turnosAtencionMedicaAux">
+        <td>{{turnoAtencionMedica[2]}}</td>
+        <td>Dr. {{turnoAtencionMedica[3]}}</td>
+        <td>{{turnoAtencionMedica[4]}}</td>
+        <td>{{turnoAtencionMedica[5]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
