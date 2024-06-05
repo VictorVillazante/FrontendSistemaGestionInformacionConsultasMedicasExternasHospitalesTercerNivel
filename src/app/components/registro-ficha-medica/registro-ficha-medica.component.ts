@@ -26,14 +26,14 @@ export class RegistroFichaMedicaComponent {
       "email":localStorage.getItem("email")
     };
     Swal.fire({
-      title: 'Estas seguro de realizar la accion',
+      text:"Estas seguro de realizar la accion?",
       showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Save',
+      confirmButtonText: 'Si',
+      confirmButtonColor: '#28afb0',
+      denyButtonColor: '#0a4a6e',
+      denyButtonText: `Cancelar`,
       heightAuto:false,
-      
-      scrollbarPadding:true,
-      denyButtonText: `Don't save`,
+      scrollbarPadding:true
     }).then((result) => {
       if (result.isConfirmed) {
         this.fichasMedicasService.registroFichaMedica(consultaMedica).subscribe((data:any)=>{

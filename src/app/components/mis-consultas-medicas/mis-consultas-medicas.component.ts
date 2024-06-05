@@ -15,7 +15,7 @@ export class MisConsultasMedicasComponent {
     this.obtenerConsultasMedicas();
    }
    obtenerConsultasMedicas(){
-    const idMedico=1;
+    const idMedico=JSON.parse(localStorage.getItem("userDetails")??"{}").idMedico;
     this.fichasMedicasService.obtenerMisConsultasMedicas(idMedico).subscribe((data:any)=>{
       this.misConsultasMedicas=data;
     });

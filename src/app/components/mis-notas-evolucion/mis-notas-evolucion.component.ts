@@ -19,7 +19,9 @@ export class MisNotasEvolucionComponent {
     this.obtenerNotasEvolucion();
    }
    obtenerNotasEvolucion(){
-    this.notaEvolucionService.obtenerNotasEvolucionPorIdPaciente(1).subscribe((data:any)=>{
+    const idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
+
+    this.notaEvolucionService.obtenerNotasEvolucionPorIdPaciente(idPaciente).subscribe((data:any)=>{
       this.notasEvolucion=data;
     });
   }

@@ -1,1 +1,65 @@
-<p>actualizacion-nota-evolucion works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Nota de Evolucion</h1>
+    <form [formGroup]="formularioNotaEvolucion" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="cambiosPacienteResultadosTratamiento" class="form-label">Cambios del pacientes por resultados de tratamiento</label>
+        <textarea id="cambiosPacienteResultadosTratamiento" class="form-control" formControlName="cambiosPacienteResultadosTratamiento"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="pacientes" class="form-label">Selecciona paciente para buscar historia clinica</label>
+        <input
+          (focus)="onFocusPaciente()"
+          (blur)="onBlurPaciente()"
+          type="text"
+          class="form-control"
+          formControlName="ciPaciente"
+          id="pacientes"
+          (input)="filterSuggestionsPaciente($event)"
+          name="pacienteInput"
+        />
+        <ul
+          *ngIf="isAutocompletePacienteFocused && filteredSuggestionsPacientes.length > 0"
+          class="list-group mt-2"
+          id="lista-opciones-alumno"
+        >
+          <li class="list-group-item" *ngFor="let paciente of filteredSuggestionsPacientes" (click)="seleccionarPaciente(paciente)">
+            {{ paciente.ci }}
+          </li>
+        </ul>
+      </div>
+      <a *ngIf="formularioNotaEvolucion.value.ciPaciente!=''" class="btn btn-success-hospital" (click)="obtenerHistoriasClinicasPaciente(formularioNotaEvolucion.value.idPaciente)">Buscar historias clinicas</a>
+      <div class="mb-3">
+        <label for="historiasClinicas" class="form-label">Historia clinica</label>
+        <input
+          (focus)="onFocusHistoriaClinica()"
+          (blur)="onBlurHistoriaClinica()"
+          type="text"
+          class="form-control"
+          formControlName="diagnosticoPresuntivo"
+          id="historiasClinicas"
+          (input)="filterSuggestionsHistoriaClinica($event)"
+          name="historiaClinicaInput"
+        />
+        <ul
+          *ngIf="isAutocompleteHistoriaClinicaFocused && filteredSuggestionsHistoriasClinicas.length > 0"
+          class="list-group mt-2"
+          id="lista-opciones-historia-clinica"
+        >
+          <li class="list-group-item" *ngFor="let historiaClinica of filteredSuggestionsHistoriasClinicas" (click)="seleccionarHistoriaClinica(historiaClinica)">
+            {{ historiaClinica.diagnosticoPresuntivo }}
+          </li>
+        </ul>
+      </div>
+      
+      <button
+        class="btn btn-success-hospital "
+        type="submit"
+      >
+        Actualizar
+      </button>
+    </form>
+    
+     
+      
+ </div>     

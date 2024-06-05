@@ -19,7 +19,7 @@ export class GestionHistoriasClinicasComponent {
     });
   }
   viewDetails(id:any){
-    this.router.navigate(["/paciente/detalle-historia-clinica",id]);
+    this.router.navigate(["/detalle-historia-clinica",id]);
   }
   editItem(id: any) {
     this.router.navigate(["/medico/modificar-historia-clinica",id]);

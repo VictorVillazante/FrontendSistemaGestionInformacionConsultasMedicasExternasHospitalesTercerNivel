@@ -17,7 +17,8 @@ export class MisNotasReferenciaComponent {
   notasReferencia: any[] = [];
 
   constructor(private router:Router,private notasReferenciaService:NotasReferenciaService) {
-    this.obtenerMisHistoriasClinicas(1);
+    this.idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
+    this.obtenerMisHistoriasClinicas(this.idPaciente);
    }
    verDetalle(id:any){
     this.router.navigate(["/detalle-nota-referencia",id]);

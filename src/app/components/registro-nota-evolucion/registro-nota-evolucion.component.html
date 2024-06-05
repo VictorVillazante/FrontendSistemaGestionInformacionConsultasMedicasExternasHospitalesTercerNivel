@@ -28,7 +28,7 @@
           </li>
         </ul>
       </div>
-      <a *ngIf="formularioNotaEvolucion.value.ciPaciente!=''" class="btn btn-success-hospital" (click)="obtenerHistoriasClinicasPaciente(formularioNotaEvolucion.value.ciPaciente)">Buscar historias clinicas</a>
+      <a *ngIf="formularioNotaEvolucion.value.ciPaciente!=''" class="btn btn-success-hospital" (click)="obtenerHistoriasClinicasPaciente(formularioNotaEvolucion.value.idPaciente)">Buscar historias clinicas</a>
       <div class="mb-3">
         <label for="historiasClinicas" class="form-label">Historia clinica</label>
         <input

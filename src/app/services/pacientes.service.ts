@@ -9,8 +9,8 @@ import { Observable, of } from 'rxjs';
 export class PacientesService {
   actualizarPaciente(paciente: any, id: any) {
     let pacienteAux=paciente.value;
-    return this.http.put<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/pacientes/${id}`,pacienteAux);
-    //return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes/${id}`,paciente);
+    //return this.http.put<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/pacientes/${id}`,pacienteAux);
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes/${id}`,pacienteAux);
   }
   obtenerPaciente(idPaciente: any) {
     let token = 'Bearer jlkasñjf'
@@ -38,17 +38,18 @@ export class PacientesService {
     //   "residencia": "Ciudad de México",
     //   "codigoExpedienteClinico": "CEX123456"
     // });
-    return this.http.get<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/pacientes/${idPaciente}`,{ headers: { Authorization: `Bearer ${token}` } });
+    //return this.http.get<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/pacientes/${idPaciente}`,{ headers: { Authorization: `Bearer ${token}` } });
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes/${idPaciente}`,{ headers: { Authorization: `Bearer ${token}` } });
 
   }
   registrarPaciente(paciente: any) {
     let pacienteAux=paciente.value;
-    return this.http.post<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/auth/registro-paciente`,pacienteAux);
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/auth/registro-paciente`,pacienteAux);
     //return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/paciente`,paciente);
   }
   eliminarPaciente(id: any) {
     let token=localStorage.getItem('token');
-    return this.http.delete<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/pacientes/${id}`,{ headers: { Authorization: `Bearer ${token}` }});
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes/${id}`,{ headers: { Authorization: `Bearer ${token}` }});
     //return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes/${id}`,{ headers: { Authorization: `Bearer ${token}` }});
 
   }
@@ -132,7 +133,7 @@ export class PacientesService {
     // ]
     // );    
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes`,{ headers: { Authorization: `Bearer ${token}` }});
-    return this.http.get<any>(`http://localhost:8086/api/microservicio-gestion-usuarios/pacientes`,{ headers: { Authorization: `Bearer ${token}` } });
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/pacientes`,{ headers: { Authorization: `Bearer ${token}` } });
 
   }
 }

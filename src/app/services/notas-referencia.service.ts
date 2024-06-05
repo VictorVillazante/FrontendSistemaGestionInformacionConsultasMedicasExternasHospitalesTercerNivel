@@ -31,15 +31,15 @@ export class NotasReferenciaService {
     //   "deletedAt": null
     // }
     // );
-    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia/${id}`);
-    return this.http.get<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia/${id}`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia/${id}`);
+    //return this.http.get<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia/${id}`);
 
   }
   registrarNotaReferencia(notaReferencia: any) {
     let idMedico=1;
     let notasReferenciaAux=notaReferencia.value;
-    return this.http.post<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia`,{
-    //return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`,{
+    //return this.http.post<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia`,{
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia`,{
       datosClinicos:notasReferenciaAux.datosClinicos,
       datosIngreso:notasReferenciaAux.datosIngreso,
       datosEgreso:notasReferenciaAux.datosEgreso,
@@ -126,8 +126,8 @@ export class NotasReferenciaService {
     //   }
     // ]
     // );
-    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia/paciente/${idPaciente}`);
-    return this.http.get<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia/paciente/${idPaciente}`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia/paciente/${idPaciente}`);
+    //return this.http.get<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia/paciente/${idPaciente}`);
 
   }
   obtenerNotasReferencia() {
@@ -200,8 +200,8 @@ export class NotasReferenciaService {
     //   }
     // ]
     // );
-    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia`);
-    return this.http.get<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia`);
+    //return this.http.get<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia`);
   }
 
   constructor(private http:HttpClient) { }

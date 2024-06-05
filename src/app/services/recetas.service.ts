@@ -12,7 +12,7 @@ export class RecetasService {
     let recetaAux=receta.value;
     recetaAux.idMedico=idMedico;
     //return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`,receta);
-    return this.http.post<any>(`http://localhost:8092/api/microservicio-recetas/recetas`,recetaAux);
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`,recetaAux);
   }
   obtenerReceta(id: any) {
     // let token=localStorage.getItem('token');
@@ -36,7 +36,7 @@ export class RecetasService {
     // }
     // );
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/${id}`);
-    return this.http.get<any>(`http://localhost:8092/api/microservicio-recetas/recetas/${id}`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/${id}`);
 
   }
   obtenerRecetasPaciente(idPaciente: any) {
@@ -81,7 +81,7 @@ export class RecetasService {
     // ]
     // );
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/paciente/${idPaciente}`);
-    return this.http.get<any>(`http://localhost:8092/api/microservicio-recetas/recetas/paciente/${idPaciente}`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/paciente/${idPaciente}`);
   }
   eliminarReceta(id: any) {
     throw new Error('Method not implemented.');
@@ -146,7 +146,7 @@ export class RecetasService {
     // ]
     // );
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`);
-    return this.http.get<any>(`http://localhost:8092/api/microservicio-recetas/recetas`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`);
 
   }
     constructor(private http:HttpClient) { }

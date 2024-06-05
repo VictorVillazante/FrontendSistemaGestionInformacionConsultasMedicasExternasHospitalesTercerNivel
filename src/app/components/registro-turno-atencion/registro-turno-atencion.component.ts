@@ -19,8 +19,11 @@ export class RegistroTurnoAtencionComponent {
 
   constructor(private fb: FormBuilder, private informacionCentroMedicoService: InformacionCentroMedicoService) {
     this.formularioTurnoAtencionMedica = this.fb.group({
+      nombreConsultorio:[''],
       idConsultorio: [''],
+      nombreMedico:[''],
       idMedico: [''],
+      nombreTurno:[''],
       idTurno: [''],
       numeroFichasDisponible: [''],
       fecha: ['']
@@ -51,6 +54,8 @@ export class RegistroTurnoAtencionComponent {
   isAutocompleteTurnoFocused:boolean=false;;
   filterSuggestionsTurno(event: Event) {
     const inputText = (event.target as HTMLInputElement)?.value ?? '';
+    console.log(this.turnos);
+    console.log(this.filteredSuggestionsTurnos);
     if (inputText) {
       this.filteredSuggestionsTurnos = this.turnos.filter(turno =>
         turno.nombre.toLowerCase().includes(inputText.toLowerCase())
@@ -132,13 +137,18 @@ export class RegistroTurnoAtencionComponent {
   seleccionarConsultorioEspecialidad(consultorio: any) {
     this.isAutocompleteConsultorioEspecialidadFocused = false;
     this.formularioTurnoAtencionMedica.controls['idConsultorio'].setValue(consultorio[0]);
+    this.formularioTurnoAtencionMedica.controls['nombreConsultorio'].setValue(consultorio[1]+" "+consultorio[4]);
+
   }
   seleccionarMedico(medico: any) {
     this.isAutocompleteMedicoFocused = false;
     this.formularioTurnoAtencionMedica.controls['idMedico'].setValue(medico.idMedico);
+    this.formularioTurnoAtencionMedica.controls['nombreMedico'].setValue(medico.nombres+" "+medico.apellidoPaterno+" "+medico.apellidoMaterno);
   }
   seleccionarTurno(turno: any) {
     this.isAutocompleteTurnoFocused = false;
     this.formularioTurnoAtencionMedica.controls['idTurno'].setValue(turno.idTurno);
+    this.formularioTurnoAtencionMedica.controls['nombreTurno'].setValue(turno.nombre);
+
   }
 }

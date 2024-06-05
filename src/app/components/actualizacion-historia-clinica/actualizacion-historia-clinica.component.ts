@@ -59,14 +59,14 @@ export class ActualizacionHistoriaClinicaComponent {
     let historiaClinica=this.clinicalHistoryForm.value;
     console.log(historiaClinica);
     Swal.fire({
-      title: 'Estas seguro de realizar la accion',
+      text:"Estas seguro de realizar la accion?",
       showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Save',
+      confirmButtonText: 'Si',
+      confirmButtonColor: '#28afb0',
+      denyButtonColor: '#0a4a6e',
+      denyButtonText: `Cancelar`,
       heightAuto:false,
-      
-      scrollbarPadding:true,
-      denyButtonText: `Don't save`,
+      scrollbarPadding:true
     }).then((result) => {
       if (result.isConfirmed) {
         this.historiasClinicasService.actualizarHistoriaClinica(this.id,historiaClinica).subscribe((data:any)=>{

@@ -16,23 +16,21 @@ export class GestionFichasMedicasComponent {
     this.obtenerConsultasMedicas();
    }
    obtenerConsultasMedicas(){
-    this.fichasMedicasService.obtenerFichasMedicasDePaciente(1).subscribe((data:any)=>{
+    const idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
+    this.fichasMedicasService.obtenerFichasMedicasDePaciente(idPaciente).subscribe((data:any)=>{
       this.misFichasMedicas=data;
     });
   }
   deleteItem(item: string) {
     Swal.fire({
-      title:'',
-      html: '<span font-weight: bold;">¿Estás seguro de realizar la acción?</span>',
-      
+      text:"Estas seguro de realizar la accion?",
       showDenyButton: true,
-      showCancelButton: true,
       confirmButtonText: 'Si',
-      confirmButtonColor: '#3085d6',
+      confirmButtonColor: '#28afb0',
+      denyButtonColor: '#0a4a6e',
+      denyButtonText: `Cancelar`,
       heightAuto:false,
-      
-      scrollbarPadding:true,
-      denyButtonText: `No`,
+      scrollbarPadding:true
     }).then((result) => {
       if (result.isConfirmed) {
         this.fichasMedicasService.eliminarFichaMedica(item).subscribe((data:any)=>{

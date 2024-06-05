@@ -11,10 +11,11 @@ export class MisHistoriasClnicasComponent {
   historiasClinicas: any[] = [];
 
   constructor(private router:Router,private historiasClinicasService:HistoriasClinicasService) {
-    this.obtenerMisHistoriasClinicas(1);
+    this.idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
+    this.obtenerMisHistoriasClinicas(this.idPaciente);
    }
   viewDetails(id:any){
-    this.router.navigate(["/paciente/detalle-historia-clinica",id]);
+    this.router.navigate(["/detalle-historia-clinica",id]);
   }
   idPaciente:any=1;
   obtenerMisHistoriasClinicas(idPaciente:any){

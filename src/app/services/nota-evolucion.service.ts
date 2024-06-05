@@ -21,8 +21,8 @@ export class NotaEvolucionService {
     //   "deletedAt": null
     // }
     // );
-    //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-evolucion/notas-evolucion`);
-    return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion/${id}`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/notas-evolucion/${id}`);
+    //return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion/${id}`);
 
   }
   registrarNotaEvolucion(notaEvolucion: any) {
@@ -30,8 +30,8 @@ export class NotaEvolucionService {
     let idMedico=1;
     let notaEvolucionAux=notaEvolucion.value;
     notaEvolucionAux.idMedico=idMedico;
-    //return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-evolucion/notas-evolucion`,notaEvolucion);
-    return this.http.post<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion`,notaEvolucionAux);
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/notas-evolucion`,notaEvolucionAux);
+    //return this.http.post<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion`,notaEvolucionAux);
   }
   obtenerNotasEvolucion() {
     // return of([
@@ -92,8 +92,8 @@ export class NotaEvolucionService {
     //   }
     // ]
     // );
-    //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-evolucion/notas-evolucion`);
-    return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/notas-evolucion`);
+    //return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion`);
   }
   obtenerNotasEvolucionPorIdPaciente(idPaciente:any) {
     // return of([
@@ -154,8 +154,8 @@ export class NotaEvolucionService {
     //   }
     // ]
     // );
-    //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-evolucion/notas-evolucion`);
-    return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion/paciente/${idPaciente}`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/notas-evolucion/paciente/${idPaciente}`);
+    //return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion/paciente/${idPaciente}`);
   }
 
   constructor(private http:HttpClient) { }

@@ -2,14 +2,14 @@
   <h1 class="text-center p-3">Detalle de turno de atencion medica</h1>
   <form [formGroup]="formularioTurnoAtencionMedica" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-      <label for="historiasClinicas" class="form-label">Consultorio-especialidad</label>
+      <label for="nombreConsultorio" class="form-label">Consultorio-especialidad</label>
       <input
         (focus)="onFocusConsultorioEspecialidad()"
         (blur)="onBlurConsultorioEspecialidad()"
         type="text"
         class="form-control"
-        formControlName="diagnosticoPresuntivo"
-        id="historiasClinicas"
+        formControlName="nombreConsultorio"
+        id="nombreConsultorio"
         (input)="filterSuggestionsConsultorioEspecialidad($event)"
         name="historiaClinicaInput"
       />
@@ -32,14 +32,14 @@
       </ul>
     </div>
     <div class="mb-3">
-        <label for="historiasClinicas" class="form-label">Medico</label>
+        <label for="nombreMedico" class="form-label">Medico</label>
         <input
           (focus)="onFocusMedico()"
           (blur)="onBlurMedico()"
           type="text"
           class="form-control"
-          formControlName="diagnosticoPresuntivo"
-          id="historiasClinicas"
+          formControlName="nombreMedico"
+          id="nombreMedico"
           (input)="filterSuggestionsMedico($event)"
           name="historiaClinicaInput"
         />
@@ -61,14 +61,14 @@
         </ul>
       </div>
       <div class="mb-3">
-        <label for="historiasClinicas" class="form-label">Turno</label>
+        <label for="nombreTurno" class="form-label">Turno</label>
         <input
           (focus)="onFocusTurno()"
           (blur)="onBlurTurno()"
           type="text"
           class="form-control"
-          formControlName="diagnosticoPresuntivo"
-          id="historiasClinicas"
+          formControlName="nombreTurno"
+          id="nombreTurno"
           (input)="filterSuggestionsTurno($event)"
           name="historiaClinicaInput"
         />
@@ -89,6 +89,14 @@
           </li>
         </ul>
       </div>
-    <button class="btn btn-success-hospital" type="submit">Registrar</button>
+      <div class="mb-3">
+        <label for="numeroFichasDisponible" class="form-label">Numero de fichas disponibles</label>
+        <input type="number" class="form-control" id="numeroFichasDisponible" formControlName="numeroFichasDisponible">
+      </div>
+      <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha de atencion</label>
+        <input type="date" class="form-control" id="fecha" formControlName="fecha">
+      </div>
+      <button class="btn btn-success-hospital" type="submit">Registrar</button>
   </form>
 </div>

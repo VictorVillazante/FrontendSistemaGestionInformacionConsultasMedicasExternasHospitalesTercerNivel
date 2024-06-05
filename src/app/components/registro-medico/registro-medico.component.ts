@@ -24,7 +24,9 @@ export class RegistroMedicoComponent {
       salario:[''],
       foto:[''],
       grupoSanguineo:[''],
-      password:['']
+      password:[''],
+      apellidoPaterno:[''],
+      apellidoMaterno:['']
     });
   }
 

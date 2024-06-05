@@ -22,7 +22,7 @@ export class LoginComponent {
     const { email, password } = this.loginForm.value;
     try {
       const token = await this.authService.loginWithCredentials(email, password);
-      const roles = await this.authService.getUserRoles(token);
+      const roles = await this.authService.getUserDetails(token);
       console.log('Token:', token);
       console.log('Roles:', roles);
 
