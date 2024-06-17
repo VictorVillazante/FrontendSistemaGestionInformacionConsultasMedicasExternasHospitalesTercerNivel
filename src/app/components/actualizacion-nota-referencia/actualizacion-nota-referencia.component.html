@@ -1,1 +1,116 @@
-<p>actualizacion-nota-referencia works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Nota de Referencia</h1>
+    <form [formGroup]="formularioNotaReferencia" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="datosClinicos" class="form-label">Datos clinicos</label>
+        <textarea id="datosClinicos" class="form-control" formControlName="datosClinicos"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="datosIngreso" class="form-label">Datos de ingreso</label>
+        <textarea id="datosIngreso" class="form-control" formControlName="datosIngreso"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="datosEgreso" class="form-label">Datos de egreso</label>
+        <textarea id="datosEgreso" class="form-control" formControlName="datosEgreso"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="condicionesPacienteMomentoTransferencia" class="form-label">Condiciones de paciente momento de tansferencia</label>
+        <textarea id="condicionesPacienteMomentoTransferencia" class="form-control" formControlName="condicionesPacienteMomentoTransferencia"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="informeProcedimientosRealizados" class="form-label">Informe de procedimientos realizados</label>
+        <textarea id="informeProcedimientosRealizados" class="form-control" formControlName="informeProcedimientosRealizados"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="tratamientoEfectuado" class="form-label">Tratamiento efectuado</label>
+        <textarea id="tratamientoEfectuado" class="form-control" formControlName="tratamientoEfectuado"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="tratamientoPersistePaciente" class="form-label">Tratamiento con el que persiste eñ paciente</label>
+        <textarea id="tratamientoPersistePaciente" class="form-control" formControlName="tratamientoPersistePaciente"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="fechaVencimiento" class="form-label">Fecha de vencimiento</label>
+        <input type="date" class="form-control border-dark" id="fechaVencimiento" formControlName="fechaVencimiento" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="advertenciasFactoresRiesgo" class="form-label">Advertencias factores de riesgo</label>
+        <textarea id="advertenciasFactoresRiesgo" class="form-control" formControlName="advertenciasFactoresRiesgo"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="comentarioAdicional" class="form-label">Comentario adicional</label>
+        <textarea id="comentarioAdicional" class="form-control" formControlName="comentarioAdicional"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="monitoreo" class="form-label">Monitoreo</label>
+        <textarea id="monitoreo" class="form-control" formControlName="monitoreo"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="informeTrabajoSocial" class="form-label">Informe de trabajo social</label>
+        <textarea id="informeTrabajoSocial" class="form-control" formControlName="informeTrabajoSocial"></textarea>
+      </div> 
+      <div class="mb-3">
+        <label for="pacientes" class="form-label">Selecciona paciente para buscar historia clinica</label>
+        <input
+          (focus)="onFocusPaciente()"
+          (blur)="onBlurPaciente()"
+          type="text"
+          class="form-control"
+          formControlName="ciPaciente"
+          id="pacientes"
+          (input)="filterSuggestionsPaciente($event)"
+          name="pacienteInput"
+        />
+        <ul
+          *ngIf="isAutocompletePacienteFocused && filteredSuggestionsPacientes.length > 0"
+          class="list-group mt-2"
+          id="lista-opciones-alumno"
+        >
+          <li class="list-group-item" *ngFor="let paciente of filteredSuggestionsPacientes" (click)="seleccionarPaciente(paciente)">
+            {{ paciente.ci }}
+          </li>
+        </ul>
+      </div>
+      <a *ngIf="formularioNotaReferencia.value.ciPaciente!=''" class="btn btn-success-hospital" (click)="obtenerHistoriasClinicasPaciente(formularioNotaReferencia.value.idPaciente)">Buscar historias clinicas</a>
+      <div class="mb-3">
+        <label for="historiasClinicas" class="form-label">Historia clinica</label>
+        <input
+          (focus)="onFocusHistoriaClinica()"
+          (blur)="onBlurHistoriaClinica()"
+          type="text"
+          class="form-control"
+          formControlName="diagnosticoPresuntivo"
+          id="historiasClinicas"
+          (input)="filterSuggestionsHistoriaClinica($event)"
+          name="historiaClinicaInput"
+        />
+        <ul
+          *ngIf="isAutocompleteHistoriaClinicaFocused && filteredSuggestionsHistoriasClinicas.length > 0"
+          class="list-group mt-2"
+          id="lista-opciones-historia-clinica"
+        >
+          <li class="list-group-item" *ngFor="let historiaClinica of filteredSuggestionsHistoriasClinicas" (click)="seleccionarHistoriaClinica(historiaClinica)">
+            {{ historiaClinica.diagnosticoPresuntivo }}
+          </li>
+        </ul>
+      </div>
+      
+      <button
+        class="btn btn-success-hospital "
+        type="submit"
+      >
+        Registrar
+      </button>
+    </form>
+    
+     
+      
+ </div>     

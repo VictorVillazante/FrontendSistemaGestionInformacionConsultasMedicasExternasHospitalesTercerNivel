@@ -96,6 +96,8 @@ export class HistoriasClinicasService {
       propuestaBasicaDeConducta: historiaClinicaAux.propuestaBasicaDeConducta,
       tratamiento: historiaClinicaAux.tratamiento,
       idPaciente: historiaClinicaAux.idPaciente,
+      idMedico: historiaClinicaAux.idMedico,
+      idEspecialidad: 1
     });
   }
 }

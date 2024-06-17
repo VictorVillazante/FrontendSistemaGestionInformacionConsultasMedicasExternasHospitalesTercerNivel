@@ -41,11 +41,13 @@ export class ActualizacionNotaEvolucionComponent {
   }
   obtenerDetalleNotaEvolucion(id:any){
     this.notaEvolucionService.obtenerNotaEvolucion(id).subscribe((data)=>{
+      let diagnostivoPresentivoObtenido=this.historiasClinicas.filter(historiaClinica=>historiaClinica.idHistoriaClinica==data.idHistoriaClinica);
       this.formularioNotaEvolucion.patchValue({
         cambiosPacienteResultadosTratamiento:data.cambiosPacienteResultadosTratamiento,
         idPaciente:data.idPaciente,
         idHistoriaClinica:data.idHistoriaClinica,
-        ciPaciente:this.buscarCiEnPaciente(data),
+        diagnosticoPresuntivo:diagnostivoPresentivoObtenido,
+        ciPaciente:data.ciPaciente,
       });
     });
   }

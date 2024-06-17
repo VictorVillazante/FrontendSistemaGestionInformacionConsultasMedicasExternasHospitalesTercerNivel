@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,10 @@ export class LoginComponent {
       console.log('Roles:', roles);
 
       if (roles.length > 0) {
-        this.router.navigate(['/menu']);
+        window.location.href = '/menu';
+        // this.router.navigate(['/menu'], { skipLocationChange: true }).then(() => {
+        //   window.location.href = '/menu';
+        // });;
       } else {
         // Manejar el caso donde no se obtuvieron roles
         console.error('No se obtuvieron roles para el usuario.');

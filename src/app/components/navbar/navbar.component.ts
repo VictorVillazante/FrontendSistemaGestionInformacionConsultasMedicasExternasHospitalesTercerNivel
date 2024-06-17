@@ -21,15 +21,15 @@ export class NavbarComponent {
   }
   ngOnInit() {
     const token = this.authService.getToken();
+    console.log("Token navbar"+token);
     if(token){
       this.estaLogeado=true
     }else{
       this.estaLogeado=false;
     }
-    console.log("paso algo con estaLogeado "+this.estaLogeado);
     this.authService.roles$.subscribe((roles: any) => {
       console.log("paso algo con roles$ "+roles);
-      if(roles!=null){
+      if(roles){
         this.roles=roles;
       }else{
         this.roles=roles;
