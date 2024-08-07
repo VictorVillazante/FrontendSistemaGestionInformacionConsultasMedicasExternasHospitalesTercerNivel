@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { of } from 'rxjs';
 import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
 
@@ -7,6 +8,12 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class NotaEvolucionService {
+  actualizarNotaEvolucion(id: any, notaEvolucion: any) {
+    let idMedico=1;
+    let notaEvolucionAux=notaEvolucion.value;
+    notaEvolucionAux.idMedico=idMedico;
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/notas-evolucion/${id}`,notaEvolucionAux);
+  }
   obtenerNotaEvolucion(id: any) {
     // return of({
     //   "idNotaEvolucion": 1,

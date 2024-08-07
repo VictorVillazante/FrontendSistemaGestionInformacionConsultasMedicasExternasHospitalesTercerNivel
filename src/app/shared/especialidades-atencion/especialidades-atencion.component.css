@@ -1,0 +1,17 @@
+.container-especialidades-atencion{
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: var(--color2);
+    align-items: center;
+}
+.container-especialidades-atencion .btn-success-hospital{
+    max-width: 400px;
+}
+.carousel-inner{
+    display: flex;
+}
+app-card-especialidades{
+    flex: 0 0 50%;
+}

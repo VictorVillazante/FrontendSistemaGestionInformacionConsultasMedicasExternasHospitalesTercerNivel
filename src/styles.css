@@ -30,3 +30,13 @@
 .bg-color-blue-hospital{
     background-color: var(--color4);
   }
+.btn-outline-white{
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+    min-width: 200px;
+}
+.btn-outline-white:hover{
+    background: white;
+    color: #0a4a6e;
+}

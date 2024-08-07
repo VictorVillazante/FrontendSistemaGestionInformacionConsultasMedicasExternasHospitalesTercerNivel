@@ -107,7 +107,7 @@ export class ActualizacionNotaEvolucionComponent {
       scrollbarPadding:true,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.notaEvolucionService.registrarNotaEvolucion(this.formularioNotaEvolucion).subscribe((data:any)=>{
+        this.notaEvolucionService.actualizarNotaEvolucion(this.id,this.formularioNotaEvolucion).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",
