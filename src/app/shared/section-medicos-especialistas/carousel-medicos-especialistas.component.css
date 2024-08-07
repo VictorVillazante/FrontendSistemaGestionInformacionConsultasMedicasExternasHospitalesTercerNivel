@@ -1,0 +1,19 @@
+.section-medicos-especialistas{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.carousel-inner{
+    padding: 10px 40px;
+}
+@media screen and (min-width:576px){
+    .carousel-inner{
+        display: flex;
+    }
+    .carousel-item{
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100%/4);
+    }
+}

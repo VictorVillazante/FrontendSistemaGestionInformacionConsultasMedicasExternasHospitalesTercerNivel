@@ -45,10 +45,11 @@ import { RegistroTurnoAtencionComponent } from './components/registro-turno-aten
 import { ActualizacionTurnoAtencionComponent } from './components/actualizacion-turno-atencion/actualizacion-turno-atencion.component';
 import { MisConsultasMedicasComponent } from './components/mis-consultas-medicas/mis-consultas-medicas.component';
 import { UsuarioNoLogeadoHorariosAtencionComponent } from './components/usuario-no-logeado-horarios-atencion/usuario-no-logeado-horarios-atencion.component';
-import { EspecialidadesAtencionComponent } from './shared/especialidades-atencion/especialidades-atencion.component';
+import { EspecialidadesAtencionComponent } from './shared/section-especialidades-atencion/especialidades-atencion.component';
 import { CardEspecialidadesComponent } from './shared/card-especialidades/card-especialidades.component';
 import { ScriptsService } from './services/scripts.service';
-import { CarouselMedicosEspecialistasComponent } from './shared/carousel-medicos-especialistas/carousel-medicos-especialistas.component';
+import { CarouselMedicosEspecialistasComponent } from './shared/section-medicos-especialistas/carousel-medicos-especialistas.component';
+import { CardMedicoEspecialistaComponent } from './shared/card-medico-especialista/card-medico-especialista.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { CarouselMedicosEspecialistasComponent } from './shared/carousel-medicos
     EspecialidadesAtencionComponent,
     CardEspecialidadesComponent,
     CarouselMedicosEspecialistasComponent,
+    CardMedicoEspecialistaComponent,
   ],
   imports: [
     BrowserModule,

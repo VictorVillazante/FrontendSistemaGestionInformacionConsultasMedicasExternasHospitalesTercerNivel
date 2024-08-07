@@ -1,0 +1,27 @@
+.contenedor-medico-especialista{
+    background-color: white;
+}
+.contenedor-img-medico-especialista{
+    height: 300px;
+    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.img-medico-especialista{
+    width: 100%;
+}
+.datos-medico-especialista{
+    height: 200px;
+    border-radius: 20px;
+    background-color: var(--color4);
+    color: var(--color1);
+    padding: 5px;
+    padding: 10px;
+}
+.datos-medico-especialista .nombre-completo{
+    text-align: center;
+}
+.datos-medico-especialista .descripcion{
+    text-align: left;
+}
