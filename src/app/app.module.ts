@@ -48,6 +48,7 @@ import { UsuarioNoLogeadoHorariosAtencionComponent } from './components/usuario-
 import { EspecialidadesAtencionComponent } from './shared/especialidades-atencion/especialidades-atencion.component';
 import { CardEspecialidadesComponent } from './shared/card-especialidades/card-especialidades.component';
 import { ScriptsService } from './services/scripts.service';
+import { CarouselMedicosEspecialistasComponent } from './shared/carousel-medicos-especialistas/carousel-medicos-especialistas.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { ScriptsService } from './services/scripts.service';
     UsuarioNoLogeadoHorariosAtencionComponent,
     EspecialidadesAtencionComponent,
     CardEspecialidadesComponent,
+    CarouselMedicosEspecialistasComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,13 +9,6 @@
 .container-especialidades-atencion .btn-success-hospital{
     max-width: 400px;
 }
-/*.carousel-inner{
-    display: flex;
-}
-app-card-especialidades{
-    flex: 0 0 50%;
-} */
-
 @media screen and (min-width:576px){
     .carousel-inner{
         display: flex;
