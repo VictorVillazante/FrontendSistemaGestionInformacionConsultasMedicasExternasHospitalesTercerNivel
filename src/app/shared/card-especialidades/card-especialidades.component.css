@@ -1,11 +1,11 @@
-.carousel-item {
+.speciality-card {
     height: 400px;
     overflow: hidden;
     position: relative;
     font-size: 24px;
 }
 
-.carousel-item img{
+.speciality-card img{
     width: 100%;
 }
 

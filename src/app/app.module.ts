@@ -47,6 +47,7 @@ import { MisConsultasMedicasComponent } from './components/mis-consultas-medicas
 import { UsuarioNoLogeadoHorariosAtencionComponent } from './components/usuario-no-logeado-horarios-atencion/usuario-no-logeado-horarios-atencion.component';
 import { EspecialidadesAtencionComponent } from './shared/especialidades-atencion/especialidades-atencion.component';
 import { CardEspecialidadesComponent } from './shared/card-especialidades/card-especialidades.component';
+import { ScriptsService } from './services/scripts.service';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,9 @@ import { CardEspecialidadesComponent } from './shared/card-especialidades/card-e
     HttpClientModule,
     CommonModule
   ],
-  providers: [],
+  providers: [
+    ScriptsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

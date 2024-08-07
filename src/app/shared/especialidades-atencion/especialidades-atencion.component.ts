@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Especialidad } from 'src/app/models/Especialidades';
+import { ScriptsService } from 'src/app/services/scripts.service';
 
 @Component({
   selector: 'app-especialidades-atencion',
@@ -29,4 +30,7 @@ export class EspecialidadesAtencionComponent {
       name:"Medicina general"
     }
   ];
+  constructor(private _ScriptsService:ScriptsService){
+    _ScriptsService.cargar(["carousel"]);
+  }
 }
