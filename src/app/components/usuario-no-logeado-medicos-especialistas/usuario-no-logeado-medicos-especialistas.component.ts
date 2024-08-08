@@ -37,12 +37,6 @@ export class UsuarioNoLogeadoMedicosEspecialistasComponent {
       apellidos:"Ibañez",
       descripcion:"descripcion",
       imagen:"fondo-opciones-menu.jpg"
-    },
-    {
-      nombres:"Juan Jose",
-      apellidos:"Ibañez",
-      descripcion:"descripcion",
-      imagen:"fondo-opciones-menu.jpg"
     }
   ];
 }

@@ -38,6 +38,7 @@ import { ActualizacionPacienteComponent } from "./components/actualizacion-pacie
 import { UsuarioNoLogeadoHorariosAtencionComponent } from "./components/usuario-no-logeado-horarios-atencion/usuario-no-logeado-horarios-atencion.component";
 import { UsuarioNoLogeadoEspecialidadedesComponent } from "./components/usuario-no-logeado-especialidadedes/usuario-no-logeado-especialidadedes.component";
 import { UsuarioNoLogeadoMedicosEspecialistasComponent } from "./components/usuario-no-logeado-medicos-especialistas/usuario-no-logeado-medicos-especialistas.component";
+import { UsuarioNoLogeadoRequisitosComponent } from "./components/usuario-no-logeado-requisitos/usuario-no-logeado-requisitos.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -45,6 +46,7 @@ const APP_ROUTES: Routes = [
     { path: 'horarios-atencion', component:  UsuarioNoLogeadoHorariosAtencionComponent},
     { path: 'especialidades-atencion', component:  UsuarioNoLogeadoEspecialidadedesComponent},
     { path: 'medicos-especialistas', component:  UsuarioNoLogeadoMedicosEspecialistasComponent},
+    { path: 'requisitos/:tipo/:id', component:  UsuarioNoLogeadoRequisitosComponent},
 
 
     // { path: 'menu', component:  MenuComponent},

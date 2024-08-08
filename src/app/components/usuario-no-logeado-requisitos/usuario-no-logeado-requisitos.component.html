@@ -1,0 +1,18 @@
+<div class="contenedor-requisitos">
+    <div class="requisitos">
+        <div class="contenedor-banner">
+            <img src="../../../assets/images/fondo-opciones-menu.jpg" alt="">
+            <div class="contenedor-titulo">
+                <h2>Requisitos ...</h2>
+            </div>
+        </div>
+        <div class="requisito" *ngFor="let requisito of listaRequisitos">
+            <div class="requisito-img"><img [src]="requisito.imagen" alt=""></div>
+            <div class="requisito-info">
+                <h3>{{requisito.nombre}}</h3>
+                <p>{{requisito.descripcion}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

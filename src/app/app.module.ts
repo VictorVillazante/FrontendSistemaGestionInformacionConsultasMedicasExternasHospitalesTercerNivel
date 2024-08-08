@@ -52,6 +52,8 @@ import { CarouselMedicosEspecialistasComponent } from './shared/section-medicos-
 import { CardMedicoEspecialistaComponent } from './shared/card-medico-especialista/card-medico-especialista.component';
 import { UsuarioNoLogeadoEspecialidadedesComponent } from './components/usuario-no-logeado-especialidadedes/usuario-no-logeado-especialidadedes.component';
 import { UsuarioNoLogeadoMedicosEspecialistasComponent } from './components/usuario-no-logeado-medicos-especialistas/usuario-no-logeado-medicos-especialistas.component';
+import { UsuarioNoLogeadoRequisitosComponent } from './components/usuario-no-logeado-requisitos/usuario-no-logeado-requisitos.component';
+import { UsuarioNoLogeadoProcedimientosComponent } from './components/usuario-no-logeado-procedimientos/usuario-no-logeado-procedimientos.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +102,8 @@ import { UsuarioNoLogeadoMedicosEspecialistasComponent } from './components/usua
     CardMedicoEspecialistaComponent,
     UsuarioNoLogeadoEspecialidadedesComponent,
     UsuarioNoLogeadoMedicosEspecialistasComponent,
+    UsuarioNoLogeadoRequisitosComponent,
+    UsuarioNoLogeadoProcedimientosComponent,
   ],
   imports: [
     BrowserModule,

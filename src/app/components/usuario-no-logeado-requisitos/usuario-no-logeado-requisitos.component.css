@@ -1,0 +1,58 @@
+.contenedor-requisitos{
+    width: 100%;
+    background-color: var(--color2);
+    min-height: 100vh;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+.requisitos{
+    width: 80%;
+    background-color: white;
+}
+.contenedor-banner{
+    width: 100%;
+    position: relative;
+    min-height: 400px;
+}
+.contenedor-banner img{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0%;
+    size: cover;
+}
+.contenedor-banner .contenedor-titulo{
+    position: absolute;
+    height: 50%;
+    top: 25%;
+    left: 20%;
+    background-color: rgba(255, 255, 255, 0.635);
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.requisito{
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+.requisito-img{
+    width: 35%;
+    height: 100%;   
+}
+.requisito-img img{
+    width: 100%;
+    overflow: hidden;
+}
+.requisito-info{
+    width: 65%;
+    height: 100%;
+    padding: 10px 10px 10px 40px;
+}
+.requisito-info h3{
+    margin: 10px 0px;
+}
