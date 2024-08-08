@@ -1,0 +1,26 @@
+.contenedor-especialidades {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.especialidades {
+    width: 80%;
+    margin: 0px 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.especialidad {
+    width: calc(100%/4);
+}
+
+.contenedor-vacio {
+    background-color: #0a496e4a;
+    height: 400px;
+}

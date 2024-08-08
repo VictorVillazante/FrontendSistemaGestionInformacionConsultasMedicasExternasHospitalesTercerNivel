@@ -1,1 +1,20 @@
-<p>usuario-no-logeado-especialidadedes works!</p>
+<div class="contenedor-especialidades">
+  <h2>Especialidades</h2>
+  <div class="especialidades"*ngFor="let fila of elementosMostrados; let i=index">
+    <div class="especialidad" *ngFor="let e of fila; let j=index">
+      <div class="contenedor-vacio" *ngIf="e == 0"></div>
+      <!-- <app-card-especialidades
+        *ngIf="e == 1 && (listaEspecialidades.length-1) > indexEspecialidad"
+        [especialidad]="obtenerEspecialidad()"
+      /> -->
+      <app-card-especialidades
+        *ngIf="e == 1"
+        [especialidad]="obtenerEspecialidad(i,j,e)"
+      />
+      <!-- <div
+        class="contenedor-imagen"
+        *ngIf="e == 1 && (listaEspecialidades.length-1) <= indexEspecialidad"
+      ></div> -->
+    </div>
+  </div>
+</div>

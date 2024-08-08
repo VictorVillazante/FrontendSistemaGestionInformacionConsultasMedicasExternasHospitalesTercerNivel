@@ -58,6 +58,29 @@ export class InformacionCentroMedicoService {
     //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/consultorios`);
     //throw new Error('Method not implemented.');
   }
+  obtenerEspecialidades() {
+    return of([
+      {
+        img:"doctor-home.png",
+        name:"Ginecología"
+      },
+      {
+        img:"fondo-opciones-menu.jpg",
+        name:"Medicina general"
+      },
+      {
+        img:"doctor-home.png",
+        name:"Ginecología"
+      },
+      {
+        img:"fondo-opciones-menu.jpg",
+        name:"Medicina general"
+      }
+    ]);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/especialidades`);
+    //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/especialidades`);
+    //throw new Error('Method not implemented.');
+  }
   obtenerTurnos() {
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/turnos`);
     // return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/turnos`);
