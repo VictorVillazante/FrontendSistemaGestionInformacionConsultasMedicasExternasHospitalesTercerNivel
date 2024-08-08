@@ -39,6 +39,7 @@ import { UsuarioNoLogeadoHorariosAtencionComponent } from "./components/usuario-
 import { UsuarioNoLogeadoEspecialidadedesComponent } from "./components/usuario-no-logeado-especialidadedes/usuario-no-logeado-especialidadedes.component";
 import { UsuarioNoLogeadoMedicosEspecialistasComponent } from "./components/usuario-no-logeado-medicos-especialistas/usuario-no-logeado-medicos-especialistas.component";
 import { UsuarioNoLogeadoRequisitosComponent } from "./components/usuario-no-logeado-requisitos/usuario-no-logeado-requisitos.component";
+import { UsuarioNoLogeadoProcedimientosComponent } from "./components/usuario-no-logeado-procedimientos/usuario-no-logeado-procedimientos.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -47,6 +48,7 @@ const APP_ROUTES: Routes = [
     { path: 'especialidades-atencion', component:  UsuarioNoLogeadoEspecialidadedesComponent},
     { path: 'medicos-especialistas', component:  UsuarioNoLogeadoMedicosEspecialistasComponent},
     { path: 'requisitos/:tipo/:id', component:  UsuarioNoLogeadoRequisitosComponent},
+    { path: 'procedimiento/:tipo/:id', component:  UsuarioNoLogeadoProcedimientosComponent},
 
 
     // { path: 'menu', component:  MenuComponent},

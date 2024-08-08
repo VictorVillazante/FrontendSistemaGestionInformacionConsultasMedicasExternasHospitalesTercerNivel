@@ -1,1 +1,9 @@
-<p>usuario-no-logeado-procedimientos works!</p>
+<div class="contenedor-procedimiento">
+    <div class="banner-img">
+        <img src="../../../assets/images/fondo-opciones-menu.jpg" alt="">
+    </div>
+    <div class="procedimiento-pasos">
+        <h2>Procedimiento...</h2>
+        <app-card-paso-procedimiento *ngFor="let pasoProcedimiento of listadoProcedimientoPasos" [pasoProcedimiento]="pasoProcedimiento"/>
+    </div>
+</div>

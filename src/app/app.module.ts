@@ -54,7 +54,8 @@ import { UsuarioNoLogeadoEspecialidadedesComponent } from './components/usuario-
 import { UsuarioNoLogeadoMedicosEspecialistasComponent } from './components/usuario-no-logeado-medicos-especialistas/usuario-no-logeado-medicos-especialistas.component';
 import { UsuarioNoLogeadoRequisitosComponent } from './components/usuario-no-logeado-requisitos/usuario-no-logeado-requisitos.component';
 import { UsuarioNoLogeadoProcedimientosComponent } from './components/usuario-no-logeado-procedimientos/usuario-no-logeado-procedimientos.component';
-import { CardRequisitoProcedimientoComponent } from './shared/card-requisito-procedimiento/card-requisito-procedimiento.component';
+import { CardPasoProcedimientoComponent } from './shared/card-paso-procedimiento/card-paso-procedimiento.component';
+import { CardRequisitoProcedimientoComponent } from './shared/card-requisito/card-requisito-procedimiento.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +107,7 @@ import { CardRequisitoProcedimientoComponent } from './shared/card-requisito-pro
     UsuarioNoLogeadoRequisitosComponent,
     UsuarioNoLogeadoProcedimientosComponent,
     CardRequisitoProcedimientoComponent,
+    CardPasoProcedimientoComponent
   ],
   imports: [
     BrowserModule,
