@@ -1,4 +1,4 @@
-.container-especialidades-atencion{
+.section-especialidades-atencion{
     padding: 40px 10px;
     display: flex;
     flex-direction: column;
@@ -6,8 +6,8 @@
     background-color: var(--color2);
     align-items: center;
 }
-.container-especialidades-atencion .btn-success-hospital{
-    max-width: 400px;
+.section-especialidades-atencion .btn-success-hospital{
+    min-width: 200px;
 }
 @media screen and (min-width:576px){
     .carousel-inner{

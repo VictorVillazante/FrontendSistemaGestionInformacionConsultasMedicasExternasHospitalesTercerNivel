@@ -50,6 +50,8 @@ import { CardEspecialidadesComponent } from './shared/card-especialidades/card-e
 import { ScriptsService } from './services/scripts.service';
 import { CarouselMedicosEspecialistasComponent } from './shared/section-medicos-especialistas/carousel-medicos-especialistas.component';
 import { CardMedicoEspecialistaComponent } from './shared/card-medico-especialista/card-medico-especialista.component';
+import { UsuarioNoLogeadoEspecialidadedesComponent } from './components/usuario-no-logeado-especialidadedes/usuario-no-logeado-especialidadedes.component';
+import { UsuarioNoLogeadoMedicosEspecialistasComponent } from './components/usuario-no-logeado-medicos-especialistas/usuario-no-logeado-medicos-especialistas.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +98,8 @@ import { CardMedicoEspecialistaComponent } from './shared/card-medico-especialis
     CardEspecialidadesComponent,
     CarouselMedicosEspecialistasComponent,
     CardMedicoEspecialistaComponent,
+    UsuarioNoLogeadoEspecialidadedesComponent,
+    UsuarioNoLogeadoMedicosEspecialistasComponent,
   ],
   imports: [
     BrowserModule,

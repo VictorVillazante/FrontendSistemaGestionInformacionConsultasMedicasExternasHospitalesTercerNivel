@@ -36,11 +36,16 @@ import { MisNotasEvolucionComponent } from "./components/mis-notas-evolucion/mis
 import { MisConsultasMedicasComponent } from "./components/mis-consultas-medicas/mis-consultas-medicas.component";
 import { ActualizacionPacienteComponent } from "./components/actualizacion-paciente/actualizacion-paciente.component";
 import { UsuarioNoLogeadoHorariosAtencionComponent } from "./components/usuario-no-logeado-horarios-atencion/usuario-no-logeado-horarios-atencion.component";
+import { UsuarioNoLogeadoEspecialidadedesComponent } from "./components/usuario-no-logeado-especialidadedes/usuario-no-logeado-especialidadedes.component";
+import { UsuarioNoLogeadoMedicosEspecialistasComponent } from "./components/usuario-no-logeado-medicos-especialistas/usuario-no-logeado-medicos-especialistas.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
     { path: 'login', component:  LoginComponent},
     { path: 'horarios-atencion', component:  UsuarioNoLogeadoHorariosAtencionComponent},
+    { path: 'especialidades-atencion', component:  UsuarioNoLogeadoEspecialidadedesComponent},
+    { path: 'medicos-especialistas', component:  UsuarioNoLogeadoMedicosEspecialistasComponent},
+
 
     // { path: 'menu', component:  MenuComponent},
 

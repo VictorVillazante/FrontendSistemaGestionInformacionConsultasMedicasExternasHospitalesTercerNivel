@@ -1,0 +1,11 @@
+<div class="contenedor-medicos-especialistas">
+  <h2>Equipo médico</h2>
+  <div class="medicos-especialistas">
+    <div
+      class="medico-especialista"
+      *ngFor="let medicoEspecialista of listadoMedicosEspecialistas"
+    >
+      <app-card-medico-especialista [medicoEspecialista]="medicoEspecialista" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.contenedor-medicos-especialistas {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-medicos-especialistas h2 {
+    padding: 20px 0px;
+}
+
+.medicos-especialistas {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.medico-especialista {
+    width: calc(100%/3);
+    padding: 10px;
+    background-color: transparent;
+}
+
+app-card-medico-especialista {
+    background-color: transparent;
+}
+
+@media (max-width:1280px) {
+    .medico-especialista {
+        width: calc(100%/2);
+    }
+}
+@media (max-width:414px) {
+    .medico-especialista {
+        width: calc(100%);
+    }
+}
