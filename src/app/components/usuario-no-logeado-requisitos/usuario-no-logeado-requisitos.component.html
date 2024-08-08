@@ -6,13 +6,7 @@
                 <h2>Requisitos ...</h2>
             </div>
         </div>
-        <div class="requisito" *ngFor="let requisito of listaRequisitos">
-            <div class="requisito-img"><img [src]="requisito.imagen" alt=""></div>
-            <div class="requisito-info">
-                <h3>{{requisito.nombre}}</h3>
-                <p>{{requisito.descripcion}}</p>
-            </div>
-        </div>
+        <app-card-requisito-procedimiento *ngFor="let requisito of listaRequisitos" [requisito]="requisito"/>
     </div>
 
 </div>

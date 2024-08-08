@@ -1,0 +1,23 @@
+.requisito{
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+.requisito-img{
+    width: 35%;
+    height: 100%;   
+}
+.requisito-img img{
+    width: 100%;
+    overflow: hidden;
+}
+.requisito-info{
+    width: 65%;
+    height: 100%;
+    padding: 10px 10px 10px 40px;
+}
+.requisito-info h3{
+    margin: 10px 0px;
+}
