@@ -1,0 +1,74 @@
+.contenedor-proceso-inscripcion {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--color2);
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-proceso-inscripcion {
+    min-height: 500px;
+    width: 100%;
+    background-color: var(--color2);
+    display: flex;
+    flex-direction: row;
+}
+
+.descripcion-proceso-inscripcion {
+    width: 45%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 5px 20px;
+}
+
+.descripcion-proceso-inscripcion * {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.descripcion-proceso-inscripcion h2 {
+    text-align: center;
+}
+
+.descripcion-proceso-inscripcion p {
+    text-align: left;
+}
+
+.img-proceso-inscripcion {
+    width: 65%;
+    height: 500px;
+}
+
+.img-proceso-inscripcion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.proceso-inscripcion {
+    width: 80%;
+    margin: 20px 10% 5px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+}
+
+.proceso-inscripcion .enlaces-contactos {
+    width: 100%;
+}
+
+.contactos-proceso-inscripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.enlaces-contactos *{
+    width: 32px;
+    height: 32px;
+    display: flex;
+}
