@@ -62,13 +62,23 @@
     width: 100%;
 }
 
-.contactos-proceso-inscripcion{
+.contactos-proceso-inscripcion {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.enlaces-contactos *{
+
+.enlaces-contactos {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.enlaces-contactos * {
     width: 32px;
     height: 32px;
     display: flex;
+}
+.pasos-proceso-inscripcion{
+    width: 100%;
 }

@@ -58,6 +58,9 @@ import { CardPasoProcedimientoComponent } from './shared/card-paso-procedimiento
 import { CardRequisitoProcedimientoComponent } from './shared/card-requisito/card-requisito-procedimiento.component';
 import { UsuarioNoLogeadoProcesoInscripcionComponent } from './components/usuario-no-logeado-proceso-inscripcion/usuario-no-logeado-proceso-inscripcion.component';
 import { WhatsappComponent } from './shared/whatsapp/whatsapp.component';
+import { IconoFacebookComponent } from './shared/icono-facebook/icono-facebook.component';
+import { IconoMailComponent } from './shared/icono-mail/icono-mail.component';
+import { IconoTelefonoComponent } from './shared/icono-telefono/icono-telefono.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +114,10 @@ import { WhatsappComponent } from './shared/whatsapp/whatsapp.component';
     CardRequisitoProcedimientoComponent,
     CardPasoProcedimientoComponent,
     UsuarioNoLogeadoProcesoInscripcionComponent,
-    WhatsappComponent
+    WhatsappComponent,
+    IconoFacebookComponent,
+    IconoMailComponent,
+    IconoTelefonoComponent
   ],
   imports: [
     BrowserModule,

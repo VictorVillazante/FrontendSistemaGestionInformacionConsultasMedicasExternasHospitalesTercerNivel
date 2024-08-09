@@ -15,12 +15,16 @@
   </div>
   <div class="proceso-inscripcion">
     <h3>Pasos proceso de inscripcion</h3>
-    <div class="pasos-proceso-inscripcion"></div>
+    <div class="pasos-proceso-inscripcion">
+      <app-card-paso-procedimiento *ngFor="let pasoProcedimiento of listadoProcedimientoPasos" [pasoProcedimiento]="pasoProcedimiento"/>
+    </div>
   </div>
   <div class="contactos-proceso-inscripcion">
     <h4>Contactanos</h4>
     <div class="enlaces-contactos">
       <app-whatsapp/>
+      <app-icono-facebook/>
+      <app-icono-mail/>
     </div>
   </div>
 </div>
