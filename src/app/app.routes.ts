@@ -41,6 +41,7 @@ import { UsuarioNoLogeadoMedicosEspecialistasComponent } from "./components/usua
 import { UsuarioNoLogeadoRequisitosComponent } from "./components/usuario-no-logeado-requisitos/usuario-no-logeado-requisitos.component";
 import { UsuarioNoLogeadoProcedimientosComponent } from "./components/usuario-no-logeado-procedimientos/usuario-no-logeado-procedimientos.component";
 import { UsuarioNoLogeadoProcesoInscripcionComponent } from "./components/usuario-no-logeado-proceso-inscripcion/usuario-no-logeado-proceso-inscripcion.component";
+import { UsuarioNoLogeadoNoticiasComponent } from "./components/usuario-no-logeado-noticias/usuario-no-logeado-noticias.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -51,6 +52,7 @@ const APP_ROUTES: Routes = [
     { path: 'requisitos/:tipo/:id', component:  UsuarioNoLogeadoRequisitosComponent},
     { path: 'procedimiento/:tipo/:id', component:  UsuarioNoLogeadoProcedimientosComponent},
     { path: 'proceso-inscripcion', component:  UsuarioNoLogeadoProcesoInscripcionComponent},
+    { path: 'noticias', component:  UsuarioNoLogeadoNoticiasComponent},
 
 
     // { path: 'menu', component:  MenuComponent},

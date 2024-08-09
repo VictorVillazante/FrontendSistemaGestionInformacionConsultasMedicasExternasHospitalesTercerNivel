@@ -61,6 +61,8 @@ import { WhatsappComponent } from './shared/whatsapp/whatsapp.component';
 import { IconoFacebookComponent } from './shared/icono-facebook/icono-facebook.component';
 import { IconoMailComponent } from './shared/icono-mail/icono-mail.component';
 import { IconoTelefonoComponent } from './shared/icono-telefono/icono-telefono.component';
+import { UsuarioNoLogeadoNoticiasComponent } from './components/usuario-no-logeado-noticias/usuario-no-logeado-noticias.component';
+import { CardNoticiaComponent } from './shared/card-noticia/card-noticia.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +119,9 @@ import { IconoTelefonoComponent } from './shared/icono-telefono/icono-telefono.c
     WhatsappComponent,
     IconoFacebookComponent,
     IconoMailComponent,
-    IconoTelefonoComponent
+    IconoTelefonoComponent,
+    UsuarioNoLogeadoNoticiasComponent,
+    CardNoticiaComponent
   ],
   imports: [
     BrowserModule,

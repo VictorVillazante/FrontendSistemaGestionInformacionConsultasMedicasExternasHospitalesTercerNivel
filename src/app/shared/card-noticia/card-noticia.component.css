@@ -1,0 +1,11 @@
+.card-body p{
+    overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 10;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-align: left;
+}
+.card-body{
+    text-align: center;
+}
