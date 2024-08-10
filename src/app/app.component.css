@@ -1,4 +1,11 @@
-.container-router{
+.container-router {
     background: var(--color2);
     min-height: 100vh;
+    padding-top: 100px;
+}
+
+app-navbar {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
 }
