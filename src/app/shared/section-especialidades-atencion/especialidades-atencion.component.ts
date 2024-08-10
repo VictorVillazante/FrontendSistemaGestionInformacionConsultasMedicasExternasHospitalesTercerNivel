@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Especialidad } from 'src/app/models/Especialidades';
 import { ScriptsService } from 'src/app/services/scripts.service';
 
@@ -7,7 +7,7 @@ import { ScriptsService } from 'src/app/services/scripts.service';
   templateUrl: './especialidades-atencion.component.html',
   styleUrls: ['./especialidades-atencion.component.css']
 })
-export class EspecialidadesAtencionComponent {
+export class EspecialidadesAtencionComponent implements AfterViewInit{
   listadoEspecialidades:Especialidad[]=[
     // {
     //   img:"pediatria.jpg",
@@ -28,9 +28,23 @@ export class EspecialidadesAtencionComponent {
     {
       img:"fondo-opciones-menu.jpg",
       name:"Medicina general"
+    },
+    {
+      img:"fondo-opciones-menu.jpg",
+      name:"Medicina general"
+    },
+    {
+      img:"fondo-opciones-menu.jpg",
+      name:"Medicina general"
+    },
+    {
+      img:"fondo-opciones-menu.jpg",
+      name:"Medicina general"
     }
   ];
-  constructor(private _ScriptsService:ScriptsService){
-    _ScriptsService.cargar(["carousel"]);
+  constructor(private scriptsService:ScriptsService){
+  }
+  ngAfterViewInit(): void {
+    this.scriptsService.cargar(["carousel"]);
   }
 }

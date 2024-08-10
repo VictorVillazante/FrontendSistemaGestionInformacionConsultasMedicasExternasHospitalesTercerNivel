@@ -1,24 +1,55 @@
 const multipleItemCarousel = document.querySelector("#carouselExampleControls");
-if (window.matchMedia("(min-width:576px)").matches) {
-  const carousel = new bootstrap.Carousel(multipleItemCarousel, {
-    interval: 2000,
-    touch: false,
-  });
-  var carouselWidth = $('.carousel-inner')[0].scrollWidth;
-  var cardWidth = $('.carousel-item').width();
-  var scrollPosition = 0;
-  $('.carousel-control-next').on('click',function(){
-    if(scrollPosition<(carouselWidth-(cardWidth*4))){
-        scrollPosition = scrollPosition + cardWidth;
-        $('.carousel-inner').animate({scrollLeft: scrollPosition},600);
+
+function checkScreenWidth() {
+  if (window.matchMedia("(min-width:1280px)").matches) {
+    opcionesCarousel(4);
+  } else if (window.matchMedia("(min-width:415px) and (max-width:1279px)").matches) {
+    opcionesCarousel(3);
+  } else {
+    if (multipleItemCarousel) {
+      multipleItemCarousel.classList.add('slide');
     }
-  });
-  $('.carousel-control-prev').on('click',function(){
-    if(scrollPosition>0){
-        scrollPosition = scrollPosition - cardWidth;
-        $('.carousel-inner').animate({scrollLeft: scrollPosition},600);
-    }
-  });
-}else{
-    $(multipleItemCarousel).addClass('slide');
+  }
 }
+
+function opcionesCarousel(numeroElementos) {
+  if (multipleItemCarousel) {
+    const carousel = new bootstrap.Carousel(multipleItemCarousel, {
+      interval: 2000,
+      touch: false,
+    });
+
+    const carouselInner = document.querySelector('.carousel-inner');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const carouselControlNext = document.querySelector('.carousel-control-next');
+    const carouselControlPrev = document.querySelector('.carousel-control-prev');
+    
+    if (!carouselInner || !carouselItems.length) return;
+
+    let carouselWidth = carouselInner.scrollWidth;
+    let cardWidth = carouselItems[0].offsetWidth; 
+    let scrollPosition = 0;
+
+    if (carouselControlNext) {
+      carouselControlNext.addEventListener('click', function () {
+        if (scrollPosition < (carouselWidth - (cardWidth * numeroElementos))) {
+          scrollPosition += cardWidth;
+          carouselInner.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+        }
+      });
+    }
+
+    if (carouselControlPrev) {
+      carouselControlPrev.addEventListener('click', function () {
+        if (scrollPosition > 0) {
+          scrollPosition -= cardWidth;
+          carouselInner.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+        }
+      });
+    }
+  }
+}
+
+checkScreenWidth();
+
+window.addEventListener('resize', checkScreenWidth);

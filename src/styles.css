@@ -5,6 +5,10 @@
     --color3:#28afb0;
     --color4:#0a4a6e;
     --color5:#000;
+    --titulo-banner:48px;
+    --texto-banner:32px;
+    --titulo1:32px;
+    --titulo2:28px;
 }
 .btn-success-hospital{
     background-color: var(--color3);
@@ -40,12 +44,23 @@
     color: #0a4a6e;
 }
 @media (max-width:1280px){
-    p{
-        font-size: 14px;
+    *{
+        --titulo-banner:36px;
+        --texto-banner:24px;
+        --titulo1:26px;
+        --titulo2:22px;
+
     }
 }
 @media (max-width:414px){
-    p{
-        font-size: 12px;
+    *{
+        --titulo-banner:20px;
+        --texto-banner:16px;
+        --titulo1:20px;
+        --titulo2:16px;
     }
+}
+
+h2{
+    font-size: var(--titulo2);
 }

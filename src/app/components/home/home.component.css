@@ -2,30 +2,35 @@
     background-image: url("../../../assets/images/doctor-home.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-}
-#div-home{
-    min-height: 60vh;
-}
-#div-home .row{
-    min-height: 60vh;
+    background-size: contain;
+    min-height: 200px;
+    height: 100%;
 }
 #div-texto-banner{
-    padding: 10px;
-    padding-left: 100px;
+    height: fit-content;
+    padding: 10px 10%;
     align-content: center;
 }
 
 #div-texto-banner .titulo-banner{
-    font-size: 48px;
+    font-size: var(--titulo-banner);
     color: var(--color4);
     font-weight: bold;
 }
 
 #div-texto-banner .sub-titulo-banner{
-    font-size: 24px;
+    font-size: var(--texto-banner);
     font-weight: bold;
 }
 #banner-home{
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    min-height: fit-content;
+}
+@media (max-width:1280px){
+    #img-doctor,#banner-home{
+        height: min-content;
+    }
 }
