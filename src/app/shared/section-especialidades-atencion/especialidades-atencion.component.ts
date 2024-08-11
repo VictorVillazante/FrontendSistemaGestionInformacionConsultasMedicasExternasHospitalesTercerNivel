@@ -1,14 +1,15 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Especialidad } from 'src/app/models/Especialidades';
 import { ScriptsService } from 'src/app/services/scripts.service';
-
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-especialidades-atencion',
   templateUrl: './especialidades-atencion.component.html',
   styleUrls: ['./especialidades-atencion.component.css']
 })
 export class EspecialidadesAtencionComponent implements AfterViewInit{
-  listadoEspecialidades:Especialidad[]=[
+  id: string = uuidv4().replace(/-/g, '');
+ listadoEspecialidades:Especialidad[]=[
     // {
     //   img:"pediatria.jpg",
     //   name:"Pediatria"
@@ -45,6 +46,6 @@ export class EspecialidadesAtencionComponent implements AfterViewInit{
   constructor(private scriptsService:ScriptsService){
   }
   ngAfterViewInit(): void {
-    this.scriptsService.cargar(["carousel"]);
+    this.scriptsService.cargarCarousel(this.id);
   }
 }

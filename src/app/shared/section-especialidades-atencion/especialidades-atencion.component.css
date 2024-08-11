@@ -1,3 +1,4 @@
+
 .section-especialidades-atencion{
     padding: 40px 10px;
     display: flex;
@@ -8,6 +9,10 @@
 }
 .section-especialidades-atencion .btn-success-hospital{
     min-width: 200px;
+}
+.section-especialidades-atencion .btn-success-hospital p{
+    padding: 0;
+    margin: 0;
 }
 @media screen and (min-width:1280px){
     .carousel-inner{

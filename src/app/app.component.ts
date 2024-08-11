@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScriptsService } from './services/scripts.service';
 
 @Component({
   selector: 'app-root',

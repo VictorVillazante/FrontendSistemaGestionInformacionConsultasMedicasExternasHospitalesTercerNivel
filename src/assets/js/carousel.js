@@ -1,55 +1,118 @@
-const multipleItemCarousel = document.querySelector("#carouselExampleControls");
 
-function checkScreenWidth() {
+
+// multipleItemCarousel = document.querySelector("#carouselExampleControls");
+
+// function checkScreenWidth() {
+//   if (window.matchMedia("(min-width:1280px)").matches) {
+//     opcionesCarousel(4);
+//   } else if (window.matchMedia("(min-width:415px) and (max-width:1279px)").matches) {
+//     opcionesCarousel(3);
+//   } else {
+//     if (multipleItemCarousel) {
+//       multipleItemCarousel.classList.add('slide');
+//     }
+//   }
+// }
+
+// function opcionesCarousel(numeroElementos) {
+//   if (multipleItemCarousel) {
+//     let carousel = new bootstrap.Carousel(multipleItemCarousel, {
+//       interval: 2000,
+//       touch: false,
+//     });
+
+//     carouselInner = document.querySelector('.carousel-inner');
+//     carouselItems = document.querySelectorAll('.carousel-item');
+//     carouselControlNext = document.querySelector('.carousel-control-next');
+//     carouselControlPrev = document.querySelector('.carousel-control-prev');
+    
+//     if (!carouselInner || !carouselItems.length) return;
+
+//     carouselWidth = carouselInner.scrollWidth;
+//     cardWidth = carouselItems[0].offsetWidth; 
+//     scrollPosition = 0;
+
+//     if (carouselControlNext) {
+//       carouselControlNext.addEventListener('click', function () {
+//         if (scrollPosition < (carouselWidth - (cardWidth * numeroElementos))) {
+//           scrollPosition += cardWidth;
+//           carouselInner.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+//         }
+//       });
+//     }
+
+//     if (carouselControlPrev) {
+//       carouselControlPrev.addEventListener('click', function () {
+//         if (scrollPosition > 0) {
+//           scrollPosition -= cardWidth;
+//           carouselInner.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+//         }
+//       });
+//     }
+//   }
+// }
+
+// checkScreenWidth();
+
+// window.addEventListener('resize', checkScreenWidth);
+
+
+
+function checkScreenWidth(idScript) {
+  let id = idScript.replace(/^script-/, '');
   if (window.matchMedia("(min-width:1280px)").matches) {
-    opcionesCarousel(4);
+    opcionesCarousel(id,4);
   } else if (window.matchMedia("(min-width:415px) and (max-width:1279px)").matches) {
-    opcionesCarousel(3);
+    opcionesCarousel(id,3);
   } else {
-    if (multipleItemCarousel) {
-      multipleItemCarousel.classList.add('slide');
+    if (document.querySelector(id)) {
+      document.querySelector(id).classList.add('slide');
     }
   }
 }
 
-function opcionesCarousel(numeroElementos) {
-  if (multipleItemCarousel) {
-    const carousel = new bootstrap.Carousel(multipleItemCarousel, {
+function opcionesCarousel(id,numeroElementos) {
+  if (document.querySelector(`#${CSS.escape(id)}`)) {
+    let carousel = new bootstrap.Carousel(document.querySelector(`#${CSS.escape(id)}`), {
       interval: 2000,
       touch: false,
     });
 
-    const carouselInner = document.querySelector('.carousel-inner');
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const carouselControlNext = document.querySelector('.carousel-control-next');
-    const carouselControlPrev = document.querySelector('.carousel-control-prev');
     
-    if (!carouselInner || !carouselItems.length) return;
+    if (!document.querySelector(`#${CSS.escape(id)} .carousel-inner`) || !document.querySelectorAll(`#${CSS.escape(id)} .carousel-item`).length) return;
 
-    let carouselWidth = carouselInner.scrollWidth;
-    let cardWidth = carouselItems[0].offsetWidth; 
     let scrollPosition = 0;
 
-    if (carouselControlNext) {
-      carouselControlNext.addEventListener('click', function () {
-        if (scrollPosition < (carouselWidth - (cardWidth * numeroElementos))) {
-          scrollPosition += cardWidth;
-          carouselInner.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    if (document.querySelector(`#${CSS.escape(id)} .carousel-control-next`)) {
+      document.querySelector(`#${CSS.escape(id)} .carousel-control-next`).addEventListener('click', function () {
+        if (scrollPosition < (document.querySelector(`#${CSS.escape(id)} .carousel-inner`).scrollWidth - (document.querySelectorAll(`#${CSS.escape(id)} .carousel-item`)[0].offsetWidth * numeroElementos))) {
+          scrollPosition += document.querySelectorAll(`#${CSS.escape(id)} .carousel-item`)[0].offsetWidth;
+          document.querySelector(`#${CSS.escape(id)} .carousel-inner`).scrollTo({ left: scrollPosition, behavior: 'smooth' });
         }
       });
     }
 
-    if (carouselControlPrev) {
-      carouselControlPrev.addEventListener('click', function () {
+    if (document.querySelector(`#${CSS.escape(id)} .carousel-control-prev`)) {
+      document.querySelector(`#${CSS.escape(id)} .carousel-control-prev`).addEventListener('click', function () {
         if (scrollPosition > 0) {
-          scrollPosition -= cardWidth;
-          carouselInner.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+          scrollPosition -= document.querySelectorAll(`#${CSS.escape(id)} .carousel-item`)[0].offsetWidth;
+          document.querySelector(`#${CSS.escape(id)} .carousel-inner`).scrollTo({ left: scrollPosition, behavior: 'smooth' });
         }
       });
     }
   }
 }
 
-checkScreenWidth();
+checkScreensWidth();
 
-window.addEventListener('resize', checkScreenWidth);
+window.addEventListener('resize', checkScreensWidth);
+
+
+function checkScreensWidth(){
+  for (let script of document.querySelectorAll('script')) {
+    if(script.id){
+      console.log(script.id);
+      checkScreenWidth(script.id);
+    }
+  }
+}

@@ -1,9 +1,9 @@
 <div class="section-medicos-especialistas">
   <h2>Medicos especialistas</h2>
-  <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-    <div class="carousel-inner">
+  <div id="carouselMedicosEspecialistas" class="carousel" data-bs-ride="carousel">
+    <div class="carousel-inner" id="carousel-inner-medicos-especialistas">
       <div
-        class="carousel-item"
+        class="carousel-item carousel-item-medicos-especialistas"
         *ngFor="let medicoEspecialista of listadoMedicosEspecialistas"
       >
         <app-card-medico-especialista
@@ -12,18 +12,18 @@
       </div>
     </div>
     <button
-      class="carousel-control-prev"
+      class="carousel-control-prev" id="carousel-medicos-especialistas-control-prev"
       type="button"
-      data-bs-target="#carouselExampleControls"
+      data-bs-target="#carouselMedicosEspecialistas"
       data-bs-slide="prev"
     >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
     <button
-      class="carousel-control-next"
+      class="carousel-control-next" id="carousel-medicos-especialistas-control-next"
       type="button"
-      data-bs-target="#carouselExampleControls"
+      data-bs-target="#carouselMedicosEspecialistas"
       data-bs-slide="next"
     >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
