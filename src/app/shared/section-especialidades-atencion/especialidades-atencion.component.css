@@ -34,3 +34,13 @@
         flex: 0 0 calc(100%/3);
     }
 }
+@media screen and (max-width:413px){
+    .carousel-inner{
+        display: flex;
+    }
+    .carousel-item{
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100%);
+    }
+}

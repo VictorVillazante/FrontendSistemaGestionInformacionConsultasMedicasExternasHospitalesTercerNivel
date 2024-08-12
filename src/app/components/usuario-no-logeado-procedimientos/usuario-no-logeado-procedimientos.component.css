@@ -16,7 +16,8 @@
 }
 .banner-img img{
     width: 100%;
-    size: cover;
+    height: 100%;
+    object-fit: cover;
 }
 app-card-paso-procedimiento{
     width: 100%;

@@ -3,11 +3,12 @@
     padding: 10px;
 }
 .contenedor-img-medico-especialista{
-    height: 300px;
+    height: fit-content;
     overflow-y: hidden;
     justify-content: center;
     align-items: center;
     display: flex;
+    padding: 10px;
 }
 .img-medico-especialista{
     width: 100%;
@@ -24,5 +25,11 @@
     text-align: center;
 }
 .datos-medico-especialista .descripcion{
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     text-align: left;
 }

@@ -6,7 +6,9 @@
                 <h2>Requisitos ...</h2>
             </div>
         </div>
-        <app-card-requisito-procedimiento *ngFor="let requisito of listaRequisitos" [requisito]="requisito"/>
+        <div class="cards-requisitos">
+            <app-card-requisito-procedimiento *ngFor="let requisito of listaRequisitos" [requisito]="requisito"/>
+        </div>
     </div>
 
 </div>

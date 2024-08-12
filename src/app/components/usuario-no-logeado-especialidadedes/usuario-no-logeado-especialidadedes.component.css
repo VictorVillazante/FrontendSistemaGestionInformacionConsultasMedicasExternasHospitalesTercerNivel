@@ -24,3 +24,19 @@
     background-color: #0a496e4a;
     height: 400px;
 }
+@media (min-width:415px) and (max-width:1279px){
+    .especialidad {
+        width: calc(100%/3);
+    }
+    .contenedor-vacio {
+        height: 300px;
+    }
+}
+@media (max-width:414px){
+    .especialidad {
+        width: calc(100%);
+    }    
+    .contenedor-vacio {
+        height: 300px;
+    }
+}

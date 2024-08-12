@@ -65,9 +65,10 @@ function checkScreenWidth(idScript) {
   } else if (window.matchMedia("(min-width:415px) and (max-width:1279px)").matches) {
     opcionesCarousel(id,3);
   } else {
-    if (document.querySelector(id)) {
-      document.querySelector(id).classList.add('slide');
-    }
+    opcionesCarousel(id,1);
+    // if (document.querySelector(id)) {
+    //   document.querySelector(id).classList.add('slide');
+    // }
   }
 }
 

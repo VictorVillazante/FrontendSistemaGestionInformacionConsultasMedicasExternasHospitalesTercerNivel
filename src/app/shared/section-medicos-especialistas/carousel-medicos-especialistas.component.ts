@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { MedicoEspecialista } from 'src/app/models/MedicoEspecialista';
 import { ScriptsService } from 'src/app/services/scripts.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-carousel-medicos-especialistas',
@@ -8,9 +9,10 @@ import { ScriptsService } from 'src/app/services/scripts.service';
   styleUrls: ['./carousel-medicos-especialistas.component.css']
 })
 export class CarouselMedicosEspecialistasComponent implements AfterViewInit{
+  id:string=uuidv4().replace(/-/g,"");
   constructor(private scriptsService:ScriptsService){}
   ngAfterViewInit(): void {
-    this.scriptsService.cargar(["carousel-medicos-especialistas"]);
+    this.scriptsService.cargarCarousel(this.id);
   }
   listadoMedicosEspecialistas:MedicoEspecialista[]=[{
     nombres:"Juan Jose",

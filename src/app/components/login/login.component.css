@@ -16,3 +16,13 @@
 .form-login{
   width: 50%;
 }
+@media (min-width:481px) and (max-width:1279px){
+  .form-login{
+    width: 80%;
+  }
+}
+@media (max-width:480px){
+  .form-login{
+    width: 100%;
+  }
+}

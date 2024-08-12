@@ -7,8 +7,12 @@
     justify-content: center;
 }
 .requisitos{
-    width: 80%;
+    width: 100%;
     background-color: white;
+}
+.cards-requisitos{
+    width: 80%;
+    margin: 20px 10%;
 }
 .contenedor-banner{
     width: 100%;

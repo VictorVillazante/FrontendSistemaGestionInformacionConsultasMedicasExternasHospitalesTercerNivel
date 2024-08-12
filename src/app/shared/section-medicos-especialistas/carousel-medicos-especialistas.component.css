@@ -7,6 +7,9 @@
 .carousel-inner{
     padding: 10px 0px;
 }
+.section-medicos-especialistas .btn-success-hospital{
+    min-width: 200px;
+}
 @media screen and (min-width:1280px){
     .carousel-inner{
         display: flex;
@@ -17,7 +20,7 @@
         flex: 0 0 calc(100%/4);
     }
 }
-@media screen and (min-width:414px) and (max-width: 1279px){
+@media screen and (min-width:413px) and (max-width: 1279px){
     .carousel-inner{
         display: flex;
     }
@@ -25,5 +28,15 @@
         display: block;
         margin-right: 0;
         flex: 0 0 calc(100%/3);
+    }
+}
+@media screen and (max-width: 414px){
+    .carousel-inner{
+        display: flex;
+    }
+    .carousel-item{
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100%);
     }
 }

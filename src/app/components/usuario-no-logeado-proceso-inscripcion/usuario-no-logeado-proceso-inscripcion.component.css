@@ -39,7 +39,7 @@
 
 .img-proceso-inscripcion {
     width: 65%;
-    height: 500px;
+    height: 100%;
 }
 
 .img-proceso-inscripcion img {
@@ -81,4 +81,34 @@
 }
 .pasos-proceso-inscripcion{
     width: 100%;
+}
+@media(min-width:415px) and (max-width:1279px){
+    .banner-proceso-inscripcion{
+        position: relative;
+        min-height:400px;
+    }
+    .descripcion-proceso-inscripcion,.img-proceso-inscripcion{
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+     .descripcion-proceso-inscripcion{
+        background-color: #fffefab2;
+        z-index: 2;
+    }
+}
+@media(max-width:414px){
+    .banner-proceso-inscripcion{
+        position: relative;
+        min-height:400px;
+    }
+    .descripcion-proceso-inscripcion{
+        background-color: #fffefab2;
+        z-index: 2;
+    }
+    .descripcion-proceso-inscripcion,.img-proceso-inscripcion{
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
 }

@@ -4,6 +4,7 @@
     position: relative;
     font-size: 24px;
     border: 1px solid black;
+    min-height: 300px;
 }
 
 .speciality-card img{
@@ -27,4 +28,10 @@
 p{
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+@media (max-width:1280px){
+    .speciality-card{
+        height: min-content;
+    }
 }
