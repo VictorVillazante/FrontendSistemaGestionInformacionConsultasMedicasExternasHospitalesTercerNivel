@@ -43,6 +43,7 @@ import { UsuarioNoLogeadoProcedimientosComponent } from "./components/usuario-no
 import { UsuarioNoLogeadoProcesoInscripcionComponent } from "./components/usuario-no-logeado-proceso-inscripcion/usuario-no-logeado-proceso-inscripcion.component";
 import { UsuarioNoLogeadoNoticiasComponent } from "./components/usuario-no-logeado-noticias/usuario-no-logeado-noticias.component";
 import { UsuarioNoLogeadoDetalleNoticiaComponent } from "./components/usuario-no-logeado-detalle-noticia/usuario-no-logeado-detalle-noticia.component";
+import { UsuarioNoLogeadoDescripcionMedicosComponent } from "./components/usuario-no-logeado-descripcion-medicos/usuario-no-logeado-descripcion-medicos.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -55,6 +56,7 @@ const APP_ROUTES: Routes = [
     { path: 'proceso-inscripcion', component:  UsuarioNoLogeadoProcesoInscripcionComponent},
     { path: 'noticias', component:  UsuarioNoLogeadoNoticiasComponent},
     { path: 'noticia/:id', component:  UsuarioNoLogeadoDetalleNoticiaComponent},
+    { path: 'medico/:id', component:  UsuarioNoLogeadoDescripcionMedicosComponent},
 
 
     // { path: 'menu', component:  MenuComponent},

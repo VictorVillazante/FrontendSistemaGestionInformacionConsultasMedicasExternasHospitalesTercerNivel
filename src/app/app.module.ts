@@ -65,6 +65,7 @@ import { UsuarioNoLogeadoNoticiasComponent } from './components/usuario-no-logea
 import { CardNoticiaComponent } from './shared/card-noticia/card-noticia.component';
 import { UsuarioNoLogeadoDetalleNoticiaComponent } from './components/usuario-no-logeado-detalle-noticia/usuario-no-logeado-detalle-noticia.component';
 import { SectionNoticiasComponent } from './shared/section-noticias/section-noticias.component';
+import { UsuarioNoLogeadoDescripcionMedicosComponent } from './components/usuario-no-logeado-descripcion-medicos/usuario-no-logeado-descripcion-medicos.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +126,8 @@ import { SectionNoticiasComponent } from './shared/section-noticias/section-noti
     UsuarioNoLogeadoNoticiasComponent,
     CardNoticiaComponent,
     UsuarioNoLogeadoDetalleNoticiaComponent,
-    SectionNoticiasComponent
+    SectionNoticiasComponent,
+    UsuarioNoLogeadoDescripcionMedicosComponent
   ],
   imports: [
     BrowserModule,

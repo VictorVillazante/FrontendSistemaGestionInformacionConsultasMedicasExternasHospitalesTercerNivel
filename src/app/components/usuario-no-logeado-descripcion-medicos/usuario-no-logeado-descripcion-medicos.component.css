@@ -1,0 +1,47 @@
+.contenedor-descripcion-medico{
+    min-height: 100vh;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    padding: 20px;
+}
+.medico{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.contenedor-imagen{
+    height: 400px;
+    min-height: 300px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+.contenedor-imagen img{
+    width: 100%;
+}
+.datos{
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.datos-medico,.datos-atencion{
+    min-height: 300px;
+    width: 100%;
+}
+@media (max-width:414px){
+    .medico{
+        display: flex;
+        flex-direction: column;
+    }
+    .contenedor-imagen{
+        width: 100%;
+    }
+    .datos{
+        width: 100%;
+    }
+}
