@@ -63,6 +63,8 @@ import { IconoMailComponent } from './shared/icono-mail/icono-mail.component';
 import { IconoTelefonoComponent } from './shared/icono-telefono/icono-telefono.component';
 import { UsuarioNoLogeadoNoticiasComponent } from './components/usuario-no-logeado-noticias/usuario-no-logeado-noticias.component';
 import { CardNoticiaComponent } from './shared/card-noticia/card-noticia.component';
+import { UsuarioNoLogeadoDetalleNoticiaComponent } from './components/usuario-no-logeado-detalle-noticia/usuario-no-logeado-detalle-noticia.component';
+import { SectionNoticiasComponent } from './shared/section-noticias/section-noticias.component';
 
 @NgModule({
   declarations: [
@@ -121,7 +123,9 @@ import { CardNoticiaComponent } from './shared/card-noticia/card-noticia.compone
     IconoMailComponent,
     IconoTelefonoComponent,
     UsuarioNoLogeadoNoticiasComponent,
-    CardNoticiaComponent
+    CardNoticiaComponent,
+    UsuarioNoLogeadoDetalleNoticiaComponent,
+    SectionNoticiasComponent
   ],
   imports: [
     BrowserModule,
