@@ -5,11 +5,18 @@ import { Observable, of } from 'rxjs';
 import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
 import { Noticia } from '../models/Noticia';
 import { MedicoEspecialista } from '../models/MedicoEspecialista';
+import { Especialidad } from '../models/Especialidades';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  obtenerEspecialidad(idEspecialidad: number):Observable<Especialidad> {
+    return of({
+      img:"doctor-home.png",
+      name:"Ginecología"
+    },);
+  }
   obtenerInformacionMedico(id:number):Observable<MedicoEspecialista> {
     return of({
       nombres:"Juan Jose",

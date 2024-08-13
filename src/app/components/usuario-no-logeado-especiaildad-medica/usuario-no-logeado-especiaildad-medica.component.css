@@ -1,0 +1,48 @@
+.contenedor-detalle-especialidad{
+    background-color: var(--color2);
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.especialidad{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.titulo{
+    width: 90%;
+    height: 300px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.titulo img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .5;
+}
+.titulo h2{
+    position: absolute;
+}
+@media (max-width:480px){
+    .especialidad{
+        width: 90%;
+        gap: 10px;
+    }
+    .titulo{
+        height: min-content;
+    }
+}
+app-carousel-medicos-especialistas{
+    width: 100%;
+}
