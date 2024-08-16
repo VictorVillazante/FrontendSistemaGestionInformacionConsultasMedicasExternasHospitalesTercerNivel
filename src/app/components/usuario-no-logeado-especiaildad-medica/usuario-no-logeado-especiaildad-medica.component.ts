@@ -11,6 +11,26 @@ import { ActivatedRoute } from '@angular/router';
 export class UsuarioNoLogeadoEspeciaildadMedicaComponent implements OnInit{
   idEspecialidad!:number;
   especialidad!:Especialidad;
+  requisitosProcedimientosCards=[
+    {
+      titulo: 'Procedimiento ficha medica presencial',
+      descripcion: 'Pasos detallados de procedimiento de obtencion de ficha medica',
+      ruta:"/procedimiento/ficha-medica-presencial",
+      rol:""
+    },
+    {
+      titulo: 'Requisitos minimos obtencion ficha presencial',
+      descripcion: 'Listado requisitos minimos para obtencion de ficha presencial',
+      ruta:"/requisitos/obtencion-ficha-presencial",
+      rol:""
+    },
+    {
+      titulo: 'Requisitos minimos atencion sonsulta externa',
+      descripcion: 'Listado requisitos minimos para atencion consulta externa',
+      ruta:"/requisitos/atencion-consulta-externa",
+      rol:""
+    }
+  ];
   constructor(private activatedRoute:ActivatedRoute,private informacionCentroMedicoService:InformacionCentroMedicoService){}
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{

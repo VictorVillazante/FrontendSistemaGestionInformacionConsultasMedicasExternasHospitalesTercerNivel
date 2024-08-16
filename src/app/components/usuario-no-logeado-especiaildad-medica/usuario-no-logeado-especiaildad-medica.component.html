@@ -6,5 +6,8 @@
         </div>
         <p>{{especialidad.descripcion}}</p>
     </div>
+    <div class="requisitos-procedicimientos">
+        <app-boton-tipo-background *ngFor="let requisitosProcedimiento of requisitosProcedimientosCards" [ruta]="requisitosProcedimiento.ruta+'/'+this.idEspecialidad" [titulo]="requisitosProcedimiento.titulo"/>
+    </div>
     <app-carousel-medicos-especialistas/>
 </div>

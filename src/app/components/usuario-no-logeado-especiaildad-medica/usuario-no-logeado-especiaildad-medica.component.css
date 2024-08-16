@@ -38,6 +38,16 @@
 .titulo h2{
     position: absolute;
 }
+.requisitos-procedicimientos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    
+}
 @media (max-width:480px){
     .especialidad{
         width: 90%;

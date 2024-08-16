@@ -69,6 +69,7 @@ import { UsuarioNoLogeadoDescripcionMedicosComponent } from './components/usuari
 import { UsuarioNoLogeadoEspeciaildadMedicaComponent } from './components/usuario-no-logeado-especiaildad-medica/usuario-no-logeado-especiaildad-medica.component';
 import { GestionCertificadosMedicosComponent } from './components/gestion-certificados-medicos/gestion-certificados-medicos.component';
 import { GestionPapeletasInternacionComponent } from './components/gestion-papeletas-internacion/gestion-papeletas-internacion.component';
+import { BotonTipoBackgroundComponent } from './shared/boton-tipo-background/boton-tipo-background.component';
 
 @NgModule({
   declarations: [
@@ -133,7 +134,8 @@ import { GestionPapeletasInternacionComponent } from './components/gestion-papel
     UsuarioNoLogeadoDescripcionMedicosComponent,
     UsuarioNoLogeadoEspeciaildadMedicaComponent,
     GestionCertificadosMedicosComponent,
-    GestionPapeletasInternacionComponent
+    GestionPapeletasInternacionComponent,
+    BotonTipoBackgroundComponent
   ],
   imports: [
     BrowserModule,

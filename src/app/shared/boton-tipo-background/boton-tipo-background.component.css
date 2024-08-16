@@ -1,0 +1,47 @@
+.container {
+    background-color: #007bff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    min-width: 200px;
+  }
+  
+  .card-body {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  h1 {
+    border-radius: 5px;
+  }
+  
+  .bg-dark.bg-opacity-75 {
+    background-color: rgba(52, 58, 64, 0.75);
+  }
+  .div-menu{
+    background-color: var(--color2);
+    min-height: 100vh;
+  }
+  .card-body{
+    min-height: 150px;
+    background-image: url('../../../assets/images/fondo-opciones-menu.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  .card-body-fondo-negro{
+    background-color: #00000054;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color1);
+    padding: 10px;
+  }
