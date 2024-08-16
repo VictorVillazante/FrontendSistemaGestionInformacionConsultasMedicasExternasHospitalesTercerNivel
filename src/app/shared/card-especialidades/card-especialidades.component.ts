@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Especialidad } from 'src/app/models/Especialidades';
+import { Especialidad } from 'src/app/models/Especialidad';
 
 @Component({
   selector: 'app-card-especialidades',

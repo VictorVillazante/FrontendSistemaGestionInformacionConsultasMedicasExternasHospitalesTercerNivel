@@ -1,4 +1,4 @@
 <div class="speciality-card">
     <img [src]="especialidad.img" alt="..." />
-    <div class="content"><p>{{especialidad.name}}</p><button class="btn btn-outline-white"><p>Ver mas</p></button></div>
+    <div class="content"><p>{{especialidad.name}}</p><button class="btn btn-outline-white" [routerLink]="'especialidad/'+especialidad.idEspecialidad"><p>Ver mas</p></button></div>
 </div>

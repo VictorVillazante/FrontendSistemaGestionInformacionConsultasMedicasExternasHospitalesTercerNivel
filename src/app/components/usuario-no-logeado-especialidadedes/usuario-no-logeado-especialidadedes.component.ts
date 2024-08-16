@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Especialidad } from 'src/app/models/Especialidades';
+import { Especialidad } from 'src/app/models/Especialidad';
 import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class UsuarioNoLogeadoEspecialidadedesComponent implements OnInit {
       this.indexEspecialidad=0;
     }
     let especialidad = {
+      idEspecialidad:0,
       name: "",
       img: ""
     };

@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
 import { Noticia } from '../models/Noticia';
 import { MedicoEspecialista } from '../models/MedicoEspecialista';
-import { Especialidad } from '../models/Especialidades';
+import { Especialidad } from '../models/Especialidad';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ import { Especialidad } from '../models/Especialidades';
 export class InformacionCentroMedicoService {
   obtenerEspecialidad(idEspecialidad: number):Observable<Especialidad> {
     return of({
+      idEspecialidad:1,
       img:"doctor-home.png",
       name:"Ginecología"
     },);
@@ -119,18 +120,22 @@ export class InformacionCentroMedicoService {
   obtenerEspecialidades() {
     return of([
       {
+        idEspecialidad:1,
         img:"doctor-home.png",
         name:"Ginecología"
       },
       {
+        idEspecialidad:2,
         img:"fondo-opciones-menu.jpg",
         name:"Medicina general"
       },
       {
+        idEspecialidad:3,
         img:"doctor-home.png",
         name:"Ginecología"
       },
       {
+        idEspecialidad:4,
         img:"fondo-opciones-menu.jpg",
         name:"Medicina general"
       }

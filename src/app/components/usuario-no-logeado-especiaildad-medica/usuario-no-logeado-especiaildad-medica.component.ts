@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
-import { Especialidad } from 'src/app/models/Especialidades';
+import { Especialidad } from 'src/app/models/Especialidad';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
