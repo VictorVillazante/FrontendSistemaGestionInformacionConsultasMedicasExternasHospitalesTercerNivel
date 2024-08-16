@@ -9,13 +9,16 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./gestion-notas-evolucion.component.css']
 })
 export class GestionNotasEvolucionComponent {
-  filtrarNotasEvolucion(event: Event) {
+  filtrarNotasEvolucion() {
+    console.log("filtrar")
     let notasEvolucionAuxAFiltrar=this.notasEvolucion;
-    console.log(this.fecha);
-    if(this.fecha){
+    if(this.fechaInicio && this.fechaFin){
       notasEvolucionAuxAFiltrar=notasEvolucionAuxAFiltrar.filter((notaEvolucion:any)=>{
         const fechaFormateada = formatDate(notaEvolucion.updatedAt, 'yyyy-MM-dd', 'en-US');
-        return fechaFormateada==this.fecha
+        const fechaFormateadaDate = new Date(fechaFormateada);
+        const fechaInicioDate = new Date(this.fechaInicio);
+        const fechaFinDate = new Date(this.fechaFin);
+        return fechaFormateadaDate>=fechaInicioDate && fechaFormateadaDate<=fechaFinDate;
       })
     }
     console.log(this.ciPaciente);
@@ -24,14 +27,39 @@ export class GestionNotasEvolucionComponent {
         return notaEvolucion.ciPropietario.includes(this.ciPaciente);
       })
     }
+    if(this.nombrePaciente){
+      notasEvolucionAuxAFiltrar=notasEvolucionAuxAFiltrar.filter((notaEvolucion:any)=>{
+        return notaEvolucion.pacientePropietario.includes(this.nombrePaciente);
+      })
+    }
+    if(this.nombreMedico){
+      notasEvolucionAuxAFiltrar=notasEvolucionAuxAFiltrar.filter((notaEvolucion:any)=>{
+        return notaEvolucion.nombreMedico.includes(this.nombreMedico);
+      })
+    }
+    if(this.nombreEspecialidad){
+      notasEvolucionAuxAFiltrar=notasEvolucionAuxAFiltrar.filter((notaEvolucion:any)=>{
+        return notaEvolucion.nombreEspecialidad.includes(this.nombreEspecialidad);
+      })
+    }
+    if(this.diagnosticoPresuntivo){
+      notasEvolucionAuxAFiltrar=notasEvolucionAuxAFiltrar.filter((notaEvolucion:any)=>{
+        return notaEvolucion.diagnosticoPresuntivo.includes(this.diagnosticoPresuntivo);
+      })
+    }
     this.notasEvolucionAux=notasEvolucionAuxAFiltrar;
-    if(!this.fecha && !this.ciPaciente){
+    if(!this.fechaInicio && !this.ciPaciente){
       this.notasEvolucionAux=this.notasEvolucion;
     }  
   }
   notasEvolucionAux:any[]=[];
   ciPaciente:any;
-  fecha:any;
+  nombrePaciente:any;
+  nombreMedico:any;
+  nombreEspecialidad:any;
+  diagnosticoPresuntivo:any;
+  fechaInicio:any;
+  fechaFin:any;
   notasEvolucion: any[] = [];
   constructor(private router:Router,private notaEvolucionService:NotaEvolucionService) {
     this.obtenerNotasEvolucion();

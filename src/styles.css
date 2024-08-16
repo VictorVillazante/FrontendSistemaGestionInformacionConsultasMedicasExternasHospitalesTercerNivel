@@ -80,6 +80,6 @@ h3{
 h4{
     font-size: var(--titulo4);
 }
-p,a{
+p,a,label{
     font-size: var(--texto) !important;
 }
