@@ -32,5 +32,6 @@ app-card-paso-procedimiento{
     align-items: center;
 }
 .procedimiento-pasos h2{
-    padding: 10px;
+    padding: 40px 10px;
+    text-align: center;
 }
