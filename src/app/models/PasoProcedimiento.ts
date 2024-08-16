@@ -1,5 +1,6 @@
 export class PasoProcedimiento{
+    idPasoProcedimiento:number=0;
     nombre:string="";
     descripcion:string="";
-    imagen:string="";
+    imagenes:string[]=["",""];
 }

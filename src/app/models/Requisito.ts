@@ -1,5 +1,6 @@
 export class Requisito{
+    idRequisito:number=0;
     nombre:string="";
     descripcion:string="";
-    imagen:string="";
+    imagenes:string[]=[];
 }

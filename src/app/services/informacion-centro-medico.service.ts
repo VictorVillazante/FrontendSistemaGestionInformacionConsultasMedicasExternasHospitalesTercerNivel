@@ -6,18 +6,13 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
 import { Noticia } from '../models/Noticia';
 import { MedicoEspecialista } from '../models/MedicoEspecialista';
 import { Especialidad } from '../models/Especialidad';
-
+import { EspecialidadesData } from 'src/assets/data-dev/especialidades';
 @Injectable({
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
-  obtenerEspecialidad(idEspecialidad: number):Observable<Especialidad> {
-    return of({
-      idEspecialidad:1,
-      img:"doctor-home.png",
-      name:"Ginecología"
-    },);
-  }
+  listaEspecialidades:Especialidad[]=EspecialidadesData.especialidadesDataDev.map(especialidad=>new Especialidad(especialidad));
+
   obtenerInformacionMedico(id:number):Observable<MedicoEspecialista> {
     return of({
       nombres:"Juan Jose",
@@ -118,31 +113,14 @@ export class InformacionCentroMedicoService {
     //throw new Error('Method not implemented.');
   }
   obtenerEspecialidades() {
-    return of([
-      {
-        idEspecialidad:1,
-        img:"doctor-home.png",
-        name:"Ginecología"
-      },
-      {
-        idEspecialidad:2,
-        img:"fondo-opciones-menu.jpg",
-        name:"Medicina general"
-      },
-      {
-        idEspecialidad:3,
-        img:"doctor-home.png",
-        name:"Ginecología"
-      },
-      {
-        idEspecialidad:4,
-        img:"fondo-opciones-menu.jpg",
-        name:"Medicina general"
-      }
-    ]);
+    return of(this.listaEspecialidades);
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/especialidades`);
     //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/especialidades`);
     //throw new Error('Method not implemented.');
+  }
+  obtenerEspecialidad(idEspecialidad: number):Observable<Especialidad> {
+    let especialidadBuscada=this.listaEspecialidades.filter((e)=>e.idEspecialidad==idEspecialidad)[0]
+    return of(especialidadBuscada);
   }
   obtenerTurnos() {
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/turnos`);

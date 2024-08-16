@@ -15,11 +15,10 @@ export class UsuarioNoLogeadoEspeciaildadMedicaComponent implements OnInit{
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
       this.idEspecialidad=params["id"];
+      if(this.idEspecialidad){
+        this.obtenerDatosEspecialidd(this.idEspecialidad);
+      }
     });
-    if(this.idEspecialidad){
-      this.obtenerDatosEspecialidd(this.idEspecialidad);
-    }
-   
   }
   obtenerDatosEspecialidd(idEspecialidad: number) {
     this.informacionCentroMedicoService.obtenerEspecialidad(idEspecialidad).subscribe(e=>{
