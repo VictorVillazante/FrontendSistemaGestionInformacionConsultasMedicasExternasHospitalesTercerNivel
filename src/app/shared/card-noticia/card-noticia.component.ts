@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Noticia } from 'src/app/models/Noticia';
+import { Comunicado } from 'src/app/models/Comunicado';
 
 @Component({
   selector: 'app-card-noticia',
@@ -7,5 +7,5 @@ import { Noticia } from 'src/app/models/Noticia';
   styleUrls: ['./card-noticia.component.css']
 })
 export class CardNoticiaComponent {
-  @Input() noticia!:Noticia;
+  @Input() comunicado!:Comunicado;
 }

@@ -3,16 +3,32 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
-import { Noticia } from '../models/Noticia';
+import { Comunicado } from '../models/Comunicado';
 import { MedicoEspecialista } from '../models/MedicoEspecialista';
 import { Especialidad } from '../models/Especialidad';
 import { EspecialidadesData } from 'src/assets/data-dev/especialidades';
+import { ComunicadosDataDev } from 'src/assets/data-dev/comunicados';
 @Injectable({
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
-  listaEspecialidades:Especialidad[]=EspecialidadesData.especialidadesDataDev.map(especialidad=>new Especialidad(especialidad));
+  obtenerInformacionCentroSalud() {
+    return of({
+      descripcionProcesoInscripcion:"",
+      procedimientoProcesoInscripcion:[
+        { "idPasoProcedimiento": 1, "nombre": "Paso 1", "descripcion": "Presentarse en la recepción con documentos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
+        { "idPasoProcedimiento": 2, "nombre": "Paso 2", "descripcion": "Completar el formulario de solicitud.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
 
+      ],
+      requisitosProcesoInscripcion:[
+        { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
+        { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica completa.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
+
+      ]
+    })
+  }
+  listaEspecialidades:Especialidad[]=EspecialidadesData.especialidadesDataDev.map(especialidad=>new Especialidad(especialidad));
+  listaComunicados:Comunicado[]=ComunicadosDataDev.listaComunicados.map(comunicado=>new Comunicado().jsonToComunicado(comunicado))
   obtenerInformacionMedico(id:number):Observable<MedicoEspecialista> {
     return of({
       nombres:"Juan Jose",
@@ -21,46 +37,14 @@ export class InformacionCentroMedicoService {
       imagen:"fondo-opciones-menu.jpg"
     });
   }
-  obtenerNoticia(id:number):Observable<Noticia>{
-    return of({
-      titulo: "Noticia n",
-      descripcion: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis sapien eu est lobortis, sit amet aliquam diam iaculis. Nulla pulvinar lacus mauris, in convallis odio elementum eu. Duis a dolor feugiat, accumsan libero a, volutpat risus. Cras at pretium ante. Nullam condimentum purus tortor, nec sagittis ipsum mattis a. Nam molestie mollis mauris, ut convallis diam molestie eget. Nulla eu diam at felis porttitor dapibus. Nam luctus augue ut nisl euismod, eu suscipit velit gravida. Integer fermentum mi quis quam consectetur ultrices. Nullam in mauris a augue tempus commodo ut ac neque. Pellentesque in arcu purus. Sed eu sem turpis."+
-      "\norbi sit amet ligula consectetur, ultrices risus id, fermentum orci.Aenean feugiat interdum finibus.In lectus nibh, sodales vitae velit eu, tincidunt sagittis ante.Duis hendrerit vel felis in elementum.Vivamus rutrum viverra metus cursus consequat.Morbi eget sodales leo, in pretium massa.Cras nec sagittis purus.Aenean semper, augue vitae vehicula vestibulum, lacus mi laoreet erat, non tincidunt ligula elit pharetra neque.Praesent sit amet felis pharetra, ultrices tortor at, laoreet felis.Morbi lacinia quis nisi quis lacinia.Nullam eget turpis ligula.Fusce sit amet rhoncus est.Integer vulputate ornare tincidunt.Quisque eget ullamcorper quam.Cras nunc turpis, blandit et ante nec, tempus posuere orci."+
-      "\nVivamus lobortis odio vitae posuere pellentesque.Vestibulum nisi arcu, feugiat sed tristique vitae, fringilla id ante.Praesent eget bibendum nunc.Fusce dictum, nisi non suscipit blandit, arcu lorem tincidunt nunc, in bibendum enim nunc nec diam.Nulla orci lectus, feugiat vel imperdiet in, vulputate et turpis.Mauris semper metus velit, interdum gravida nulla fermentum id.In sed arcu est."+
-      "\nMaecenas sodales sollicitudin eros.Aenean id ex ut lectus molestie fringilla vehicula et dolor.Integer ullamcorper varius massa eu aliquam.Morbi maximus posuere velit vulputate interdum.Proin dignissim nibh a orci ullamcorper, vel placerat augue auctor.Sed posuere facilisis sapien, id aliquam ante semper eu.Cras quis nulla convallis, facilisis metus quis, facilisis urna.Proin feugiat cursus tempus.Duis sed felis sit amet lorem mollis facilisis mattis a orci.Nunc id felis in augue euismod rhoncus.Donec non magna tellus.Interdum et malesuada fames ac ante ipsum primis in faucibus.Integer fermentum elementum magna vitae ultrices.Nullam iaculis felis quis turpis bibendum, quis venenatis nisi aliquet. ",
-      imagen: "fondo-opciones-menu.jpg"
-    });
+  obtenerComunicado(idComunicado:number):Observable<Comunicado>{
+    return of(this.listaComunicados.filter(comunicado=>comunicado.idComunicado==idComunicado)[0]);
   }
-  obtenerNoticias():Observable<Noticia[]>{
-    return of([{
-      titulo: "Noticia n",
-      descripcion: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis sapien eu est lobortis, sit amet aliquam diam iaculis. Nulla pulvinar lacus mauris, in convallis odio elementum eu. Duis a dolor feugiat, accumsan libero a, volutpat risus. Cras at pretium ante. Nullam condimentum purus tortor, nec sagittis ipsum mattis a. Nam molestie mollis mauris, ut convallis diam molestie eget. Nulla eu diam at felis porttitor dapibus. Nam luctus augue ut nisl euismod, eu suscipit velit gravida. Integer fermentum mi quis quam consectetur ultrices. Nullam in mauris a augue tempus commodo ut ac neque. Pellentesque in arcu purus. Sed eu sem turpis."+
-      "\norbi sit amet ligula consectetur, ultrices risus id, fermentum orci.Aenean feugiat interdum finibus.In lectus nibh, sodales vitae velit eu, tincidunt sagittis ante.Duis hendrerit vel felis in elementum.Vivamus rutrum viverra metus cursus consequat.Morbi eget sodales leo, in pretium massa.Cras nec sagittis purus.Aenean semper, augue vitae vehicula vestibulum, lacus mi laoreet erat, non tincidunt ligula elit pharetra neque.Praesent sit amet felis pharetra, ultrices tortor at, laoreet felis.Morbi lacinia quis nisi quis lacinia.Nullam eget turpis ligula.Fusce sit amet rhoncus est.Integer vulputate ornare tincidunt.Quisque eget ullamcorper quam.Cras nunc turpis, blandit et ante nec, tempus posuere orci."+
-      "\nVivamus lobortis odio vitae posuere pellentesque.Vestibulum nisi arcu, feugiat sed tristique vitae, fringilla id ante.Praesent eget bibendum nunc.Fusce dictum, nisi non suscipit blandit, arcu lorem tincidunt nunc, in bibendum enim nunc nec diam.Nulla orci lectus, feugiat vel imperdiet in, vulputate et turpis.Mauris semper metus velit, interdum gravida nulla fermentum id.In sed arcu est."+
-      "\nMaecenas sodales sollicitudin eros.Aenean id ex ut lectus molestie fringilla vehicula et dolor.Integer ullamcorper varius massa eu aliquam.Morbi maximus posuere velit vulputate interdum.Proin dignissim nibh a orci ullamcorper, vel placerat augue auctor.Sed posuere facilisis sapien, id aliquam ante semper eu.Cras quis nulla convallis, facilisis metus quis, facilisis urna.Proin feugiat cursus tempus.Duis sed felis sit amet lorem mollis facilisis mattis a orci.Nunc id felis in augue euismod rhoncus.Donec non magna tellus.Interdum et malesuada fames ac ante ipsum primis in faucibus.Integer fermentum elementum magna vitae ultrices.Nullam iaculis felis quis turpis bibendum, quis venenatis nisi aliquet. ",
-      imagen: "fondo-opciones-menu.jpg"
-    },{
-      titulo: "Noticia n",
-      descripcion: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis sapien eu est lobortis, sit amet aliquam diam iaculis. Nulla pulvinar lacus mauris, in convallis odio elementum eu. Duis a dolor feugiat, accumsan libero a, volutpat risus. Cras at pretium ante. Nullam condimentum purus tortor, nec sagittis ipsum mattis a. Nam molestie mollis mauris, ut convallis diam molestie eget. Nulla eu diam at felis porttitor dapibus. Nam luctus augue ut nisl euismod, eu suscipit velit gravida. Integer fermentum mi quis quam consectetur ultrices. Nullam in mauris a augue tempus commodo ut ac neque. Pellentesque in arcu purus. Sed eu sem turpis."+
-      "\norbi sit amet ligula consectetur, ultrices risus id, fermentum orci.Aenean feugiat interdum finibus.In lectus nibh, sodales vitae velit eu, tincidunt sagittis ante.Duis hendrerit vel felis in elementum.Vivamus rutrum viverra metus cursus consequat.Morbi eget sodales leo, in pretium massa.Cras nec sagittis purus.Aenean semper, augue vitae vehicula vestibulum, lacus mi laoreet erat, non tincidunt ligula elit pharetra neque.Praesent sit amet felis pharetra, ultrices tortor at, laoreet felis.Morbi lacinia quis nisi quis lacinia.Nullam eget turpis ligula.Fusce sit amet rhoncus est.Integer vulputate ornare tincidunt.Quisque eget ullamcorper quam.Cras nunc turpis, blandit et ante nec, tempus posuere orci."+
-      "\nVivamus lobortis odio vitae posuere pellentesque.Vestibulum nisi arcu, feugiat sed tristique vitae, fringilla id ante.Praesent eget bibendum nunc.Fusce dictum, nisi non suscipit blandit, arcu lorem tincidunt nunc, in bibendum enim nunc nec diam.Nulla orci lectus, feugiat vel imperdiet in, vulputate et turpis.Mauris semper metus velit, interdum gravida nulla fermentum id.In sed arcu est."+
-      "\nMaecenas sodales sollicitudin eros.Aenean id ex ut lectus molestie fringilla vehicula et dolor.Integer ullamcorper varius massa eu aliquam.Morbi maximus posuere velit vulputate interdum.Proin dignissim nibh a orci ullamcorper, vel placerat augue auctor.Sed posuere facilisis sapien, id aliquam ante semper eu.Cras quis nulla convallis, facilisis metus quis, facilisis urna.Proin feugiat cursus tempus.Duis sed felis sit amet lorem mollis facilisis mattis a orci.Nunc id felis in augue euismod rhoncus.Donec non magna tellus.Interdum et malesuada fames ac ante ipsum primis in faucibus.Integer fermentum elementum magna vitae ultrices.Nullam iaculis felis quis turpis bibendum, quis venenatis nisi aliquet. ",
-      imagen: "fondo-opciones-menu.jpg"
-    },{
-      titulo: "Noticia n",
-      descripcion: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis sapien eu est lobortis, sit amet aliquam diam iaculis. Nulla pulvinar lacus mauris, in convallis odio elementum eu. Duis a dolor feugiat, accumsan libero a, volutpat risus. Cras at pretium ante. Nullam condimentum purus tortor, nec sagittis ipsum mattis a. Nam molestie mollis mauris, ut convallis diam molestie eget. Nulla eu diam at felis porttitor dapibus. Nam luctus augue ut nisl euismod, eu suscipit velit gravida. Integer fermentum mi quis quam consectetur ultrices. Nullam in mauris a augue tempus commodo ut ac neque. Pellentesque in arcu purus. Sed eu sem turpis."+
-      "\norbi sit amet ligula consectetur, ultrices risus id, fermentum orci.Aenean feugiat interdum finibus.In lectus nibh, sodales vitae velit eu, tincidunt sagittis ante.Duis hendrerit vel felis in elementum.Vivamus rutrum viverra metus cursus consequat.Morbi eget sodales leo, in pretium massa.Cras nec sagittis purus.Aenean semper, augue vitae vehicula vestibulum, lacus mi laoreet erat, non tincidunt ligula elit pharetra neque.Praesent sit amet felis pharetra, ultrices tortor at, laoreet felis.Morbi lacinia quis nisi quis lacinia.Nullam eget turpis ligula.Fusce sit amet rhoncus est.Integer vulputate ornare tincidunt.Quisque eget ullamcorper quam.Cras nunc turpis, blandit et ante nec, tempus posuere orci."+
-      "\nVivamus lobortis odio vitae posuere pellentesque.Vestibulum nisi arcu, feugiat sed tristique vitae, fringilla id ante.Praesent eget bibendum nunc.Fusce dictum, nisi non suscipit blandit, arcu lorem tincidunt nunc, in bibendum enim nunc nec diam.Nulla orci lectus, feugiat vel imperdiet in, vulputate et turpis.Mauris semper metus velit, interdum gravida nulla fermentum id.In sed arcu est."+
-      "\nMaecenas sodales sollicitudin eros.Aenean id ex ut lectus molestie fringilla vehicula et dolor.Integer ullamcorper varius massa eu aliquam.Morbi maximus posuere velit vulputate interdum.Proin dignissim nibh a orci ullamcorper, vel placerat augue auctor.Sed posuere facilisis sapien, id aliquam ante semper eu.Cras quis nulla convallis, facilisis metus quis, facilisis urna.Proin feugiat cursus tempus.Duis sed felis sit amet lorem mollis facilisis mattis a orci.Nunc id felis in augue euismod rhoncus.Donec non magna tellus.Interdum et malesuada fames ac ante ipsum primis in faucibus.Integer fermentum elementum magna vitae ultrices.Nullam iaculis felis quis turpis bibendum, quis venenatis nisi aliquet. ",
-      imagen: "fondo-opciones-menu.jpg"
-    },{
-      titulo: "Noticia n",
-      descripcion: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis sapien eu est lobortis, sit amet aliquam diam iaculis. Nulla pulvinar lacus mauris, in convallis odio elementum eu. Duis a dolor feugiat, accumsan libero a, volutpat risus. Cras at pretium ante. Nullam condimentum purus tortor, nec sagittis ipsum mattis a. Nam molestie mollis mauris, ut convallis diam molestie eget. Nulla eu diam at felis porttitor dapibus. Nam luctus augue ut nisl euismod, eu suscipit velit gravida. Integer fermentum mi quis quam consectetur ultrices. Nullam in mauris a augue tempus commodo ut ac neque. Pellentesque in arcu purus. Sed eu sem turpis."+
-      "\norbi sit amet ligula consectetur, ultrices risus id, fermentum orci.Aenean feugiat interdum finibus.In lectus nibh, sodales vitae velit eu, tincidunt sagittis ante.Duis hendrerit vel felis in elementum.Vivamus rutrum viverra metus cursus consequat.Morbi eget sodales leo, in pretium massa.Cras nec sagittis purus.Aenean semper, augue vitae vehicula vestibulum, lacus mi laoreet erat, non tincidunt ligula elit pharetra neque.Praesent sit amet felis pharetra, ultrices tortor at, laoreet felis.Morbi lacinia quis nisi quis lacinia.Nullam eget turpis ligula.Fusce sit amet rhoncus est.Integer vulputate ornare tincidunt.Quisque eget ullamcorper quam.Cras nunc turpis, blandit et ante nec, tempus posuere orci."+
-      "\nVivamus lobortis odio vitae posuere pellentesque.Vestibulum nisi arcu, feugiat sed tristique vitae, fringilla id ante.Praesent eget bibendum nunc.Fusce dictum, nisi non suscipit blandit, arcu lorem tincidunt nunc, in bibendum enim nunc nec diam.Nulla orci lectus, feugiat vel imperdiet in, vulputate et turpis.Mauris semper metus velit, interdum gravida nulla fermentum id.In sed arcu est."+
-      "\nMaecenas sodales sollicitudin eros.Aenean id ex ut lectus molestie fringilla vehicula et dolor.Integer ullamcorper varius massa eu aliquam.Morbi maximus posuere velit vulputate interdum.Proin dignissim nibh a orci ullamcorper, vel placerat augue auctor.Sed posuere facilisis sapien, id aliquam ante semper eu.Cras quis nulla convallis, facilisis metus quis, facilisis urna.Proin feugiat cursus tempus.Duis sed felis sit amet lorem mollis facilisis mattis a orci.Nunc id felis in augue euismod rhoncus.Donec non magna tellus.Interdum et malesuada fames ac ante ipsum primis in faucibus.Integer fermentum elementum magna vitae ultrices.Nullam iaculis felis quis turpis bibendum, quis venenatis nisi aliquet. ",
-      imagen: "fondo-opciones-menu.jpg"
-    }]);
+  obtenerComunicados():Observable<Comunicado[]>{
+    return of(this.listaComunicados);
+  }
+  obtenerNoticiasRecientes():Observable<Comunicado[]>{
+    return of(this.listaComunicados);
   }
   registrarTurnoAtencion(formularioTurnoAtencionMedica:any) {
     let formularioTurnoAtencionMedicaAux=formularioTurnoAtencionMedica.value;

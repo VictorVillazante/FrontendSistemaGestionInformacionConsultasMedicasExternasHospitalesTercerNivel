@@ -27,3 +27,16 @@
     overflow: scroll;
     height: 80%;
 }
+@media (max-width:415px){
+    .requisito{
+        flex-direction: column-reverse;
+        height: auto;
+        border: 1px solid black;
+    }
+    .requisito-info{
+        padding: 10px;
+    }
+    .requisito-img,.requisito-info{
+        width: 100%;
+    }
+}

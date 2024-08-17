@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Noticia } from 'src/app/models/Noticia';
+import { Comunicado } from 'src/app/models/Comunicado';
 import { ScriptsService } from 'src/app/services/scripts.service';
 import { v4 as uuidv4 } from 'uuid';
 import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
@@ -11,12 +11,12 @@ import { InformacionCentroMedicoService } from '../../services/informacion-centr
 })
 export class SectionNoticiasComponent implements OnInit{
   id: string = uuidv4().replace(/-/g, '');
-  listadoNoticias: Noticia[] = [];
+  listadoComunicados: Comunicado[] = [];
   constructor(private scriptsService: ScriptsService,private informacionCentroMedicoService:InformacionCentroMedicoService) {
   }
   ngOnInit(): void {
-    this.informacionCentroMedicoService.obtenerNoticias().subscribe(noticias=>{
-      this.listadoNoticias=noticias;
+    this.informacionCentroMedicoService.obtenerNoticiasRecientes().subscribe(noticias=>{
+      this.listadoComunicados=noticias;
     })
   }
   ngAfterViewInit(): void {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
-import { Noticia } from '../../models/Noticia';
+import { Comunicado } from '../../models/Comunicado';
 
 @Component({
   selector: 'app-usuario-no-logeado-detalle-noticia',
@@ -10,7 +10,7 @@ import { Noticia } from '../../models/Noticia';
 })
 export class UsuarioNoLogeadoDetalleNoticiaComponent implements OnInit {
   idNoticia: number = 0;
-  noticia!:Noticia;
+  noticia!:Comunicado;
   constructor(private activatedRoute: ActivatedRoute, private informacionCentroMedicoService: InformacionCentroMedicoService) { }
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -19,7 +19,7 @@ export class UsuarioNoLogeadoDetalleNoticiaComponent implements OnInit {
     })
   }
   obtenerNoticia(id:number){
-    this.informacionCentroMedicoService.obtenerNoticia(this.idNoticia).subscribe((noticia) => {
+    this.informacionCentroMedicoService.obtenerComunicado(this.idNoticia).subscribe((noticia) => {
       this.noticia=noticia;
     })
   }

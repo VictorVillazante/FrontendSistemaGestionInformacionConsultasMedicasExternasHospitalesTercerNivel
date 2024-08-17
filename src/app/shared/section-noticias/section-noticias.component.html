@@ -1,12 +1,12 @@
 <div class="section-noticias">
-    <h2>Noticias</h2>
+    <h2>Comunicados</h2>
     <div [id]="id" class="carousel" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div
           class="carousel-item"
-          *ngFor="let noticia of listadoNoticias"
+          *ngFor="let comunicado of listadoComunicados"
         >
-          <app-card-noticia [noticia]="noticia" />
+          <app-card-noticia [comunicado]="comunicado" />
         </div>
       </div>
       <button
@@ -28,5 +28,5 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <button class="btn btn-success-hospital" routerLink="/especialidades-atencion"><p>Ver mas</p></button>
+    <button class="btn btn-success-hospital" routerLink="/comunicados"><p>Ver mas</p></button>
   </div> 

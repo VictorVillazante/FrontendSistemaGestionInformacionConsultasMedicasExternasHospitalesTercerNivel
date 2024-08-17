@@ -55,8 +55,8 @@ const APP_ROUTES: Routes = [
     { path: 'requisitos/:tipo/:id', component:  UsuarioNoLogeadoRequisitosComponent},
     { path: 'procedimiento/:tipo/:id', component:  UsuarioNoLogeadoProcedimientosComponent},
     { path: 'proceso-inscripcion', component:  UsuarioNoLogeadoProcesoInscripcionComponent},
-    { path: 'noticias', component:  UsuarioNoLogeadoNoticiasComponent},
-    { path: 'noticia/:id', component:  UsuarioNoLogeadoDetalleNoticiaComponent},
+    { path: 'comunicados', component:  UsuarioNoLogeadoNoticiasComponent},
+    { path: 'comunicado/:id', component:  UsuarioNoLogeadoDetalleNoticiaComponent},
     { path: 'descripcion-medico/:id', component:  UsuarioNoLogeadoDescripcionMedicosComponent},
     { path: 'especialidad/:id', component:  UsuarioNoLogeadoEspeciaildadMedicaComponent},
 
