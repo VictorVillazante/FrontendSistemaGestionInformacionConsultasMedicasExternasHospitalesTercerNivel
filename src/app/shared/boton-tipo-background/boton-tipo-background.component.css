@@ -45,3 +45,6 @@
     color: var(--color1);
     padding: 10px;
   }
+  .w-100p{
+    width: 100%;
+  }

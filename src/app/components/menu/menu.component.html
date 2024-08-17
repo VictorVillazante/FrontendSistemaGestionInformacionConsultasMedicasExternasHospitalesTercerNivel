@@ -2,7 +2,7 @@
     <h1 class="text-center p-3">Menú</h1>
     <div class="row">
       <div *ngFor="let card of cards" class="col-md-4 mb-4">
-        <app-boton-tipo-background [ruta]="card.route" [titulo]="card.title"/>
+        <app-boton-tipo-background [ruta]="card.route" [titulo]="card.title" clase="w-100p"/>
         <!-- <div [routerLink]="card.route" class="card text-center">
           <div class="card-body p-0 d-flex justify-content-center align-items-center">
             <div class="card-body-fondo-negro">

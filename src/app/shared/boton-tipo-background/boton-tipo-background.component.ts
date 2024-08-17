@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class BotonTipoBackgroundComponent {
   @Input() ruta:string="";
   @Input() titulo:string="";
+  @Input() clase:string="";
+
   constructor(private route:Router){}
   cambiarRutaVista(){
    this.route.navigate([this.ruta]);
