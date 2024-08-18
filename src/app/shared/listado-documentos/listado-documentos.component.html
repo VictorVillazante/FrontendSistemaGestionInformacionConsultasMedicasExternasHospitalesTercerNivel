@@ -12,7 +12,7 @@
     ></div>
     <div class="datos-opciones-doc">
       <p class="dato-info">
-        Nota de evolucion {{ dato.id }}<br />
+        {{tipoDocumento}} {{ dato.id }}<br />
         Fecha creacion: {{ dato.createdAt | dateFormat : "dd-MM-yyyy" }} <br />
         Fecha actualizacion: {{ dato.updatedAt | dateFormat : "dd-MM-yyyy"
         }}<br />

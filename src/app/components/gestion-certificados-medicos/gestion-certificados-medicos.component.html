@@ -1,1 +1,18 @@
-<p>gestion-certificados-medicos works!</p>
+<div class="container mt-5">
+  <app-formulario-filtrado-documentos
+    [documentos]="listaCertificadosMedico"
+    (documentosEvent)="handleCertificadoMedico($event)"
+  ></app-formulario-filtrado-documentos>
+  <button
+    class="btn btn-success-hospital"
+    routerLink="/medico/registro-certificado-medico"
+  >
+    Registrar certificado medico
+  </button>
+  <app-listado-documentos
+    [documentos]="listaCertificadosMedico"
+    tipoDocumento="Certificado medico"
+    [actualizarDocumento]="actualizarCertificadoMedico"
+    [verDetalleDocumento]="detalleCertificadoMedico"
+  ></app-listado-documentos>
+</div>
