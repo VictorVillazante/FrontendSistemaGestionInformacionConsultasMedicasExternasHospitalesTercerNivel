@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <h1 class="p-3">Gestion de interconsultas</h1>
+  <app-formulario-filtrado-documentos
+    [documentos]="listadoInterconsultas"
+    (documentosEvent)="handleInterconsultas($event)"
+  ></app-formulario-filtrado-documentos>
+  <button
+    class="btn btn-success-hospital"
+    routerLink="/medico/registro-interconsulta"
+  >
+    Registrar interconsulta
+  </button>
+  <app-listado-documentos [documentos]="listadoInterconsultas" [actualizarDocumento]="actualizarInterconsultas" [verDetalleDocumento]="verDetalleInterconsultaa"></app-listado-documentos>
+</div>

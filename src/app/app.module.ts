@@ -73,6 +73,7 @@ import { BotonTipoBackgroundComponent } from './shared/boton-tipo-background/bot
 import { DateFormatPipe } from './util/pipes/date-format.pipe';
 import { ListadoDocumentosComponent } from './shared/listado-documentos/listado-documentos.component';
 import { FormularioFiltradoDocumentosComponent } from './shared/formulario-filtrado-documentos/formulario-filtrado-documentos.component';
+import { GestionInterconsultasComponent } from './components/gestion-interconsultas/gestion-interconsultas.component';
 
 @NgModule({
   declarations: [
@@ -141,7 +142,8 @@ import { FormularioFiltradoDocumentosComponent } from './shared/formulario-filtr
     BotonTipoBackgroundComponent,
     DateFormatPipe,
     ListadoDocumentosComponent,
-    FormularioFiltradoDocumentosComponent
+    FormularioFiltradoDocumentosComponent,
+    GestionInterconsultasComponent
   ],
   imports: [
     BrowserModule,
