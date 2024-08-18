@@ -74,6 +74,7 @@ import { DateFormatPipe } from './util/pipes/date-format.pipe';
 import { ListadoDocumentosComponent } from './shared/listado-documentos/listado-documentos.component';
 import { FormularioFiltradoDocumentosComponent } from './shared/formulario-filtrado-documentos/formulario-filtrado-documentos.component';
 import { GestionInterconsultasComponent } from './components/gestion-interconsultas/gestion-interconsultas.component';
+import { GestionExamenesComplementariosComponent } from './components/gestion-examenes-complementarios/gestion-examenes-complementarios.component';
 
 @NgModule({
   declarations: [
@@ -143,7 +144,8 @@ import { GestionInterconsultasComponent } from './components/gestion-interconsul
     DateFormatPipe,
     ListadoDocumentosComponent,
     FormularioFiltradoDocumentosComponent,
-    GestionInterconsultasComponent
+    GestionInterconsultasComponent,
+    GestionExamenesComplementariosComponent
   ],
   imports: [
     BrowserModule,
