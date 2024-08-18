@@ -1,11 +1,19 @@
 <div class="container mt-5">
   <h1 class="text-center p-3">Gestion historias clinicas</h1>
-  <app-formulario-filtrado-documentos [documentos]="historiasClinicas" (documentosEvent)="handleHistoriasClinicas($event)"></app-formulario-filtrado-documentos>
+  <app-formulario-filtrado-documentos
+    [documentos]="historiasClinicas"
+    (documentosEvent)="handleHistoriasClinicas($event)"
+  ></app-formulario-filtrado-documentos>
   <button
     class="btn btn-success-hospital"
     routerLink="/medico/registro-historia-clinica"
   >
     Registrar historia clinica
   </button>
-  <app-listado-documentos [documentos]="historiasClinicas" tipoDocumento="Historia clinica" [actualizarDocumento]="editarHistoriaClinica" [verDetalleDocumento]="verDetallerHistoriaClinica"></app-listado-documentos>
+  <app-listado-documentos
+    [documentos]="historiasClinicas"
+    tipoDocumento="Historia clinica"
+    [actualizarDocumento]="editarHistoriaClinica"
+    [verDetalleDocumento]="verDetallerHistoriaClinica"
+  ></app-listado-documentos>
 </div>

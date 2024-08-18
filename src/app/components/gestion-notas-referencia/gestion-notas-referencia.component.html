@@ -1,26 +1,19 @@
 <div class="container mt-5">
-    <h1 class="text-center p-3">Gestion notas de referencia</h1>
-    <button
-      class="btn btn-success-hospital"
-      routerLink="/medico/registro-nota-referencia"
-    >
-      Registrar nota de referencia
-    </button>
-    <ul class="list-group">
-        <li *ngFor="let dato of notasReferencia; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
-          <p class="dato-info">
-            Nota de referencia {{ dato.idNotaReferencia }}<br/>
-            Fecha creacion: {{ dato.createdAt }} <br/>
-            Fecha actualizacion: {{ dato.updatedAt }}<br/>
-            Historia clinica: {{ dato.idHistoriaClinica }} <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(dato.idHistoriaClinica)"></i><br/>
-            Paciente propietario: {{ dato.pacientePropietario }}<br/>
-            CI paciente propietario: {{ dato.ciPropietario }}<br/>
-
-          </p>
-          <div class="botones-opciones">
-            <i class="fas fa-edit me-2" (click)="editarDato(dato.idNotaReferencia)"></i>
-            <i class="fas fa-chevron-right me-2" (click)="verDetalles(dato.idNotaReferencia)"></i>
-          </div>
-        </li>
-      </ul>
-  </div>
+  <h1 class="text-center p-3">Gestion notas de referencia</h1>
+  <app-formulario-filtrado-documentos
+    [documentos]="notasReferencia"
+    (documentosEvent)="handleNotasReferencia($event)"
+  ></app-formulario-filtrado-documentos>
+  <button
+    class="btn btn-success-hospital"
+    routerLink="/medico/registro-nota-referencia"
+  >
+    Registrar nota de referencia
+  </button>
+  <app-listado-documentos
+    [documentos]="notasReferencia"
+    tipoDocumento="Nota de referencia"
+    [actualizarDocumento]="editarNotaReferencia"
+    [verDetalleDocumento]="verDetallesNotasReferencia"
+  ></app-listado-documentos>
+</div>

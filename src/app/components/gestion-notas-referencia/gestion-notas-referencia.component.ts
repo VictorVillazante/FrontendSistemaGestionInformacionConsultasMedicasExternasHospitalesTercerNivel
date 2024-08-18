@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NotasReferenciaService } from 'src/app/services/notas-referencia.service';
 
@@ -7,27 +7,31 @@ import { NotasReferenciaService } from 'src/app/services/notas-referencia.servic
   templateUrl: './gestion-notas-referencia.component.html',
   styleUrls: ['./gestion-notas-referencia.component.css']
 })
-export class GestionNotasReferenciaComponent {
+export class GestionNotasReferenciaComponent implements OnInit{
+  handleNotasReferencia($event: any) {
+    this.notasReferencia=$event;
+  }
   verDetalleHistoriaClinica(idHistoriaClinica: any) {
     const url = this.router.serializeUrl(
-     this.router.createUrlTree(['/medico/modificar-historia-clinica', idHistoriaClinica])
-   );
-   window.open(url, '_blank');
-   }
+      this.router.createUrlTree(['/medico/modificar-historia-clinica', idHistoriaClinica])
+    );
+    window.open(url, '_blank');
+  }
 
   notasReferencia: any[] = [];
-  constructor(private router:Router,private notasReferenciaService:NotasReferenciaService) {
-    this.obtenerNotasReferencia();
-   }
-   obtenerNotasReferencia(){
-    this.notasReferenciaService.obtenerNotasReferencia().subscribe((data:any)=>{
-      this.notasReferencia=data;
+  constructor(private router: Router, private notasReferenciaService: NotasReferenciaService) {}
+  ngOnInit(): void {
+    this.obtenerNotasReferencia();    
+  }
+  obtenerNotasReferencia() {
+    this.notasReferenciaService.obtenerNotasReferencia().subscribe((data: any) => {
+      this.notasReferencia = data;
     });
   }
-  verDetalles(id:any){
-    this.router.navigate(["/detalle-nota-referencia",id]);
+  verDetallesNotasReferencia(id: any) {
+    this.router.navigate(["/detalle-nota-referencia", id]);
   }
-  editarDato(id: any) {
-    this.router.navigate(["/medico/modificar-nota-referencia",id]);
+  editarNotaReferencia(id: any) {
+    this.router.navigate(["/medico/modificar-nota-referencia", id]);
   }
 }
