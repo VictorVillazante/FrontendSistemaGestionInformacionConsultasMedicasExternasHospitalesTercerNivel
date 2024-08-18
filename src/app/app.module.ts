@@ -70,6 +70,9 @@ import { UsuarioNoLogeadoEspeciaildadMedicaComponent } from './components/usuari
 import { GestionCertificadosMedicosComponent } from './components/gestion-certificados-medicos/gestion-certificados-medicos.component';
 import { GestionPapeletasInternacionComponent } from './components/gestion-papeletas-internacion/gestion-papeletas-internacion.component';
 import { BotonTipoBackgroundComponent } from './shared/boton-tipo-background/boton-tipo-background.component';
+import { DateFormatPipe } from './util/pipes/date-format.pipe';
+import { ListadoDocumentosComponent } from './shared/listado-documentos/listado-documentos.component';
+import { FormularioFiltradoDocumentosComponent } from './shared/formulario-filtrado-documentos/formulario-filtrado-documentos.component';
 
 @NgModule({
   declarations: [
@@ -135,7 +138,10 @@ import { BotonTipoBackgroundComponent } from './shared/boton-tipo-background/bot
     UsuarioNoLogeadoEspeciaildadMedicaComponent,
     GestionCertificadosMedicosComponent,
     GestionPapeletasInternacionComponent,
-    BotonTipoBackgroundComponent
+    BotonTipoBackgroundComponent,
+    DateFormatPipe,
+    ListadoDocumentosComponent,
+    FormularioFiltradoDocumentosComponent
   ],
   imports: [
     BrowserModule,

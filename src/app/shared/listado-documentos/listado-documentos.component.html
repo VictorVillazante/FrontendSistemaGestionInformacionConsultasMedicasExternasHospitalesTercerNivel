@@ -1,0 +1,40 @@
+<ul class="list-group">
+  <li
+    *ngFor="let dato of documentos; let i = index"
+    [class.bg-color-blue-hospital]="i % 2 === 0"
+    [class.text-white]="i % 2 === 0"
+    class="d-flex align-items-center"
+  >
+    <div
+      class="img-doc"
+      [class.bg-img-doc-1]="i % 2 == 0"
+      [class.bg-img-doc-2]="i % 2 != 0"
+    ></div>
+    <div class="datos-opciones-doc">
+      <p class="dato-info">
+        Nota de evolucion {{ dato.id }}<br />
+        Fecha creacion: {{ dato.createdAt | dateFormat : "dd-MM-yyyy" }} <br />
+        Fecha actualizacion: {{ dato.updatedAt | dateFormat : "dd-MM-yyyy"
+        }}<br />
+        Historia clinica: {{ dato.idHistoriaClinica }}
+        <i
+          class="fas fa-share-square"
+          (click)="verDetalleHistoriaClinica(dato.idHistoriaClinica)"
+        ></i
+        ><br />
+        Paciente propietario: {{ dato.pacientePropietario }}<br />
+        CI paciente propietario: {{ dato.ciPropietario }}<br />
+      </p>
+      <div class="botones-opciones">
+        <i
+          class="fas fa-edit me-2"
+          (click)="actualizarDocumento(dato.id)"
+        ></i>
+        <i
+          class="fas fa-chevron-right me-2"
+          (click)="verDetalleDocumento(dato.id)"
+        ></i>
+      </div>
+    </div>
+  </li>
+</ul>

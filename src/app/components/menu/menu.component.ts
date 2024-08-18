@@ -50,13 +50,7 @@ export class MenuComponent {
       route:"/medico/gestion-historias-clinicas",
       rol:"MEDICO"
     },
-    {
-      title: 'Gestión de pacientes',
-      description: '',
-      image: 'url("https://images.unsplash.com/photo-1580281657521-7805f5a4e552?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
-      route:"/administrador/gestion-pacientes",
-      rol:"ADMINISTRADOR"
-    },
+    
     {
       title: 'Gestión de Notas de Referencia',
       description: 'Administra notas de referencia de manera eficiente y segura.',
@@ -83,6 +77,13 @@ export class MenuComponent {
       description: 'Administra informacion de medicos de manera eficiente y segura.',
       image: 'url("https://images.unsplash.com/photo-1580281657521-7805f5a4e552?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
       route:"/administrador/gestion-medicos",
+      rol:"ADMINISTRADOR"
+    },
+    {
+      title: 'Gestión de pacientes',
+      description: '',
+      image: 'url("https://images.unsplash.com/photo-1580281657521-7805f5a4e552?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
+      route:"/administrador/gestion-pacientes",
       rol:"ADMINISTRADOR"
     },
     {

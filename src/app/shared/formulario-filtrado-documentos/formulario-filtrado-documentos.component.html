@@ -1,0 +1,93 @@
+<section class="p-1" id="buscador">
+    <h1 class="text-center p-3">Gestion notas de evolucion</h1>
+    <div class="mb-3">
+      <p class="mv-3">Buscar por rangos de fecha de creacion</p>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="fechaInicio" class="form-label">Fecha inicio</label>
+          <input
+            type="date"
+            class="form-control border-bottom-dark"
+            id="fechaInicio"
+            [(ngModel)]="fechaInicio"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="fechaFin" class="form-label">Fecha fin</label>
+          <input
+            type="date"
+            class="form-control border-dark"
+            id="fechaFin"
+            [(ngModel)]="fechaFin"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="ciPaciente" class="form-label">CI paciente</label>
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="ciPaciente"
+            [(ngModel)]="ciPaciente"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="nombrePaciente" class="form-label">Nombre paciente</label>
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="nombrePaciente"
+            [(ngModel)]="nombrePaciente"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="nombreMedico" class="form-label">Medico elaborador</label>
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="nombreMedico"
+            [(ngModel)]="nombreMedico"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="nombreEspecialidad" class="form-label"
+            >Especialidad</label
+          >
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="nombreEspecialidad"
+            [(ngModel)]="nombreEspecialidad"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="diagnosticoPresuntivo" class="form-label"
+            >Diagnostico presuntivo</label
+          >
+          <input
+            type="text"
+            class="form-control border-dark"
+            id="diagnosticoPresuntivo"
+            [(ngModel)]="diagnosticoPresuntivo"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn btn-success-hospital"
+      (click)="filtrarNotasEvolucion()"
+    >
+      Buscar
+    </button>
+  </section>

@@ -45,6 +45,7 @@ import { UsuarioNoLogeadoNoticiasComponent } from "./components/usuario-no-logea
 import { UsuarioNoLogeadoDetalleNoticiaComponent } from "./components/usuario-no-logeado-detalle-noticia/usuario-no-logeado-detalle-noticia.component";
 import { UsuarioNoLogeadoDescripcionMedicosComponent } from "./components/usuario-no-logeado-descripcion-medicos/usuario-no-logeado-descripcion-medicos.component";
 import { UsuarioNoLogeadoEspeciaildadMedicaComponent } from "./components/usuario-no-logeado-especiaildad-medica/usuario-no-logeado-especiaildad-medica.component";
+import { GestionDocumentosExpedienteClinicoComponent } from "./components/gestion-documentos-expediente-clinico/gestion-documentos-expediente-clinico.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -101,6 +102,9 @@ const APP_ROUTES: Routes = [
     { path: 'paciente/registro-ficha-medica', component:  RegistroFichaMedicaComponent,},
     { path: 'paciente/detalle-ficha-medica/:id', component:  DetalleFichaMedicaComponent},
 
+
+
+    { path: 'medico/gestion/:documento', component:  GestionDocumentosExpedienteClinicoComponent},
 
 
     { path: 'medico/gestion-historias-clinicas', component:  GestionHistoriasClinicasComponent},

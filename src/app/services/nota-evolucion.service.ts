@@ -44,7 +44,7 @@ export class NotaEvolucionService {
     return of(
       [
         {
-          "idNotaEvolucion": 1,
+          "id": 1,
           "cambiosPacienteResultadosTratamiento": "El paciente ha mostrado mejoría significativa después del cambio de medicación.",
           "createdAt": "2023-01-01T08:00:00Z",
           "updatedAt": "2023-01-10T10:00:00Z",
@@ -60,7 +60,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "Juan Tellez"
         },
         {
-          "idNotaEvolucion": 2,
+          "id": 2,
           "cambiosPacienteResultadosTratamiento": "Se ha observado una ligera mejoría en los síntomas después de ajustar la dosis del medicamento.",
           "createdAt": "2023-01-15T09:30:00Z",
           "updatedAt": "2023-01-20T11:45:00Z",
@@ -76,7 +76,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "María López"
         },
         {
-          "idNotaEvolucion": 3,
+          "id": 3,
           "cambiosPacienteResultadosTratamiento": "El paciente reporta haber experimentado una reducción en los niveles de ansiedad.",
           "createdAt": "2023-02-01T07:00:00Z",
           "updatedAt": "2023-02-05T08:30:00Z",
@@ -92,7 +92,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "Luis García"
         },
         {
-          "idNotaEvolucion": 4,
+          "id": 4,
           "cambiosPacienteResultadosTratamiento": "Se ha observado una estabilidad en el estado emocional del paciente tras el ajuste en la terapia.",
           "createdAt": "2023-02-10T08:15:00Z",
           "updatedAt": "2023-02-15T09:00:00Z",
@@ -108,7 +108,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "Ana Ruiz"
         },
         {
-          "idNotaEvolucion": 5,
+          "id": 5,
           "cambiosPacienteResultadosTratamiento": "El paciente ha tenido una respuesta positiva al nuevo plan de tratamiento.",
           "createdAt": "2023-03-01T10:00:00Z",
           "updatedAt": "2023-03-05T11:30:00Z",
@@ -124,7 +124,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "Claudia Martínez"
         },
         {
-          "idNotaEvolucion": 6,
+          "id": 6,
           "cambiosPacienteResultadosTratamiento": "Se ha notado una disminución en los síntomas psicóticos tras ajustar el tratamiento.",
           "createdAt": "2023-03-10T08:30:00Z",
           "updatedAt": "2023-03-15T09:45:00Z",
@@ -140,7 +140,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "Carlos Mendoza"
         },
         {
-          "idNotaEvolucion": 7,
+          "id": 7,
           "cambiosPacienteResultadosTratamiento": "El paciente ha mostrado una mejora en el control de los síntomas tras cambiar el medicamento.",
           "createdAt": "2023-04-01T07:45:00Z",
           "updatedAt": "2023-04-05T08:15:00Z",
@@ -156,7 +156,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "Sara Martínez"
         },
         {
-          "idNotaEvolucion": 8,
+          "id": 8,
           "cambiosPacienteResultadosTratamiento": "La paciente ha tenido una notable mejora en la gestión de su ansiedad con el nuevo tratamiento.",
           "createdAt": "2023-04-10T09:00:00Z",
           "updatedAt": "2023-04-15T10:30:00Z",
@@ -172,7 +172,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "Miguel Torres"
         },
         {
-          "idNotaEvolucion": 9,
+          "id": 9,
           "cambiosPacienteResultadosTratamiento": "Se ha observado una mejora en el estado general del paciente después de ajustar el tratamiento.",
           "createdAt": "2023-05-01T10:15:00Z",
           "updatedAt": "2023-05-05T11:00:00Z",
@@ -188,7 +188,7 @@ export class NotaEvolucionService {
           "pacientePropietario": "Laura Gómez"
         },
         {
-          "idNotaEvolucion": 10,
+          "id": 10,
           "cambiosPacienteResultadosTratamiento": "El paciente ha presentado una mejora en la calidad de vida tras el ajuste del tratamiento.",
           "createdAt": "2023-05-10T08:00:00Z",
           "updatedAt": "2023-05-15T09:15:00Z",
@@ -211,7 +211,7 @@ export class NotaEvolucionService {
   obtenerNotasEvolucionPorIdPaciente(idPaciente:any) {
     return of([
       {
-        "idNotaEvolucion": 1,
+        "id": 1,
         "idHistoriaClinica": 1,
         "cambiosPacienteResultadosTratamiento": "El paciente ha mostrado mejoría significativa después del cambio de medicación.",
         "idMedico": "medico123",
@@ -222,7 +222,7 @@ export class NotaEvolucionService {
         "deletedAt": null
       },
       {
-        "idNotaEvolucion": 2,
+        "id": 2,
         "idHistoriaClinica": 2,
         "cambiosPacienteResultadosTratamiento": "No se observan cambios relevantes en el estado del paciente.",
         "idMedico": "medico456",
@@ -255,7 +255,7 @@ export class NotaEvolucionService {
         "deletedAt": null
       },
       {
-        "idNotaEvolucion": 5,
+        "id": 5,
         "idHistoriaClinica": 5,
         "ciPropietario":"89327889",
         "pacientePropietario":"Juan Tellez",
