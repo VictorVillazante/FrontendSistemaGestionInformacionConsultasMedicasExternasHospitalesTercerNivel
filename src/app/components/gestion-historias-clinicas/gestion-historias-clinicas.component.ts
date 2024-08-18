@@ -8,6 +8,9 @@ import { HistoriasClinicasService } from '../../services/historias-clinicas.serv
   styleUrls: ['./gestion-historias-clinicas.component.css']
 })
 export class GestionHistoriasClinicasComponent {
+  handleHistoriasClinicas($event: any) {
+    this.historiasClinicas=$event;
+  }
 
   historiasClinicas: any[] = [];
   constructor(private router:Router,private historiasClinicasService:HistoriasClinicasService) {
@@ -18,10 +21,10 @@ export class GestionHistoriasClinicasComponent {
       this.historiasClinicas=data;
     });
   }
-  viewDetails(id:any){
+  verDetallerHistoriaClinica(id:any){
     this.router.navigate(["/detalle-historia-clinica",id]);
   }
-  editItem(id: any) {
+  editarHistoriaClinica(id: any) {
     this.router.navigate(["/medico/modificar-historia-clinica",id]);
   }
 }

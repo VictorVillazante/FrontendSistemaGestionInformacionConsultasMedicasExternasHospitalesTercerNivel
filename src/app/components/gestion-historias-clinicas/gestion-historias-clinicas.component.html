@@ -1,25 +1,11 @@
 <div class="container mt-5">
   <h1 class="text-center p-3">Gestion historias clinicas</h1>
+  <app-formulario-filtrado-documentos [documentos]="historiasClinicas" (documentosEvent)="handleHistoriasClinicas($event)"></app-formulario-filtrado-documentos>
   <button
     class="btn btn-success-hospital"
     routerLink="/medico/registro-historia-clinica"
   >
     Registrar historia clinica
   </button>
-  <ul class="list-group">
-      <li *ngFor="let dato of historiasClinicas; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
-        Historia clinica: {{ dato.idHistoriaClinica }}<br/>
-        Paciente propietario: {{dato.pacientePropietario}}<br/>
-        Fecha creacion: {{ dato.createdAt }} <br/>
-        <div>
-          <i class="fas fa-edit me-2" (click)="editItem(dato.idHistoriaClinica)"></i>
-          <i class="fas fa-chevron-right me-2" (click)="viewDetails(dato.idHistoriaClinica)"></i>
-        </div>
-      </li>
-    </ul>
+  <app-listado-documentos [documentos]="historiasClinicas" tipoDocumento="Historia clinica" [actualizarDocumento]="editarHistoriaClinica" [verDetalleDocumento]="verDetallerHistoriaClinica"></app-listado-documentos>
 </div>
-<!-- 
-  <button class="btn btn-primary" routerLink="/medico/registro-historia-clinica">Registrar historia clinica</button>
-
-  <i class="fas fa-edit text-primary me-2" (click)="editItem(item.idHistoriaClinica)"></i>
-  <i class="fas fa-chevron-right text-primary me-2" (click)="viewDetails(item.idHistoriaClinica)"></i> -->
