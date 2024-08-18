@@ -1,1 +1,14 @@
-<p>gestion-papeletas-internacion works!</p>
+<div class="container mt-5">
+  <h1 class="p-3">Gestion papeletas de internacion</h1>
+  <app-formulario-filtrado-documentos
+    [documentos]="listadoPapeletasInternacion"
+    (documentosEvent)="handlePapeletasInternacion($event)"
+  ></app-formulario-filtrado-documentos>
+  <button
+    class="btn btn-success-hospital"
+    routerLink="/medico/registro-papeleta-internacion"
+  >
+    Registrar papeleta internacion
+  </button>
+  <app-listado-documentos [documentos]="listadoPapeletasInternacion" tipoDocumento="Papeleta de internacion" [actualizarDocumento]="actualizarPapeletaInternacion" [verDetalleDocumento]="verDetallePapeletaInternacion"></app-listado-documentos>
+</div>
