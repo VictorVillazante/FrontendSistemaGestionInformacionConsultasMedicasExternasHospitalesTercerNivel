@@ -1,26 +1,15 @@
 <div class="container mt-5">
-    <h1 class="text-center p-3">Gestion recetas</h1>
-    <button
-      class="btn btn-success-hospital"
-      routerLink="/medico/registro-receta"
-    >
-      Registrar receta
-    </button>
-    <ul class="list-group">
-        <li *ngFor="let dato of recetas; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
-          <p class="dato-info">
-            Receta {{ dato.idReceta }}<br/>
-            Fecha creacion: {{ dato.createdAt }} <br/>
-            Fecha actualizacion: {{ dato.updatedAt }}<br/>
-            Historia clinica: {{ dato.idHistoriaClinica }}  <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(dato.idHistoriaClinica)"></i><br/>
-            Paciente propietario: {{ dato.pacientePropietario }}<br/>
-            CI paciente propietario: {{ dato.ciPropietario }}<br/>
-
-          </p>
-          <div class="botones-opciones">
-            <i class="fas fa-edit me-2" (click)="editarDato(dato.idReceta)"></i>
-            <i class="fas fa-chevron-right me-2" (click)="verDetalles(dato.idReceta)"></i>
-          </div>
-        </li>
-      </ul>
-  </div>
+  <h1 class="text-center p-3">Gestion recetas</h1>
+  <app-formulario-filtrado-documentos
+    [documentos]="recetas"
+    (documentosEvent)="handleRecetas($event)"
+  ></app-formulario-filtrado-documentos>
+  <button class="btn btn-success-hospital" routerLink="/medico/registro-receta">
+    Registrar receta
+  </button>
+  <app-listado-documentos
+    [documentos]="recetas"
+    [actualizarDocumento]="editarReceta"
+    [verDetalleDocumento]="verDetalleReceta"
+  ></app-listado-documentos>
+</div>
