@@ -83,3 +83,13 @@ h4{
 p,a,label{
     font-size: var(--texto) !important;
 }
+.input-border-bottom{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+}
+.input-border-bottom:focus{
+    border-radius: 20;
+    box-shadow: 0 .25rem .2rem .01rem #0a496e69;
+}

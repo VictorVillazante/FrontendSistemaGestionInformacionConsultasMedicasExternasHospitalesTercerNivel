@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { NotasReferenciaDataDev } from 'src/assets/data-dev/notas-referencia';
 import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotasReferenciaService {
+  listadoNotasReferencia:any[]=NotasReferenciaDataDev.listaNotasReferencia;
   obtenerNotaReferencia(id: any) {
     // return of(  {
     //   "idNotaReferencia": 3,
@@ -131,6 +133,7 @@ export class NotasReferenciaService {
 
   }
   obtenerNotasReferencia() {
+    return of(this.listadoNotasReferencia);
     return of([
       {
         "idNotaReferencia": 1,

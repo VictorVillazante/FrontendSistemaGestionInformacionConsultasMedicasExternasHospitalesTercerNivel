@@ -11,25 +11,25 @@
       [class.bg-img-doc-2]="i % 2 != 0"
     ></div>
     <div class="datos-opciones-doc">
-      <p class="dato-info">
-        {{tipoDocumento}} {{ dato.id }}<br />
-        Fecha creacion: {{ dato.createdAt | dateFormat : "dd-MM-yyyy" }} <br />
-        Fecha actualizacion: {{ dato.updatedAt | dateFormat : "dd-MM-yyyy"
-        }}<br />
-        Historia clinica: {{ dato.idHistoriaClinica }}
-        <i
-          class="fas fa-share-square"
-          (click)="verDetalleHistoriaClinica(dato.idHistoriaClinica)"
-        ></i
-        ><br />
-        Paciente propietario: {{ dato.pacientePropietario }}<br />
-        CI paciente propietario: {{ dato.ciPropietario }}<br />
-      </p>
+      <div class="dato-info">
+        <p>{{ tipoDocumento }} {{ dato.id }}</p>
+        <p>Fecha creacion: {{ dato.createdAt | dateFormat : "dd-MM-yyyy" }}</p>
+        <p>
+          Fecha actualizacion: {{ dato.updatedAt | dateFormat : "dd-MM-yyyy" }}
+        </p>
+
+        <p *ngIf="dato.idHistoriaClinica">
+          Historia clinica: {{ dato.idHistoriaClinica }}
+          <i
+            class="fas fa-share-square"
+            (click)="verDetalleHistoriaClinica(dato.idHistoriaClinica)"
+          ></i>
+        </p>
+        <p>Paciente propietario: {{ dato.pacientePropietario }}</p>
+        <p>CI paciente propietario: {{ dato.ciPropietario }}<br /></p>
+      </div>
       <div class="botones-opciones">
-        <i
-          class="fas fa-edit me-2"
-          (click)="actualizarDocumento(dato.id)"
-        ></i>
+        <i class="fas fa-edit me-2" (click)="actualizarDocumento(dato.id)"></i>
         <i
           class="fas fa-chevron-right me-2"
           (click)="verDetalleDocumento(dato.id)"

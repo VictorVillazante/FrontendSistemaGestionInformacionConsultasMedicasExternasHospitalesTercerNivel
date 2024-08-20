@@ -75,6 +75,8 @@ import { ListadoDocumentosComponent } from './shared/listado-documentos/listado-
 import { FormularioFiltradoDocumentosComponent } from './shared/formulario-filtrado-documentos/formulario-filtrado-documentos.component';
 import { GestionInterconsultasComponent } from './components/gestion-interconsultas/gestion-interconsultas.component';
 import { GestionExamenesComplementariosComponent } from './components/gestion-examenes-complementarios/gestion-examenes-complementarios.component';
+import { FormularioFiltradoDocumentosPacienteComponent } from './shared/formulario-filtrado-documentos-paciente/formulario-filtrado-documentos-paciente.component';
+import { ListadoDocumentosPacienteComponent } from './shared/listado-documentos-paciente/listado-documentos-paciente.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +147,9 @@ import { GestionExamenesComplementariosComponent } from './components/gestion-ex
     ListadoDocumentosComponent,
     FormularioFiltradoDocumentosComponent,
     GestionInterconsultasComponent,
-    GestionExamenesComplementariosComponent
+    GestionExamenesComplementariosComponent,
+    FormularioFiltradoDocumentosPacienteComponent,
+    ListadoDocumentosPacienteComponent
   ],
   imports: [
     BrowserModule,

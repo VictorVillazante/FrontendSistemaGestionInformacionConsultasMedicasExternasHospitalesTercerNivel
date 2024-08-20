@@ -24,6 +24,9 @@ li{
 .dato-info{
     padding: 5px;
 }
+.dato-info p{
+    margin-bottom: 0;
+}
 @media (max-width:414px){
     li{
         position: relative;

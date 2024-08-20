@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { RecetasDataDev } from 'src/assets/data-dev/recetas';
 import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecetasService {
+  listadoRecetas:any[]=RecetasDataDev.listaRecetas;
   registrarReceta(receta: any) {
     let idMedico=1;
     let recetaAux=receta.value;
@@ -146,6 +148,7 @@ export class RecetasService {
     // ]
     // );
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`);
+    return of(this.listadoRecetas);
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`);
 
   }

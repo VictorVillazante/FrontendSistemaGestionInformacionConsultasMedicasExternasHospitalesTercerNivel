@@ -45,7 +45,9 @@ import { UsuarioNoLogeadoNoticiasComponent } from "./components/usuario-no-logea
 import { UsuarioNoLogeadoDetalleNoticiaComponent } from "./components/usuario-no-logeado-detalle-noticia/usuario-no-logeado-detalle-noticia.component";
 import { UsuarioNoLogeadoDescripcionMedicosComponent } from "./components/usuario-no-logeado-descripcion-medicos/usuario-no-logeado-descripcion-medicos.component";
 import { UsuarioNoLogeadoEspeciaildadMedicaComponent } from "./components/usuario-no-logeado-especiaildad-medica/usuario-no-logeado-especiaildad-medica.component";
-import { GestionDocumentosExpedienteClinicoComponent } from "./components/gestion-documentos-expediente-clinico/gestion-documentos-expediente-clinico.component";
+import { GestionCertificadosMedicosComponent } from "./components/gestion-certificados-medicos/gestion-certificados-medicos.component";
+import { GestionExamenesComplementariosComponent } from "./components/gestion-examenes-complementarios/gestion-examenes-complementarios.component";
+import { GestionInterconsultasComponent } from "./components/gestion-interconsultas/gestion-interconsultas.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -103,9 +105,11 @@ const APP_ROUTES: Routes = [
     { path: 'paciente/detalle-ficha-medica/:id', component:  DetalleFichaMedicaComponent},
 
 
+    { path: 'medico/gestion-certificados-medicos', component:  GestionCertificadosMedicosComponent},
 
-    { path: 'medico/gestion/:documento', component:  GestionDocumentosExpedienteClinicoComponent},
+    { path: 'medico/gestion-examenes-complementarios', component:  GestionExamenesComplementariosComponent},
 
+    { path: 'medico/gestion-solicitudes-interconsultas', component:  GestionInterconsultasComponent},
 
     { path: 'medico/gestion-historias-clinicas', component:  GestionHistoriasClinicasComponent},
     { path: 'medico/registro-historia-clinica', component:  RegistroHistoriaClinicaComponent},
