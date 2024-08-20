@@ -1,15 +1,26 @@
 <div id="div-home">
   <div class="row" id="banner-home">
     <div class="col-md-6 mb-6" id="div-texto-banner">
-      <div class="titulo-banner">Cuidando tu salud construyendo un futuro saludable</div><br>
-      <div class="sub-titulo-banner">Atencion medica de calidad al alcance de todos !Tu bienestar es nuestra prioridad!</div>
+      <div class="titulo-banner">
+        Cuidando tu salud construyendo un futuro saludable
+      </div>
+      <br />
+      <div class="sub-titulo-banner">
+        Atencion medica de calidad al alcance de todos !Tu bienestar es nuestra
+        prioridad!
+      </div>
     </div>
     <div id="img-doctor" class="col-md-6 mb-6"></div>
   </div>
   <div class="section-especialidades-atencion">
-    <app-especialidades-atencion/>
+    <app-especialidades-atencion />
   </div>
   <div class="section-medicos-especialidades">
-    <app-carousel-medicos-especialistas/>
+    <app-carousel-medicos-especialistas />
   </div>
+  <app-section-especialidades-requisitos
+    [listadoEspecialidades]="listadoEspecialidades"
+    descripcionSeccionRequisitos="En esta sección, encontrarás toda la información necesaria para facilitar tu solicitud de una ficha médica presencial. Asegúrate de cumplir con los siguientes requisitos antes de realizar tu petición para agilizar el proceso y evitar contratiempos"
+    tipoRequisito="Peticion ficha medica presencial"
+  ></app-section-especialidades-requisitos>
 </div>

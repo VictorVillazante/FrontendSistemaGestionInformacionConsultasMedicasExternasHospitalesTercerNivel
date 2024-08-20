@@ -77,6 +77,9 @@ import { GestionInterconsultasComponent } from './components/gestion-interconsul
 import { GestionExamenesComplementariosComponent } from './components/gestion-examenes-complementarios/gestion-examenes-complementarios.component';
 import { FormularioFiltradoDocumentosPacienteComponent } from './shared/formulario-filtrado-documentos-paciente/formulario-filtrado-documentos-paciente.component';
 import { ListadoDocumentosPacienteComponent } from './shared/listado-documentos-paciente/listado-documentos-paciente.component';
+import { SectionEspecialidadesRequisitosComponent } from './shared/section-especialidades-requisitos/section-especialidades-requisitos.component';
+import { SectionEspecialidadesProcedimientosComponent } from './shared/section-especialidades-procedimientos/section-especialidades-procedimientos.component';
+import { CardEspecialidadRequisitoComponent } from './shared/card-especialidad-requisito/card-especialidad-requisito.component';
 
 @NgModule({
   declarations: [
@@ -149,7 +152,10 @@ import { ListadoDocumentosPacienteComponent } from './shared/listado-documentos-
     GestionInterconsultasComponent,
     GestionExamenesComplementariosComponent,
     FormularioFiltradoDocumentosPacienteComponent,
-    ListadoDocumentosPacienteComponent
+    ListadoDocumentosPacienteComponent,
+    SectionEspecialidadesRequisitosComponent,
+    SectionEspecialidadesProcedimientosComponent,
+    CardEspecialidadRequisitoComponent
   ],
   imports: [
     BrowserModule,

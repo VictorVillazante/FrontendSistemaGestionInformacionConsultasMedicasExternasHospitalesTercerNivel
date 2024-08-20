@@ -83,6 +83,9 @@ h4{
 p,a,label{
     font-size: var(--texto) !important;
 }
+p{
+    overflow-wrap: anywhere;
+}
 .input-border-bottom{
     background: transparent;
     border: none;

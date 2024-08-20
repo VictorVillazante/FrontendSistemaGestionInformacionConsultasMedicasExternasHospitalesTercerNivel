@@ -5,7 +5,7 @@ export class Especialidad{
     idEspecialidad:number=0;
     nombre:string="";
     descripcion:string="";
-    img:string="";
+    imagenes:string[]=[];
     requisitosSolicitudFichaMedica:Requisito[]=[];
     requisitosMinimosAtencionConsultaExterna:Requisito[]=[];
     procedimientoObtencionFichaMedicaPresencial:PasoProcedimiento[]=[];
@@ -17,7 +17,7 @@ export class Especialidad{
     this.idEspecialidad = json.idEspecialidad || 0;
     this.nombre = json.nombre || "";
     this.descripcion = json.descripcion || "";
-    this.img = json.img || "";
+    this.imagenes = json.imagenes || [];
     this.requisitosSolicitudFichaMedica = json.requisitosSolicitudFichaMedica?.map((req: any) => {
         const requisito = new Requisito();
         requisito.idRequisito = req.idRequisito || 0;

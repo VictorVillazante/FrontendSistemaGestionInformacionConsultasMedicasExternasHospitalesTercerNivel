@@ -6,7 +6,7 @@ export class EspecialidadesData{
             "idEspecialidad": 1,
             "nombre": "Cardiología",
             "descripcion": "Especialidad médica que se ocupa del diagnóstico y tratamiento de las enfermedades del corazón.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica completa.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -27,7 +27,7 @@ export class EspecialidadesData{
             "idEspecialidad": 2,
             "nombre": "Neurología",
             "descripcion": "Especialidad médica que trata los trastornos del sistema nervioso.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Estudios recientes del sistema nervioso.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -48,7 +48,7 @@ export class EspecialidadesData{
             "idEspecialidad": 3,
             "nombre": "Gastroenterología",
             "descripcion": "Especialidad médica que se enfoca en el diagnóstico y tratamiento de trastornos del sistema digestivo.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historial de problemas digestivos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -69,7 +69,7 @@ export class EspecialidadesData{
             "idEspecialidad": 4,
             "nombre": "Ortopedia",
             "descripcion": "Especialidad médica dedicada al diagnóstico, tratamiento y prevención de trastornos del sistema músculoesquelético.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Radiografías recientes.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -90,7 +90,7 @@ export class EspecialidadesData{
             "idEspecialidad": 5,
             "nombre": "Endocrinología",
             "descripcion": "Especialidad médica que se encarga del diagnóstico y tratamiento de trastornos hormonales y metabólicos.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historial de problemas endocrinos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -111,7 +111,7 @@ export class EspecialidadesData{
             "idEspecialidad": 6,
             "nombre": "Dermatología",
             "descripcion": "Especialidad médica que trata enfermedades de la piel, cabello y uñas.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia clínica de problemas dermatológicos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -132,7 +132,7 @@ export class EspecialidadesData{
             "idEspecialidad": 7,
             "nombre": "Pediatría",
             "descripcion": "Especialidad médica que se enfoca en la salud y el bienestar de los niños.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica infantil completa.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -153,7 +153,7 @@ export class EspecialidadesData{
             "idEspecialidad": 8,
             "nombre": "Oftalmología",
             "descripcion": "Especialidad médica dedicada al diagnóstico y tratamiento de enfermedades oculares.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia clínica ocular previa.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -174,7 +174,7 @@ export class EspecialidadesData{
             "idEspecialidad": 9,
             "nombre": "Otorrinolaringología",
             "descripcion": "Especialidad médica que se ocupa de los trastornos del oído, nariz y garganta.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica de problemas otorrinolaringológicos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
@@ -195,7 +195,7 @@ export class EspecialidadesData{
             "idEspecialidad": 10,
             "nombre": "Urología",
             "descripcion": "Especialidad médica que se ocupa del diagnóstico y tratamiento de enfermedades del tracto urinario y del sistema reproductor masculino.",
-            "img": "fondo-opciones-menu.jpg",
+            "imagenes": ["fondo-opciones-menu.jpg"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica de problemas urológicos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
