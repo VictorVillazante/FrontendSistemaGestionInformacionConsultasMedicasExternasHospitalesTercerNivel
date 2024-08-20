@@ -1,0 +1,32 @@
+.card-especialidad-procedimiento{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-especialidad-procedimiento img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-especialidad-procedimiento .fondo-contenido{
+    position: absolute;
+    background-color: #0a496e4b;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-especialidad-procedimiento p{
+    color: white;
+    font-weight: bold;
+}
+.card-especialidad-procedimiento .fondo-contenido:hover{
+    background-color: #0a496e9a;
+}

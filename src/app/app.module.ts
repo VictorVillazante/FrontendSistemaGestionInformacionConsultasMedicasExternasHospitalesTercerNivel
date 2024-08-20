@@ -80,6 +80,7 @@ import { ListadoDocumentosPacienteComponent } from './shared/listado-documentos-
 import { SectionEspecialidadesRequisitosComponent } from './shared/section-especialidades-requisitos/section-especialidades-requisitos.component';
 import { SectionEspecialidadesProcedimientosComponent } from './shared/section-especialidades-procedimientos/section-especialidades-procedimientos.component';
 import { CardEspecialidadRequisitoComponent } from './shared/card-especialidad-requisito/card-especialidad-requisito.component';
+import { CardEspecialidadProcedimientoComponent } from './shared/card-especialidad-procedimiento/card-especialidad-procedimiento.component';
 
 @NgModule({
   declarations: [
@@ -155,7 +156,8 @@ import { CardEspecialidadRequisitoComponent } from './shared/card-especialidad-r
     ListadoDocumentosPacienteComponent,
     SectionEspecialidadesRequisitosComponent,
     SectionEspecialidadesProcedimientosComponent,
-    CardEspecialidadRequisitoComponent
+    CardEspecialidadRequisitoComponent,
+    CardEspecialidadProcedimientoComponent
   ],
   imports: [
     BrowserModule,
