@@ -1,13 +1,6 @@
 <div class="container mt-5">
     <h1 class="text-center p-3">Mis historias clinicas</h1>
-
-    <ul class="list-group">
-        <li *ngFor="let item of historiasClinicas; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
-          Historia clinica {{ item.idHistoriaClinica }}
-          <div>
-            <i class="fas fa-chevron-right me-2" (click)="viewDetails(item.idHistoriaClinica)"></i>
-          </div>
-        </li>
-      </ul>
+    <app-formulario-filtrado-documentos [documentos]="historiasClinicas" (documentosEvent)="handleHistoriasClinicas($event)"></app-formulario-filtrado-documentos>
+    <app-listado-documentos [documentos]="historiasClinicas" [verDetalleDocumento]="verDetalleHistoriaClinica"></app-listado-documentos>
   </div>
   

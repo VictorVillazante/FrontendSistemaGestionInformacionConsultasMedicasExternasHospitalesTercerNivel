@@ -15,13 +15,24 @@
   <div class="section-especialidades-atencion">
     <app-especialidades-atencion />
   </div>
-  <div class="section-medicos-especialidades">
-    <app-carousel-medicos-especialistas />
-  </div>
   <app-section-especialidades-requisitos
     [listadoEspecialidades]="listadoEspecialidades"
     descripcionSeccionRequisitos="En esta sección, encontrarás toda la información necesaria para facilitar tu solicitud de una ficha médica presencial. Asegúrate de cumplir con los siguientes requisitos antes de realizar tu petición para agilizar el proceso y evitar contratiempos"
     tipoRequisito="Peticion ficha medica presencial"
+    [rutaElementos]="rutaElementosRequisitosPeticionFichaMedicaPresencial"
   ></app-section-especialidades-requisitos>
-  <app-section-especialidades-procedimientos [listadoEspecialidades]="listadoEspecialidades" tipoProcedimientos="Obtencion de ficha medica presencial"></app-section-especialidades-procedimientos>
+  <div class="section-medicos-especialidades">
+    <app-carousel-medicos-especialistas />
+  </div>
+  <app-section-especialidades-procedimientos
+    [listadoEspecialidades]="listadoEspecialidades"
+    tipoProcedimientos="Obtencion de ficha medica presencial"
+    [rutaElementos]="rutaElementosProcedimientoPeticionFichaMedicaPresencial"
+  ></app-section-especialidades-procedimientos>
+  <app-section-especialidades-requisitos
+    [listadoEspecialidades]="listadoEspecialidades"
+    descripcionSeccionRequisitos="En esta sección, encontrarás toda la información necesaria para facilitar tu solicitud de una ficha médica presencial. Asegúrate de cumplir con los siguientes requisitos antes de realizar tu petición para agilizar el proceso y evitar contratiempos"
+    tipoRequisito="Requisito minimo atencion consulta externa"
+    [rutaElementos]="rutaElementosRequisitosMinimosAtencionConsultaExterna"
+  ></app-section-especialidades-requisitos>
 </div>

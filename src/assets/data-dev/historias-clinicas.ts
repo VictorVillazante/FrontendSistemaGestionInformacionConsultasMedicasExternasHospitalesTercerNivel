@@ -96,7 +96,7 @@ export class HistoriasClinicasDataDev {
             "nombreEspecialidad": "Cardiología",
             "idMedico": 16,
             "nombreMedico": "Laura Sánchez",
-            "idPaciente": 4,
+            "idPaciente": 3,
             "ciPropietario": "345678901",
             "pacientePropietario": "Carlos Rivera"
         },
@@ -221,7 +221,7 @@ export class HistoriasClinicasDataDev {
             "nombreEspecialidad": "Reumatología",
             "idMedico": 26,
             "nombreMedico": "Ana López",
-            "idPaciente": 9,
+            "idPaciente": 3,
             "ciPropietario": "890123456",
             "pacientePropietario": "Julieta Ruiz"
         },
@@ -246,7 +246,7 @@ export class HistoriasClinicasDataDev {
             "nombreEspecialidad": "Neurología",
             "idMedico": 28,
             "nombreMedico": "Carlos Pérez",
-            "idPaciente": 10,
+            "idPaciente": 3,
             "ciPropietario": "901234567",
             "pacientePropietario": "Elena Vargas"
         }                                                

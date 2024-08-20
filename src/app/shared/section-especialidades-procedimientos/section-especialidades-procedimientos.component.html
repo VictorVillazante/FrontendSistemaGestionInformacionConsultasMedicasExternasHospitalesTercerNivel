@@ -6,7 +6,7 @@
             class="carousel-item"
             *ngFor="let especialidad of listadoEspecialidades"
           >
-            <app-card-especialidad-procedimiento [especialidad]="especialidad" />
+            <app-card-especialidad-procedimiento [especialidad]="especialidad" (click)="rutaElementos(especialidad.idEspecialidad)"/>
           </div>
         </div>
         <button

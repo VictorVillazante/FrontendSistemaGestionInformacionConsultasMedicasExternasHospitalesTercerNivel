@@ -6,10 +6,9 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: var(--color4);
 }
 .especialidades-procedimientos h2{
-    color: var(--color1);
+    color: var(--color5);
 }
 .especialidades-procedimientos .carousel{
     width: 100%;

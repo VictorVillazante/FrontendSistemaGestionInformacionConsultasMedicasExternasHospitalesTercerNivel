@@ -8,20 +8,25 @@ import { HistoriasClinicasService } from '../../services/historias-clinicas.serv
   styleUrls: ['./mis-historias-clnicas.component.css']
 })
 export class MisHistoriasClnicasComponent {
+  handleHistoriasClinicas($event: any) {
+    this.historiasClinicas = $event;
+  }
   historiasClinicas: any[] = [];
 
-  constructor(private router:Router,private historiasClinicasService:HistoriasClinicasService) {
-    this.idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
+  constructor(private router: Router, private historiasClinicasService: HistoriasClinicasService) {
+    this.idPaciente = JSON.parse(localStorage.getItem("userDetails") ?? "{}").idPaciente;
     this.obtenerMisHistoriasClinicas(this.idPaciente);
-   }
-  viewDetails(id:any){
-    this.router.navigate(["/detalle-historia-clinica",id]);
   }
-  idPaciente:any=1;
-  obtenerMisHistoriasClinicas(idPaciente:any){
-    this.historiasClinicasService.obtenerHistoriasClinicasDePaciente(idPaciente).subscribe((data:any)=>{
-      console.log(data);
-      this.historiasClinicas=data;
+  viewDetails(id: any) {
+    this.router.navigate(["/detalle-historia-clinica", id]);
+  }
+  idPaciente: any = 1;
+  obtenerMisHistoriasClinicas(idPaciente: any) {
+    this.historiasClinicasService.obtenerHistoriasClinicasDePaciente(idPaciente).subscribe((data: any) => {
+      this.historiasClinicas = data;
     });
+  }
+  verDetalleHistoriaClinica(id: number) {
+    this.router.navigate(["detalle-historia-clinica/" + id]);
   }
 }

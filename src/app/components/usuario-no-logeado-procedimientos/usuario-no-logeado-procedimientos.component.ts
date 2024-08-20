@@ -31,7 +31,7 @@ export class UsuarioNoLogeadoProcedimientosComponent {
   }
   cargarRequisitosPorTipo(tipo: string,especialidad:Especialidad) {
     switch(this.tipo){
-      case "ficha-medica-presencial":
+      case "obtencion-ficha-presencial":
         this.listadoProcedimientoPasos=especialidad.procedimientoObtencionFichaMedicaPresencial;
       break;
     }

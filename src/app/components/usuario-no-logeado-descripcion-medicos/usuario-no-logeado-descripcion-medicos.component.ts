@@ -21,7 +21,7 @@ export class UsuarioNoLogeadoDescripcionMedicosComponent implements OnInit{
     });
   }
   obtenerDatosMedico(id:number) {
-    this.informacionCentroMedicoService.obtenerInformacionMedico(id).subscribe((medico)=>{
+    this.informacionCentroMedicoService.obtenerMedico(id).subscribe((medico)=>{
       this.medico=medico;
     });
   }

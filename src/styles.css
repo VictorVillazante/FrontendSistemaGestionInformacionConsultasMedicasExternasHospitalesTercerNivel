@@ -40,7 +40,8 @@
     border: 2px solid white;
     color: white;
     background: transparent;
-    min-width: 200px;
+    width: 200px;
+    min-width: fit-content;
 }
 .btn-outline-white:hover{
     background: white;
@@ -95,4 +96,10 @@ p{
 .input-border-bottom:focus{
     border-radius: 20;
     box-shadow: 0 .25rem .2rem .01rem #0a496e69;
+}
+@media (max-width:1280px){
+    .btn-outline-white{
+        width: min-content;
+        padding: 10;
+    }
 }
