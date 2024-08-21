@@ -7,6 +7,9 @@ import { CertificadosMedicosDataDev } from '../../assets/data-dev/certificados-m
   providedIn: 'root'
 })
 export class CertificadosMedicosService {
+  obtenerCertificadosMedicosPaciente(idPaciente: any) {
+    return of(this.listadoCertificadosMedicos.filter(certificadoMedico=>certificadoMedico.idPaciente=idPaciente));
+  }
   listadoCertificadosMedicos:any[]=CertificadosMedicosDataDev.listaadoCertificadosMedicos;
   obtenerCertificadosMedicos() {
     return of(this.listadoCertificadosMedicos)
