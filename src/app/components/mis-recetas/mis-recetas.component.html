@@ -1,18 +1,12 @@
 <div class="container mt-5">
-    <h1 class="text-center p-3">Mis recetas</h1>
+  <h1 class="text-center p-3">Mis recetas</h1>
 
-    <ul class="list-group">
-        <li *ngFor="let item of recetas; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
-          <p class="dato-info">
-            Receta {{ item.idReceta }}<br/>
-            Fecha creacion {{ item.createdAt }}<br/>
-            Fecha modificacion {{ item.updatedAt }}<br/>
-            Historia clinica {{ item.idHistoriaClinica }}   <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(item.idHistoriaClinica)"></i><br/>
-          </p>
-          <div class="botones-opciones">
-            <i class="fas fa-chevron-right me-2" (click)="verDetalle(item.idReceta)"></i>
-          </div>
-        </li>
-      </ul>
-  </div>
-  
+  <app-formulario-filtrado-documentos-paciente
+    [documentos]="recetas"
+    (documentosEvent)="handleRecetas($event)"
+  ></app-formulario-filtrado-documentos-paciente>
+  <app-listado-documentos
+    [documentos]="recetas"
+    [verDetalleDocumento]="verDetalleReceta"
+  ></app-listado-documentos>
+</div>

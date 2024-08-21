@@ -9,24 +9,27 @@ import { RecetasService } from '../../services/recetas.service';
 })
 export class MisRecetasComponent {
   verDetalleHistoriaClinica(idHistoriaClinica: any) {
-   const url = this.router.serializeUrl(
-    this.router.createUrlTree(['/detalle-historia-clinica', idHistoriaClinica])
-  );
-  window.open(url, '_blank');
+    const url = this.router.serializeUrl(
+      this.router.createUrlTree(['/detalle-historia-clinica', idHistoriaClinica])
+    );
+    window.open(url, '_blank');
   }
   recetas: any[] = [];
 
-  constructor(private router:Router,private recetasService:RecetasService) {
-    this.idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
+  constructor(private router: Router, private recetasService: RecetasService) {
+    this.idPaciente = JSON.parse(localStorage.getItem("userDetails") ?? "{}").idPaciente;
     this.obtenerMisHistoriasClinicas(this.idPaciente);
-   }
-   verDetalle(id:any){
-    this.router.navigate(["/detalle-receta",id]);
   }
-  idPaciente:any=1;
-  obtenerMisHistoriasClinicas(idPaciente:any){
-    this.recetasService.obtenerRecetasPaciente(idPaciente).subscribe((data:any)=>{
-      this.recetas=data;
+  verDetalleReceta(id: any) {
+    this.router.navigate(["/detalle-receta", id]);
+  }
+  idPaciente: any = 1;
+  obtenerMisHistoriasClinicas(idPaciente: any) {
+    this.recetasService.obtenerRecetasPaciente(idPaciente).subscribe((data: any) => {
+      this.recetas = data;
     });
+  }
+  handleRecetas($event:any){
+    this.recetas=$event;
   }
 }
