@@ -48,6 +48,7 @@ import { UsuarioNoLogeadoEspeciaildadMedicaComponent } from "./components/usuari
 import { GestionCertificadosMedicosComponent } from "./components/gestion-certificados-medicos/gestion-certificados-medicos.component";
 import { GestionExamenesComplementariosComponent } from "./components/gestion-examenes-complementarios/gestion-examenes-complementarios.component";
 import { GestionInterconsultasComponent } from "./components/gestion-interconsultas/gestion-interconsultas.component";
+import { GestionPapeletasInternacionComponent } from "./components/gestion-papeletas-internacion/gestion-papeletas-internacion.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -104,6 +105,7 @@ const APP_ROUTES: Routes = [
     { path: 'paciente/registro-ficha-medica', component:  RegistroFichaMedicaComponent,},
     { path: 'paciente/detalle-ficha-medica/:id', component:  DetalleFichaMedicaComponent},
 
+    { path: 'medico/gestion-papeletas-internacion', component:  GestionPapeletasInternacionComponent},
 
     { path: 'medico/gestion-certificados-medicos', component:  GestionCertificadosMedicosComponent},
 

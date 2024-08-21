@@ -93,6 +93,13 @@ export class MenuComponent {
       rol:"MEDICO"
     },
     {
+      title: 'Gestión de Papeletas de Internacion',
+      description: 'Administra papeletas de internacion de manera eficiente y segura.',
+      image: 'url("https://images.unsplash.com/photo-1580281657521-7805f5a4e552?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
+      route:"/medico/gestion-papeletas-internacion",
+      rol:"MEDICO"
+    },
+    {
       title: 'Gestión de Medicos',
       description: 'Administra informacion de medicos de manera eficiente y segura.',
       image: 'url("https://images.unsplash.com/photo-1580281657521-7805f5a4e552?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',

@@ -1,1 +1,12 @@
-<p>mis-examenes-complementarios works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Mis examenes complementarios</h1>
+    <app-formulario-filtrado-documentos-paciente
+      [documentos]="examenesComplementarios"
+      (documentosEvent)="handleInterconsultas($event)"
+    ></app-formulario-filtrado-documentos-paciente>
+    <app-listado-documentos
+      [documentos]="examenesComplementarios"
+      [verDetalleDocumento]="verDetalleExamenComplementario"
+    ></app-listado-documentos>
+  </div>
+  
