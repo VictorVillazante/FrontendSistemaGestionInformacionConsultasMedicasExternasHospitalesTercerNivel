@@ -1,13 +1,39 @@
 <div class="contenedor-descripcion-medico">
     <div class="medico">
-        <div class="contenedor-imagen">
-            <img [src]="medico.imagen" alt="">
-        </div>
         <div class="datos">
             <div class="datos-medico">
-                
+                <p class="nombre-apellido">Dr. {{medico.nombres}} {{medico.apellidos}}</p>
+                <p>{{medico.email}}</p>
+                <p>{{medico.celular}}</p>
             </div>
-            <div class="datos-atencion"></div>
+            <div class="datos-atencion">
+                <p class="tipo-dato">Años de experiencia</p>
+                <p>{{medico.aniosExperiencia}}</p>
+                <p class="tipo-dato">Especialidades</p>
+                <p *ngFor="let especialidad of medico.especialidades">
+                    {{especialidad.nombre}}
+                </p>
+                <p class="tipo-dato">Idiomas</p>
+                <p *ngFor="let idioma of medico.idiomas">
+                    {{idioma.nombre}}
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Horarios de atencion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let turno of medico.turnosAtencionMedica">
+                            <td>{{turno.nombreEspecialidad}}</td>
+                            <td>{{turno.horaInicio}} {{turno.horaFin}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="contenedor-imagen">
+            <img [src]="medico.imagen" alt="">
         </div>
     </div>
     <p>{{medico.descripcion}}</p>
