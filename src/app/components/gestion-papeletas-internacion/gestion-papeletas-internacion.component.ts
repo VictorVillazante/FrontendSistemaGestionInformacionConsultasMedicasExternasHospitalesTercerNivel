@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CertificadosMedicosService } from '../../services/certificados-medicos.service';
 import { Router } from '@angular/router';
+import { PapeletasInternacionService } from 'src/app/services/papeletas-internacion.service';
 
 @Component({
   selector: 'app-gestion-papeletas-internacion',
@@ -9,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class GestionPapeletasInternacionComponent implements OnInit {
   listadoPapeletasInternacion: any[] = [];
-  constructor(private router:Router,private certificadosMedicosService: CertificadosMedicosService) { }
+  constructor(private router:Router,private papeletasInternacionService: PapeletasInternacionService) { }
   handlePapeletasInternacion($event: any) {
     this.listadoPapeletasInternacion = $event;
   }
   ngOnInit(): void {
-    this.certificadosMedicosService.obtenerCertificadosMedicos().subscribe((pi) => {
+    this.papeletasInternacionService.obtenerPapeletasInternacion().subscribe((pi) => {
       this.listadoPapeletasInternacion = pi;
     })
   }

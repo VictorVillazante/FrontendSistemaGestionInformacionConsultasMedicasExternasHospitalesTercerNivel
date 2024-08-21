@@ -1,0 +1,12 @@
+<div class="container mt-5">
+    <h1 class="text-center p-3">Mis papeletas de internacion</h1>
+    <app-formulario-filtrado-documentos-paciente
+      [documentos]="papeletasInternacion"
+      (documentosEvent)="handlePapeletasInternacion($event)"
+    ></app-formulario-filtrado-documentos-paciente>
+    <app-listado-documentos
+      [documentos]="papeletasInternacion"
+      [verDetalleDocumento]="verDetallePapeletaInternacion"
+    ></app-listado-documentos>
+  </div>
+  
