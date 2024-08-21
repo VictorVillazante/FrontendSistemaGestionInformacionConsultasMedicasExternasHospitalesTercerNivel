@@ -49,6 +49,18 @@ import { GestionCertificadosMedicosComponent } from "./components/gestion-certif
 import { GestionExamenesComplementariosComponent } from "./components/gestion-examenes-complementarios/gestion-examenes-complementarios.component";
 import { GestionInterconsultasComponent } from "./components/gestion-interconsultas/gestion-interconsultas.component";
 import { GestionPapeletasInternacionComponent } from "./components/gestion-papeletas-internacion/gestion-papeletas-internacion.component";
+import { RegistroCertificadoMedicoComponent } from "./components/registro-certificado-medico/registro-certificado-medico.component";
+import { ActualizacionCertificadoMedicoComponent } from "./components/actualizacion-certificado-medico/actualizacion-certificado-medico.component";
+import { DetalleCertificadoMedicoComponent } from "./components/detalle-certificado-medico/detalle-certificado-medico.component";
+import { RegistroExamenComplementarioComponent } from "./components/registro-examen-complementario/registro-examen-complementario.component";
+import { ActualizacionExamenComplementarioComponent } from "./components/actualizacion-examen-complementario/actualizacion-examen-complementario.component";
+import { RegistroInterconsultaComponent } from "./components/registro-interconsulta/registro-interconsulta.component";
+import { ActualizacionInterconsultaComponent } from "./components/actualizacion-interconsulta/actualizacion-interconsulta.component";
+import { RegistroPapeletaInternacionComponent } from "./components/registro-papeleta-internacion/registro-papeleta-internacion.component";
+import { ActualizacionPapeletaInternacionComponent } from "./components/actualizacion-papeleta-internacion/actualizacion-papeleta-internacion.component";
+import { DetalleExamenComplementarioComponent } from "./components/detalle-examen-complementario/detalle-examen-complementario.component";
+import { DetalleInterconsultaComponent } from "./components/detalle-interconsulta/detalle-interconsulta.component";
+import { DetallePapeletaInternacionComponent } from "./components/detalle-papeleta-internacion/detalle-papeleta-internacion.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -92,8 +104,10 @@ const APP_ROUTES: Routes = [
     { path: 'detalle-nota-referencia/:id', component:  DetalleNotaReferenciaComponent},
     { path: 'detalle-receta/:id', component:  DetalleRecetaComponent},
     { path: 'detalle-nota-evolucion/:id', component:  DetalleNotaEvolucionComponent},
-
-
+    { path: 'detalle-certificado-medico/:id', component: DetalleCertificadoMedicoComponent},
+    { path: 'detalle-examen-complementario/:id',component: DetalleExamenComplementarioComponent},
+    { path: 'detalle-interconsulta/:id', component: DetalleInterconsultaComponent},
+    { path: 'detalle-papeleta-internacion/:id', component: DetallePapeletaInternacionComponent},
 
     { path: 'paciente/ver-mis-historias-clinicas', component:  MisHistoriasClnicasComponent},
     { path: 'paciente/ver-mis-recetas', component:  MisRecetasComponent},
@@ -106,12 +120,22 @@ const APP_ROUTES: Routes = [
     { path: 'paciente/detalle-ficha-medica/:id', component:  DetalleFichaMedicaComponent},
 
     { path: 'medico/gestion-papeletas-internacion', component:  GestionPapeletasInternacionComponent},
+    { path: 'medico/registro-papeleta-internacion', component:  RegistroPapeletaInternacionComponent},
+    { path: 'medico/modificar-papeleta-internacion/:id', component:  ActualizacionPapeletaInternacionComponent},
 
+
+    { path: 'medico/registro-certificado-medico', component:  RegistroCertificadoMedicoComponent},
     { path: 'medico/gestion-certificados-medicos', component:  GestionCertificadosMedicosComponent},
+    { path: 'medico/modificar-certificado-medico/:id', component: ActualizacionCertificadoMedicoComponent},
 
     { path: 'medico/gestion-examenes-complementarios', component:  GestionExamenesComplementariosComponent},
+    { path: 'medico/registro-examen-complementario', component: RegistroExamenComplementarioComponent},
+    { path: 'medico/modificar-examen-complementario/:id', component: ActualizacionExamenComplementarioComponent},
 
-    { path: 'medico/gestion-solicitudes-interconsultas', component:  GestionInterconsultasComponent},
+    { path: 'medico/gestion-interconsultas', component:  GestionInterconsultasComponent},
+    { path: 'medico/registro-interconsulta', component:  RegistroInterconsultaComponent},
+    { path: 'medico/modificar-interconsulta/:id', component:  ActualizacionInterconsultaComponent},
+
 
     { path: 'medico/gestion-historias-clinicas', component:  GestionHistoriasClinicasComponent},
     { path: 'medico/registro-historia-clinica', component:  RegistroHistoriaClinicaComponent},

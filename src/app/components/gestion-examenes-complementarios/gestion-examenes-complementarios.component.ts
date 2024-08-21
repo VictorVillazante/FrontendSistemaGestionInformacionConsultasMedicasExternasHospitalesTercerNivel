@@ -18,10 +18,10 @@ export class GestionExamenesComplementariosComponent implements OnInit{
     this.listadoExamenesComplementarios=$event;
   }
   actualizarExamenComplementario(id:any){
-    this.router.navigate(['/medico/modificar-examen-complementaario',id]);
+    this.router.navigate(['/medico/modificar-examen-complementario',id]);
   }
   verDetalleExamenComplementario(id:any){
-    this.router.navigate(['/detalle-examen-complmentario',id]);
+    this.router.navigate(['/detalle-examen-complementario',id]);
   }
   listadoExamenesComplementarios:any[]=[];
 }

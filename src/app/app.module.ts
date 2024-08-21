@@ -85,6 +85,18 @@ import { MisCertificadosMedicosComponent } from './components/mis-certificados-m
 import { MisExamenesComplementariosComponent } from './components/mis-examenes-complementarios/mis-examenes-complementarios.component';
 import { MisSolicitudesInterconsultaComponent } from './components/mis-solicitudes-interconsulta/mis-solicitudes-interconsulta.component';
 import { MisPapeletasInternacionComponent } from './components/mis-papeletas-internacion/mis-papeletas-internacion.component';
+import { RegistroCertificadoMedicoComponent } from './components/registro-certificado-medico/registro-certificado-medico.component';
+import { ActualizacionCertificadoMedicoComponent } from './components/actualizacion-certificado-medico/actualizacion-certificado-medico.component';
+import { DetalleCertificadoMedicoComponent } from './components/detalle-certificado-medico/detalle-certificado-medico.component';
+import { RegistroExamenComplementarioComponent } from './components/registro-examen-complementario/registro-examen-complementario.component';
+import { ActualizacionExamenComplementarioComponent } from './components/actualizacion-examen-complementario/actualizacion-examen-complementario.component';
+import { RegistroInterconsultaComponent } from './components/registro-interconsulta/registro-interconsulta.component';
+import { ActualizacionInterconsultaComponent } from './components/actualizacion-interconsulta/actualizacion-interconsulta.component';
+import { RegistroPapeletaInternacionComponent } from './components/registro-papeleta-internacion/registro-papeleta-internacion.component';
+import { ActualizacionPapeletaInternacionComponent } from './components/actualizacion-papeleta-internacion/actualizacion-papeleta-internacion.component';
+import { DetalleExamenComplementarioComponent } from './components/detalle-examen-complementario/detalle-examen-complementario.component';
+import { DetalleInterconsultaComponent } from './components/detalle-interconsulta/detalle-interconsulta.component';
+import { DetallePapeletaInternacionComponent } from './components/detalle-papeleta-internacion/detalle-papeleta-internacion.component';
 
 @NgModule({
   declarations: [
@@ -165,7 +177,19 @@ import { MisPapeletasInternacionComponent } from './components/mis-papeletas-int
     MisCertificadosMedicosComponent,
     MisExamenesComplementariosComponent,
     MisSolicitudesInterconsultaComponent,
-    MisPapeletasInternacionComponent
+    MisPapeletasInternacionComponent,
+    RegistroCertificadoMedicoComponent,
+    ActualizacionCertificadoMedicoComponent,
+    DetalleCertificadoMedicoComponent,
+    RegistroExamenComplementarioComponent,
+    ActualizacionExamenComplementarioComponent,
+    RegistroInterconsultaComponent,
+    ActualizacionInterconsultaComponent,
+    RegistroPapeletaInternacionComponent,
+    ActualizacionPapeletaInternacionComponent,
+    DetalleExamenComplementarioComponent,
+    DetalleInterconsultaComponent,
+    DetallePapeletaInternacionComponent
   ],
   imports: [
     BrowserModule,

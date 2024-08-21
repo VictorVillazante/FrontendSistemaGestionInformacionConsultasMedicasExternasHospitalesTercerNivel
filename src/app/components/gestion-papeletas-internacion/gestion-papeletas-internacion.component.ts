@@ -23,6 +23,6 @@ export class GestionPapeletasInternacionComponent implements OnInit {
     this.router.navigate(["medico/modificar-papeleta-internacion",id]);
   }
   verDetallePapeletaInternacion(id:number){
-    this.router.navigate(["medico/modificar-papeleta-internacion",id]);
+    this.router.navigate(["detalle-papeleta-internacion",id]);
   }
 }
