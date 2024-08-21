@@ -8,6 +8,9 @@ import { NotaEvolucionService } from 'src/app/services/nota-evolucion.service';
   styleUrls: ['./mis-notas-evolucion.component.css']
 })
 export class MisNotasEvolucionComponent {
+  handleNotasEvolucion($event:any){
+    this.notaEvolucionService=$event
+  }
   verDetalleHistoriaClinica(idHistoriaClinica: any) {
     const url = this.router.serializeUrl(
      this.router.createUrlTree(['/detalle-historia-clinica', idHistoriaClinica])
@@ -25,7 +28,7 @@ export class MisNotasEvolucionComponent {
       this.notasEvolucion=data;
     });
   }
-  verDetalles(id:any){
+  verDetalleNotaEvolucion(id:number){
     this.router.navigate(["/detalle-nota-evolucion",id]);
   }
 }

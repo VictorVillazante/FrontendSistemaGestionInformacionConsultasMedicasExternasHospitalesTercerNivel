@@ -81,6 +81,9 @@ import { SectionEspecialidadesRequisitosComponent } from './shared/section-espec
 import { SectionEspecialidadesProcedimientosComponent } from './shared/section-especialidades-procedimientos/section-especialidades-procedimientos.component';
 import { CardEspecialidadRequisitoComponent } from './shared/card-especialidad-requisito/card-especialidad-requisito.component';
 import { CardEspecialidadProcedimientoComponent } from './shared/card-especialidad-procedimiento/card-especialidad-procedimiento.component';
+import { MisCertificadosMedicosComponent } from './components/mis-certificados-medicos/mis-certificados-medicos.component';
+import { MisExamenesComplementariosComponent } from './components/mis-examenes-complementarios/mis-examenes-complementarios.component';
+import { MisSolicitudesInterconsultaComponent } from './components/mis-solicitudes-interconsulta/mis-solicitudes-interconsulta.component';
 
 @NgModule({
   declarations: [
@@ -157,7 +160,10 @@ import { CardEspecialidadProcedimientoComponent } from './shared/card-especialid
     SectionEspecialidadesRequisitosComponent,
     SectionEspecialidadesProcedimientosComponent,
     CardEspecialidadRequisitoComponent,
-    CardEspecialidadProcedimientoComponent
+    CardEspecialidadProcedimientoComponent,
+    MisCertificadosMedicosComponent,
+    MisExamenesComplementariosComponent,
+    MisSolicitudesInterconsultaComponent
   ],
   imports: [
     BrowserModule,
