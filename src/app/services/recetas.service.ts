@@ -82,6 +82,7 @@ export class RecetasService {
     //   }
     // ]
     // );
+    return of(this.listadoRecetas.filter(receta=>receta.idPaciente==3));
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/paciente/${idPaciente}`);
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/paciente/${idPaciente}`);
   }

@@ -22,6 +22,27 @@ export class MenuComponent {
       rol:"PACIENTE"
     },
     {
+      title: 'Mis Certificados Medicos',
+      description: 'Consulta tus certificados medicos de manera fácil y rápida.',
+      image: 'url("https://images.unsplash.com/photo-1580281656224-5f45b0172d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
+      route:"/paciente/ver-mis-certificados-medicos",
+      rol:"PACIENTE"
+    },
+    {
+      title: 'Mis Examenes Complementarios',
+      description: 'Consulta tus examenes complementarios de manera fácil y rápida.',
+      image: 'url("https://images.unsplash.com/photo-1580281656224-5f45b0172d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
+      route:"/paciente/ver-mis-examenes-complementarios",
+      rol:"PACIENTE"
+    },
+    {
+      title: 'Mis Interconsultas',
+      description: 'Consulta tus interconsultas de manera fácil y rápida.',
+      image: 'url("https://images.unsplash.com/photo-1580281656224-5f45b0172d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
+      route:"/paciente/ver-mis-interconsultas",
+      rol:"PACIENTE"
+    },
+    {
       title: 'Mis notas de referencia',
       description: 'Consulta tus notas de referencia de manera fácil y rápida.',
       image: 'url("https://images.unsplash.com/photo-1580281657521-7805f5a4e552?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
@@ -42,7 +63,13 @@ export class MenuComponent {
       route:"/paciente/ver-mis-notas-evolucion",
       rol:"PACIENTE"
     },
-    
+    {
+      title: 'Mis Papeletas de Internacion',
+      description: 'Consulta tus papeletas de internacion de manera fácil y rápida.',
+      image: 'url("https://images.unsplash.com/photo-1580281656224-5f45b0172d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG1lZGljYWwlMjByZWNvcmR8fDB8fHx8MTY4NzgzODc3Ng&ixlib=rb-1.2.1&q=80&w=400")',
+      route:"/paciente/ver-mis-papeletas-internacion",
+      rol:"PACIENTE"
+    },
     {
       title: 'Gestión de Historias Clinicas',
       description: 'Administra historias clinicas de manera eficiente y segura.',

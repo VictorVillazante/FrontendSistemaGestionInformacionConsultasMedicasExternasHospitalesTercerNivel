@@ -128,6 +128,7 @@ export class NotasReferenciaService {
     //   }
     // ]
     // );
+    return of(this.listadoNotasReferencia.filter(nr=>nr.idPaciente==3));
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-notas-referencia/notas-referencia/paciente/${idPaciente}`);
     //return this.http.get<any>(`http://localhost:8094/api/microservicio-notas-referencia/notas-referencia/paciente/${idPaciente}`);
 

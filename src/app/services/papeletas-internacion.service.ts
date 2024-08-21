@@ -11,7 +11,7 @@ export class PapeletasInternacionService {
     return of(this.listadoPapeletasInternacion);
   }
   obtenerPapeletasInternacionPaciente(idPaciente:number){
-    return of(this.listadoPapeletasInternacion.filter(pi=>pi.idPaciente==idPaciente))
+    return of(this.listadoPapeletasInternacion.filter(pi=>pi.idPaciente==3))
   }
   constructor() { }
 }

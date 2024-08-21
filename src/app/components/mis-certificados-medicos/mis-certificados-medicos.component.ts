@@ -9,13 +9,15 @@ import { CertificadosMedicosService } from 'src/app/services/certificados-medico
 })
 export class MisCertificadosMedicosComponent implements OnInit{
   certificadosMedicos: any[] = [];
-  idPaciente = JSON.parse(localStorage.getItem("userDetails") ?? "{}").idPaciente;
-  constructor(private router: Router, private certificadosMedicosService: CertificadosMedicosService) { }
-  ngOnInit(): void {
-    this.obtenerInterconultasPaciente();
+  idPaciente:any=1;
+  constructor(private router: Router, private certificadosMedicosService: CertificadosMedicosService) { 
+    this.idPaciente = JSON.parse(localStorage.getItem("userDetails") ?? "{}").idPaciente;
+    this.obtenerCertificadosMedicosPaciente(this.idPaciente);
   }
-  obtenerInterconultasPaciente() {
-    this.certificadosMedicosService.obtenerCertificadosMedicosPaciente(this.idPaciente).subscribe((data: any) => {
+  ngOnInit(): void {
+  }
+  obtenerCertificadosMedicosPaciente(idPaciente:any) {
+    this.certificadosMedicosService.obtenerCertificadosMedicosPaciente(idPaciente).subscribe((data: any) => {
       this.certificadosMedicos = data;
     });
   }

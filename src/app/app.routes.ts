@@ -61,6 +61,10 @@ import { ActualizacionPapeletaInternacionComponent } from "./components/actualiz
 import { DetalleExamenComplementarioComponent } from "./components/detalle-examen-complementario/detalle-examen-complementario.component";
 import { DetalleInterconsultaComponent } from "./components/detalle-interconsulta/detalle-interconsulta.component";
 import { DetallePapeletaInternacionComponent } from "./components/detalle-papeleta-internacion/detalle-papeleta-internacion.component";
+import { MisCertificadosMedicosComponent } from "./components/mis-certificados-medicos/mis-certificados-medicos.component";
+import { MisExamenesComplementariosComponent } from "./components/mis-examenes-complementarios/mis-examenes-complementarios.component";
+import { MisSolicitudesInterconsultaComponent } from './components/mis-solicitudes-interconsulta/mis-solicitudes-interconsulta.component';
+import { MisPapeletasInternacionComponent } from "./components/mis-papeletas-internacion/mis-papeletas-internacion.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -113,6 +117,10 @@ const APP_ROUTES: Routes = [
     { path: 'paciente/ver-mis-recetas', component:  MisRecetasComponent},
     { path: 'paciente/ver-mis-notas-referencia', component:  MisNotasReferenciaComponent},
     { path: 'paciente/ver-mis-notas-evolucion', component:  MisNotasEvolucionComponent},
+    { path: 'paciente/ver-mis-certificados-medicos', component:  MisCertificadosMedicosComponent},
+    { path: 'paciente/ver-mis-examenes-complementarios', component:  MisExamenesComplementariosComponent},
+    { path: 'paciente/ver-mis-interconsultas', component:  MisSolicitudesInterconsultaComponent},
+    { path: 'paciente/ver-mis-papeletas-internacion', component:  MisPapeletasInternacionComponent},
 
 
     { path: 'paciente/gestion-ficha-medica', component:  GestionFichasMedicasComponent,},

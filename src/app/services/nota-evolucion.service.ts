@@ -30,7 +30,7 @@ export class NotaEvolucionService {
     //   "deletedAt": null
     // }
     // );
-    return of(this.listaNotasEvolucion.filter(notaEvolucion=>notaEvolucion.id=id)[0]);
+    return of(this.listaNotasEvolucion.filter(notaEvolucion=>notaEvolucion.id==id)[0]);
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/notas-evolucion/${id}`);
     //return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion/${id}`);
 
@@ -49,7 +49,7 @@ export class NotaEvolucionService {
     return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion`);
   }
   obtenerNotasEvolucionPorIdPaciente(idPaciente:any) {
-    return of(this.listaNotasEvolucion.filter(notaEvolucion=>notaEvolucion.idPaciente=idPaciente));
+    return of(this.listaNotasEvolucion.filter(notaEvolucion=>notaEvolucion.idPaciente==3));
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/notas-evolucion/paciente/${idPaciente}`);
     //return this.http.get<any>(`http://localhost:8082/api/microservicio-historias-clinicas/notas-evolucion/paciente/${idPaciente}`);
   }

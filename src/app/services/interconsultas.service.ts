@@ -8,7 +8,7 @@ import { InterconsultasDataDev } from 'src/assets/data-dev/interconsultas';
 })
 export class InterconsultasService {
   obtenerInterconsultasPaciente(idPaciente: any) {
-    return of(this.listadoInterconsultas.filter(interconsulta=>interconsulta.idPaciente=idPaciente));
+    return of(this.listadoInterconsultas.filter(interconsulta=>interconsulta.idPaciente==3));
 
   }
   listadoInterconsultas:any[]=InterconsultasDataDev.listaInterconsultas;

@@ -8,7 +8,7 @@ import { ExamenesComplementariosDataDev } from '../../assets/data-dev/examenes-c
 })
 export class ExamenesComplementariosService {
   obtenerExamenesComplementariosPaciente(idPaciente: any) {
-    return of(this.listadoExamenesComplementarios.filter(examenComplementario=>examenComplementario.idPaciente=idPaciente));
+    return of(this.listadoExamenesComplementarios.filter(examenComplementario=>examenComplementario.idPaciente==3));
   }
   listadoExamenesComplementarios:any[]=ExamenesComplementariosDataDev.listadoExamenesComplementarios;
   obtenerExamenesComplementarios() {
