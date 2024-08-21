@@ -10,23 +10,26 @@ import { NotasReferenciaService } from 'src/app/services/notas-referencia.servic
 export class MisNotasReferenciaComponent {
   verDetalleHistoriaClinica(idHistoriaClinica: any) {
     const url = this.router.serializeUrl(
-     this.router.createUrlTree(['/detalle-historia-clinica', idHistoriaClinica])
-   );
-   window.open(url, '_blank');
-   }
+      this.router.createUrlTree(['/detalle-historia-clinica', idHistoriaClinica])
+    );
+    window.open(url, '_blank');
+  }
   notasReferencia: any[] = [];
 
-  constructor(private router:Router,private notasReferenciaService:NotasReferenciaService) {
-    this.idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
+  constructor(private router: Router, private notasReferenciaService: NotasReferenciaService) {
+    this.idPaciente = JSON.parse(localStorage.getItem("userDetails") ?? "{}").idPaciente;
     this.obtenerMisHistoriasClinicas(this.idPaciente);
-   }
-   verDetalle(id:any){
-    this.router.navigate(["/detalle-nota-referencia",id]);
   }
-  idPaciente:any=1;
-  obtenerMisHistoriasClinicas(idPaciente:any){
-    this.notasReferenciaService.obtenerNotasReferenciaPaciente(idPaciente).subscribe((data:any)=>{
-      this.notasReferencia=data;
+  handleNotasReferencia($event:any){
+    this.notasReferencia=$event;
+  }
+  verDetalleNotaReferencia(id: number) {
+    this.router.navigate(["/detalle-nota-referencia", id]);
+  }
+  idPaciente: any = 1;
+  obtenerMisHistoriasClinicas(idPaciente: any) {
+    this.notasReferenciaService.obtenerNotasReferenciaPaciente(idPaciente).subscribe((data: any) => {
+      this.notasReferencia = data;
     });
   }
 }

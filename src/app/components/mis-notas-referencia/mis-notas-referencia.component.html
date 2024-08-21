@@ -1,18 +1,11 @@
 <div class="container mt-5">
-    <h1 class="text-center p-3">Mis notas de referencia</h1>
-
-    <ul class="list-group">
-        <li *ngFor="let item of notasReferencia; let i = index" [class.bg-color-blue-hospital]="i % 2 === 0" [class.text-white]="i % 2 === 0" class="p-3 list-group-item d-flex justify-content-between align-items-center">
-        <p class="dato-info">
-            Nota de referencia {{ item.idNotaReferencia }}<br/>
-            Fecha creacion: {{ item.createdAt }} <br/>
-            Fecha actualizacion: {{ item.updatedAt }}<br/>
-            Historia clinica: {{ item.idHistoriaClinica }} <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(item.idHistoriaClinica)"></i><br/>            
-        </p>
-        <div class="botones-opciones">
-            <i class="fas fa-chevron-right me-2" (click)="verDetalle(item.idNotaReferencia)"></i>
-        </div>
-        </li>
-      </ul>
-  </div>
-  
+  <h1 class="text-center p-3">Mis notas de referencia</h1>
+  <app-formulario-filtrado-documentos-paciente
+    [documentos]="notasReferencia"
+    (documentosEvent)="handleNotasReferencia($event)"
+  ></app-formulario-filtrado-documentos-paciente>
+  <app-listado-documentos
+    [documentos]="notasReferencia"
+    [verDetalleDocumento]="verDetalleNotaReferencia"
+  ></app-listado-documentos>
+</div>
