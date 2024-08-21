@@ -2,7 +2,7 @@
     <div class="mb-3">
       <p class="mv-3">Buscar por rangos de fecha de creacion</p>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="esBusquedaAvanzada">
           <label for="fechaInicio" class="form-label">Fecha inicio</label>
           <input
             type="date"
@@ -11,7 +11,7 @@
             [(ngModel)]="fechaInicio"
           />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="esBusquedaAvanzada">
           <label for="fechaFin" class="form-label">Fecha fin</label>
           <input
             type="date"
@@ -33,7 +33,7 @@
             [(ngModel)]="ciPaciente"
           />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="esBusquedaAvanzada">
           <label for="nombrePaciente" class="form-label">Nombre paciente</label>
           <input
             type="text"
@@ -46,7 +46,7 @@
     </div>
     <div class="mb-3">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="esBusquedaAvanzada">
           <label for="nombreMedico" class="form-label">Medico elaborador</label>
           <input
             type="text"
@@ -55,7 +55,7 @@
             [(ngModel)]="nombreMedico"
           />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="esBusquedaAvanzada">
           <label for="nombreEspecialidad" class="form-label"
             >Especialidad</label
           >
@@ -70,7 +70,7 @@
     </div>
     <div class="mb-3">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="esBusquedaAvanzada">
           <label for="diagnosticoPresuntivo" class="form-label"
             >Diagnostico presuntivo</label
           >
@@ -82,6 +82,8 @@
           />
         </div>
       </div>
+      <a id="tipo-busqueda" (click)="cambiarTipoBusqueda()" *ngIf="!esBusquedaAvanzada">Busqueda avanzada</a>
+      <a id="tipo-busqueda" (click)="cambiarTipoBusqueda()" *ngIf="esBusquedaAvanzada">Busqueda normal</a>
     </div>
     <button
       class="btn btn-success-hospital"

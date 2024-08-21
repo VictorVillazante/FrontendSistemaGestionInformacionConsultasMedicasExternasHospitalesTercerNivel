@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <h1 class="text-center p-3">Mis historias clinicas</h1>
-    <app-formulario-filtrado-documentos [documentos]="historiasClinicas" (documentosEvent)="handleHistoriasClinicas($event)"></app-formulario-filtrado-documentos>
+    <app-formulario-filtrado-documentos-paciente [documentos]="historiasClinicas" (documentosEvent)="handleHistoriasClinicas($event)"></app-formulario-filtrado-documentos-paciente>
     <app-listado-documentos [documentos]="historiasClinicas" [verDetalleDocumento]="verDetalleHistoriaClinica"></app-listado-documentos>
   </div>
   

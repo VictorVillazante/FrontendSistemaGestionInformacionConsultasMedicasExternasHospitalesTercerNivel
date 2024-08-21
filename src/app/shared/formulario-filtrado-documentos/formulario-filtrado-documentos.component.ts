@@ -10,6 +10,9 @@ export class FormularioFiltradoDocumentosComponent implements OnInit{
   @Input() documentos!:any;
   @Output() documentosEvent = new EventEmitter<any>();
   documentosAux:any[]=[];
+  cambiarTipoBusqueda(){
+    this.esBusquedaAvanzada=!this.esBusquedaAvanzada;
+  }
   ngOnInit(): void {
       this.documentosAux=this.documentos;
   }
@@ -61,6 +64,7 @@ export class FormularioFiltradoDocumentosComponent implements OnInit{
   }
 
   constructor(){}
+  esBusquedaAvanzada:boolean=false;
   ciPaciente:any;
   nombrePaciente:any;
   nombreMedico:any;
