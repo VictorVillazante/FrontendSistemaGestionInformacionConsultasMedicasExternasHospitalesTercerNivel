@@ -8,6 +8,8 @@ import { NotaEvolucionService } from 'src/app/services/nota-evolucion.service';
   styleUrls: ['./mis-notas-evolucion.component.css']
 })
 export class MisNotasEvolucionComponent {
+  idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
+
   handleNotasEvolucion($event:any){
     this.notaEvolucionService=$event
   }
@@ -22,9 +24,8 @@ export class MisNotasEvolucionComponent {
     this.obtenerNotasEvolucion();
    }
    obtenerNotasEvolucion(){
-    const idPaciente=JSON.parse(localStorage.getItem("userDetails")??"{}").idPaciente;
 
-    this.notaEvolucionService.obtenerNotasEvolucionPorIdPaciente(idPaciente).subscribe((data:any)=>{
+    this.notaEvolucionService.obtenerNotasEvolucionPorIdPaciente(this.idPaciente).subscribe((data:any)=>{
       this.notasEvolucion=data;
     });
   }
