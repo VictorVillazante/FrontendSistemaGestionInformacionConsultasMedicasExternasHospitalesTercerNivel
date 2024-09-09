@@ -1,0 +1,37 @@
+.contenido-principal {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.formulario-recuperar-contrasena {
+    background-color: #fff;
+    padding: 80px 70px;
+}
+
+.texto-informativo {
+    font-weight: 400;
+}
+
+
+.btn-primary {
+    background-color: #28afb0;
+    color: #fff;
+    border: none;
+}
+
+@media (max-width: 1280px) {
+    .contenido-principal {
+        padding: 20px 0;
+    }
+    .formulario-recuperar-contrasena {
+        padding: 20px;
+    }
+    
+}
+@media (max-width: 414px) {
+    .formulario-recuperar-contrasena {
+        padding: 40px;
+    }
+    
+}

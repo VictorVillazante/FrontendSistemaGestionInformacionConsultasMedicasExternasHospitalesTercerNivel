@@ -97,6 +97,8 @@ import { ActualizacionPapeletaInternacionComponent } from './components/actualiz
 import { DetalleExamenComplementarioComponent } from './components/detalle-examen-complementario/detalle-examen-complementario.component';
 import { DetalleInterconsultaComponent } from './components/detalle-interconsulta/detalle-interconsulta.component';
 import { DetallePapeletaInternacionComponent } from './components/detalle-papeleta-internacion/detalle-papeleta-internacion.component';
+import { GestionEspecialidadesComponent } from './components/gestion-especialidades/gestion-especialidades.component';
+import { RecuperarContraseniaComponent } from './components/recuperar-contrasenia/recuperar-contrasenia.component';
 
 @NgModule({
   declarations: [
@@ -189,7 +191,9 @@ import { DetallePapeletaInternacionComponent } from './components/detalle-papele
     ActualizacionPapeletaInternacionComponent,
     DetalleExamenComplementarioComponent,
     DetalleInterconsultaComponent,
-    DetallePapeletaInternacionComponent
+    DetallePapeletaInternacionComponent,
+    GestionEspecialidadesComponent,
+    RecuperarContraseniaComponent
   ],
   imports: [
     BrowserModule,

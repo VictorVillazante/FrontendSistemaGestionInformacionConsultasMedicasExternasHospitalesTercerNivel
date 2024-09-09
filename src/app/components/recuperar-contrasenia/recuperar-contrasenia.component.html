@@ -1,0 +1,59 @@
+<main class="contenido-principal">
+  <section class="formulario-recuperar-contrasena container">
+    <h1 class="mb-4">Recuperar contraseña</h1>
+
+    <form>
+      <div class="grupo-formulario mb-4">
+        <label for="correo" class="form-label">Correo electrónico</label>
+
+        <input
+          type="email"
+          id="correo"
+          class="form-control input-border-bottom"
+          required
+        />
+      </div>
+
+      <button type="button" class="btn btn-success-hospital mb-4">
+        Recibir código de verificación
+      </button>
+
+      <p class="texto-informativo mb-4">
+        Recibirá un mensaje de texto con el código de verificación en el celular
+        con el que está registrado
+      </p>
+
+      <div class="grupo-formulario mb-4">
+        <label for="ci" class="form-label">CI</label>
+
+        <input
+          type="text"
+          id="ci"
+          class="form-control input-border-bottom"
+          required
+        />
+      </div>
+
+      <div class="grupo-formulario mb-4">
+        <label for="codigo-verificacion" class="form-label"
+          >Código de verificación</label
+        >
+
+        <input
+          type="text"
+          id="codigo-verificacion"
+          class="form-control input-border-bottom"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-success-hospital">
+        Recuperar contraseña
+      </button>
+
+      <p class="texto-informativo mt-4">
+        Recibirá su nueva contraseña en su email
+      </p>
+    </form>
+  </section>
+</main>

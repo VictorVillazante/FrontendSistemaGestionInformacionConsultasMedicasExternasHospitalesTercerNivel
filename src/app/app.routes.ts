@@ -65,10 +65,12 @@ import { MisCertificadosMedicosComponent } from "./components/mis-certificados-m
 import { MisExamenesComplementariosComponent } from "./components/mis-examenes-complementarios/mis-examenes-complementarios.component";
 import { MisSolicitudesInterconsultaComponent } from './components/mis-solicitudes-interconsulta/mis-solicitudes-interconsulta.component';
 import { MisPapeletasInternacionComponent } from "./components/mis-papeletas-internacion/mis-papeletas-internacion.component";
+import { RecuperarContraseniaComponent } from "./components/recuperar-contrasenia/recuperar-contrasenia.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
     { path: 'login', component:  LoginComponent},
+    { path: 'recuperar-contrasenia', component:  RecuperarContraseniaComponent},
     { path: 'horarios-atencion', component:  UsuarioNoLogeadoHorariosAtencionComponent},
     { path: 'especialidades-atencion', component:  UsuarioNoLogeadoEspecialidadedesComponent},
     { path: 'medicos-especialistas', component:  UsuarioNoLogeadoMedicosEspecialistasComponent},

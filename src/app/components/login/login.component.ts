@@ -10,9 +10,10 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private router: Router,private authService:AuthService) {
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = this.fb.group({
       email: [''],
       password: ['']
@@ -39,5 +40,8 @@ export class LoginComponent {
     } catch (error) {
       console.error('Error en la autenticación:', error);
     }
+  }
+  redireccionarRecuperarConstrasenia() {
+    this.router.navigate(["recuperar-contrasenia"]);
   }
 }
