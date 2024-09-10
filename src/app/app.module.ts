@@ -99,6 +99,9 @@ import { DetalleInterconsultaComponent } from './components/detalle-interconsult
 import { DetallePapeletaInternacionComponent } from './components/detalle-papeleta-internacion/detalle-papeleta-internacion.component';
 import { GestionEspecialidadesComponent } from './components/gestion-especialidades/gestion-especialidades.component';
 import { RecuperarContraseniaComponent } from './components/recuperar-contrasenia/recuperar-contrasenia.component';
+import { RegistroEspecialidadComponent } from './components/registro-especialidad/registro-especialidad.component';
+import { InputImagenesComponent } from './shared/input-imagenes/input-imagenes.component';
+import { FormularioDetalleEspecialidadComponent } from './shared/formulario-detalle-especialidad/formulario-detalle-especialidad.component';
 
 @NgModule({
   declarations: [
@@ -193,7 +196,10 @@ import { RecuperarContraseniaComponent } from './components/recuperar-contraseni
     DetalleInterconsultaComponent,
     DetallePapeletaInternacionComponent,
     GestionEspecialidadesComponent,
-    RecuperarContraseniaComponent
+    RecuperarContraseniaComponent,
+    RegistroEspecialidadComponent,
+    InputImagenesComponent,
+    FormularioDetalleEspecialidadComponent
   ],
   imports: [
     BrowserModule,

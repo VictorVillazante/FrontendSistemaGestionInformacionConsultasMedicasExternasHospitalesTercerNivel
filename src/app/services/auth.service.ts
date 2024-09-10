@@ -7,6 +7,16 @@ import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
   providedIn: 'root'
 })
 export class AuthService {
+  recuperarContrasenia(recuperarContrasenia: any) {
+    let recuperarContraseniaForm=recuperarContrasenia.value;
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/auth/nueva-contrasenia`,{
+      "ci":recuperarContrasenia.ci,
+      "codigoVerficacion":recuperarContrasenia.codigoVerificacion
+    });
+  }
+  recibirCodigoVerificacion(email:string) {
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/auth/codigo-verificacion/${email}`);
+  }
   logout() {
     localStorage.clear();
     this.roles$.next(null);

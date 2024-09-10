@@ -1,37 +1,72 @@
 <main class="contenido-principal">
   <section class="formulario-recuperar-contrasena container">
     <h1 class="mb-4">Recuperar contraseña</h1>
-
-    <form>
-      <div class="grupo-formulario mb-4">
+    <form
+      (ngSubmit)="recibirCodigoVerificacion()"
+      [formGroup]="emailRecuperacionForm"
+    >
+      <div class="mb-4">
         <label for="correo" class="form-label">Correo electrónico</label>
 
         <input
           type="email"
           id="correo"
+          formControlName="email"
           class="form-control input-border-bottom"
-          required
         />
+        <div
+          *ngIf="
+            emailRecuperacionForm.get('email')?.invalid &&
+            emailRecuperacionForm.get('email')?.touched
+          "
+        >
+          <small
+            *ngIf="recuperarContraseniaForm.get('email')?.errors?.['required']"
+            >El email es requerido.</small
+          >
+          <small *ngIf="recuperarContraseniaForm.get('email')?.errors?.['email']"
+            >Se debe ingresar un email valido.</small
+          >
+        </div>
       </div>
 
-      <button type="button" class="btn btn-success-hospital mb-4">
+      <button type="submit" class="btn btn-success-hospital mb-4">
         Recibir código de verificación
       </button>
 
       <p class="texto-informativo mb-4">
-        Recibirá un mensaje de texto con el código de verificación en el celular
+        Recibirá un mensaje de texto con el código de verificación en el email
         con el que está registrado
       </p>
-
+    </form>
+    <form
+      (ngSubmit)="recuperarContrasenia()"
+      [formGroup]="recuperarContraseniaForm"
+    >
       <div class="grupo-formulario mb-4">
         <label for="ci" class="form-label">CI</label>
 
         <input
           type="text"
           id="ci"
+          formControlName="ci"
           class="form-control input-border-bottom"
           required
         />
+        <div
+          *ngIf="
+            recuperarContraseniaForm.get('ci')?.invalid &&
+            recuperarContraseniaForm.get('ci')?.touched
+          "
+        >
+          <small
+            *ngIf="recuperarContraseniaForm.get('ci')?.errors?.['required']"
+            >El CI es requerido.</small
+          >
+          <small *ngIf="recuperarContraseniaForm.get('ci')?.errors?.['pattern']"
+            >El CI debe contener solo letras y números.</small
+          >
+        </div>
       </div>
 
       <div class="grupo-formulario mb-4">
@@ -42,9 +77,25 @@
         <input
           type="text"
           id="codigo-verificacion"
+          formControlName="codigoVerificacion"
           class="form-control input-border-bottom"
           required
         />
+        <div
+          *ngIf="
+            recuperarContraseniaForm.get('codigoVerificacion')?.invalid &&
+            recuperarContraseniaForm.get('codigoVerificacion')?.touched
+          "
+        >
+          <small
+            *ngIf="recuperarContraseniaForm.get('codigoVerificacion')?.errors?.['required']"
+            >El código de verificación es requerido.</small
+          >
+          <small
+            *ngIf="recuperarContraseniaForm.get('codigoVerificacion')?.errors?.['minlength']"
+            >El código de verificación debe tener al menos 6 caracteres.</small
+          >
+        </div>
       </div>
 
       <button type="submit" class="btn btn-success-hospital">

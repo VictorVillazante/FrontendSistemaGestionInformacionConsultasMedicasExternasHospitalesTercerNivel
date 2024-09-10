@@ -1,0 +1,32 @@
+<div class="d-flex flex-wrap align-items-center mb-4">
+    <div
+      class="btn-agregar-imagen"
+      (click)="agregarImagen()"
+      tabindex="0"
+      role="button"
+      aria-label="Agregar imagen"
+    >
+      <i class="fa-solid fa-plus icono-agregar"></i>
+      <div>Agregar imagen</div>
+    </div>
+
+    <div
+      *ngFor="let imagen of imagenes; let i = index"
+      class="position-relative me-2 mb-2"
+    >
+      <img
+        [src]="imagen"
+        [alt]="'Imagen de especialidad ' + (i + 1)"
+        class="img-fluid rounded imagen-especialidad"
+      />
+
+      <button
+        type="button"
+        class="btn btn-danger position-absolute top-0 end-0 m-2"
+        (click)="eliminarImagen(i)"
+        aria-label="Eliminar imagen"
+      >
+        <i class="fa-solid fa-trash icono-eliminar" ></i>
+      </button>
+    </div>
+  </div>

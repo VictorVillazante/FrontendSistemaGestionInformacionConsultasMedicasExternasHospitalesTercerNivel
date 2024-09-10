@@ -1,0 +1,29 @@
+.icono-agregar {
+    width: 64px;
+    height: auto;
+    margin-bottom: 0.25rem;
+}
+
+.texto-agregar-imagen {
+    margin-top: 10px;
+}
+
+.imagen-especialidad {
+    width: 180px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.icono-eliminar {
+    width: 16px;
+    height: 16px;
+}
+.btn-agregar-imagen{
+    background-color: var(--color4);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+}

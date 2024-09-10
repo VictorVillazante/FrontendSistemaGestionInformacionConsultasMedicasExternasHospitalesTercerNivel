@@ -66,6 +66,7 @@ import { MisExamenesComplementariosComponent } from "./components/mis-examenes-c
 import { MisSolicitudesInterconsultaComponent } from './components/mis-solicitudes-interconsulta/mis-solicitudes-interconsulta.component';
 import { MisPapeletasInternacionComponent } from "./components/mis-papeletas-internacion/mis-papeletas-internacion.component";
 import { RecuperarContraseniaComponent } from "./components/recuperar-contrasenia/recuperar-contrasenia.component";
+import { RegistroEspecialidadComponent } from "./components/registro-especialidad/registro-especialidad.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -177,6 +178,8 @@ const APP_ROUTES: Routes = [
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},
     { path: 'administrador/registro-turno-atencion', component:  RegistroTurnoAtencionComponent},
     { path: 'administrador/modificar-turno-atencion/:id', component:  ActualizacionTurnoAtencionComponent},
+    { path: 'administracion/registro-especialidad', component:  RegistroEspecialidadComponent},
+
     { path: 'medico/ver-mis-consultas-medicas', component:  MisConsultasMedicasComponent},
 
 
