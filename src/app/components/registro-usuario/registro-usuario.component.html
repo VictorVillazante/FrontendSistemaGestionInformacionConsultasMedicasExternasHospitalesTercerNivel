@@ -1,0 +1,15 @@
+<main class="container mt-5 mb-5">
+    <section class="bg-white p-4">
+      <h1 class="text-center mb-4">Registrar usuario</h1>
+  
+      <app-formulario-detalle-usuario
+        [formularioUsuario]="formularioUsuario"
+        [imagenes]="imagenes"
+        (imagenesEvent)="handleImagenes($event)"
+        [onSubmit]="onSubmit"
+      >
+  
+      </app-formulario-detalle-usuario>
+    </section>
+  </main>
+  

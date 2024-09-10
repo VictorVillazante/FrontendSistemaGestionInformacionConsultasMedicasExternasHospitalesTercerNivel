@@ -13,8 +13,6 @@ import { RegistroFichaMedicaComponent } from "./components/registro-ficha-medica
 import { DetalleFichaMedicaComponent } from "./components/detalle-ficha-medica/detalle-ficha-medica.component";
 import { GestionPacientesComponent } from "./components/gestion-pacientes/gestion-pacientes.component";
 import { GestionMedicosComponent } from "./components/gestion-medicos/gestion-medicos.component";
-import { RegistroMedicoComponent } from "./components/registro-medico/registro-medico.component";
-import { RegistroPacienteComponent } from "./components/registro-paciente/registro-paciente.component";
 import { DetalleNotaReferenciaComponent } from "./components/detalle-nota-referencia/detalle-nota-referencia.component";
 import { GestionNotasReferenciaComponent } from "./components/gestion-notas-referencia/gestion-notas-referencia.component";
 import { RegistroNotaReferenciaComponent } from "./components/registro-nota-referencia/registro-nota-referencia.component";
@@ -29,12 +27,10 @@ import { DetalleNotaEvolucionComponent } from "./components/detalle-nota-evoluci
 import { GestionNotasEvolucionComponent } from "./components/gestion-notas-evolucion/gestion-notas-evolucion.component";
 import { RegistroNotaEvolucionComponent } from "./components/registro-nota-evolucion/registro-nota-evolucion.component";
 import { ActualizacionNotaEvolucionComponent } from "./components/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component";
-import { ActualizacionMedicoComponent } from "./components/actualizacion-medico/actualizacion-medico.component";
 import { RegistroTurnoAtencionComponent } from "./components/registro-turno-atencion/registro-turno-atencion.component";
 import { ActualizacionTurnoAtencionComponent } from "./components/actualizacion-turno-atencion/actualizacion-turno-atencion.component";
 import { MisNotasEvolucionComponent } from "./components/mis-notas-evolucion/mis-notas-evolucion.component";
 import { MisConsultasMedicasComponent } from "./components/mis-consultas-medicas/mis-consultas-medicas.component";
-import { ActualizacionPacienteComponent } from "./components/actualizacion-paciente/actualizacion-paciente.component";
 import { UsuarioNoLogeadoHorariosAtencionComponent } from "./components/usuario-no-logeado-horarios-atencion/usuario-no-logeado-horarios-atencion.component";
 import { UsuarioNoLogeadoEspecialidadedesComponent } from "./components/usuario-no-logeado-especialidadedes/usuario-no-logeado-especialidadedes.component";
 import { UsuarioNoLogeadoMedicosEspecialistasComponent } from "./components/usuario-no-logeado-medicos-especialistas/usuario-no-logeado-medicos-especialistas.component";
@@ -67,6 +63,9 @@ import { MisSolicitudesInterconsultaComponent } from './components/mis-solicitud
 import { MisPapeletasInternacionComponent } from "./components/mis-papeletas-internacion/mis-papeletas-internacion.component";
 import { RecuperarContraseniaComponent } from "./components/recuperar-contrasenia/recuperar-contrasenia.component";
 import { RegistroEspecialidadComponent } from "./components/registro-especialidad/registro-especialidad.component";
+import { ActualizacionEspecialidadComponent } from "./components/actualizacion-especialidad/actualizacion-especialidad.component";
+import { RegistroUsuarioComponent } from "./components/registro-usuario/registro-usuario.component";
+import { ActualizacionUsuarioComponent } from "./components/actualizacion-usuario/actualizacion-usuario.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -170,15 +169,16 @@ const APP_ROUTES: Routes = [
 
 
     { path: 'administrador/gestion-pacientes', component:  GestionPacientesComponent},
-    { path: 'administrador/registro-paciente', component:  RegistroPacienteComponent},
-    { path: 'administrador/modificar-paciente/:id', component:  ActualizacionPacienteComponent},
     { path: 'administrador/gestion-medicos', component:  GestionMedicosComponent},
-    { path: 'administrador/registro-medico', component:  RegistroMedicoComponent},
-    { path: 'administrador/modificar-medico/:id', component:  ActualizacionMedicoComponent},
+    { path: 'administrador/registro-usuario', component:  RegistroUsuarioComponent},
+    { path: 'administrador/modificar-usuario/:id', component:  ActualizacionUsuarioComponent},
+
+
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},
     { path: 'administrador/registro-turno-atencion', component:  RegistroTurnoAtencionComponent},
     { path: 'administrador/modificar-turno-atencion/:id', component:  ActualizacionTurnoAtencionComponent},
     { path: 'administracion/registro-especialidad', component:  RegistroEspecialidadComponent},
+    { path: 'administracion/modificar-especialidad/:id', component:  ActualizacionEspecialidadComponent},
 
     { path: 'medico/ver-mis-consultas-medicas', component:  MisConsultasMedicasComponent},
 

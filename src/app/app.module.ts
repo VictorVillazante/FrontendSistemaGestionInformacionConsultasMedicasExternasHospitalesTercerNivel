@@ -20,11 +20,9 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RegistroFichaMedicaComponent } from './components/registro-ficha-medica/registro-ficha-medica.component';
 import { DetalleFichaMedicaComponent } from './components/detalle-ficha-medica/detalle-ficha-medica.component';
 import { GestionPacientesComponent } from './components/gestion-pacientes/gestion-pacientes.component';
-import { RegistroPacienteComponent } from './components/registro-paciente/registro-paciente.component';
 import { GestionRecetasComponent } from './components/gestion-recetas/gestion-recetas.component';
 import { GestionNotasReferenciaComponent } from './components/gestion-notas-referencia/gestion-notas-referencia.component';
 import { GestionMedicosComponent } from './components/gestion-medicos/gestion-medicos.component';
-import { RegistroMedicoComponent } from './components/registro-medico/registro-medico.component';
 import { RegistroNotaReferenciaComponent } from './components/registro-nota-referencia/registro-nota-referencia.component';
 import { DetalleNotaReferenciaComponent } from './components/detalle-nota-referencia/detalle-nota-referencia.component';
 import { ActualizacionNotaReferenciaComponent } from './components/actualizacion-nota-referencia/actualizacion-nota-referencia.component';
@@ -38,8 +36,6 @@ import { GestionNotasEvolucionComponent } from './components/gestion-notas-evolu
 import { ActualizacionNotaEvolucionComponent } from './components/actualizacion-nota-evolucion/actualizacion-nota-evolucion.component';
 import { RegistroNotaEvolucionComponent } from './components/registro-nota-evolucion/registro-nota-evolucion.component';
 import { DetalleNotaEvolucionComponent } from './components/detalle-nota-evolucion/detalle-nota-evolucion.component';
-import { ActualizacionMedicoComponent } from './components/actualizacion-medico/actualizacion-medico.component';
-import { ActualizacionPacienteComponent } from './components/actualizacion-paciente/actualizacion-paciente.component';
 import { MisNotasEvolucionComponent } from './components/mis-notas-evolucion/mis-notas-evolucion.component';
 import { RegistroTurnoAtencionComponent } from './components/registro-turno-atencion/registro-turno-atencion.component';
 import { ActualizacionTurnoAtencionComponent } from './components/actualizacion-turno-atencion/actualizacion-turno-atencion.component';
@@ -103,6 +99,9 @@ import { RegistroEspecialidadComponent } from './components/registro-especialida
 import { InputImagenesComponent } from './shared/input-imagenes/input-imagenes.component';
 import { FormularioDetalleEspecialidadComponent } from './shared/formulario-detalle-especialidad/formulario-detalle-especialidad.component';
 import { ActualizacionEspecialidadComponent } from './components/actualizacion-especialidad/actualizacion-especialidad.component';
+import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import { ActualizacionUsuarioComponent } from './components/actualizacion-usuario/actualizacion-usuario.component';
+import { FormularioDetalleUsuarioComponent } from './shared/formulario-detalle-usuario/formulario-detalle-usuario.component';
 
 @NgModule({
   declarations: [
@@ -120,11 +119,9 @@ import { ActualizacionEspecialidadComponent } from './components/actualizacion-e
     RegistroFichaMedicaComponent,
     DetalleFichaMedicaComponent,
     GestionPacientesComponent,
-    RegistroPacienteComponent,
     GestionRecetasComponent,
     GestionNotasReferenciaComponent,
     GestionMedicosComponent,
-    RegistroMedicoComponent,
     RegistroNotaReferenciaComponent,
     DetalleNotaReferenciaComponent,
     ActualizacionNotaReferenciaComponent,
@@ -138,8 +135,6 @@ import { ActualizacionEspecialidadComponent } from './components/actualizacion-e
     ActualizacionNotaEvolucionComponent,
     RegistroNotaEvolucionComponent,
     DetalleNotaEvolucionComponent,
-    ActualizacionMedicoComponent,
-    ActualizacionPacienteComponent,
     MisNotasEvolucionComponent,
     RegistroTurnoAtencionComponent,
     ActualizacionTurnoAtencionComponent,
@@ -201,7 +196,10 @@ import { ActualizacionEspecialidadComponent } from './components/actualizacion-e
     RegistroEspecialidadComponent,
     InputImagenesComponent,
     FormularioDetalleEspecialidadComponent,
-    ActualizacionEspecialidadComponent
+    ActualizacionEspecialidadComponent,
+    RegistroUsuarioComponent,
+    ActualizacionUsuarioComponent,
+    FormularioDetalleUsuarioComponent
   ],
   imports: [
     BrowserModule,

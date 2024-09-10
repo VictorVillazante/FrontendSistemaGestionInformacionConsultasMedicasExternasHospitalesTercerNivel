@@ -1,0 +1,168 @@
+<form [formGroup]="formularioUsuario" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="nombres" class="form-label">Nombres</label>
+      <input
+        id="nombres"
+        formControlName="nombres"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="ci" class="form-label">CI</label>
+      <input
+        id="ci"
+        formControlName="ci"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Dirección</label>
+      <input
+        id="direccion"
+        formControlName="direccion"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="celular" class="form-label">Celular</label>
+      <input
+        id="celular"
+        formControlName="celular"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        id="email"
+        formControlName="email"
+        type="email"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="grupo_sanguineo" class="form-label">Grupo Sanguíneo</label>
+      <input
+        id="grupo_sanguineo"
+        formControlName="grupo_sanguineo"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="apellido_paterno" class="form-label">Apellido Paterno</label>
+      <input
+        id="apellido_paterno"
+        formControlName="apellido_paterno"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="apellido_materno" class="form-label">Apellido Materno</label>
+      <input
+        id="apellido_materno"
+        formControlName="apellido_materno"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+      <input
+        id="fecha_nacimiento"
+        formControlName="fecha_nacimiento"
+        type="date"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="sexo" class="form-label">Sexo</label>
+      <select
+        id="sexo"
+        formControlName="sexo"
+        class="form-control input-border-bottom"
+        required
+      >
+        <option value="">Seleccione</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+      </select>
+    </div>
+  
+    <div class="mb-3">
+      <label for="estado_civil" class="form-label">Estado Civil</label>
+      <select
+        id="estado_civil"
+        formControlName="estado_civil"
+        class="form-control input-border-bottom"
+        required
+      >
+        <option value="">Seleccione</option>
+        <option value="soltero">Soltero</option>
+        <option value="casado">Casado</option>
+        <option value="divorciado">Divorciado</option>
+        <option value="viudo">Viudo</option>
+      </select>
+    </div>
+  
+    <div class="mb-3">
+      <label for="edad" class="form-label">Edad</label>
+      <input
+        id="edad"
+        formControlName="edad"
+        type="number"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="dias_sancion_peticion_ficha_presencial" class="form-label">Días de Sanción por Petición de Ficha Presencial</label>
+      <input
+        id="dias_sancion_peticion_ficha_presencial"
+        formControlName="dias_sancion_peticion_ficha_presencial"
+        type="number"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input
+        id="telefono"
+        formControlName="telefono"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+    <app-input-imagenes
+        [imagenes]="imagenes"
+        (imagenesEvent)="handleImagenes($event)"
+    ></app-input-imagenes>
+    <button type="submit" class="btn btn-success-hospital">GUARDAR</button>
+  </form>
