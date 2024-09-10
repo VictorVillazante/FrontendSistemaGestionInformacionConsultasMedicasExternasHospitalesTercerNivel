@@ -10,8 +10,8 @@ export class AuthService {
   recuperarContrasenia(recuperarContrasenia: any) {
     let recuperarContraseniaForm=recuperarContrasenia.value;
     return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/auth/nueva-contrasenia`,{
-      "ci":recuperarContrasenia.ci,
-      "codigoVerficacion":recuperarContrasenia.codigoVerificacion
+      "ci":recuperarContraseniaForm.ci,
+      "codigoVerficacion":recuperarContraseniaForm.codigoVerificacion
     });
   }
   recibirCodigoVerificacion(email:string) {

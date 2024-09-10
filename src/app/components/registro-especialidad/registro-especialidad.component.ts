@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
 
 @Component({
   selector: 'app-registro-especialidad',
@@ -10,7 +11,7 @@ export class RegistroEspecialidadComponent {
  
   formularioEspecialidad: FormGroup;
   imagenes: string[] = [];
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private informacionCentroMedicoService:InformacionCentroMedicoService) {
     this.formularioEspecialidad = this.fb.group({
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required]
@@ -20,7 +21,11 @@ export class RegistroEspecialidadComponent {
 
   onSubmit(): void {
     if (this.formularioEspecialidad.valid) {
+      this.informacionCentroMedicoService.registrarEspecialidad(this.formularioEspecialidad).subscribe(()=>{
 
+      },(error:any)=>{
+
+      })
     }
   }
   handleImagenes($event: any) {

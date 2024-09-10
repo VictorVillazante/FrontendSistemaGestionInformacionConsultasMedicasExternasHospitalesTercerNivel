@@ -102,6 +102,7 @@ import { RecuperarContraseniaComponent } from './components/recuperar-contraseni
 import { RegistroEspecialidadComponent } from './components/registro-especialidad/registro-especialidad.component';
 import { InputImagenesComponent } from './shared/input-imagenes/input-imagenes.component';
 import { FormularioDetalleEspecialidadComponent } from './shared/formulario-detalle-especialidad/formulario-detalle-especialidad.component';
+import { ActualizacionEspecialidadComponent } from './components/actualizacion-especialidad/actualizacion-especialidad.component';
 
 @NgModule({
   declarations: [
@@ -199,7 +200,8 @@ import { FormularioDetalleEspecialidadComponent } from './shared/formulario-deta
     RecuperarContraseniaComponent,
     RegistroEspecialidadComponent,
     InputImagenesComponent,
-    FormularioDetalleEspecialidadComponent
+    FormularioDetalleEspecialidadComponent,
+    ActualizacionEspecialidadComponent
   ],
   imports: [
     BrowserModule,

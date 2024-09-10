@@ -13,6 +13,18 @@ import { MedicosDataDev } from 'src/assets/data-dev/medicos';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  actualizarEspecialidad(idEspecialidad: number, formularioEspecialidad: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`,{
+      "nombre":formularioEspecialidad.value.nombre,
+      "descripcion":formularioEspecialidad.value.descripcion
+    });
+  }
+  registrarEspecialidad(formularioEspecialidad: FormGroup<any>) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades`,{
+      "nombre":formularioEspecialidad.value.nombre,
+      "descripcion":formularioEspecialidad.value.descripcion
+    });
+  }
   listaMedicos=MedicosDataDev.medicos;
   obtenerInformacionCentroSalud() {
     return of({
