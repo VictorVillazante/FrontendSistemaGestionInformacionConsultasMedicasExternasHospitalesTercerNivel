@@ -13,14 +13,34 @@ import { MedicosDataDev } from 'src/assets/data-dev/medicos';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  actualizarComunicado(idComunicado: number, formularioComunicado: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados/${idComunicado}`,{
+      "titulo":formularioComunicado.value.titulo,
+      "lugar":formularioComunicado.value.lugar,
+      "introduccion":formularioComunicado.value.introduccion,
+      "cuerpo":formularioComunicado.value.cuerpo,
+      "citas":formularioComunicado.value.citas,
+      "datos_contacto":formularioComunicado.value.datos_contacto
+    });
+  }
+  registrarComunicado(formularioComunicado: FormGroup<any>) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados`,{
+      "titulo":formularioComunicado.value.titulo,
+      "lugar":formularioComunicado.value.lugar,
+      "introduccion":formularioComunicado.value.introduccion,
+      "cuerpo":formularioComunicado.value.cuerpo,
+      "citas":formularioComunicado.value.citas,
+      "datos_contacto":formularioComunicado.value.datos_contacto
+    });
+  }
   actualizarEspecialidad(idEspecialidad: number, formularioEspecialidad: FormGroup<any>) {
-    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`,{
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades/${idEspecialidad}`,{
       "nombre":formularioEspecialidad.value.nombre,
       "descripcion":formularioEspecialidad.value.descripcion
     });
   }
   registrarEspecialidad(formularioEspecialidad: FormGroup<any>) {
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades`,{
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades`,{
       "nombre":formularioEspecialidad.value.nombre,
       "descripcion":formularioEspecialidad.value.descripcion
     });
