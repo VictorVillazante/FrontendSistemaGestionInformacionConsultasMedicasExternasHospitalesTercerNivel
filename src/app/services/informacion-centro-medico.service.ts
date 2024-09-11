@@ -13,6 +13,27 @@ import { MedicosDataDev } from 'src/assets/data-dev/medicos';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  actualizarProcedimientoAdmision(formularioProcedimiento: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/admision`,{
+      "titulo": formularioProcedimiento.value.titulo,
+      "descripcion": formularioProcedimiento.value.descripcion
+    })
+  }
+  actualizarProcedimiento(idProcedimiento: number, formularioProcedimiento: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}`,{
+      "titulo": formularioProcedimiento.value.titulo,
+      "descripcion": formularioProcedimiento.value.descripcion
+    })
+  }
+  obtenerProcedimiento(idProcedimiento: any) {
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}`);
+  }
+  registrarProcedimiento(formularioProcedimiento: FormGroup<any>) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos`,{
+      "titulo": formularioProcedimiento.value.titulo,
+      "descripcion": formularioProcedimiento.value.descripcion  
+    })
+  }
   actualizarComunicado(idComunicado: number, formularioComunicado: FormGroup<any>) {
     return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados/${idComunicado}`,{
       "titulo":formularioComunicado.value.titulo,

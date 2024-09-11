@@ -1,0 +1,15 @@
+<main class="container mt-5 mb-5">
+    <section class="bg-white p-4">
+      <h1 class="text-center mb-4">Actualizar procedimiento</h1>
+  
+      <app-foormulario-detalle-procedimiento
+        [formularioProcedimiento]="formularioProcedimiento"
+        [imagenes]="imagenes"
+        (imagenesEvent)="handleImagenes($event)"
+        [onSubmit]="onSubmit"
+      >
+  
+      </app-foormulario-detalle-procedimiento>
+    </section>
+  </main>
+  

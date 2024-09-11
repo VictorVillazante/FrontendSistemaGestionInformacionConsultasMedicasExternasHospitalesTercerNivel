@@ -1,0 +1,29 @@
+<form [formGroup]="formularioProcedimiento" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input
+        id="titulo"
+        formControlName="titulo"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripcion</label>
+      <textarea
+        id="descripcion"
+        formControlName="descripcion"
+        class="form-control input-border-bottom"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+  
+    <app-input-imagenes
+        [imagenes]="imagenes"
+        (imagenesEvent)="handleImagenes($event)"
+    ></app-input-imagenes>
+    <button type="submit" class="btn btn-success-hospital">GUARDAR</button>
+  </form>

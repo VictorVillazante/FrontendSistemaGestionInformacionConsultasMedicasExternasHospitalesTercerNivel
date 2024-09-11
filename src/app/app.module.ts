@@ -105,6 +105,10 @@ import { FormularioDetalleUsuarioComponent } from './shared/formulario-detalle-u
 import { RegistroComunicadoComponent } from './components/registro-comunicado/registro-comunicado.component';
 import { ActualizacionComunicadoComponent } from './components/actualizacion-comunicado/actualizacion-comunicado.component';
 import { FrmularioComunicadoComponent } from './shared/frmulario-comunicado/frmulario-comunicado.component';
+import { ActualizacionProcedimientoAdmisionComponent } from './components/actualizacion-procedimiento-admision/actualizacion-procedimiento-admision.component';
+import { ActualizacionProcedimientoComponent } from './components/actualizacion-procedimiento/actualizacion-procedimiento.component';
+import { RegistroProcedimientoComponent } from './components/registro-procedimiento/registro-procedimiento.component';
+import { FoormularioDetalleProcedimientoComponent } from './shared/foormulario-detalle-procedimiento/foormulario-detalle-procedimiento.component';
 
 @NgModule({
   declarations: [
@@ -205,7 +209,11 @@ import { FrmularioComunicadoComponent } from './shared/frmulario-comunicado/frmu
     FormularioDetalleUsuarioComponent,
     RegistroComunicadoComponent,
     ActualizacionComunicadoComponent,
-    FrmularioComunicadoComponent
+    FrmularioComunicadoComponent,
+    ActualizacionProcedimientoAdmisionComponent,
+    ActualizacionProcedimientoComponent,
+    RegistroProcedimientoComponent,
+    FoormularioDetalleProcedimientoComponent
   ],
   imports: [
     BrowserModule,
