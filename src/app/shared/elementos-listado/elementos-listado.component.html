@@ -1,0 +1,27 @@
+<li
+    [class.bg-color-blue-hospital]="i % 2 === 0"
+    [class.text-white]="i % 2 === 0"
+    class="d-flex align-items-center"
+>
+    <div
+        class="img-doc"
+        [class.bg-img-doc-1]="i % 2 == 0"
+        [class.bg-img-doc-2]="i % 2 != 0"
+    ></div>
+    <div class="datos-opciones-doc">
+        <div class="dato-info">
+            <ng-content select="dato-info">
+            </ng-content>
+        </div>
+        <div class="botones-opciones">
+            <div class="botones-crud">
+                <ng-content select="botones-crud">
+                </ng-content>
+            </div>
+            <div class="botones-adicionales">
+                <ng-content select="botones-adicionales">
+                </ng-content>
+            </div>
+        </div>
+    </div>
+</li>

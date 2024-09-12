@@ -9,10 +9,49 @@ import { Especialidad } from '../models/Especialidad';
 import { EspecialidadesData } from 'src/assets/data-dev/especialidades';
 import { ComunicadosDataDev } from 'src/assets/data-dev/comunicados';
 import { MedicosDataDev } from 'src/assets/data-dev/medicos';
+import { Procedimiento } from '../models/Procedimiento';
+import { map, catchError } from 'rxjs/operators';
+import { ProcedimientosDataDev } from 'src/assets/data-dev/procedimientos';
 @Injectable({
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  procedimientos:Procedimiento[]=ProcedimientosDataDev.listaProcedimientos.map(json=>new Procedimiento().jsonToProcedimiento(json));
+
+  obtenerProcedimientos(): Observable<Procedimiento[]> {
+    return of(this.procedimientos);
+    return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos`).pipe(
+      map(procedimientosJson => procedimientosJson.map(json => new Procedimiento().jsonToProcedimiento(json))),
+      catchError(error => {
+        console.error('Error al obtener procedimientos:', error);
+        return of([]); 
+      })
+    );
+  }
+  modificarRequerimientoProcedimiento(idProcedimiento: number, idRequerimientoProcedimiento: number, formularioRequerimientoProcedimiento: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}/requerimientos/${idRequerimientoProcedimiento}`,{
+      "titulo":formularioRequerimientoProcedimiento.value.titulo,
+      "descripcion":formularioRequerimientoProcedimiento.value.descripcion
+    });
+  }
+  registrarRequerimientoProcedimien(idProcedimiento: number, formularioRequerimientoProcedimiento: FormGroup<any>) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}`,{
+      "titulo":formularioRequerimientoProcedimiento.value.titulo,
+      "descripcion":formularioRequerimientoProcedimiento.value.descripcion
+    });
+  }
+  registrarPasoProcedimiento(idProcedimiento: number, formularioPasoProcedimiento: FormGroup<any>) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}`,{
+      "titulo":formularioPasoProcedimiento.value.titulo,
+      "descripcion":formularioPasoProcedimiento.value.descripcion
+    });
+  }
+  modificarPasoProcedimiento(idProcedimiento: number, idPasoProcedimiento: number, formularioPasoProcedimiento: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}/pasos/${idPasoProcedimiento}`,{
+      "titulo":formularioPasoProcedimiento.value.titulo,
+      "descripcion":formularioPasoProcedimiento.value.descripcion
+    });
+  }
   actualizarEspecialidad(idEspecialidad: number, formularioEspecialidad: FormGroup<any>) {
     return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`,{
       "nombre":formularioEspecialidad.value.nombre,
