@@ -9,5 +9,13 @@
     <div class="requisitos-procedicimientos">
         <app-boton-tipo-background *ngFor="let requisitosProcedimiento of requisitosProcedimientosCards" [ruta]="requisitosProcedimiento.ruta+'/'+this.idEspecialidad" [titulo]="requisitosProcedimiento.titulo"/>
     </div>
+    <div class="container p-5 d-flex flex-column justify-content-center align-items-center">
+        <h3 >Horarios de atención</h3>
+        <app-tabla-horarios-atencion
+        [turnosAtencionMedica]="turnosAtencionMedicaEspecialidad"
+        >
+        </app-tabla-horarios-atencion>
+    </div>
+    
     <app-carousel-medicos-especialistas/>
 </div>
