@@ -16,6 +16,19 @@ import { ProcedimientosDataDev } from 'src/assets/data-dev/procedimientos';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  eliminarEspecialidad(idEspecialidad:number) {
+    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`);
+  }
+  obtenerProcedimiento(idProcedimiento: number) :Observable<Procedimiento>{
+    return of(ProcedimientosDataDev.listaProcedimientos[0]);
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}`).pipe(
+    //   map(procedimientoJson => new Procedimiento().jsonToProcedimiento(procedimientoJson)),
+    //   catchError(error => {
+    //     console.error('Error al obtener procedimientos:', error);
+    //     return of([]); 
+    //   })
+    // );
+  }
   procedimientos:Procedimiento[]=ProcedimientosDataDev.listaProcedimientos.map(json=>new Procedimiento().jsonToProcedimiento(json));
 
   obtenerProcedimientos(): Observable<Procedimiento[]> {

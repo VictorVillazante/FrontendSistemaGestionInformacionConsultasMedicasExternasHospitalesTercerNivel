@@ -67,6 +67,8 @@ import { ActualizacionEspecialidadComponent } from "./components/actualizacion-e
 import { RegistroUsuarioComponent } from "./components/registro-usuario/registro-usuario.component";
 import { ActualizacionUsuarioComponent } from "./components/actualizacion-usuario/actualizacion-usuario.component";
 import { GestionProcedimientosComponent } from "./components/gestion-procedimientos/gestion-procedimientos.component";
+import { GestionPasosComponent } from "./components/gestion-pasos/gestion-pasos.component";
+import { GestionEspecialidadesComponent } from "./components/gestion-especialidades/gestion-especialidades.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -178,9 +180,12 @@ const APP_ROUTES: Routes = [
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},
     { path: 'administrador/registro-turno-atencion', component:  RegistroTurnoAtencionComponent},
     { path: 'administrador/modificar-turno-atencion/:id', component:  ActualizacionTurnoAtencionComponent},
+    { path: 'administracion/gestion-procedimientos', component:  GestionProcedimientosComponent},
+    { path: 'administracion/gestion-pasos-procedimiento/:id', component:  GestionPasosComponent},
+    
+    { path: 'administracion/gestion-especialidades', component:  GestionEspecialidadesComponent},
     { path: 'administracion/registro-especialidad', component:  RegistroEspecialidadComponent},
     { path: 'administracion/modificar-especialidad/:id', component:  ActualizacionEspecialidadComponent},
-    { path: 'administracion/gestion-procedimientos', component:  GestionProcedimientosComponent},
 
     { path: 'medico/ver-mis-consultas-medicas', component:  MisConsultasMedicasComponent},
 

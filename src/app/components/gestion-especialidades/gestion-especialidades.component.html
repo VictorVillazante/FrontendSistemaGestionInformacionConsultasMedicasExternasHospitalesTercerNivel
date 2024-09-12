@@ -1,9 +1,36 @@
 <div class="container mt-5">
   <h1 class="text-center p-3">Gestion de especialidades</h1>
+  <section id="buscador">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="nombreEspecialidad" class="form-label">Nombre especialidad</label>
+            <input
+              type="text"
+              class="form-control input-border-bottom"
+              id="nombreEspecialidad"
+              [(ngModel)]="nombreEspecialidad"
+            />
+        </div>
+    </div>
+    <button
+      class="btn btn-success-hospital"
+      (click)="filtrarEspecialidades()"
+    >
+      Buscar
+    </button>
+  </section>
   <button
     class="btn btn-success-hospital"
-    routerLink="/registro-especialidad"
+    (click)="redireccionarRegistroEspecialidad()"
   >
     Registrar especialidad
   </button>
+  <ul class="list-group">
+    <app-elementos-listado *ngFor="let especialidad of especialidades;let i=index" [i]="i">
+        <p ngProjectAs="dato-info">Id:{{especialidad?.idEspecialidad}}</p>
+        <p ngProjectAs="dato-info">Nombre:{{especialidad?.nombre}}</p>
+        <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="redireccionarActualizarEspecialidad(especialidad.idEspecialidad)"></i>
+        <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarEspecialidad(especialidad.idEspecialidad)"></i>
+    </app-elementos-listado>
+  </ul>
 </div>
