@@ -6,7 +6,7 @@ export class EspecialidadesData{
             "idEspecialidad": 1,
             "nombre": "Cardiología",
             "descripcion": "Especialidad médica que se ocupa del diagnóstico y tratamiento de las enfermedades del corazón.",
-            "imagenes": ["fondo-opciones-menu.jpg"],
+            "imagenes": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZYjqa2w66x13XKdVXJaBOx_nmjPFF5t9vw&s"],
             "requisitosSolicitudFichaMedica": [
                 { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
                 { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica completa.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }

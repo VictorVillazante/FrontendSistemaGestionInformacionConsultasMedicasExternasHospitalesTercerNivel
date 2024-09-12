@@ -27,14 +27,14 @@ export class ActualizacionEspecialidadComponent {
   }
   obtenerEspecialidad(idEspecialidad: number) {
     this.informacionCentroMedicoService.obtenerEspecialidad(idEspecialidad).subscribe((especialidad)=>{
-      this.formularioEspecialidad.value.nombre=especialidad.nombre;
-      this.formularioEspecialidad.value.descripcion=especialidad.descripcion;
+      this.formularioEspecialidad.setValue({nombre:especialidad.nombre,descripcion:especialidad.descripcion});
+      this.imagenes=especialidad.imagenes;
     });
   }
 
   onSubmit(): void {
     if (this.formularioEspecialidad.valid) {
-      this.informacionCentroMedicoService.actualizarEspecialidad(this.idEspecialidad,this.formularioEspecialidad).subscribe(()=>{
+      this.informacionCentroMedicoService.actualizarEspecialidad(this.idEspecialidad,this.formularioEspecialidad,this.imagenes).subscribe(()=>{
         this.alertasService.mensajeConfirmacion();      
       },(error:any)=>{
         this.alertasService.mensajeError();

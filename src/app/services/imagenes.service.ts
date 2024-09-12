@@ -9,7 +9,13 @@ export class ImagenesService {
 
   static agregarImagenesAFormData(formData: FormData, imagenes: string[]) :FormData{
     for (let i = 0; i < imagenes.length; i++) {
-      formData.append(`imagen${i+1}}`, this.convertirImagenBase64aBlob(imagenes[i], 'image/jpeg'));
+      if(imagenes[i].length>0){
+        if(imagenes[i].includes('https://') || imagenes[i].includes('http://')){
+          formData.append(`imagen${i+1}}`, imagenes[i]);
+        }else{
+          formData.append(`imagen${i+1}}`, this.convertirImagenBase64aBlob(imagenes[i], 'image/jpeg'));
+        }
+      }
     }
     return formData;
   }

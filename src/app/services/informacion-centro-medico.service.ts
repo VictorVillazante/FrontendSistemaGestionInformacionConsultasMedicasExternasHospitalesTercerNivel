@@ -66,11 +66,17 @@ export class InformacionCentroMedicoService {
       "descripcion":formularioPasoProcedimiento.value.descripcion
     });
   }
-  actualizarEspecialidad(idEspecialidad: number, formularioEspecialidad: FormGroup<any>) {
-    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`,{
-      "nombre":formularioEspecialidad.value.nombre,
-      "descripcion":formularioEspecialidad.value.descripcion
-    });
+  actualizarEspecialidad(idEspecialidad: number, formularioEspecialidad: FormGroup<any>,imagenes:string[]) {
+    let formData = new FormData();
+    const jsonData = {
+      nombre: formularioEspecialidad.value.nombre,
+      descripcion: formularioEspecialidad.value.descripcion
+    };
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`,formData);
   }
   registrarEspecialidad(formularioEspecialidad: FormGroup<any>,imagenes: string[]) {
     let formData = new FormData();
