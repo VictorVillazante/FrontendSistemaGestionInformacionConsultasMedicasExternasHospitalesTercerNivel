@@ -21,7 +21,10 @@ export class GestionEspecialidadesComponent implements OnInit{
     this.alertasService.confirmarAccion("Esta seguro de eliminar la especialidad?").then((respuesta:boolean)=>{
       if(respuesta){
         this.informacionCentroMedicoService.eliminarEspecialidad(idEspecialidad).subscribe(
-          (data:any)=>this.alertasService.mensajeConfirmacion(),
+          (data:any)=>{
+            this.obtenerEspecialidades();
+            this.alertasService.mensajeConfirmacion();
+          },
           (error:any)=>this.alertasService.mensajeError(),
         );
       }
