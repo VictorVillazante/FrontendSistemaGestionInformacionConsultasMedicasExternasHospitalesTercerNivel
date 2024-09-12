@@ -18,11 +18,10 @@ export class RegistroEspecialidadComponent {
       descripcion: ['', Validators.required]
     });
   }
-  ngOnInit(): void { }
 
   onSubmit(): void {
     if (this.formularioEspecialidad.valid) {
-      this.informacionCentroMedicoService.registrarEspecialidad(this.formularioEspecialidad).subscribe(()=>{
+      this.informacionCentroMedicoService.registrarEspecialidad(this.formularioEspecialidad,this.imagenes).subscribe((param)=>{
         this.alertasService.mensajeConfirmacion();      
       },(error:any)=>this.alertasService.mensajeError())
     }
