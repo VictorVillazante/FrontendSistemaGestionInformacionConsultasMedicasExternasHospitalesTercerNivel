@@ -81,7 +81,7 @@ h3{
 h4{
     font-size: var(--titulo4);
 }
-p,a,label,button{
+p,a,label,button,td{
     font-size: var(--texto) !important;
 }
 p{

@@ -106,6 +106,8 @@ import { GestionPasosComponent } from './components/gestion-pasos/gestion-pasos.
 import { GestionRequerimientosComponent } from './components/gestion-requerimientos/gestion-requerimientos.component';
 import { ElementosListadoComponent } from './shared/elementos-listado/elementos-listado.component';
 import { GestionProcedimientosComponent } from './components/gestion-procedimientos/gestion-procedimientos.component';
+import { InformacionCentroMedicoService } from './services/informacion-centro-medico.service';
+import { TablaHorariosAtencionComponent } from './shared/tabla-horarios-atencion/tabla-horarios-atencion.component';
 
 @NgModule({
   declarations: [
@@ -207,7 +209,8 @@ import { GestionProcedimientosComponent } from './components/gestion-procedimien
     GestionPasosComponent,
     GestionRequerimientosComponent,
     ElementosListadoComponent,
-    GestionProcedimientosComponent
+    GestionProcedimientosComponent,
+    TablaHorariosAtencionComponent,
   ],
   imports: [
     BrowserModule,

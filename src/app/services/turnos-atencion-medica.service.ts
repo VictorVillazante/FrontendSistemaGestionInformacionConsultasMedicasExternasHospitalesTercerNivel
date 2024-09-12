@@ -18,32 +18,36 @@ export class TurnosAtencionMedicaService {
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica/${id}`);
   }
   obtenerTurnosAtencionMedica() {
-    // return of([
-    //   [
-    //     1,
-    //     "A12",
-    //     "turno mañana",
-    //     "medico1",
-    //     "ginecologia"
-    //   ],
-    //   [
-    //     2,
-    //     "A15",
-    //     "turno mañana",
-    //     "medico3",
-    //     "neurologia"
-    //   ],
-    //   [
-    //     3,
-    //     "B12",
-    //     "turno tarde",
-    //     "medico3",
-    //     "traumatologia"
-    //   ]
-    // ]);
+    return of([
+      [
+        1,
+        "A12",
+        "turno mañana",
+        "medico1",
+        "ginecologia",
+        "2024-04-01T11:00:00Z"
+      ],
+      [
+        2,
+        "A15",
+        "turno mañana",
+        "medico3",
+        "neurologia",
+        "2024-04-01T11:00:00Z"
+      ],
+      [
+        3,
+        "B12",
+        "turno tarde",
+        "medico3",
+        "traumatologia",
+        "2024-04-02T11:00:00Z"
+      ]
+    ]);
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica`);
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica`);
   }
+
   constructor(private http: HttpClient) { }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Procedimiento } from 'src/app/models/Procedimiento';
 import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gestion-procedimientos',
@@ -8,6 +9,9 @@ import { InformacionCentroMedicoService } from '../../services/informacion-centr
   styleUrls: ['./gestion-procedimientos.component.css']
 })
 export class GestionProcedimientosComponent implements OnInit{
+  redireccionarGestionPasosProcedimiento(idProcedimiento: number) {
+    this.router.navigate(['/administracion/gestion-pasos-procedimiento', idProcedimiento]);
+  }
   eliminarProcedimiento(arg0: number) {
   }
   actualizarProcedimiento(arg0: number) {
@@ -27,7 +31,7 @@ export class GestionProcedimientosComponent implements OnInit{
   nombreProcedimiento:any;
   listadoProcedimientos:Procedimiento[]=[];
   listadoProcedimientosAux:Procedimiento[]=[];
-  constructor(private informacionCentroMedicoService:InformacionCentroMedicoService) { }
+  constructor(private router:Router,private informacionCentroMedicoService:InformacionCentroMedicoService) { }
   ngOnInit(): void {
     this.informacionCentroMedicoService.obtenerProcedimientos().subscribe((procedimientos)=>{
       this.listadoProcedimientos=procedimientos;

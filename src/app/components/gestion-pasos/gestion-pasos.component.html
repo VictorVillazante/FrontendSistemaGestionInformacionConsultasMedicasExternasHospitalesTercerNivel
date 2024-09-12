@@ -1,0 +1,48 @@
+<main class="container mt-5 mb-5">
+    <section class="bg-white p-4">
+      <h1 class="text-center mb-4">Gestionar pasos</h1>
+      <form [formGroup]="formularioPasoProcedimiento">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            id="nombre"
+            formControlName="nombre"
+            type="text"
+            class="form-control input-border-bottom"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripcion</label>
+      
+          <textarea
+            id="descripcion"
+            formControlName="descripcion"
+            class="form-control input-border-bottom"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <app-input-imagenes
+          [imagenes]="imagenes"
+          (imagenesEvent)="handleImagenes($event)"
+        ></app-input-imagenes>
+      
+        <button *ngIf="!idPasoProcedimiento" type="submit" class="btn btn-success-hospital" (click)="registrarPasoProcedimieno()">Registrar</button>
+        <div *ngIf="idPasoProcedimiento"  class="d-flex row">
+            <button class="btn" (click)="modificarPasoProcedimiento()">Modificar</button>
+            <button class="btn" (click)="limpiarFormulario()">Limpiar formulario</button>
+        </div>
+      </form>
+      <ul class="list-group">
+        <app-elementos-listado *ngFor="let paso of procedimiento.pasos;let i=index" [i]="i">
+            <p ngProjectAs="dato-info">Id:{{paso?.idPasoProcedimiento}}</p>
+            <p ngProjectAs="dato-info">Nombre paso:{{paso?.nombre}}</p>
+            <p ngProjectAs="dato-info">Descripcion:{{paso?.descripcion}}</p>
+            <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="actualizarPaso(paso.idPasoProcedimiento)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarPaso(paso.idPasoProcedimiento)"></i>
+        </app-elementos-listado>
+      </ul>
+    </section>
+  </main>
+  

@@ -8,16 +8,3 @@
     color: var(--color4);
     text-align: center;
 }
-table{
-    max-width: 800px;
-}
-table th{
-    background-color: var(--color4);
-    color: var(--color1);
-    text-align: center;
-    font-weight: 500;
-    font-size: var(--texto);
-}
-table td{
-    text-align: center;
-}

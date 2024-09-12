@@ -9,23 +9,8 @@
       (change)="filtrarPorFecha($event)"
     />
   </div>
-  <table class="table table-bordered">
-    <thead >
-      <tr>
-        <th scope="col">Turno</th>
-        <th scope="col">Medico</th>
-        <th scope="col">Especialidad</th>
-        <th scope="col">Fecha</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let turnoAtencionMedica of turnosAtencionMedicaAux">
-        <td>{{turnoAtencionMedica[2]}}</td>
-        <td>Dr. {{turnoAtencionMedica[3]}}</td>
-        <td>{{turnoAtencionMedica[4]}}</td>
-        <td>{{turnoAtencionMedica[5]}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <app-tabla-horarios-atencion
+    [turnosAtencionMedica]="turnosAtencionMedicaAux"
+  >
+  </app-tabla-horarios-atencion>
 </div>

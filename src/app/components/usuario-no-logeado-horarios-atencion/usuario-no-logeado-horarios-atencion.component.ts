@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TurnosAtencionMedicaService } from '../../services/turnos-atencion-medica.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-usuario-no-logeado-horarios-atencion',
@@ -9,8 +10,10 @@ import { TurnosAtencionMedicaService } from '../../services/turnos-atencion-medi
 export class UsuarioNoLogeadoHorariosAtencionComponent {
   filtrarPorFecha(event: Event) {
     if(this.fecha){
+      console.log(this.fecha)
       this.turnosAtencionMedicaAux=this.turnosAtencionMedica.filter((turnoAtencionMedica:any)=>{
-        return turnoAtencionMedica[5]==this.fecha
+        const fechaFormateada = formatDate( turnoAtencionMedica[5], 'yyyy-MM-dd', 'en-US');
+        return fechaFormateada==this.fecha
       })
     }else{
       this.turnosAtencionMedicaAux=this.turnosAtencionMedica;

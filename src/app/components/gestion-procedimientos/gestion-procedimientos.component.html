@@ -36,7 +36,7 @@
             <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="actualizarProcedimiento(procedimiento.idProcedimientoAtencion)"></i>
             <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarProcedimiento(procedimiento.idProcedimientoAtencion)"></i>
             <i ngProjectAs="botones-crud" class="fas fa-chevron-right me-2"></i>
-            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales">Ver pasos</button>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionPasosProcedimiento(procedimiento.idProcedimientoAtencion)">Ver pasos</button>
             <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales">Ver requerimientos</button>
         </app-elementos-listado>
       </ul>

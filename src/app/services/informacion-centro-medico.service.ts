@@ -186,6 +186,8 @@ export class InformacionCentroMedicoService {
   obtenerEspecialidad(idEspecialidad: number):Observable<Especialidad> {
     let especialidadBuscada=this.listaEspecialidades.filter((e)=>e.idEspecialidad==idEspecialidad)[0]
     return of(especialidadBuscada);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/especialidades/${idEspecialidad}`);
+
   }
   obtenerTurnos() {
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/turnos`);
