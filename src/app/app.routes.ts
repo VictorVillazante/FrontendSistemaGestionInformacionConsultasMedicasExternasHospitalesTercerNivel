@@ -69,6 +69,7 @@ import { ActualizacionUsuarioComponent } from "./components/actualizacion-usuari
 import { GestionProcedimientosComponent } from "./components/gestion-procedimientos/gestion-procedimientos.component";
 import { GestionPasosComponent } from "./components/gestion-pasos/gestion-pasos.component";
 import { GestionEspecialidadesComponent } from "./components/gestion-especialidades/gestion-especialidades.component";
+import { GestionUsuariosComponent } from "./components/gestion-usuarios/gestion-usuarios.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -173,6 +174,8 @@ const APP_ROUTES: Routes = [
 
     { path: 'administrador/gestion-pacientes', component:  GestionPacientesComponent},
     { path: 'administrador/gestion-medicos', component:  GestionMedicosComponent},
+
+    { path: 'administrador/gestion-usuarios', component:  GestionUsuariosComponent},
     { path: 'administrador/registro-usuario', component:  RegistroUsuarioComponent},
     { path: 'administrador/modificar-usuario/:id', component:  ActualizacionUsuarioComponent},
 

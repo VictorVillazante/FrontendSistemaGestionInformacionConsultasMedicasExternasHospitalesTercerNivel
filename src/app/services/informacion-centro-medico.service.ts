@@ -34,7 +34,7 @@ export class InformacionCentroMedicoService {
 
   obtenerProcedimientos(): Observable<Procedimiento[]> {
     return of(this.procedimientos);
-    return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos`).pipe(
+    return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos`).pipe(
       map(procedimientosJson => procedimientosJson.map(json => new Procedimiento().jsonToProcedimiento(json))),
       catchError(error => {
         console.error('Error al obtener procedimientos:', error);
@@ -43,25 +43,25 @@ export class InformacionCentroMedicoService {
     );
   }
   modificarRequerimientoProcedimiento(idProcedimiento: number, idRequerimientoProcedimiento: number, formularioRequerimientoProcedimiento: FormGroup<any>) {
-    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}/requerimientos/${idRequerimientoProcedimiento}`,{
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/requerimientos/${idRequerimientoProcedimiento}`,{
       "titulo":formularioRequerimientoProcedimiento.value.titulo,
       "descripcion":formularioRequerimientoProcedimiento.value.descripcion
     });
   }
   registrarRequerimientoProcedimien(idProcedimiento: number, formularioRequerimientoProcedimiento: FormGroup<any>) {
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}`,{
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}`,{
       "titulo":formularioRequerimientoProcedimiento.value.titulo,
       "descripcion":formularioRequerimientoProcedimiento.value.descripcion
     });
   }
   registrarPasoProcedimiento(idProcedimiento: number, formularioPasoProcedimiento: FormGroup<any>) {
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}`,{
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}`,{
       "titulo":formularioPasoProcedimiento.value.titulo,
       "descripcion":formularioPasoProcedimiento.value.descripcion
     });
   }
   modificarPasoProcedimiento(idProcedimiento: number, idPasoProcedimiento: number, formularioPasoProcedimiento: FormGroup<any>) {
-    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}/pasos/${idPasoProcedimiento}`,{
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/pasos/${idPasoProcedimiento}`,{
       "titulo":formularioPasoProcedimiento.value.titulo,
       "descripcion":formularioPasoProcedimiento.value.descripcion
     });
@@ -76,7 +76,7 @@ export class InformacionCentroMedicoService {
     formData.append('data', jsonString);
     formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
     console.log(formData);
-    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`,formData);
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades/${idEspecialidad}`,formData);
   }
   registrarEspecialidad(formularioEspecialidad: FormGroup<any>,imagenes: string[]) {
     let formData = new FormData();
@@ -88,7 +88,7 @@ export class InformacionCentroMedicoService {
     formData.append('data', jsonString);
     formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
     console.log(formData);
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades`,formData);
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades`,formData);
   }
   listaMedicos=MedicosDataDev.medicos;
   obtenerInformacionCentroSalud() {

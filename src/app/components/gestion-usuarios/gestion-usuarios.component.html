@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h1 class="text-center p-3">Gestion usuarios</h1>
+    <section id="buscador">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="nombreUsuario" class="form-label">Nombre usuario</label>
+                <input
+                  type="text"
+                  class="form-control input-border-bottom"
+                  id="nombreUsuario"
+                  [(ngModel)]="nombreUsuario"
+                />
+            </div>
+        </div>
+        <button
+          class="btn btn-success-hospital"
+          (click)="filtrarUsuarios()"
+        >
+          Buscar
+        </button>
+    </section>
+    <button
+      class="btn btn-success-hospital"
+      (click)="redireccionarRegistroUsuario()"
+    >
+      Registrar usuario
+    </button>
+    <ul class="list-group">
+        <app-elementos-listado *ngFor="let usuario of usuarios;let i=index" [i]="i">
+            <p ngProjectAs="dato-info">Id:{{usuario?.idUsuario}}</p>
+            <p ngProjectAs="dato-info">Nombre:{{usuario?.nombres}} {{usuario?.apellidoPaterno}} {{usuario?.apellidoMaterno}}</p>
+            <p ngProjectAs="dato-info">CI:{{usuario?.ci}}</p>
+            <p ngProjectAs="dato-info">Fecha de creacion:{{usuario.createdAt|dateFormat:"dd/MM/yyyy"}}</p>
+            <p ngProjectAs="dato-info">Fecha de actualizacion:{{usuario.updatedAt|dateFormat:"dd/MM/yyyy"}}</p>
+            <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="redireccionarActualizarUsuario(usuario.idUsuario)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarUsuario(usuario.idUsuario)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-chevron-right me-2" (click)="redireccionarVerDetalleUsuario(usuario.idUsuario)"></i>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionRoles(usuario.idUsuario)">Gestionar roles</button>
+        </app-elementos-listado>
+    </ul>
+  </div>

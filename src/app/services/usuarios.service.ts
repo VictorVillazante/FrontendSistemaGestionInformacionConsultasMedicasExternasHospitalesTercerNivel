@@ -1,11 +1,31 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { apiUrlEnviroment } from 'src/enviroments/api-url-enviroment';
+import { Usuario } from '../models/Usuario';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { UsuariosDataDev } from 'src/assets/data-dev/usuarios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
+  eliminarUsuario(idUsuario: any) {
+    return this.httpClient.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}`);
+  }
+  usuarios:Usuario[]=UsuariosDataDev.listaUsuarios.map(json=>new Usuario().jsonToUsuario(json));
+
+  obtenerUsuarios(): Observable<Usuario[]>{
+    return of(this.usuarios);
+    return this.httpClient.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios`).pipe(
+      map(usuariosJson => usuariosJson.map(json => new Usuario().jsonToUsuario(json))),
+      catchError(error => {
+        console.error('Error al obtener usuarios:', error);
+        return of([]); 
+      })
+    );
+  }
   actualizarUsuario(formularioUsuario: FormGroup<any>) {
     return this.httpClient.put<any>("",{
       nombres: formularioUsuario.value.nombres,

@@ -108,6 +108,7 @@ import { ElementosListadoComponent } from './shared/elementos-listado/elementos-
 import { GestionProcedimientosComponent } from './components/gestion-procedimientos/gestion-procedimientos.component';
 import { InformacionCentroMedicoService } from './services/informacion-centro-medico.service';
 import { TablaHorariosAtencionComponent } from './shared/tabla-horarios-atencion/tabla-horarios-atencion.component';
+import { GestionUsuariosComponent } from './components/gestion-usuarios/gestion-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -211,6 +212,7 @@ import { TablaHorariosAtencionComponent } from './shared/tabla-horarios-atencion
     ElementosListadoComponent,
     GestionProcedimientosComponent,
     TablaHorariosAtencionComponent,
+    GestionUsuariosComponent,
   ],
   imports: [
     BrowserModule,
