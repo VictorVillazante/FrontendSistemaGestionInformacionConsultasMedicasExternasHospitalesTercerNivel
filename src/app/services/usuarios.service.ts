@@ -30,8 +30,9 @@ export class UsuariosService {
       })
     );
   }
-  actualizarUsuario(formularioUsuario: FormGroup<any>) {
-    return this.httpClient.put<any>("",{
+  actualizarUsuario(formularioUsuario: FormGroup<any>,imagenes:string[],idUsuario:number) {
+    let formData=new FormData();
+    const jsonData = {
       nombres: formularioUsuario.value.nombres,
       ci: formularioUsuario.value.ci,
       direccion: formularioUsuario.value.direccion,
@@ -46,10 +47,22 @@ export class UsuariosService {
       edad: formularioUsuario.value.edad,
       dias_sancion_peticion_ficha_presencial: formularioUsuario.value.dias_sancion_peticion_ficha_presencial,
       telefono: formularioUsuario.value.telefono
-    })
+    };
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+    return this.httpClient.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}`,formData)
   }
-  obtenerUsuario(id: any) {
-    return this.httpClient.get<any>("");
+  obtenerUsuario(id: any) : Observable<Usuario>{
+    return of(this.usuarios[0]);
+    return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${id}`).pipe(
+      map(usuarioJson => new Usuario().jsonToUsuario(usuarioJson)),
+      catchError(error => {
+        console.error('Error al obtener usuarios:', error);
+        return of(new Usuario()); 
+      })
+    );
   }
   registrarUsuario(formularioUsuario: FormGroup<any>,imagenes:string[]) {
     let formData=new FormData();

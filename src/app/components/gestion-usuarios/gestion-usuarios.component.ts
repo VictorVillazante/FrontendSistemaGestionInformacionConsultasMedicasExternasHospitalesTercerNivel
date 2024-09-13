@@ -68,7 +68,8 @@ export class GestionUsuariosComponent implements OnInit{
   }
   redireccionarVerDetalleUsuario(arg0: any) {
   }
-  redireccionarActualizarUsuario(arg0: any) {
+  redireccionarActualizarUsuario(idUsuario: any) {
+    this.router.navigate(['/administracion/modificar-usuario', idUsuario]);
   }
   quitarAcentos(texto: string): string {
     const textoNormalizado: string = texto.normalize('NFD');

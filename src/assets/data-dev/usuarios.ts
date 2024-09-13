@@ -10,15 +10,16 @@ export class UsuariosDataDev {
           "grupo_sanguineo": "O+",
           "apellido_paterno": "Pérez",
           "apellido_materno": "García",
-          "fecha_nacimiento": "1990-05-15T00:00:00Z",
-          "sexo": "M",
-          "estado_civil": "Soltero",
+          "fecha_nacimiento": "2024-09-13",
+          "sexo": "masculino",
+          "estado_civil": "soltero",
           "edad": 34,
           "dias_sancion_peticion_ficha_presencial": 5,
           "telefono": "+591 987 654 321",
           "created_at": "2024-01-01T12:00:00Z",
           "updated_at": "2024-01-10T12:00:00Z",
-          "deleted_at": null
+          "deleted_at": null,
+          "imagenes": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZYjqa2w66x13XKdVXJaBOx_nmjPFF5t9vw&s"],
         },
         {
           "id_usuario": 2,
@@ -38,7 +39,8 @@ export class UsuariosDataDev {
           "telefono": "+591 678 901 234",
           "created_at": "2024-02-01T12:00:00Z",
           "updated_at": "2024-02-15T12:00:00Z",
-          "deleted_at": null
+          "deleted_at": null,
+          "imagenes": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZYjqa2w66x13XKdVXJaBOx_nmjPFF5t9vw&s"],
         },
         {
           "id_usuario": 3,
@@ -58,7 +60,8 @@ export class UsuariosDataDev {
           "telefono": "+591 789 012 345",
           "created_at": "2024-03-01T12:00:00Z",
           "updated_at": "2024-03-20T12:00:00Z",
-          "deleted_at": "2024-03-25T12:00:00Z"
+          "deleted_at": "2024-03-25T12:00:00Z",
+          "imagenes": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZYjqa2w66x13XKdVXJaBOx_nmjPFF5t9vw&s"],
         }
       ]
     }      

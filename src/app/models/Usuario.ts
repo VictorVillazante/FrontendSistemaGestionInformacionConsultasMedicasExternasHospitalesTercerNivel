@@ -8,7 +8,7 @@ export class Usuario {
     grupoSanguineo: string = "";
     apellidoPaterno: string = "";
     apellidoMaterno: string = "";
-    fechaNacimiento: Date | null = null;
+    fechaNacimiento: string = "";
     sexo: string = "";
     estadoCivil: string = "";
     edad: number = 0;
@@ -17,8 +17,9 @@ export class Usuario {
     createdAt: Date | null = null;
     updatedAt: Date | null = null;
     deletedAt: Date | null = null;
-
+    imagenes: string[] =[];
     jsonToUsuario(json: any): Usuario {
+        console.log(json);
         let usuario = new Usuario();
         usuario.idUsuario = json.id_usuario ?? 0;
         usuario.nombres = json.nombres ?? "";
@@ -29,7 +30,7 @@ export class Usuario {
         usuario.grupoSanguineo = json.grupo_sanguineo ?? "";
         usuario.apellidoPaterno = json.apellido_paterno ?? "";
         usuario.apellidoMaterno = json.apellido_materno ?? "";
-        usuario.fechaNacimiento = json.fecha_nacimiento ? new Date(json.fecha_nacimiento) : null;
+        usuario.fechaNacimiento = json.fecha_nacimiento ? json.fecha_nacimiento : "";
         usuario.sexo = json.sexo ?? "";
         usuario.estadoCivil = json.estado_civil ?? "";
         usuario.edad = json.edad ?? 0;
@@ -38,6 +39,7 @@ export class Usuario {
         usuario.createdAt = json.created_at ? new Date(json.created_at) : null;
         usuario.updatedAt = json.updated_at ? new Date(json.updated_at) : null;
         usuario.deletedAt = json.deleted_at ? new Date(json.deleted_at) : null;
+        usuario.imagenes = json.imagenes ? json.imagenes:[];
         return usuario;
     }
 }
