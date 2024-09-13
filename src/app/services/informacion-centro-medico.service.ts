@@ -124,9 +124,23 @@ export class InformacionCentroMedicoService {
   }
   obtenerComunicado(idComunicado:number):Observable<Comunicado>{
     return of(this.listaComunicados.filter(comunicado=>comunicado.idComunicado==idComunicado)[0]);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados/${idComunicado}`).pipe(
+      map(comunicadoJson => new Comunicado().jsonToComunicado(comunicadoJson)),
+      catchError(error => {
+        console.error('Error al obtener procedimientos:', error);
+        return of(new Comunicado()); 
+      })
+    );
   }
   obtenerComunicados():Observable<Comunicado[]>{
     return of(this.listaComunicados);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados`).pipe(
+      map(comunicadosJson => comunicadosJson.map((comunicadoJson:any)=>new Comunicado().jsonToComunicado(comunicadoJson))),
+      catchError(error => {
+        console.error('Error al obtener procedimientos:', error);
+        return of([]); 
+      })
+    );
   }
   obtenerNoticiasRecientes():Observable<Comunicado[]>{
     return of(this.listaComunicados);
