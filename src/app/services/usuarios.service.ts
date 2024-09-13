@@ -11,6 +11,9 @@ import { UsuariosDataDev } from 'src/assets/data-dev/usuarios';
   providedIn: 'root'
 })
 export class UsuariosService {
+  restaurarUsuario(idUsuario: number) {
+    return this.httpClient.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}/restaurar`,{});
+  }
   eliminarUsuario(idUsuario: any) {
     return this.httpClient.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}`);
   }

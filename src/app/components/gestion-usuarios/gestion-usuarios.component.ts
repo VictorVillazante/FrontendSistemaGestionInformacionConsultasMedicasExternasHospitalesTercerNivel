@@ -10,6 +10,18 @@ import { AlertasService } from '../../services/alertas.service';
   styleUrls: ['./gestion-usuarios.component.css']
 })
 export class GestionUsuariosComponent implements OnInit{
+  restaurarUsuario(idUsuario: number) {
+    this.alertasService.confirmarAccion("Estas seguro de restaurar este usuario?").then((result) => {
+      if(result){
+        this.usuariosService.restaurarUsuario(idUsuario).subscribe(() => {
+          this.obtenerUsuarios();
+          this.alertasService.mensajeConfirmacion();
+        },(error:any)=>{
+          this.alertasService.mensajeError();
+        })
+      }
+    })
+  }
   nombreUsuario: string = "";
   usuarios: Usuario[] = [];
   usuariosAux: Usuario[] = [];

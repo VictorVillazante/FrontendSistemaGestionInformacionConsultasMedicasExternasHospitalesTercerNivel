@@ -32,10 +32,12 @@
             <p ngProjectAs="dato-info">CI:{{usuario?.ci}}</p>
             <p ngProjectAs="dato-info">Fecha de creacion:{{usuario.createdAt|dateFormat:"dd/MM/yyyy"}}</p>
             <p ngProjectAs="dato-info">Fecha de actualizacion:{{usuario.updatedAt|dateFormat:"dd/MM/yyyy"}}</p>
-            <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="redireccionarActualizarUsuario(usuario.idUsuario)"></i>
-            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarUsuario(usuario.idUsuario)"></i>
-            <i ngProjectAs="botones-crud" class="fas fa-chevron-right me-2" (click)="redireccionarVerDetalleUsuario(usuario.idUsuario)"></i>
-            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionRoles(usuario.idUsuario)">Gestionar roles</button>
+            <i *ngIf="!usuario.deletedAt" ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="redireccionarActualizarUsuario(usuario.idUsuario)"></i>
+            <i *ngIf="!usuario.deletedAt" ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarUsuario(usuario.idUsuario)"></i>
+            <i *ngIf="!usuario.deletedAt" ngProjectAs="botones-crud" class="fas fa-chevron-right me-2" (click)="redireccionarVerDetalleUsuario(usuario.idUsuario)"></i>
+            <button *ngIf="!usuario.deletedAt" class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionRoles(usuario.idUsuario)">Gestionar roles</button>
+            <button *ngIf="usuario.deletedAt" class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="restaurarUsuario(usuario.idUsuario)">Restaurar usuario</button>
+
         </app-elementos-listado>
     </ul>
   </div>
