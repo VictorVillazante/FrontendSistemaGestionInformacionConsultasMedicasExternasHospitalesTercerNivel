@@ -17,6 +17,9 @@ import { ImagenesService } from './imagenes.service';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  eliminarComunicado(idComunicado: any) {
+    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/comunicados/${idComunicado}`);
+  }
   eliminarEspecialidad(idEspecialidad:number) {
     return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`);
   }

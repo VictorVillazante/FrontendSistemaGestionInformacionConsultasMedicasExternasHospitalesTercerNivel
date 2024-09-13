@@ -70,6 +70,7 @@ import { GestionProcedimientosComponent } from "./components/gestion-procedimien
 import { GestionPasosComponent } from "./components/gestion-pasos/gestion-pasos.component";
 import { GestionEspecialidadesComponent } from "./components/gestion-especialidades/gestion-especialidades.component";
 import { GestionUsuariosComponent } from "./components/gestion-usuarios/gestion-usuarios.component";
+import { GestionComunicadosComponent } from "./components/gestion-comunicados/gestion-comunicados.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -189,6 +190,8 @@ const APP_ROUTES: Routes = [
     { path: 'administracion/gestion-especialidades', component:  GestionEspecialidadesComponent},
     { path: 'administracion/registro-especialidad', component:  RegistroEspecialidadComponent},
     { path: 'administracion/modificar-especialidad/:id', component:  ActualizacionEspecialidadComponent},
+
+    { path: 'administracion/gestion-comunicados', component:  GestionComunicadosComponent},
 
     { path: 'medico/ver-mis-consultas-medicas', component:  MisConsultasMedicasComponent},
 
