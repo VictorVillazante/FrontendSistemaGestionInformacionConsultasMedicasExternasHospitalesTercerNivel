@@ -3,7 +3,7 @@
     <section id="buscador">
         <div class="row">
             <div class="col-md-6">
-                <label for="nombreComunicado" class="form-label">Nombre usuario</label>
+                <label for="nombreComunicado" class="form-label">Nombre comunicado</label>
                 <input
                   type="text"
                   class="form-control input-border-bottom"
@@ -23,7 +23,7 @@
       class="btn btn-success-hospital"
       (click)="redireccionarRegistroComunicado()"
     >
-      Registrar usuario
+      Registrar comunicado
     </button>
     <ul class="list-group">
         <app-elementos-listado *ngFor="let comunicado of comunicados;let i=index" [i]="i">
