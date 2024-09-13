@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h1 class="text-center p-3">Gestion consultorios</h1>
+    <section id="buscador">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="nombreConsultorio" class="form-label">Nombre consultorio</label>
+                <input
+                  type="text"
+                  class="form-control input-border-bottom"
+                  id="nombreConsultorio"
+                  [(ngModel)]="nombreConsultorio"
+                />
+            </div>
+        </div>
+        <button
+          class="btn btn-success-hospital"
+          (click)="filtrarConsultorio()"
+        >
+          Buscar
+        </button>
+    </section>
+    <button
+      class="btn btn-success-hospital"
+      (click)="redireccionarRegistroConsultorio()"
+    >
+      Registrar comunicado
+    </button>
+    <ul class="list-group">
+        <app-elementos-listado *ngFor="let consultorio of consultorios;let i=index" [i]="i">
+            <p ngProjectAs="dato-info">Id:{{consultorio?.idConsultorio}}</p>
+            <p ngProjectAs="dato-info">Titulo:{{consultorio?.nombre}}</p>
+            <p ngProjectAs="dato-info">Fecha de creacion:{{consultorio.createdAt|dateFormat:"dd/MM/yyyy"}}</p>
+            <p ngProjectAs="dato-info">Fecha de actualizacion:{{consultorio.updatedAt|dateFormat:"dd/MM/yyyy"}}</p>
+            <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="redireccionarActualizarConsultorio(consultorio.idConsultorio)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarConsultorio(consultorio.idConsultorio)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-chevron-right me-2" (click)="redireccionarVerDetalleConsultorio(consultorio.idConsultorio)"></i>
+        </app-elementos-listado>
+    </ul>
+  </div>

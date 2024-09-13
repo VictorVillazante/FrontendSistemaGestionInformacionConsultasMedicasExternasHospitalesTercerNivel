@@ -13,15 +13,20 @@ import { Procedimiento } from '../models/Procedimiento';
 import { map, catchError } from 'rxjs/operators';
 import { ProcedimientosDataDev } from 'src/assets/data-dev/procedimientos';
 import { ImagenesService } from './imagenes.service';
+import { Consultorio } from '../models/Consultorio';
+import { ConsultoriosDataDev } from 'src/assets/data-dev/consultorios';
 @Injectable({
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  eliminarConsultorio(idConsultorio: any) {
+    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/consultorios/${idConsultorio}`);
+  }
   eliminarComunicado(idComunicado: any) {
-    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/comunicados/${idComunicado}`);
+    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados/${idComunicado}`);
   }
   eliminarEspecialidad(idEspecialidad:number) {
-    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/especialidades/${idEspecialidad}`);
+    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades/${idEspecialidad}`);
   }
   obtenerProcedimiento(idProcedimiento: number) :Observable<Procedimiento>{
     return of(ProcedimientosDataDev.listaProcedimientos[0]);
@@ -110,7 +115,9 @@ export class InformacionCentroMedicoService {
     })
   }
   listaEspecialidades:Especialidad[]=EspecialidadesData.especialidadesDataDev.map(especialidad=>new Especialidad(especialidad));
-  listaComunicados:Comunicado[]=ComunicadosDataDev.listaComunicados.map(comunicado=>new Comunicado().jsonToComunicado(comunicado))
+  listaComunicados:Comunicado[]=ComunicadosDataDev.listaComunicados.map(comunicado=>new Comunicado().jsonToComunicado(comunicado));
+  listaConsultorios:Consultorio[]=ConsultoriosDataDev.listaConsultorios.map(consultorio=>new Consultorio().jsonToConsultorio(consultorio));
+
   obtenerMedico(id:number):Observable<MedicoEspecialista> {
     return of(this.listaMedicos.filter(m=>m.id=id)[0]);
     // return of({
@@ -190,8 +197,14 @@ export class InformacionCentroMedicoService {
     //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica`);
   }
   obtenerConsultorios() {
-    //return of([]);
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/consultorios`);
+    return of(this.listaConsultorios);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/consultorios`).pipe(
+      map(consultoriosJson => consultoriosJson.map((consultorioJson:any)=>new Consultorio().jsonToConsultorio(consultorioJson))),
+      catchError(error => {
+        console.error('Error al obtener consultorios:', error);
+        return of([]); 
+      })
+    );
     //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/consultorios`);
     //throw new Error('Method not implemented.');
   }

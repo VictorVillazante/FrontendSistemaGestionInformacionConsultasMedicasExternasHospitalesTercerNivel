@@ -110,6 +110,7 @@ import { InformacionCentroMedicoService } from './services/informacion-centro-me
 import { TablaHorariosAtencionComponent } from './shared/tabla-horarios-atencion/tabla-horarios-atencion.component';
 import { GestionUsuariosComponent } from './components/gestion-usuarios/gestion-usuarios.component';
 import { GestionComunicadosComponent } from './components/gestion-comunicados/gestion-comunicados.component';
+import { GestionConsultoriosComponent } from './components/gestion-consultorios/gestion-consultorios.component';
 
 @NgModule({
   declarations: [
@@ -215,6 +216,7 @@ import { GestionComunicadosComponent } from './components/gestion-comunicados/ge
     TablaHorariosAtencionComponent,
     GestionUsuariosComponent,
     GestionComunicadosComponent,
+    GestionConsultoriosComponent,
   ],
   imports: [
     BrowserModule,
