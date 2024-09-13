@@ -49,7 +49,7 @@ export class GestionUsuariosComponent implements OnInit{
     this.usuarios=usuariosAuxAFiltrar;
   }
   redireccionarRegistroUsuario() {
-
+    this.router.navigate(['/administracion/registro-usuario']);
   }
   redireccionarGestionRoles(arg0: any) {
 

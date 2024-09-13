@@ -175,9 +175,9 @@ const APP_ROUTES: Routes = [
     { path: 'administrador/gestion-pacientes', component:  GestionPacientesComponent},
     { path: 'administrador/gestion-medicos', component:  GestionMedicosComponent},
 
-    { path: 'administrador/gestion-usuarios', component:  GestionUsuariosComponent},
-    { path: 'administrador/registro-usuario', component:  RegistroUsuarioComponent},
-    { path: 'administrador/modificar-usuario/:id', component:  ActualizacionUsuarioComponent},
+    { path: 'administracion/gestion-usuarios', component:  GestionUsuariosComponent},
+    { path: 'administracion/registro-usuario', component:  RegistroUsuarioComponent},
+    { path: 'administracion/modificar-usuario/:id', component:  ActualizacionUsuarioComponent},
 
 
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},

@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { AlertasService } from '../../services/alertas.service';
+import { Usuario } from '../../models/Usuario';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-formulario-detalle-usuario',
@@ -14,4 +17,5 @@ export class FormularioDetalleUsuarioComponent {
   handleImagenes($event: any) {
     this.imagenes = $event;
   }
+  constructor(private alertasService:AlertasService,private usuariosService:UsuariosService){}
 }

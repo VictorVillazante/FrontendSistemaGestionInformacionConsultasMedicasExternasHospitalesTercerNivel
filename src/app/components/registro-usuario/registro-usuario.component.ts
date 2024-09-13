@@ -36,7 +36,7 @@ export class RegistroUsuarioComponent {
 
   onSubmit(): void {
     if (this.formularioUsuario.valid) {
-      this.usuariosService.registrarUsuario(this.formularioUsuario).subscribe(()=>{
+      this.usuariosService.registrarUsuario(this.formularioUsuario,this.imagenes).subscribe(()=>{
         this.alertasService.mensajeConfirmacion();      
       },(error:any)=>this.alertasService.mensajeError())
     }

@@ -6,6 +6,7 @@ import { Usuario } from '../models/Usuario';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UsuariosDataDev } from 'src/assets/data-dev/usuarios';
+import { ImagenesService } from './imagenes.service';
 
 @Injectable({
   providedIn: 'root'
@@ -50,8 +51,9 @@ export class UsuariosService {
   obtenerUsuario(id: any) {
     return this.httpClient.get<any>("");
   }
-  registrarUsuario(formularioUsuario: FormGroup<any>) {
-    return this.httpClient.post<any>("",{
+  registrarUsuario(formularioUsuario: FormGroup<any>,imagenes:string[]) {
+    let formData=new FormData();
+    const jsonData = {
       nombres: formularioUsuario.value.nombres,
       ci: formularioUsuario.value.ci,
       direccion: formularioUsuario.value.direccion,
@@ -66,7 +68,12 @@ export class UsuariosService {
       edad: formularioUsuario.value.edad,
       dias_sancion_peticion_ficha_presencial: formularioUsuario.value.dias_sancion_peticion_ficha_presencial,
       telefono: formularioUsuario.value.telefono
-    });
+    };
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+    return this.httpClient.post<any>("${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios",formData);
   }
 
   constructor(private httpClient:HttpClient) { }
