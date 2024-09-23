@@ -1,0 +1,70 @@
+<form [formGroup]="formularioComunicado" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input
+        id="titulo"
+        formControlName="titulo"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="lugar" class="form-label">Lugar</label>
+      <input
+        id="lugar"
+        formControlName="lugar"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="introduccion" class="form-label">Introducción</label>
+      <textarea
+        id="introduccion"
+        formControlName="introduccion"
+        class="form-control input-border-bottom"
+        rows="3"
+        required
+      ></textarea>
+    </div>
+  
+    <div class="mb-3">
+      <label for="cuerpo" class="form-label">Cuerpo</label>
+      <textarea
+        id="cuerpo"
+        formControlName="cuerpo"
+        class="form-control input-border-bottom"
+        rows="6"
+        required
+      ></textarea>
+    </div>
+  
+    <div class="mb-3">
+      <label for="citas" class="form-label">Citas</label>
+      <textarea
+        id="citas"
+        formControlName="citas"
+        class="form-control input-border-bottom"
+        rows="3"
+      ></textarea>
+    </div>
+  
+    <div class="mb-3">
+      <label for="datos_contacto" class="form-label">Datos de Contacto</label>
+      <textarea
+        id="datos_contacto"
+        formControlName="datos_contacto"
+        class="form-control input-border-bottom"
+        rows="3"
+      ></textarea>
+    </div>
+    <app-input-imagenes
+        [imagenes]="imagenes"
+        (imagenesEvent)="handleImagenes($event)"
+    ></app-input-imagenes>
+    <button type="submit" class="btn btn-success-hospital">GUARDAR</button>
+  </form>

@@ -111,6 +111,14 @@ import { TablaHorariosAtencionComponent } from './shared/tabla-horarios-atencion
 import { GestionUsuariosComponent } from './components/gestion-usuarios/gestion-usuarios.component';
 import { GestionComunicadosComponent } from './components/gestion-comunicados/gestion-comunicados.component';
 import { GestionConsultoriosComponent } from './components/gestion-consultorios/gestion-consultorios.component';
+import { RegistroComunicadoComponent } from './components/registro-comunicado/registro-comunicado.component';
+import { ActualizacionComunicadoComponent } from './components/actualizacion-comunicado/actualizacion-comunicado.component';
+import { FrmularioComunicadoComponent } from './shared/frmulario-comunicado/frmulario-comunicado.component';
+import { ActualizacionProcedimientoAdmisionComponent } from './components/actualizacion-procedimiento-admision/actualizacion-procedimiento-admision.component';
+import { ActualizacionProcedimientoComponent } from './components/actualizacion-procedimiento/actualizacion-procedimiento.component';
+import { RegistroProcedimientoComponent } from './components/registro-procedimiento/registro-procedimiento.component';
+import { FoormularioDetalleProcedimientoComponent } from './shared/foormulario-detalle-procedimiento/foormulario-detalle-procedimiento.component';
+import { FormularioDetalleConsultorioComponent } from './shared/formulario-detalle-consultorio/formulario-detalle-consultorio.component';
 
 @NgModule({
   declarations: [
@@ -217,6 +225,14 @@ import { GestionConsultoriosComponent } from './components/gestion-consultorios/
     GestionUsuariosComponent,
     GestionComunicadosComponent,
     GestionConsultoriosComponent,
+    RegistroComunicadoComponent,
+    ActualizacionComunicadoComponent,
+    FrmularioComunicadoComponent,
+    ActualizacionProcedimientoAdmisionComponent,
+    ActualizacionProcedimientoComponent,
+    RegistroProcedimientoComponent,
+    FoormularioDetalleProcedimientoComponent,
+    FormularioDetalleConsultorioComponent
   ],
   imports: [
     BrowserModule,

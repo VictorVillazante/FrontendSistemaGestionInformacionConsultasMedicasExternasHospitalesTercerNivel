@@ -74,6 +74,45 @@ export class InformacionCentroMedicoService {
       "descripcion":formularioPasoProcedimiento.value.descripcion
     });
   }
+  actualizarProcedimientoAdmision(formularioProcedimiento: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/admision`,{
+      "titulo": formularioProcedimiento.value.titulo,
+      "descripcion": formularioProcedimiento.value.descripcion
+    })
+  }
+  actualizarProcedimiento(idProcedimiento: number, formularioProcedimiento: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}`,{
+      "titulo": formularioProcedimiento.value.titulo,
+      "descripcion": formularioProcedimiento.value.descripcion
+    })
+  }
+  registrarProcedimiento(formularioProcedimiento: FormGroup<any>) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos`,{
+      "titulo": formularioProcedimiento.value.titulo,
+      "descripcion": formularioProcedimiento.value.descripcion  
+    })
+  }
+  actualizarComunicado(idComunicado: number, formularioComunicado: FormGroup<any>) {
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados/${idComunicado}`,{
+      "titulo":formularioComunicado.value.titulo,
+      "lugar":formularioComunicado.value.lugar,
+      "introduccion":formularioComunicado.value.introduccion,
+      "cuerpo":formularioComunicado.value.cuerpo,
+      "citas":formularioComunicado.value.citas,
+      "datos_contacto":formularioComunicado.value.datos_contacto
+    });
+  }
+  registrarComunicado(formularioComunicado: FormGroup<any>) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados`,{
+      "titulo":formularioComunicado.value.titulo,
+      "lugar":formularioComunicado.value.lugar,
+      "introduccion":formularioComunicado.value.introduccion,
+      "cuerpo":formularioComunicado.value.cuerpo,
+      "citas":formularioComunicado.value.citas,
+      "datos_contacto":formularioComunicado.value.datos_contacto
+    });
+  }
+
   actualizarEspecialidad(idEspecialidad: number, formularioEspecialidad: FormGroup<any>,imagenes:string[]) {
     let formData = new FormData();
     const jsonData = {
