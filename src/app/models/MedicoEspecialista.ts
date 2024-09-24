@@ -27,7 +27,7 @@ export class MedicoEspecialista{
         medico.celular = json.celular ?? "";
         medico.aniosExperiencia = json.aniosExperiencia ?? 0;
         medico.imagenes = json.imagenes ? json.imagenes.map((img: any) => new Imagen().jsonToImagen(img)) : [];
-        medico.especialidades = json.especialidades ? json.especialidades.map((esp: any) => new Especialidad(esp)) : [];
+        medico.especialidades = json.especialidades ? json.especialidades.map((esp: any) => new Especialidad().jsonToEspecialidad(esp)) : [];
         medico.turnosAtencionMedica = json.turnosAtencionMedica ?? [];
         medico.descripcion = json.descripcion ?? "";
         return medico;

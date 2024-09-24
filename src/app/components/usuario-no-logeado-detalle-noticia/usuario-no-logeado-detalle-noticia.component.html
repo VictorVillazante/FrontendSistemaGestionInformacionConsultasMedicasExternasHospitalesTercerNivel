@@ -2,10 +2,13 @@
     <div class="noticia">
         <!-- TODO:hacer carousel de imagenes -->
         <div class="imagen-noticia">
-            <img [src]="noticia.imagenes[0]" alt="">
+            <img [src]="noticia.imagenes[0].url" alt="">
         </div>
         <h2>{{noticia.titulo}}</h2>
-        <p>{{noticia.descripcion}}</p>
+        <p>{{noticia.introduccion}}</p>
+        <p>{{noticia.cuerpo}}</p>
+        <p>{{noticia.citas}}</p>
+
     </div>
     <app-section-noticias/>
 </div>

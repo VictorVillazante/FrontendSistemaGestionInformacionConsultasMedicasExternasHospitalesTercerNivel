@@ -29,14 +29,14 @@
 
     <ul class="list-group">
         <app-elementos-listado *ngFor="let procedimiento of listadoProcedimientos;let i=index" [i]="i">
-            <p ngProjectAs="dato-info">Id:{{procedimiento?.idProcedimientoAtencion}}</p>
+            <p ngProjectAs="dato-info">Id:{{procedimiento?.idProcedimiento}}</p>
             <p ngProjectAs="dato-info">Nombre procedimiento:{{procedimiento?.nombreProcedimiento}}</p>
             <p ngProjectAs="dato-info">Fecha creacion:{{procedimiento.createdAt|dateFormat : "dd-MM-yyyy"}}</p>
             <p ngProjectAs="dato-info">Fecha actualizacion:{{procedimiento.updatedAt|dateFormat : "dd-MM-yyyy"}}</p>
-            <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="actualizarProcedimiento(procedimiento.idProcedimientoAtencion)"></i>
-            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarProcedimiento(procedimiento.idProcedimientoAtencion)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="actualizarProcedimiento(procedimiento.idProcedimiento)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarProcedimiento(procedimiento.idProcedimiento)"></i>
             <i ngProjectAs="botones-crud" class="fas fa-chevron-right me-2"></i>
-            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionPasosProcedimiento(procedimiento.idProcedimientoAtencion)">Ver pasos</button>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionPasosProcedimiento(procedimiento.idProcedimiento)">Ver pasos</button>
             <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales">Ver requerimientos</button>
         </app-elementos-listado>
       </ul>

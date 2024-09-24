@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PasoProcedimiento } from 'src/app/models/PasoProcedimiento';
+import { Paso } from 'src/app/models/Paso';
 
 @Component({
   selector: 'app-card-paso-procedimiento',
@@ -7,6 +7,6 @@ import { PasoProcedimiento } from 'src/app/models/PasoProcedimiento';
   styleUrls: ['./card-paso-procedimiento.component.css']
 })
 export class CardPasoProcedimientoComponent {
-  @Input()pasoProcedimiento!:PasoProcedimiento;
+  @Input()pasoProcedimiento!:Paso;
 
 }

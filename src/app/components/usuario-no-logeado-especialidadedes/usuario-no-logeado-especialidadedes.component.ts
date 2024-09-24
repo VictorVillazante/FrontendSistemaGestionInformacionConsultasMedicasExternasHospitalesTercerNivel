@@ -12,7 +12,7 @@ export class UsuarioNoLogeadoEspecialidadedesComponent implements OnInit {
     if(i==0 && j==0){
       this.indexEspecialidad=0;
     }
-    let especialidad = new Especialidad("");
+    let especialidad = new Especialidad();
     if (this.indexEspecialidad < this.listaEspecialidades.length) {
       especialidad = this.listaEspecialidades[this.indexEspecialidad];
     }

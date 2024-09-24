@@ -119,6 +119,7 @@ import { ActualizacionProcedimientoComponent } from './components/actualizacion-
 import { RegistroProcedimientoComponent } from './components/registro-procedimiento/registro-procedimiento.component';
 import { FoormularioDetalleProcedimientoComponent } from './shared/foormulario-detalle-procedimiento/foormulario-detalle-procedimiento.component';
 import { FormularioDetalleConsultorioComponent } from './shared/formulario-detalle-consultorio/formulario-detalle-consultorio.component';
+import { UsuarioNoLogeadoPasosComponent } from './components/usuario-no-logeado-pasos/usuario-no-logeado-pasos.component';
 
 @NgModule({
   declarations: [
@@ -232,7 +233,8 @@ import { FormularioDetalleConsultorioComponent } from './shared/formulario-detal
     ActualizacionProcedimientoComponent,
     RegistroProcedimientoComponent,
     FoormularioDetalleProcedimientoComponent,
-    FormularioDetalleConsultorioComponent
+    FormularioDetalleConsultorioComponent,
+    UsuarioNoLogeadoPasosComponent
   ],
   imports: [
     BrowserModule,

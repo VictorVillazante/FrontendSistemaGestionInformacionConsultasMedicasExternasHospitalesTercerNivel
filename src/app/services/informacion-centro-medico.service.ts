@@ -9,9 +9,9 @@ import { Especialidad } from '../models/Especialidad';
 import { EspecialidadesData } from 'src/assets/data-dev/especialidades';
 import { ComunicadosDataDev } from 'src/assets/data-dev/comunicados';
 import { MedicosDataDev } from 'src/assets/data-dev/medicos';
-import { Procedimiento } from '../models/Procedimiento';
+import { ProcedimientoElemento } from '../models/ProcedimientoElemento';
 import { map, catchError } from 'rxjs/operators';
-import { ProcedimientosDataDev } from 'src/assets/data-dev/procedimientos';
+import { ProcedimientosElementosDataDev } from 'src/assets/data-dev/procedimientos-elementos';
 import { ImagenesService } from './imagenes.service';
 import { Consultorio } from '../models/Consultorio';
 import { ConsultoriosDataDev } from 'src/assets/data-dev/consultorios';
@@ -19,26 +19,6 @@ import { ConsultoriosDataDev } from 'src/assets/data-dev/consultorios';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
-  obtenerProcedimientoAtencionConsultaExternaDeEspecialidad(idEspecialidad: number) {
-    return of(ProcedimientosDataDev.listaProcedimientos[0]);
-    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades/${idEspecialidad}/procedimientos/2`).pipe(
-    //   map(procedimientoJson => new Procedimiento().jsonToProcedimiento(procedimientoJson)),
-    //   catchError(error => {
-    //     console.error('Error al obtener procedimientos:', error);
-    //     return of([]); 
-    //   })
-    // );
-  }
-  obtenerProcedimientoObtencionFichaMedicaPresencialDeEspecialidad(idEspecialidad: number) {
-    return of(ProcedimientosDataDev.listaProcedimientos[0]);
-    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades/${idEspecialidad}/procedimientos/2`).pipe(
-    //   map(procedimientoJson => new Procedimiento().jsonToProcedimiento(procedimientoJson)),
-    //   catchError(error => {
-    //     console.error('Error al obtener procedimientos:', error);
-    //     return of([]); 
-    //   })
-    // );
-  }
   eliminarConsultorio(idConsultorio: any) {
     return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/consultorios/${idConsultorio}`);
   }
@@ -48,8 +28,29 @@ export class InformacionCentroMedicoService {
   eliminarEspecialidad(idEspecialidad:number) {
     return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades/${idEspecialidad}`);
   }
-  obtenerProcedimiento(idProcedimiento: number) :Observable<Procedimiento>{
-    return of(ProcedimientosDataDev.listaProcedimientos[0]);
+
+  obtenerRequisitosProcedimientoElemento(idProcedimiento: number,idElemento:number,tipo:string){
+    return of(ProcedimientosElementosDataDev.listaProcedimientosElementos[0].requisitos);
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/elementos/${idElemento}/tipo-elemento/${tipo}/requisitos`).pipe(
+    //   map(requisitosJson => requisitosJson.map((requisitoJson:any)=>new Requisito().jsonToRequisito(requisitoJson))),
+    //   catchError(error => {
+    //     console.error('Error al obtener requisitos:', error);
+    //     return of([]); 
+    //   })
+    // );
+  }
+  obtenerPasosProcedimientoElemento(idProcedimiento: number,idElemento:number,tipo:string){
+    return of(ProcedimientosElementosDataDev.listaProcedimientosElementos[0].pasos);
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/elementos/${idElemento}/tipo-elemento/${tipo}/pasos`).pipe(
+    //   map(pasosJson => pasosJson.map((pasoJson:any)=>new Paso().jsonToPaso(pasoJson))),
+    //   catchError(error => {
+    //     console.error('Error al obtener pasos:', error);
+    //     return of([]); 
+    //   })
+    // );
+  }
+  obtenerProcedimiento(idProcedimiento: number) :Observable<ProcedimientoElemento>{
+    return of(ProcedimientosElementosDataDev.listaProcedimientosElementos[0]);
     // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}`).pipe(
     //   map(procedimientoJson => new Procedimiento().jsonToProcedimiento(procedimientoJson)),
     //   catchError(error => {
@@ -58,12 +59,12 @@ export class InformacionCentroMedicoService {
     //   })
     // );
   }
-  procedimientos:Procedimiento[]=ProcedimientosDataDev.listaProcedimientos.map(json=>new Procedimiento().jsonToProcedimiento(json));
+  procedimientos:ProcedimientoElemento[]=ProcedimientosElementosDataDev.listaProcedimientosElementos.map(json=>new ProcedimientoElemento().jsonToProcedimientoElemento(json));
 
-  obtenerProcedimientos(): Observable<Procedimiento[]> {
+  obtenerProcedimientos(): Observable<ProcedimientoElemento[]> {
     return of(this.procedimientos);
     return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos`).pipe(
-      map(procedimientosJson => procedimientosJson.map(json => new Procedimiento().jsonToProcedimiento(json))),
+      map(procedimientosJson => procedimientosJson.map(json => new ProcedimientoElemento().jsonToProcedimientoElemento(json))),
       catchError(error => {
         console.error('Error al obtener procedimientos:', error);
         return of([]); 
@@ -158,24 +159,12 @@ export class InformacionCentroMedicoService {
     return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades`,formData);
   }
   listaMedicos=MedicosDataDev.medicos;
-  obtenerInformacionCentroSalud() {
-    return of({
-      descripcionProcesoInscripcion:"",
-      procedimientoProcesoInscripcion:[
-        { "idPasoProcedimiento": 1, "nombre": "Paso 1", "descripcion": "Presentarse en la recepción con documentos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
-        { "idPasoProcedimiento": 2, "nombre": "Paso 2", "descripcion": "Completar el formulario de solicitud.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
-
-      ],
-      requisitosProcesoInscripcion:[
-        { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
-        { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica completa.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
-
-      ]
-    })
+  obtenerProcesoInscripcionCentroSalud() {
+    return of(new ProcedimientoElemento().jsonToProcedimientoElemento(this.procedimientos[0]));
   }
-  listaEspecialidades:Especialidad[]=EspecialidadesData.especialidadesDataDev.map(especialidad=>new Especialidad(especialidad));
-  listaComunicados:Comunicado[]=ComunicadosDataDev.listaComunicados.map(comunicado=>new Comunicado().jsonToComunicado(comunicado));
-  listaConsultorios:Consultorio[]=ConsultoriosDataDev.listaConsultorios.map(consultorio=>new Consultorio().jsonToConsultorio(consultorio));
+  listaEspecialidades:any[]=EspecialidadesData.especialidadesDataDev;
+  listaComunicados:any[]=ComunicadosDataDev.listaComunicados;
+  listaConsultorios:any[]=ConsultoriosDataDev.listaConsultorios;
 
   obtenerMedico(id:number):Observable<MedicoEspecialista> {
     return of(this.listaMedicos[0]).pipe(
@@ -205,7 +194,13 @@ export class InformacionCentroMedicoService {
     );
   }
   obtenerComunicados():Observable<Comunicado[]>{
-    return of(this.listaComunicados);
+    return of(this.listaComunicados).pipe(
+      map(comunicadosJson => comunicadosJson.map((comunicadoJson:any)=>new Comunicado().jsonToComunicado(comunicadoJson))),
+      catchError(error => {
+        console.error('Error al obtener comunicados:', error);
+        return of([]); 
+      })
+    );
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados`).pipe(
       map(comunicadosJson => comunicadosJson.map((comunicadoJson:any)=>new Comunicado().jsonToComunicado(comunicadoJson))),
       catchError(error => {
@@ -273,8 +268,15 @@ export class InformacionCentroMedicoService {
     //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/consultorios`);
     //throw new Error('Method not implemented.');
   }
-  obtenerEspecialidades() {
-    return of(this.listaEspecialidades);
+  obtenerEspecialidades() : Observable<Especialidad[]> {
+    //return of<Especialidad[]>(this.listaEspecialidades.map((e)=>new Especialidad().jsonToEspecialidad(e)));
+    return of(this.listaEspecialidades).pipe(
+      map(especialidadesJson => especialidadesJson.map((especialidadJson:any)=>new Especialidad().jsonToEspecialidad(especialidadJson))),
+      catchError(error => {
+        console.error('Error al obtener especialidades:', error);
+        return of([]); 
+      })
+    );
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/especialidades`);
     //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/especialidades`);
     //throw new Error('Method not implemented.');
@@ -292,7 +294,13 @@ export class InformacionCentroMedicoService {
     // throw new Error('Method not implemented.');
   }
   obtenerMedicos() {
-    return of(this.listaMedicos);
+    return of(this.listaMedicos).pipe(
+      map(medicosJson => medicosJson.map((medicoJson:any)=>new MedicoEspecialista().jsonToMedicoEspecialista(medicoJson))),
+      catchError(error => {
+        console.error('Error al obtener medicos:', error);
+        return of([]); 
+      })
+    );
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/medicos`);
     // return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/medicos`);
     // return of([]);

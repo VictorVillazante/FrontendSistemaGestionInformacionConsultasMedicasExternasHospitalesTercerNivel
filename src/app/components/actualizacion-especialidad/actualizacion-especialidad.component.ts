@@ -28,7 +28,7 @@ export class ActualizacionEspecialidadComponent {
   obtenerEspecialidad(idEspecialidad: number) {
     this.informacionCentroMedicoService.obtenerEspecialidad(idEspecialidad).subscribe((especialidad)=>{
       this.formularioEspecialidad.setValue({nombre:especialidad.nombre,descripcion:especialidad.descripcion});
-      this.imagenes=especialidad.imagenes;
+      this.imagenes=especialidad.imagenes.map((imagen)=>imagen.url);
     });
   }
 

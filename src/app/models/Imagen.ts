@@ -6,7 +6,6 @@ export class Imagen{
     createdAt:Date|null=null;
     updatedAt:Date|null=null;
     deletedAt:Date|null=null;
-
     jsonToImagen(json: any): Imagen {
         let imagen = new Imagen();
         imagen.idImagen = json.idImagen ?? 0;

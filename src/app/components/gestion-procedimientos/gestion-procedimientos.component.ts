@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Procedimiento } from 'src/app/models/Procedimiento';
+import { ProcedimientoElemento } from 'src/app/models/ProcedimientoElemento';
 import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
 import { Router } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class GestionProcedimientosComponent implements OnInit{
   filtrarProcedimientos() {
     let procedimientosAuxAFiltrar=this.listadoProcedimientosAux;
     if(this.nombreProcedimiento){
-      procedimientosAuxAFiltrar=procedimientosAuxAFiltrar.filter((procedimiento:Procedimiento)=>{
+      procedimientosAuxAFiltrar=procedimientosAuxAFiltrar.filter((procedimiento:ProcedimientoElemento)=>{
         return this.quitarAcentos(procedimiento.nombreProcedimiento.toLowerCase()).includes(this.quitarAcentos(this.nombreProcedimiento.toLowerCase()));
       })      
     }
@@ -29,8 +29,8 @@ export class GestionProcedimientosComponent implements OnInit{
     this.listadoProcedimientos=procedimientosAuxAFiltrar;
   }
   nombreProcedimiento:any;
-  listadoProcedimientos:Procedimiento[]=[];
-  listadoProcedimientosAux:Procedimiento[]=[];
+  listadoProcedimientos:ProcedimientoElemento[]=[];
+  listadoProcedimientosAux:ProcedimientoElemento[]=[];
   constructor(private router:Router,private informacionCentroMedicoService:InformacionCentroMedicoService) { }
   ngOnInit(): void {
     this.informacionCentroMedicoService.obtenerProcedimientos().subscribe((procedimientos)=>{

@@ -1,9 +1,9 @@
 <div class="card w-100" >
-  <img [src]="comunicado.imagenes[0]" class="card-img-top" alt="..." />
+  <img [src]="comunicado.imagenes[0].url" class="card-img-top card-imagen" alt="..." />
   <div class="card-body">
     <h5 class="card-title">{{comunicado.titulo}}</h5>
     <p class="card-text">
-        {{comunicado.descripcion}}
+        {{comunicado.introduccion}}
     </p>
     <a href="#" class="btn btn-success-hospital" [routerLink]="'/comunicado/'+comunicado.idComunicado">Ver más</a>
   </div>

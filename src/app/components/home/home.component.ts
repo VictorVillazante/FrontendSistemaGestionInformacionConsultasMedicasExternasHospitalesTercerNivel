@@ -16,13 +16,13 @@ export class HomeComponent implements OnInit{
         this.listadoEspecialidades=e;
       })
   }
-  rutaElementosRequisitosPeticionFichaMedicaPresencial(id:number):void{
-    this.router.navigate(["requisitos/obtencion-ficha-presencial/"+id]);
+  rutaElementosRequisitosProcedimientoPeticionFichaMedicaPresencial(id:number):void{
+    this.router.navigate(["procedimientos/1/elementos/"+id+"/tipo-elemento/especialidades/requisitos"]);
   }
-  rutaElementosProcedimientoPeticionFichaMedicaPresencial(id:number):void{
-    this.router.navigate(["procedimiento/obtencion-ficha-presencial/"+id]);
+  rutaElementosPasosProcedimientoPeticionFichaMedicaPresencial(id:number):void{
+    this.router.navigate(["procedimientos/1/elementos/"+id+"/tipo-elemento/especialidades/pasos"]);
   }
-  rutaElementosRequisitosMinimosAtencionConsultaExterna(id:number):void{
-    this.router.navigate(["requisitos/atencion-consulta-externa/"+id]);
+  rutaElementosRequisitosProcedimientoMinimosAtencionConsultaExterna(id:number):void{
+    this.router.navigate(["procedimientos/2/elementos/"+id+"/tipo-elemento/especialidades/requisitos"]);
   }
 }

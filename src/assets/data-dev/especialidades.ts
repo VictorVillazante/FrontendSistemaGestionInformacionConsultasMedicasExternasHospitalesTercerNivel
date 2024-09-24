@@ -9,20 +9,28 @@ export class EspecialidadesData{
             "fechaCreacion": "2024-01-15T08:30:00Z",
             "createdAt": "2024-01-15T08:30:00Z",
             "updatedAt": "2024-01-20T10:00:00Z",
-            "deletedAt": null,
-            "requisitosSolicitudFichaMedica": [
-                { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
-                { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica completa.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
-            ],
-            "requisitosMinimosAtencionConsultaExterna": [
-                { "idRequisito": 3, "nombre": "Requisito 3", "descripcion": "Informe médico anterior.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
-            ],
-            "procedimientoObtencionFichaMedicaPresencial": [
-                { "idPasoProcedimiento": 1, "nombre": "Paso 1", "descripcion": "Presentarse en la recepción con documentos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
-                { "idPasoProcedimiento": 2, "nombre": "Paso 2", "descripcion": "Completar el formulario de solicitud.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
-            ],
+            // "deletedAt": null,
+            // "requisitosSolicitudFichaMedica": [
+            //     { "idRequisito": 1, "nombre": "Requisito 1", "descripcion": "Copia del documento de identidad.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
+            //     { "idRequisito": 2, "nombre": "Requisito 2", "descripcion": "Historia médica completa.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
+            // ],
+            // "requisitosMinimosAtencionConsultaExterna": [
+            //     { "idRequisito": 3, "nombre": "Requisito 3", "descripcion": "Informe médico anterior.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
+            // ],
+            // "procedimientoObtencionFichaMedicaPresencial": [
+            //     { "idPasoProcedimiento": 1, "nombre": "Paso 1", "descripcion": "Presentarse en la recepción con documentos.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] },
+            //     { "idPasoProcedimiento": 2, "nombre": "Paso 2", "descripcion": "Completar el formulario de solicitud.", "imagenes": ["fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg", "fondo-opciones-menu.jpg"] }
+            // ],
             
-            "imagenes": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhZYjqa2w66x13XKdVXJaBOx_nmjPFF5t9vw&s"]
+            "imagenes": [{
+                "idImagen": 62,
+                "nombre": "Captura de pantalla de 2024-09-23 22-47-50.png",
+                "tipo": "image/png",
+                "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNBVh79jGaH-D21r7geT8NSnFWIqqAVEbFvA&s",
+                "createdAt": "2024-09-24T10:47:25.000+00:00",
+                "updatedAt": "2024-09-24T10:47:25.000+00:00",
+                "deletedAt": null
+              }]
 
         },
         // {

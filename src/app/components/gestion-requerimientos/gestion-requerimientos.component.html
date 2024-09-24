@@ -40,7 +40,7 @@
       <ul class="list-group">
         <app-elementos-listado *ngFor="let requisito of listaRequisitosProcedimiento;let i=index" [i]="i">
             <div ngProjectAs="dato-info">
-                <p>{{requisito?.nombre}}</p>
+                <p>{{requisito?.titulo}}</p>
                 <p>{{requisito?.descripcion}}</p>
             </div>
             <div ngProjectAs="dato-opciones">

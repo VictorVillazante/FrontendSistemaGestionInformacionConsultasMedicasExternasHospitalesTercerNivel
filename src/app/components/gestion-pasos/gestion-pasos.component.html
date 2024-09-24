@@ -36,11 +36,11 @@
       </form>
       <ul class="list-group">
         <app-elementos-listado *ngFor="let paso of procedimiento.pasos;let i=index" [i]="i">
-            <p ngProjectAs="dato-info">Id:{{paso?.idPasoProcedimiento}}</p>
+            <p ngProjectAs="dato-info">Id:{{paso?.idPaso}}</p>
             <p ngProjectAs="dato-info">Nombre paso:{{paso?.nombre}}</p>
             <p ngProjectAs="dato-info">Descripcion:{{paso?.descripcion}}</p>
-            <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="actualizarPaso(paso.idPasoProcedimiento)"></i>
-            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarPaso(paso.idPasoProcedimiento)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="actualizarPaso(paso.idPaso)"></i>
+            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarPaso(paso.idPaso)"></i>
         </app-elementos-listado>
       </ul>
     </section>

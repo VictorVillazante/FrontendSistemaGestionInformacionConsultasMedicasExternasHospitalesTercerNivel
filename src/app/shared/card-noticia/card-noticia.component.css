@@ -9,3 +9,7 @@
 .card-body{
     text-align: center;
 }
+.card-imagen{
+  height: 300px;
+  object-fit: cover;
+}

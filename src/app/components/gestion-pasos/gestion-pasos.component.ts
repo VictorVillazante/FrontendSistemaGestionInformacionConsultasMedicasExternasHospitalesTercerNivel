@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
 import { AlertasService } from 'src/app/services/alertas.service';
 import { ActivatedRoute } from '@angular/router';
-import { Procedimiento } from 'src/app/models/Procedimiento';
+import { ProcedimientoElemento } from 'src/app/models/ProcedimientoElemento';
 
 @Component({
   selector: 'app-gestion-pasos',
@@ -19,7 +19,7 @@ actualizarPaso(arg0: number) {
   idProcedimiento!:number;
   formularioPasoProcedimiento:FormGroup;
   imagenes:string[]=[];
-  procedimiento!:Procedimiento;
+  procedimiento!:ProcedimientoElemento;
   constructor(private activatedRoute:ActivatedRoute,private alertasService:AlertasService,private informacionCentroMedicoService:InformacionCentroMedicoService,private fb:FormBuilder){
     this.formularioPasoProcedimiento=fb.group({
       "nombre":["",Validators.required],

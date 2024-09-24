@@ -11,38 +11,24 @@ import { Especialidad } from 'src/app/models/Especialidad';
 })
 export class UsuarioNoLogeadoRequisitosComponent implements OnInit{
   tipo:string="";
-  idEspecialidad:number=0;
-  titulo:string="Requisitos ";
+  idElemento:number=0;
+  idProcedimiento:number=0;
+  @Input() titulo:string="";
   @Input() listaRequisitos:Requisito[]=[];
   constructor(private route:ActivatedRoute,private informacionCentroMedicoService:InformacionCentroMedicoService){}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.tipo = params['tipo'];
-      this.titulo+=this.tipo.replace(/-/g," ");
-      this.idEspecialidad = params['id'];
-      this.cargarRequisitosPorTipo(this.tipo,this.idEspecialidad);
+      this.tipo = params['tipo'].replace(/-/g," ").toLowerCase();
+      this.idElemento = params['idElemento'];
+      this.idProcedimiento = params['idProcedimiento'];
+      this.obtenerRequisitosProcedimientoElemento(this.idProcedimiento,this.idElemento,this.tipo);
     });
   }
-  obtenerProcedimientoObtencionFichaMedicaPresencial(idEspecialidad: number) {
-    this.informacionCentroMedicoService.obtenerProcedimientoObtencionFichaMedicaPresencialDeEspecialidad(idEspecialidad).subscribe((e)=>{
-      this.cargarRequisitosPorTipo(this.tipo,e);
+
+  obtenerRequisitosProcedimientoElemento(idProcedimiento: number,idElemento:number,tipo:string) {
+    this.informacionCentroMedicoService.obtenerRequisitosProcedimientoElemento(idProcedimiento,idElemento,tipo).subscribe((e)=>{
+      this.listaRequisitos=e.requisitos;
     })
   }
-  obtenerProcedimientoAtencionConsultaExterna(idEspecialidad: number) {
-    this.informacionCentroMedicoService.obtenerProcedimientoAtencionConsultaExternaDeEspecialidad(idEspecialidad).subscribe((e)=>{
-      this.cargarRequisitosPorTipo(this.tipo,e);
-    })
-  }
-  cargarRequisitosPorTipo(tipo: string,idEspecialidad:number) {
-    switch(tipo){
-      case "obtencion-ficha-presencial":
-        this.obtenerProcedimientoObtencionFichaMedicaPresencial(idEspecialidad);
-      break;
-      case "atencion-consulta-externa":
-        this.obtenerProcedimientoAtencionConsultaExterna(idEspecialidad);
-      break;
-    }
-  }
-  
 }

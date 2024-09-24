@@ -1,0 +1,9 @@
+<div class="contenedor-procedimiento">
+    <div class="banner-img">
+        <img src="../../../assets/images/banner-procedimiento.jpg" alt="">
+    </div>
+    <div class="procedimiento-pasos">
+        <h2>{{titulo}}</h2>
+        <app-card-paso-procedimiento *ngFor="let pasoProcedimiento of listaPasos" [pasoProcedimiento]="pasoProcedimiento"/>
+    </div>
+</div>
