@@ -1,10 +1,10 @@
 <div class="contenedor-medico-especialista">
     <div class="contenedor-img-medico-especialista">
-        <img *ngIf="medicoEspecialista.imagen!=''" class="img-medico-especialista" [src]="medicoEspecialista.imagen" alt="">
+        <img *ngIf="medicoEspecialista.imagenes[0].url!=''" class="img-medico-especialista" [src]="medicoEspecialista.imagenes[0].url" alt="">
     </div>
     <div class="datos-medico-especialista">
-        <p class="nombre-completo">{{medicoEspecialista.nombres}} {{medicoEspecialista.apellidos}}</p>
+        <p class="nombre-completo">{{medicoEspecialista.nombres}} {{medicoEspecialista.apellidoPaterno}} {{medicoEspecialista.apellidoMaterno}}</p>
         <p class="descripcion">{{medicoEspecialista.descripcion}}</p>
-        <button class="btn btn-outline-white" (click)="irRutaDetalleMedico(medicoEspecialista.id)">Ver mas</button>
+        <button class="btn btn-outline-white" (click)="irRutaDetalleMedico(medicoEspecialista.idUsuario)">Ver mas</button>
     </div>
 </div>

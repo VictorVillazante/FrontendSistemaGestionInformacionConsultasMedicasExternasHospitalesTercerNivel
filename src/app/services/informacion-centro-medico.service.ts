@@ -19,6 +19,26 @@ import { ConsultoriosDataDev } from 'src/assets/data-dev/consultorios';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  obtenerProcedimientoAtencionConsultaExternaDeEspecialidad(idEspecialidad: number) {
+    return of(ProcedimientosDataDev.listaProcedimientos[0]);
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades/${idEspecialidad}/procedimientos/2`).pipe(
+    //   map(procedimientoJson => new Procedimiento().jsonToProcedimiento(procedimientoJson)),
+    //   catchError(error => {
+    //     console.error('Error al obtener procedimientos:', error);
+    //     return of([]); 
+    //   })
+    // );
+  }
+  obtenerProcedimientoObtencionFichaMedicaPresencialDeEspecialidad(idEspecialidad: number) {
+    return of(ProcedimientosDataDev.listaProcedimientos[0]);
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/especialidades/${idEspecialidad}/procedimientos/2`).pipe(
+    //   map(procedimientoJson => new Procedimiento().jsonToProcedimiento(procedimientoJson)),
+    //   catchError(error => {
+    //     console.error('Error al obtener procedimientos:', error);
+    //     return of([]); 
+    //   })
+    // );
+  }
   eliminarConsultorio(idConsultorio: any) {
     return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/consultorios/${idConsultorio}`);
   }
@@ -158,7 +178,13 @@ export class InformacionCentroMedicoService {
   listaConsultorios:Consultorio[]=ConsultoriosDataDev.listaConsultorios.map(consultorio=>new Consultorio().jsonToConsultorio(consultorio));
 
   obtenerMedico(id:number):Observable<MedicoEspecialista> {
-    return of(this.listaMedicos.filter(m=>m.id=id)[0]);
+    return of(this.listaMedicos[0]).pipe(
+      map(medicoJson => new MedicoEspecialista().jsonToMedicoEspecialista(medicoJson)),
+      catchError(error => {
+        console.error('Error al obtener medico:', error);
+        return of(new MedicoEspecialista()); 
+      })
+    );
     // return of({
     //   id:1,
     //   nombres:"Juan Jose",

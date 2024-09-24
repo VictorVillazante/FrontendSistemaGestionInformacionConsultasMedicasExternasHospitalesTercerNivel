@@ -19,24 +19,28 @@ export class UsuarioNoLogeadoRequisitosComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.tipo = params['tipo'];
-      console.log(this.tipo);
       this.titulo+=this.tipo.replace(/-/g," ");
       this.idEspecialidad = params['id'];
-      this.obtenerEspecialidad(this.idEspecialidad);
+      this.cargarRequisitosPorTipo(this.tipo,this.idEspecialidad);
     });
   }
-  obtenerEspecialidad(idEspecialidad: number) {
-    this.informacionCentroMedicoService.obtenerEspecialidad(this.idEspecialidad).subscribe((e)=>{
+  obtenerProcedimientoObtencionFichaMedicaPresencial(idEspecialidad: number) {
+    this.informacionCentroMedicoService.obtenerProcedimientoObtencionFichaMedicaPresencialDeEspecialidad(idEspecialidad).subscribe((e)=>{
       this.cargarRequisitosPorTipo(this.tipo,e);
     })
   }
-  cargarRequisitosPorTipo(tipo: string,especialidad:Especialidad) {
-    switch(this.tipo){
+  obtenerProcedimientoAtencionConsultaExterna(idEspecialidad: number) {
+    this.informacionCentroMedicoService.obtenerProcedimientoAtencionConsultaExternaDeEspecialidad(idEspecialidad).subscribe((e)=>{
+      this.cargarRequisitosPorTipo(this.tipo,e);
+    })
+  }
+  cargarRequisitosPorTipo(tipo: string,idEspecialidad:number) {
+    switch(tipo){
       case "obtencion-ficha-presencial":
-        this.listaRequisitos=especialidad.requisitosSolicitudFichaMedica;
+        this.obtenerProcedimientoObtencionFichaMedicaPresencial(idEspecialidad);
       break;
       case "atencion-consulta-externa":
-        this.listaRequisitos=especialidad.requisitosMinimosAtencionConsultaExterna;
+        this.obtenerProcedimientoAtencionConsultaExterna(idEspecialidad);
       break;
     }
   }

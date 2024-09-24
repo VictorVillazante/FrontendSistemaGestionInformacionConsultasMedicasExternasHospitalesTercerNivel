@@ -2,7 +2,7 @@
     <div class="medico">
         <div class="datos">
             <div class="datos-medico">
-                <p class="nombre-apellido">Dr. {{medico.nombres}} {{medico.apellidos}}</p>
+                <p class="nombre-apellido">Dr. {{medico.nombres}} {{medico.apellidoPaterno}} {{medico.apellidoMaterno}}</p>
                 <p>{{medico.email}}</p>
                 <p>{{medico.celular}}</p>
             </div>
@@ -12,10 +12,6 @@
                 <p class="tipo-dato">Especialidades</p>
                 <p *ngFor="let especialidad of medico.especialidades">
                     {{especialidad.nombre}}
-                </p>
-                <p class="tipo-dato">Idiomas</p>
-                <p *ngFor="let idioma of medico.idiomas">
-                    {{idioma.nombre}}
                 </p>
                 <table class="table">
                     <thead>
@@ -33,7 +29,7 @@
             </div>
         </div>
         <div class="contenedor-imagen">
-            <img [src]="medico.imagen" alt="">
+            <img [src]="medico.imagenes[0].url" alt="">
         </div>
     </div>
     <p>{{medico.descripcion}}</p>

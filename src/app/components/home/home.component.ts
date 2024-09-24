@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit{
       })
   }
   rutaElementosRequisitosPeticionFichaMedicaPresencial(id:number):void{
-    this.router.navigate(["requisitos/obtencion-ficha-presencial/1"]);
+    this.router.navigate(["requisitos/obtencion-ficha-presencial/"+id]);
   }
   rutaElementosProcedimientoPeticionFichaMedicaPresencial(id:number):void{
     this.router.navigate(["procedimiento/obtencion-ficha-presencial/"+id]);
