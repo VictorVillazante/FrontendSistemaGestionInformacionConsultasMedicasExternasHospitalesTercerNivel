@@ -19,10 +19,60 @@ import { Imagen } from '../models/Imagen';
 import { ProcedimientosDataDev } from 'src/assets/data-dev/procedimientos';
 import { Procedimiento } from '../models/Procedimieto';
 import { formatDate } from '@angular/common';
+import { PasosDataDev } from 'src/assets/data-dev/pasos';
+import { Paso } from '../models/Paso';
 @Injectable({
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  modificarPaso(idPaso: number, formularioPaso: FormGroup<any>, imagenes: Imagen[]) {
+    let formData=new FormData();
+    const jsonData = {
+      nombre:formularioPaso.value.nombre,
+      descripcion:formularioPaso.value.descripcion
+    }
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos/${idPaso}`,formData);
+
+  }
+  eliminarPaso(idPaso: number) {
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos/${idPaso}`);
+  }
+  registrarPaso(idPaso: number, formularioPaso: FormGroup<any>, imagenes: Imagen[]) {
+    let formData=new FormData();
+    const jsonData = {
+      nombre:formularioPaso.value.nombre,
+      descripcion:formularioPaso.value.descripcion
+    }
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos`,formData);
+  }
+
+  pasos:any[]=PasosDataDev.listaPasos;
+  obtenerPasos():Observable<Paso[]> {
+    return of(this.procedimientos).pipe(
+      map(pasosJson => pasosJson.map(json => new Paso().jsonToPaso(json))),
+      catchError(error => {
+        console.error('Error al obtener procedimientos:', error);
+        return of([]); 
+      })
+    );
+    // return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos`).pipe(
+    //   map(procedimientosJson => procedimientosJson.map((json:any) => new Paso().jsonToPaso(json))),
+    //   catchError(error => {
+    //     console.error('Error al obtener procedimientos:', error);
+    //     return of([]); 
+    //   })
+    // );
+  }
 
   eliminarConsultorio(idConsultorio: any) {
     return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/consultorios/${idConsultorio}`);
