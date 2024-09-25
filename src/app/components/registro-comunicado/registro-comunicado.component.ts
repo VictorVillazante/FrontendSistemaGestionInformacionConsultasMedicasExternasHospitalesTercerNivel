@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Imagen } from 'src/app/models/Imagen';
 import { AlertasService } from 'src/app/services/alertas.service';
 import { InformacionCentroMedicoService } from 'src/app/services/informacion-centro-medico.service';
 
@@ -10,7 +11,7 @@ import { InformacionCentroMedicoService } from 'src/app/services/informacion-cen
 })
 export class RegistroComunicadoComponent {
   formularioComunicado: FormGroup;
-  imagenes: string[] = [];
+  imagenes: Imagen[] = [];
   constructor(private alertasService:AlertasService,private fb: FormBuilder,private informacionCentroMedicoService:InformacionCentroMedicoService) {
     this.formularioComunicado = this.fb.group({
       titulo: ['', [Validators.required]],
@@ -18,14 +19,13 @@ export class RegistroComunicadoComponent {
       introduccion: ['', [Validators.required]],
       cuerpo: ['', [Validators.required]],
       citas: [''],
-      datos_contacto: ['']
+      datosContacto: ['']
     });
   }
-  ngOnInits(): void { }
 
   onSubmit(): void {
     if (this.formularioComunicado.valid) {
-      this.informacionCentroMedicoService.registrarComunicado(this.formularioComunicado).subscribe(()=>{
+      this.informacionCentroMedicoService.registrarComunicado(this.formularioComunicado,this.imagenes).subscribe(()=>{
         this.alertasService.mensajeConfirmacion();      
       },(error:any)=>this.alertasService.mensajeError())
     }

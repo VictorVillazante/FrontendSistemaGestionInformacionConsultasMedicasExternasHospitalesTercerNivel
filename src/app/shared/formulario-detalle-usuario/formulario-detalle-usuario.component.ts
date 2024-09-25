@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { AlertasService } from '../../services/alertas.service';
 import { Usuario } from '../../models/Usuario';
 import { UsuariosService } from '../../services/usuarios.service';
+import { Imagen } from 'src/app/models/Imagen';
 
 @Component({
   selector: 'app-formulario-detalle-usuario',
@@ -12,7 +13,7 @@ import { UsuariosService } from '../../services/usuarios.service';
 export class FormularioDetalleUsuarioComponent {
   @Input() formularioUsuario!: FormGroup;
   @Input() onSubmit!: ()=>void;
-  @Input() imagenes!: string[];
+  @Input() imagenes!: Imagen[];
   @Output() imagenesEvent = new EventEmitter<any>();
   handleImagenes($event: any) {
     this.imagenes = $event;

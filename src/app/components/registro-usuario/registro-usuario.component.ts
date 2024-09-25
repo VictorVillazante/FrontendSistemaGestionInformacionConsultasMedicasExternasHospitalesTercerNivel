@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuariosService } from '../../services/usuarios.service';
 import { AlertasService } from 'src/app/services/alertas.service';
+import { Imagen } from 'src/app/models/Imagen';
 
 @Component({
   selector: 'app-registro-usuario',
@@ -10,7 +11,7 @@ import { AlertasService } from 'src/app/services/alertas.service';
 })
 export class RegistroUsuarioComponent {
   formularioUsuario: FormGroup;
-  imagenes: string[] = [];
+  imagenes: Imagen[] = [];
 
   constructor(private alertasService:AlertasService,private usuariosService:UsuariosService,private fb: FormBuilder) {
     this.formularioUsuario = this.fb.group({
@@ -19,14 +20,14 @@ export class RegistroUsuarioComponent {
       direccion: ['', Validators.required],
       celular: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      grupo_sanguineo: ['', Validators.required],
-      apellido_paterno: ['', Validators.required],
-      apellido_materno: ['', Validators.required],
-      fecha_nacimiento: ['', Validators.required],
+      grupoSanguineo: ['', Validators.required],
+      apellidoPaterno: ['', Validators.required],
+      apellidoMaterno: ['', Validators.required],
+      fechaNacimiento: ['', Validators.required],
       sexo: ['', Validators.required],
-      estado_civil: ['', Validators.required],
+      estadoCivil: ['', Validators.required],
       edad: ['', [Validators.required, Validators.min(0)]],
-      dias_sancion_peticion_ficha_presencial: ['', [Validators.required, Validators.min(0)]],
+      diasSancionPeticionFichaPresencial: ['', [Validators.required, Validators.min(0)]],
       telefono: ['', Validators.required]
     });
   }

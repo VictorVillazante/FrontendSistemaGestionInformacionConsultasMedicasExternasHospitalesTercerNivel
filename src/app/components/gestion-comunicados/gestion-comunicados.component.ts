@@ -40,11 +40,11 @@ export class GestionComunicadosComponent implements OnInit{
       }
     })
   }
-  redireccionarActualizarComunicado(arg0: any) {
-  throw new Error('Method not implemented.');
+  redireccionarActualizarComunicado(idComunicado: any) {
+    this.router.navigate(['/administracion/modificar-comunicado', idComunicado]);
   }
   redireccionarRegistroComunicado() {
-  throw new Error('Method not implemented.');
+    this.router.navigate(['/administracion/registro-comunicado']);
   }
   filtrarComunicados() {
     let comunicadosAuxAFiltrar=this.comunicadosAux;

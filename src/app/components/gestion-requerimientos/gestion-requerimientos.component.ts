@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Imagen } from 'src/app/models/Imagen';
 import { Requisito } from 'src/app/models/Requisito';
 import { AlertasService } from 'src/app/services/alertas.service';
 import { InformacionCentroMedicoService } from 'src/app/services/informacion-centro-medico.service';
@@ -17,7 +18,7 @@ export class GestionRequerimientosComponent {
   idRequisitoProcedimiento!:number;
   idProcedimiento!:number;
   formularioRequisitoProcedimiento:FormGroup;
-  imagenes:string[]=[];
+  imagenes:Imagen[]=[];
   listaRequisitosProcedimiento:Requisito[]=[];
   constructor(private alertasService:AlertasService,private informacionCentroMedicoService:InformacionCentroMedicoService,private fb:FormBuilder){
     this.formularioRequisitoProcedimiento=fb.group({

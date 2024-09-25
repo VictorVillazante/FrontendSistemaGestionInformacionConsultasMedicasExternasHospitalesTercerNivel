@@ -3,6 +3,7 @@
       <h1 class="text-center mb-4">Actualización comunicado</h1>
   
       <app-frmulario-comunicado
+        [idComunicado]="idComunicado"
         [formularioComunicado]="formularioComunicado"
         [imagenes]="imagenes"
         (imagenesEvent)="handleImagenes($event)"

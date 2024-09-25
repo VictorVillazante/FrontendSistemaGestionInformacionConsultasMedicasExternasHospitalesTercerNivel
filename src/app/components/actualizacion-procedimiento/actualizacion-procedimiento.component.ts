@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Imagen } from 'src/app/models/Imagen';
 import { AlertasService } from 'src/app/services/alertas.service';
 import { InformacionCentroMedicoService } from 'src/app/services/informacion-centro-medico.service';
 
@@ -12,7 +13,7 @@ import { InformacionCentroMedicoService } from 'src/app/services/informacion-cen
 export class ActualizacionProcedimientoComponent implements OnInit{
   idProcedimiento!:number;
   formularioProcedimiento: FormGroup;
-  imagenes: string[] = [];
+  imagenes: Imagen[] = [];
   constructor(private activatedRoute:ActivatedRoute,private alertasService:AlertasService,private fb: FormBuilder,private informacionCentroMedicoService:InformacionCentroMedicoService) {
     this.formularioProcedimiento = this.fb.group({
       titulo: ['', [Validators.required]],
@@ -26,7 +27,7 @@ export class ActualizacionProcedimientoComponent implements OnInit{
     })
   }
   obtenerProcedimiento(idProcedimiento: any) {
-    this.informacionCentroMedicoService.obtenerProcedimiento(idProcedimiento).subscribe((procedimiento:any)=>{
+    this.informacionCentroMedicoService.obtenerProcedimientoElemento(idProcedimiento).subscribe((procedimiento:any)=>{
       this.formularioProcedimiento.patchValue(procedimiento);
     })
   }

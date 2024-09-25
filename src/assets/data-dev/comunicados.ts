@@ -3,11 +3,11 @@ export class ComunicadosDataDev{
       {
         "idComunicado": 4,
         "titulo": "Título 1",
-        "lugar": null,
+        "lugar": "lugar falso",
         "introduccion": "Introducción del comunicado 1",
         "cuerpo": "Descripción del comunicado 1",
-        "citas": null,
-        "datosContacto": null,
+        "citas": "Citas del comunicado 1",
+        "datosContacto": "Datos de Contacto del comunicado 1",
         "createdAt": "2024-09-21T20:29:24.000+00:00",
         "updatedAt": "2024-09-21T20:29:24.000+00:00",
         "deletedAt": null,
@@ -40,6 +40,19 @@ export class ComunicadosDataDev{
                 "deletedAt": null
             }
         ]
+      },
+      {
+        "idComunicado": 5,
+        "titulo": "Título 2",
+        "lugar": null,
+        "introduccion": "Introducción del comunicado 1",
+        "cuerpo": "Descripción del comunicado 1",
+        "citas": null,
+        "datosContacto": null,
+        "createdAt": "2024-09-21T20:29:24.000+00:00",
+        "updatedAt": "2024-09-21T20:29:24.000+00:00",
+        "deletedAt": null,
+        "imagenes": []
       }
         // {
         //   "idComunicado": 2,

@@ -1,1 +1,98 @@
-<p>formulario-detalle-consultorio works!</p>
+<form [formGroup]="formularioConsultorio" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input
+        id="nombre"
+        formControlName="nombre"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Dirección</label>
+      <input
+        id="direccion"
+        formControlName="direccion"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="equipamiento" class="form-label">Equipamiento</label>
+      <input
+        id="equipamiento"
+        formControlName="equipamiento"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="especialidad" class="form-label">Especialidad</label>
+      <input
+        id="especialidad"
+        formControlName="especialidad"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="codigoConsultorio" class="form-label">Código Consultorio</label>
+      <input
+        id="codigoConsultorio"
+        formControlName="codigoConsultorio"
+        type="text"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea
+        id="descripcion"
+        formControlName="descripcion"
+        class="form-control input-border-bottom"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+  
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Número de Teléfono</label>
+      <input
+        id="telefono"
+        formControlName="telefono"
+        type="tel"
+        class="form-control input-border-bottom"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="capacidad" class="form-label">Capacidad</label>
+      <input
+        id="capacidad"
+        formControlName="capacidad"
+        type="number"
+        class="form-control input-border-bottom"
+        required
+        min="1"
+      />
+    </div>
+  
+    <app-input-imagenes
+      [imagenes]="imagenes"
+      (imagenesEvent)="handleImagenes($event)"
+    ></app-input-imagenes>
+  
+    <button type="submit" class="btn btn-success-hospital">GUARDAR</button>
+  </form> 
+  

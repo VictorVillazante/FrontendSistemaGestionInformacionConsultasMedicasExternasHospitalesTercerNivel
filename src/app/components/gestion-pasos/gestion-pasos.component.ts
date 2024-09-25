@@ -4,6 +4,7 @@ import { InformacionCentroMedicoService } from '../../services/informacion-centr
 import { AlertasService } from 'src/app/services/alertas.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProcedimientoElemento } from 'src/app/models/ProcedimientoElemento';
+import { Imagen } from 'src/app/models/Imagen';
 
 @Component({
   selector: 'app-gestion-pasos',
@@ -18,7 +19,7 @@ actualizarPaso(arg0: number) {
   idPasoProcedimiento!:number;
   idProcedimiento!:number;
   formularioPasoProcedimiento:FormGroup;
-  imagenes:string[]=[];
+  imagenes:Imagen[]=[];
   procedimiento!:ProcedimientoElemento;
   constructor(private activatedRoute:ActivatedRoute,private alertasService:AlertasService,private informacionCentroMedicoService:InformacionCentroMedicoService,private fb:FormBuilder){
     this.formularioPasoProcedimiento=fb.group({
@@ -33,7 +34,7 @@ actualizarPaso(arg0: number) {
     })
   }
   obtenerProcedimiento(idProcedimiento:number){ 
-    this.informacionCentroMedicoService.obtenerProcedimiento(idProcedimiento).subscribe((data)=>{
+    this.informacionCentroMedicoService.obtenerProcedimientoElemento(idProcedimiento).subscribe((data)=>{
       this.procedimiento=data;
     })
   }

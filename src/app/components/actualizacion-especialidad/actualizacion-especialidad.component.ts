@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InformacionCentroMedicoService } from 'src/app/services/informacion-centro-medico.service';
 import { ActivatedRoute } from '@angular/router';
 import { AlertasService } from '../../services/alertas.service';
+import { Imagen } from 'src/app/models/Imagen';
 
 @Component({
   selector: 'app-actualizacion-especialidad',
@@ -12,7 +13,7 @@ import { AlertasService } from '../../services/alertas.service';
 export class ActualizacionEspecialidadComponent {
   idEspecialidad!:number;
   formularioEspecialidad: FormGroup;
-  imagenes: string[] = [];
+  imagenes: Imagen[] = [];
   constructor(private activatedRoute:ActivatedRoute,private fb: FormBuilder,private informacionCentroMedicoService:InformacionCentroMedicoService,private alertasService:AlertasService) {
     this.formularioEspecialidad = this.fb.group({
       nombre: ['', Validators.required],
@@ -28,11 +29,14 @@ export class ActualizacionEspecialidadComponent {
   obtenerEspecialidad(idEspecialidad: number) {
     this.informacionCentroMedicoService.obtenerEspecialidad(idEspecialidad).subscribe((especialidad)=>{
       this.formularioEspecialidad.setValue({nombre:especialidad.nombre,descripcion:especialidad.descripcion});
-      this.imagenes=especialidad.imagenes.map((imagen)=>imagen.url);
+      this.imagenes=especialidad.imagenes;
     });
   }
 
+
   onSubmit(): void {
+    console.log("ON SUBMIT")
+    console.log(this.idEspecialidad);
     if (this.formularioEspecialidad.valid) {
       this.informacionCentroMedicoService.actualizarEspecialidad(this.idEspecialidad,this.formularioEspecialidad,this.imagenes).subscribe(()=>{
         this.alertasService.mensajeConfirmacion();      

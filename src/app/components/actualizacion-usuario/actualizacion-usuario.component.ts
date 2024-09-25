@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Imagen } from 'src/app/models/Imagen';
 import { Usuario } from 'src/app/models/Usuario';
 import { AlertasService } from 'src/app/services/alertas.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
@@ -12,7 +13,7 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class ActualizacionUsuarioComponent {
   formularioUsuario: FormGroup;
-  imagenes: string[] = [];
+  imagenes: Imagen[] = [];
   idUsuario!:number;
   constructor(private activatedRoute:ActivatedRoute,private alertasService:AlertasService,private usuariosService:UsuariosService,private fb: FormBuilder) {
     this.formularioUsuario = this.fb.group({
@@ -21,14 +22,14 @@ export class ActualizacionUsuarioComponent {
       direccion: ['', Validators.required],
       celular: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      grupo_sanguineo: ['', Validators.required],
-      apellido_paterno: ['', Validators.required],
-      apellido_materno: ['', Validators.required],
-      fecha_nacimiento: ['', Validators.required],
+      grupoSanguineo: ['', Validators.required],
+      apellidoPaterno: ['', Validators.required],
+      apellidoMaterno: ['', Validators.required],
+      fechaNacimiento: ['', Validators.required],
       sexo: ['', Validators.required],
-      estado_civil: ['', Validators.required],
+      estadoCivil: ['', Validators.required],
       edad: ['', [Validators.required, Validators.min(0)]],
-      dias_sancion_peticion_ficha_presencial: ['', [Validators.required, Validators.min(0)]],
+      diasSancionPeticionFichaPresencial: ['', [Validators.required, Validators.min(0)]],
       telefono: ['', Validators.required]
     });
   }
@@ -48,14 +49,14 @@ export class ActualizacionUsuarioComponent {
         direccion:data.direccion,
         celular:data.celular,
         email:data.email,
-        grupo_sanguineo:data.grupoSanguineo,
-        apellido_paterno:data.apellidoMaterno,
-        apellido_materno:data.apellidoPaterno,
-        fecha_nacimiento:data.fechaNacimiento,
+        grupoSanguineo:data.grupoSanguineo,
+        apellidoPaterno:data.apellidoPaterno,
+        apellidoMaterno:data.apellidoMaterno,
+        fechaNacimiento:data.fechaNacimiento,
         sexo:data.sexo,
-        estado_civil:data.estadoCivil,
+        estadoCivil:data.estadoCivil,
         edad:data.edad,
-        dias_sancion_peticion_ficha_presencial:data.diasSancionPeticionFichaPresencial,
+        diasSancionPeticionFichaPresencial:data.diasSancionPeticionFichaPresencial,
         telefono:data.telefono,
       });
       this.imagenes=data.imagenes;

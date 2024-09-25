@@ -72,6 +72,10 @@ import { GestionEspecialidadesComponent } from "./components/gestion-especialida
 import { GestionUsuariosComponent } from "./components/gestion-usuarios/gestion-usuarios.component";
 import { GestionComunicadosComponent } from "./components/gestion-comunicados/gestion-comunicados.component";
 import { GestionConsultoriosComponent } from "./components/gestion-consultorios/gestion-consultorios.component";
+import { RegistroComunicadoComponent } from "./components/registro-comunicado/registro-comunicado.component";
+import { ActualizacionComunicadoComponent } from "./components/actualizacion-comunicado/actualizacion-comunicado.component";
+import { ActualizacionProcedimientoAdmisionComponent } from "./components/actualizacion-procedimiento-admision/actualizacion-procedimiento-admision.component";
+import { GestionRequerimientosComponent } from "./components/gestion-requerimientos/gestion-requerimientos.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -185,14 +189,25 @@ const APP_ROUTES: Routes = [
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},
     { path: 'administrador/registro-turno-atencion', component:  RegistroTurnoAtencionComponent},
     { path: 'administrador/modificar-turno-atencion/:id', component:  ActualizacionTurnoAtencionComponent},
+
+
     { path: 'administracion/gestion-procedimientos', component:  GestionProcedimientosComponent},
+    { path: 'administracion/actualizacion-procedimiento-admision', component:  ActualizacionProcedimientoAdmisionComponent},
+
+    
     { path: 'administracion/gestion-pasos-procedimiento/:id', component:  GestionPasosComponent},
+
+    { path: 'administracion/gestion-requisitos-procedimiento/:id', component:  GestionRequerimientosComponent},
+
     
     { path: 'administracion/gestion-especialidades', component:  GestionEspecialidadesComponent},
     { path: 'administracion/registro-especialidad', component:  RegistroEspecialidadComponent},
     { path: 'administracion/modificar-especialidad/:id', component:  ActualizacionEspecialidadComponent},
 
     { path: 'administracion/gestion-comunicados', component:  GestionComunicadosComponent},
+    { path: 'administracion/registro-comunicado', component:  RegistroComunicadoComponent},
+    { path: 'administracion/modificar-comunicado/:id', component:  ActualizacionComunicadoComponent},
+
 
     { path: 'administracion/gestion-consultorios', component:  GestionConsultoriosComponent},
 

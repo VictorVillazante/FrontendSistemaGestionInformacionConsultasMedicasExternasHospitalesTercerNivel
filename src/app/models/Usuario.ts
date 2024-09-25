@@ -1,3 +1,5 @@
+import { Imagen } from "./Imagen";
+
 export class Usuario {
     idUsuario: number = 0;
     nombres: string = "";
@@ -17,7 +19,7 @@ export class Usuario {
     createdAt: Date | null = null;
     updatedAt: Date | null = null;
     deletedAt: Date | null = null;
-    imagenes: string[] =[];
+    imagenes: Imagen[] =[];
     jsonToUsuario(json: any): Usuario {
         console.log(json);
         let usuario = new Usuario();
@@ -39,7 +41,7 @@ export class Usuario {
         usuario.createdAt = json.created_at ? new Date(json.created_at) : null;
         usuario.updatedAt = json.updated_at ? new Date(json.updated_at) : null;
         usuario.deletedAt = json.deleted_at ? new Date(json.deleted_at) : null;
-        usuario.imagenes = json.imagenes ? json.imagenes:[];
+        usuario.imagenes = json.imagenes ? json.imagenes.map((imagen: any) => new Imagen().jsonToImagen(imagen)):[];
         return usuario;
     }
 }

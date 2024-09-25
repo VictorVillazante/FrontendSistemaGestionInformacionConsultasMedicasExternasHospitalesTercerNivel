@@ -1,4 +1,5 @@
 import { Component, Input, Output,EventEmitter } from '@angular/core';
+import { Imagen } from 'src/app/models/Imagen';
 
 @Component({
   selector: 'app-input-imagenes',
@@ -6,7 +7,7 @@ import { Component, Input, Output,EventEmitter } from '@angular/core';
   styleUrls: ['./input-imagenes.component.css']
 })
 export class InputImagenesComponent {
-  @Input() imagenes!: string[];
+  @Input() imagenes!: Imagen[];
   @Output() imagenesEvent = new EventEmitter<any>();
 
   emitEventCambiarImagenes(imagenes:any):void{
@@ -23,7 +24,8 @@ export class InputImagenesComponent {
         reader.onload = (e: ProgressEvent<FileReader>) => {
           const result = e.target?.result;
           if (typeof result === 'string') {
-            this.imagenes.push(result);
+            let imagen = new Imagen();
+            this.imagenes.push(imagen.jsonToImagen({ url: result }));
             this.emitEventCambiarImagenes(this.imagenes);
           }
         };

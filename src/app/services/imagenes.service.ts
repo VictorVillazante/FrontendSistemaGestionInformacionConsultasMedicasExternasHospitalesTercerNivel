@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Imagen } from '../models/Imagen';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +8,13 @@ export class ImagenesService {
 
   constructor() { }
 
-  static agregarImagenesAFormData(formData: FormData, imagenes: string[]) :FormData{
+  static agregarImagenesAFormData(formData: FormData, imagenes: Imagen[]) :FormData{
     for (let i = 0; i < imagenes.length; i++) {
-      if(imagenes[i].length>0){
-        if(imagenes[i].includes('https://') || imagenes[i].includes('http://')){
-          formData.append(`imagen${i+1}`, imagenes[i]);
+      if(imagenes[i] != null){
+        if(imagenes[i].url.includes('https://') || imagenes[i].url.includes('http://')){
+          formData.append(`imagen${i+1}`, JSON.stringify(imagenes[i]));
         }else{
-          formData.append(`imagen${i+1}`, this.convertirImagenBase64aBlob(imagenes[i], 'image/jpeg'));
+          formData.append(`imagen${i+1}`, this.convertirImagenBase64aBlob(imagenes[i].url, 'image/jpeg'));
         }
       }
     }

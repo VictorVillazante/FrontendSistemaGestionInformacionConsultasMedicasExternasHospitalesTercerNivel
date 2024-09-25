@@ -7,13 +7,14 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UsuariosDataDev } from 'src/assets/data-dev/usuarios';
 import { ImagenesService } from './imagenes.service';
+import { Imagen } from '../models/Imagen';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
   restaurarUsuario(idUsuario: number) {
-    return this.httpClient.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}/restaurar`,{});
+    return this.httpClient.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/usuario-restaurado/${idUsuario}`,{});
   }
   eliminarUsuario(idUsuario: any) {
     return this.httpClient.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}`);
@@ -30,7 +31,7 @@ export class UsuariosService {
       })
     );
   }
-  actualizarUsuario(formularioUsuario: FormGroup<any>,imagenes:string[],idUsuario:number) {
+  actualizarUsuario(formularioUsuario: FormGroup<any>,imagenes:Imagen[],idUsuario:number) {
     let formData=new FormData();
     const jsonData = {
       nombres: formularioUsuario.value.nombres,
@@ -38,14 +39,14 @@ export class UsuariosService {
       direccion: formularioUsuario.value.direccion,
       celular: formularioUsuario.value.celular,
       email: formularioUsuario.value.email,
-      grupo_sanguineo: formularioUsuario.value.grupo_sanguineo,
-      apellido_paterno: formularioUsuario.value.apellido_paterno,
-      apellido_materno: formularioUsuario.value.apellido_materno,
-      fecha_nacimiento: formularioUsuario.value.fecha_nacimiento,
+      grupoSanguineo: formularioUsuario.value.grupoSanguineo,
+      apellidoPaterno: formularioUsuario.value.apellidoPaterno,
+      apellidoMaterno: formularioUsuario.value.apellidoMaterno,
+      fechaNacimiento: formularioUsuario.value.fechaNacimiento,
       sexo: formularioUsuario.value.sexo,
-      estado_civil: formularioUsuario.value.estado_civil,
+      estadoCivil: formularioUsuario.value.estadoCivil,
       edad: formularioUsuario.value.edad,
-      dias_sancion_peticion_ficha_presencial: formularioUsuario.value.dias_sancion_peticion_ficha_presencial,
+      diasSancionPeticionFichaPresencial: formularioUsuario.value.diasSancionPeticionFichaPresencial,
       telefono: formularioUsuario.value.telefono
     };
     const jsonString = JSON.stringify(jsonData);
@@ -64,7 +65,7 @@ export class UsuariosService {
       })
     );
   }
-  registrarUsuario(formularioUsuario: FormGroup<any>,imagenes:string[]) {
+  registrarUsuario(formularioUsuario: FormGroup<any>,imagenes:Imagen[]) {
     let formData=new FormData();
     const jsonData = {
       nombres: formularioUsuario.value.nombres,
@@ -72,14 +73,14 @@ export class UsuariosService {
       direccion: formularioUsuario.value.direccion,
       celular: formularioUsuario.value.celular,
       email: formularioUsuario.value.email,
-      grupo_sanguineo: formularioUsuario.value.grupo_sanguineo,
-      apellido_paterno: formularioUsuario.value.apellido_paterno,
-      apellido_materno: formularioUsuario.value.apellido_materno,
-      fecha_nacimiento: formularioUsuario.value.fecha_nacimiento,
+      grupoSanguineo: formularioUsuario.value.grupoSanguineo,
+      apellidoPaterno: formularioUsuario.value.apellidoPaterno,
+      apellidoMaterno: formularioUsuario.value.apellidoMaterno,
+      fechaNacimiento: formularioUsuario.value.fechaNacimiento,
       sexo: formularioUsuario.value.sexo,
       estado_civil: formularioUsuario.value.estado_civil,
       edad: formularioUsuario.value.edad,
-      dias_sancion_peticion_ficha_presencial: formularioUsuario.value.dias_sancion_peticion_ficha_presencial,
+      diasSancionPeticionFichaPresencial: formularioUsuario.value.diasSancionPeticionFichaPresencial,
       telefono: formularioUsuario.value.telefono
     };
     const jsonString = JSON.stringify(jsonData);
