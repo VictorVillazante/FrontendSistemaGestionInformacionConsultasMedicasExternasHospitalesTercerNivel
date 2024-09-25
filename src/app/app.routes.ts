@@ -76,6 +76,8 @@ import { RegistroComunicadoComponent } from "./components/registro-comunicado/re
 import { ActualizacionComunicadoComponent } from "./components/actualizacion-comunicado/actualizacion-comunicado.component";
 import { ActualizacionProcedimientoAdmisionComponent } from "./components/actualizacion-procedimiento-admision/actualizacion-procedimiento-admision.component";
 import { GestionRequerimientosComponent } from "./components/gestion-requerimientos/gestion-requerimientos.component";
+import { RegistroConsultorioComponent } from "./components/registro-consultorio/registro-consultorio.component";
+import { ActualizacionConsultorioComponent } from "./components/actualizacion-consultorio/actualizacion-consultorio.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -210,6 +212,8 @@ const APP_ROUTES: Routes = [
 
 
     { path: 'administracion/gestion-consultorios', component:  GestionConsultoriosComponent},
+    { path: 'administracion/registro-consultorio', component:  RegistroConsultorioComponent},
+    { path: 'administracion/modificar-consultorio/:id', component:  ActualizacionConsultorioComponent},
 
 
     { path: 'medico/ver-mis-consultas-medicas', component:  MisConsultasMedicasComponent},

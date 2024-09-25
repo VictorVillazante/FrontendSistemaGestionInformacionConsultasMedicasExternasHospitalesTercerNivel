@@ -34,13 +34,12 @@
   
     <div class="mb-3">
       <label for="especialidad" class="form-label">Especialidad</label>
-      <input
-        id="especialidad"
-        formControlName="especialidad"
-        type="text"
-        class="form-control input-border-bottom"
-        required
-      />
+      <select id="especialidad" formControlName="idEspecialidad" class="form-control input-border-bottom" required>
+        <option value="" disabled>Selecciona una especialidad</option>
+        <option *ngFor="let especialidad of especialidades" [value]="especialidad.idEspecialidad">
+          {{ especialidad.nombre }}
+        </option>
+      </select>
     </div>
   
     <div class="mb-3">
@@ -66,10 +65,10 @@
     </div>
   
     <div class="mb-3">
-      <label for="telefono" class="form-label">Número de Teléfono</label>
+      <label for="numeroTelefono" class="form-label">Número de Teléfono</label>
       <input
-        id="telefono"
-        formControlName="telefono"
+        id="numeroTelefono"
+        formControlName="numeroTelefono"
         type="tel"
         class="form-control input-border-bottom"
         required

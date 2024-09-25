@@ -35,15 +35,15 @@ export class GestionConsultoriosComponent implements OnInit{
       }
     })
   }
-  redireccionarActualizarConsultorio(arg0: any) {
-  throw new Error('Method not implemented.');
+  redireccionarActualizarConsultorio(idConsutorio: any) {
+   this.router.navigate(["/administracion/modificar-consultorio",idConsutorio]);
   }
   consultorios: Consultorio[]=[];
   consultoriosAux: Consultorio[]=[];
   constructor(private alertasService:AlertasService,private router:Router,private informacionCentroMedicoService:InformacionCentroMedicoService) { }
 
   redireccionarRegistroConsultorio() {
-  throw new Error('Method not implemented.');
+    this.router.navigate(["/administracion/registro-consultorio"]);
   }
   filtrarConsultorio() {
     let consultoriosAuxAFiltrar=this.consultoriosAux;

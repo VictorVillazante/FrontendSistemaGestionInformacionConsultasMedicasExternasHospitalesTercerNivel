@@ -18,12 +18,14 @@ import { ConsultoriosDataDev } from 'src/assets/data-dev/consultorios';
 import { Imagen } from '../models/Imagen';
 import { ProcedimientosDataDev } from 'src/assets/data-dev/procedimientos';
 import { Procedimiento } from '../models/Procedimieto';
+import { formatDate } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+
   eliminarConsultorio(idConsultorio: any) {
-    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/consultorios/${idConsultorio}`);
+    return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/consultorios/${idConsultorio}`);
   }
   eliminarComunicado(idComunicado: any) {
     return this.http.delete<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados/${idComunicado}`);
@@ -172,7 +174,45 @@ export class InformacionCentroMedicoService {
     console.log(formData);
     return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/comunicados`,formData);
   }
+  registrarConsultorio(formularioConsultorio: FormGroup<any>,imagenes:Imagen[]) {
+    let formData = new FormData();
+    const jsonData = {
+      nombre: formularioConsultorio.value.nombre,
+      direccion: formularioConsultorio.value.direccion,
+      equipamiento: formularioConsultorio.value.equipamiento,
+      idEspecialidad: parseInt(formularioConsultorio.value.idEspecialidad),
+      nombreEspecialidad: formularioConsultorio.value.nombreEspecialidad,
+      codigoConsultorio: formularioConsultorio.value.codigoConsultorio,
+      descripcion: formularioConsultorio.value.descripcion,
+      numeroTelefono: formularioConsultorio.value.numeroTelefono,
+      capacidad: formularioConsultorio.value.capacidad,
+    };
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/consultorios`,formData);
+  }
+  actualizarConsultorio(idConsultorio:number,formularioConsultorio: FormGroup<any>,imagenes:Imagen[]){
+    let formData = new FormData();
+    const jsonData = {
+      nombre: formularioConsultorio.value.nombre,
+      direccion: formularioConsultorio.value.direccion,
+      equipamiento: formularioConsultorio.value.equipamiento,
+      idEspecialidad: parseInt(formularioConsultorio.value.idEspecialidad),
+      nombreEspecialidad: formularioConsultorio.value.nombreEspecialidad,
+      codigoConsultorio: formularioConsultorio.value.codigoConsultorio,
+      descripcion: formularioConsultorio.value.descripcion,
+      numeroTelefono: formularioConsultorio.value.numeroTelefono,
+      capacidad: formularioConsultorio.value.capacidad,
+    };
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/consultorios/${idConsultorio}`,formData);
 
+  }
   actualizarEspecialidad(idEspecialidad: number, formularioEspecialidad: FormGroup<any>,imagenes:Imagen[]) {
     let formData = new FormData();
     const jsonData = {
@@ -294,6 +334,22 @@ export class InformacionCentroMedicoService {
     // ]);
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica`);
     //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/horarios-atencion-medica`);
+  }
+  obtenerConsultorio(idConsultorio: number) {
+    return of(this.listaConsultorios[0]).pipe(
+      map((consultorioJson:any)=>new Consultorio().jsonToConsultorio(consultorioJson)),
+      catchError(error => {
+        console.error('Error al obtener consultorio:', error);
+        return of(new Consultorio()); 
+      })
+    );
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/consultorios`).pipe(
+      map((consultorioJson:any)=>new Consultorio().jsonToConsultorio(consultorioJson)),
+      catchError(error => {
+        console.error('Error al obtener consultorio:', error);
+        return of(new Consultorio()); 
+      })
+    );    
   }
   obtenerConsultorios() {
     return of(this.listaConsultorios).pipe(
