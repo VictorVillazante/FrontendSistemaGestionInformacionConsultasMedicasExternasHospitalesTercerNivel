@@ -78,6 +78,7 @@ import { ActualizacionProcedimientoAdmisionComponent } from "./components/actual
 import { GestionRequerimientosComponent } from "./components/gestion-requerimientos/gestion-requerimientos.component";
 import { RegistroConsultorioComponent } from "./components/registro-consultorio/registro-consultorio.component";
 import { ActualizacionConsultorioComponent } from "./components/actualizacion-consultorio/actualizacion-consultorio.component";
+import { GestionRolesUsuariosComponent } from "./components/gestion-roles-usuarios/gestion-roles-usuarios.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -186,6 +187,8 @@ const APP_ROUTES: Routes = [
     { path: 'administracion/gestion-usuarios', component:  GestionUsuariosComponent},
     { path: 'administracion/registro-usuario', component:  RegistroUsuarioComponent},
     { path: 'administracion/modificar-usuario/:id', component:  ActualizacionUsuarioComponent},
+
+    { path: 'administracion/gestion-roles-usuarios', component:  GestionRolesUsuariosComponent},
 
 
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},

@@ -122,6 +122,8 @@ import { FormularioDetalleConsultorioComponent } from './shared/formulario-detal
 import { UsuarioNoLogeadoPasosComponent } from './components/usuario-no-logeado-pasos/usuario-no-logeado-pasos.component';
 import { ActualizacionConsultorioComponent } from './components/actualizacion-consultorio/actualizacion-consultorio.component';
 import { RegistroConsultorioComponent } from './components/registro-consultorio/registro-consultorio.component';
+import { GestionRolesComponent } from './components/gestion-roles/gestion-roles.component';
+import { GestionRolesUsuariosComponent } from './components/gestion-roles-usuarios/gestion-roles-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -238,7 +240,9 @@ import { RegistroConsultorioComponent } from './components/registro-consultorio/
     FormularioDetalleConsultorioComponent,
     UsuarioNoLogeadoPasosComponent,
     ActualizacionConsultorioComponent,
-    RegistroConsultorioComponent
+    RegistroConsultorioComponent,
+    GestionRolesComponent,
+    GestionRolesUsuariosComponent
   ],
   imports: [
     BrowserModule,

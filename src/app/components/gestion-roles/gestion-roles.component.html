@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h1 class="text-center p-3">Gestion roles</h1>
+    <h2 class="p-3">Roles actuales del usuario</h2>
+
+    <ul class="list-group">
+        <app-elementos-listado *ngFor="let usuarioRol of rolesUsuario;let i=index" [i]="i">
+            <p ngProjectAs="dato-info">Nombre:{{usuarioRol?.nombreRol}}</p>
+            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarRolUsuario(usuarioRol)"></i>
+        </app-elementos-listado>
+    </ul>
+    <h2 class="p-3">Roles del sistema</h2>
+    <ul class="list-group">
+        <app-elementos-listado *ngFor="let rol of roles;let i=index" [i]="i">
+            <p ngProjectAs="dato-info">Nombre:{{rol?.nombre}}</p>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="registrarRolUsuario(rol)">Restaurar usuario</button>
+        </app-elementos-listado>
+    </ul>
+  </div>

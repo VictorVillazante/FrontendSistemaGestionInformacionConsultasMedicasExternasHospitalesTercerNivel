@@ -6,13 +6,60 @@ import { Usuario } from '../models/Usuario';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UsuariosDataDev } from 'src/assets/data-dev/usuarios';
+import { RolesUsuariosDataDev } from 'src/assets/data-dev/roles-usuarios';
+import { RolesDataDev } from 'src/assets/data-dev/roles';
+
 import { ImagenesService } from './imagenes.service';
 import { Imagen } from '../models/Imagen';
+import { RolUsuario } from '../models/RolUsuario';
+import { Rol } from '../models/Rol';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
+  registrarRolUsuario(idUsuario: number, idRol: number) {
+    return this.httpClient.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}/roles/${idRol}`,{});
+  }
+  eliminarRolUsuario(idUsuario: number, idRol: number) {
+    return this.httpClient.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}/roles/${idRol}`);
+  }
+  listaRolesUsuario=RolesUsuariosDataDev.listaRolesUsuarios;
+  listaRoles=RolesDataDev.listaRoles;
+
+  obtenerRolesUsuario(idUsuario: number):Observable<RolUsuario[]> {
+    return of(this.listaRolesUsuario).pipe(
+      map(rolesUsuariosJson => rolesUsuariosJson.map(json => new RolUsuario().jsonToRolUsuario(json))),
+      catchError(error => {
+        console.error('Error al obtener roles de usuario:', error);
+        return of([]); 
+      })
+    );
+    // return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}/roles`).pipe(
+    //   map(rolesUsuariosJson => rolesUsuariosJson.map((json: any) => new RolUsuario().jsonToRolUsuario(json))),
+    //   catchError(error => {
+    //     console.error('Error al obtener roles de usuario:', error);
+    //     return of([]); 
+    //   })
+    // );
+  }
+  obtenerRoles() :Observable<Rol[]>{
+    return of(this.listaRoles).pipe(
+      map(roles => roles.map(json => new Rol().jsonToRol(json))),
+      catchError(error => {
+        console.error('Error al obtener roles:', error);
+        return of([]); 
+      })
+    );
+    // return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/roles`).pipe(
+    //   map(roles => roles.map((json: any) => new Rol().jsonToRol(json))),
+    //   catchError(error => {
+    //     console.error('Error al obtener roles:', error);
+    //     return of([]); 
+    //   })
+    // );
+
+  }
   restaurarUsuario(idUsuario: number) {
     return this.httpClient.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/usuario-restaurado/${idUsuario}`,{});
   }
