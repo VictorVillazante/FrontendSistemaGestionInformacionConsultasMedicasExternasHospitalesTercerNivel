@@ -21,10 +21,60 @@ import { Procedimiento } from '../models/Procedimieto';
 import { formatDate } from '@angular/common';
 import { PasosDataDev } from 'src/assets/data-dev/pasos';
 import { Paso } from '../models/Paso';
+import { RequisitosDataDev } from 'src/assets/data-dev/requisitos';
+import { Requisito } from '../models/Requisito';
 @Injectable({
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  requisitos:any[]=RequisitosDataDev.listaRequisitos;
+  registrarRequisito(formularioRequisito: FormGroup<any>, imagenes: Imagen[]) {
+     let formData=new FormData();
+    const jsonData = {
+      titulo:formularioRequisito.value.titulo,
+      descripcion:formularioRequisito.value.descripcion
+    }
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/requisitos`,formData);
+
+  }
+  eliminarRequisito(idRequisito: number) {
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/requisitos/${idRequisito}`);
+
+  }
+  obtenerRequisitos() {
+    return of(this.requisitos).pipe(
+      map(requisitosJson => requisitosJson.map(json => new Requisito().jsonToRequisito(json))),
+      catchError(error => {
+        console.error('Error al obtener requisitos:', error);
+        return of([]); 
+      })
+    );
+    // return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos`).pipe(
+    //   map(requisitosJson => requisitosJson.map(json => new Requisito().jsonToRequisito(json))),
+    //   catchError(error => {
+    //     console.error('Error al obtener requisitos:', error);
+    //     return of([]); 
+    //   })
+    // );
+  }
+  modificarRequisito(idRequisito: number, formularioRequisito: FormGroup<any>, imagenes: Imagen[]) {
+    let formData=new FormData();
+    const jsonData = {
+      titulo:formularioRequisito.value.titulo,
+      descripcion:formularioRequisito.value.descripcion
+    }
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/requisitos/${idRequisito}`,formData);
+  }
   modificarPaso(idPaso: number, formularioPaso: FormGroup<any>, imagenes: Imagen[]) {
     let formData=new FormData();
     const jsonData = {
