@@ -13,18 +13,18 @@ export class PasoProcedimientoElemento{
     imagenes: Imagen[] = [];
 
 
-    jsonToProcedimientoElemento(json: any): PasoProcedimientoElemento {
-        let procedimiento = new PasoProcedimientoElemento();
-        procedimiento.idPaso = json.idPaso ?? 0;
-        procedimiento.nombrePaso = json.nombrePaso?? "";
-        procedimiento.idProcedimiento = json.idProcedimiento ?? 0;
-        procedimiento.nombreProcedimiento = json.nombreProcedimiento ?? "";
-        procedimiento.imagenes = json.imagenes ? json.imagenes.map((imagen: any) => new Imagen().jsonToImagen(imagen)): [];
-        procedimiento.idElemento = json.idElemento ?? 0;
-        procedimiento.tipoElemento = json.tipoElemento ?? 0;
-        procedimiento.createdAt = json.createdAt ? new Date(json.createdAt) : null;
-        procedimiento.updatedAt = json.updatedAt ? new Date(json.updatedAt) : null;
-        procedimiento.deletedAt = json.deletedAt ? new Date(json.deletedAt) : null;
-        return procedimiento;
+    jsonToPasoProcedimientoElemento(json: any): PasoProcedimientoElemento {
+        let pasoProcedimientoElemento = new PasoProcedimientoElemento();
+        pasoProcedimientoElemento.idPaso = json.idPaso ?? 0;
+        pasoProcedimientoElemento.nombrePaso = json.nombrePaso?? "";
+        pasoProcedimientoElemento.idProcedimiento = json.idProcedimiento ?? 0;
+        pasoProcedimientoElemento.nombreProcedimiento = json.nombreProcedimiento ?? "";
+        pasoProcedimientoElemento.imagenes = json.imagenes ? json.imagenes.map((imagen: any) => new Imagen().jsonToImagen(imagen)): [];
+        pasoProcedimientoElemento.idElemento = json.idElemento ?? 0;
+        pasoProcedimientoElemento.tipoElemento = json.tipoElemento ?? 0;
+        pasoProcedimientoElemento.createdAt = json.createdAt ? new Date(json.createdAt) : null;
+        pasoProcedimientoElemento.updatedAt = json.updatedAt ? new Date(json.updatedAt) : null;
+        pasoProcedimientoElemento.deletedAt = json.deletedAt ? new Date(json.deletedAt) : null;
+        return pasoProcedimientoElemento;
     }
 }

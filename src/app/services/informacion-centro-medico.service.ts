@@ -27,6 +27,12 @@ import { Requisito } from '../models/Requisito';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  eliminarRequisitoProcedimientoElemento(idRequisito: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}/requisitos/${idRequisito}`,{});
+  }
+  registrarRequisitoProcedimientoElemento(idRequisito: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}/requisitos/${idRequisito}`,{});
+  }
   eliminarPasoProcedimientoElemento(idPaso: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
     return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}/pasos/${idPaso}`,{});
   }
