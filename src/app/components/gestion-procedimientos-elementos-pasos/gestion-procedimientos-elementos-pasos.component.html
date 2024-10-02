@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h1 class="text-center p-3">Gestion pasos de procedimiento del elemento</h1>
+    <h2 class="p-3">Pasos del procedimiento del elemento</h2>
+
+    <ul class="list-group">
+        <app-elementos-listado *ngFor="let pasoProcedimientoElemento of pasosProcedimientoElemento;let i=index" [i]="i">
+            <p ngProjectAs="dato-info">Paso:{{pasoProcedimientoElemento?.nombrePaso}}</p>
+            <p ngProjectAs="dato-info">Procedimiento:{{pasoProcedimientoElemento?.nombreProcedimiento}}</p>
+            <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarPasoProcedimientoElemento(pasoProcedimientoElemento.idPaso,idProcedimiento,idElemento,tipoElemento)"></i>
+        </app-elementos-listado>
+    </ul>
+    <h2 class="p-3">Pasos del sistema</h2>
+    <ul class="list-group">
+        <app-elementos-listado *ngFor="let paso of pasos;let i=index" [i]="i">
+            <p ngProjectAs="dato-info">Nombre:{{paso?.nombre}}</p>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="registrarPasoProcedimientoElemento(paso.idPaso,idProcedimiento,idElemento,tipoElemento)">Agregar rol a usuario</button>
+        </app-elementos-listado>
+    </ul>
+  </div>
