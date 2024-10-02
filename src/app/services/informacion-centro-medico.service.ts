@@ -27,6 +27,18 @@ import { Requisito } from '../models/Requisito';
   providedIn: 'root'
 })
 export class InformacionCentroMedicoService {
+  eliminarPasoProcedimientoElemento(idPaso: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}/pasos/${idPaso}`,{});
+  }
+  registrarPasoProcedimientoElemento(idPaso: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}/pasos/${idPaso}`,{});
+  }
+  registrarProcedimientoElemento(idProcedimiento:number,idElemento: any, tipoElemento: string) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}`,{});
+  }
+  eliminarProcedimientoElemento(idProcedimiento:number,idElemento: any, tipoElemento: string) {
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}`,{});
+  }
   requisitos:any[]=RequisitosDataDev.listaRequisitos;
   registrarRequisito(formularioRequisito: FormGroup<any>, imagenes: Imagen[]) {
      let formData=new FormData();
@@ -172,9 +184,25 @@ export class InformacionCentroMedicoService {
     // );
 
   }
-  obtenerProcedimientoElemento(idProcedimiento: number) :Observable<ProcedimientoElemento>{
+  obtenerProcedimientoElemento(idProcedimiento: number,tipoElemento:string) :Observable<ProcedimientoElemento>{
     return of(ProcedimientosElementosDataDev.listaProcedimientosElementos[0])
-    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/${idProcedimiento}`).pipe(
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/tipo-elemento/${tipoElemento}/elementos/${idElemento}`).pipe(
+    //   map(procedimientoJson => new Procedimiento().jsonToProcedimiento(procedimientoJson)),
+    //   catchError(error => {
+    //     console.error('Error al obtener procedimientos:', error);
+    //     return of(new Procedimiento()); 
+    //   })
+    // );
+  }
+  obtenerProcedimientosElemento(idProcedimiento: number,tipoElemento:string) :Observable<ProcedimientoElemento[]>{
+    return of(ProcedimientosElementosDataDev.listaProcedimientosElementos).pipe(
+        map(procedimientosElementoJson => procedimientosElementoJson.map(procedimientoElementoJson=> new ProcedimientoElemento().jsonToProcedimientoElemento(procedimientoElementoJson))),
+        catchError(error => {
+          console.error('Error al obtener procedimientos:', error);
+          return of([]); 
+        })
+      );
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/procedimientos/tipo-elemento/${tipoElemento}/elementos/${idElemento}`).pipe(
     //   map(procedimientoJson => new Procedimiento().jsonToProcedimiento(procedimientoJson)),
     //   catchError(error => {
     //     console.error('Error al obtener procedimientos:', error);
@@ -184,15 +212,21 @@ export class InformacionCentroMedicoService {
   }
   procedimientos:ProcedimientoElemento[]=ProcedimientosElementosDataDev.listaProcedimientosElementos.map(json=>new ProcedimientoElemento().jsonToProcedimientoElemento(json));
 
-  obtenerProcedimientos(): Observable<ProcedimientoElemento[]> {
-    return of(this.procedimientos);
-    return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos`).pipe(
-      map(procedimientosJson => procedimientosJson.map(json => new ProcedimientoElemento().jsonToProcedimientoElemento(json))),
+  obtenerProcedimientos(): Observable<Procedimiento[]> {
+    return of(this.procedimientos).pipe(
+      map(procedimientosJson => procedimientosJson.map(json => new Procedimiento().jsonToProcedimiento(json))),
       catchError(error => {
         console.error('Error al obtener procedimientos:', error);
         return of([]); 
       })
     );
+    // return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos`).pipe(
+    //   map(procedimientosJson => procedimientosJson.map(json => new ProcedimientoElemento().jsonToProcedimientoElemento(json))),
+    //   catchError(error => {
+    //     console.error('Error al obtener procedimientos:', error);
+    //     return of([]); 
+    //   })
+    // );
   }
   modificarRequerimientoProcedimiento(idProcedimiento: number, idRequerimientoProcedimiento: number, formularioRequerimientoProcedimiento: FormGroup<any>) {
     return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/requerimientos/${idRequerimientoProcedimiento}`,{

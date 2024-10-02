@@ -1,8 +1,8 @@
 import { Imagen } from "./Imagen";
-import { Paso } from "./Paso";
-import { Requisito } from "./Requisito";
 
-export class ProcedimientoElemento {
+export class PasoProcedimientoElemento{
+    idPaso:number=0;
+    nombrePaso:string="";
     idProcedimiento: number = 0;
     nombreProcedimiento: string = "";
     idElemento:number=0;
@@ -13,8 +13,10 @@ export class ProcedimientoElemento {
     imagenes: Imagen[] = [];
 
 
-    jsonToProcedimientoElemento(json: any): ProcedimientoElemento {
-        let procedimiento = new ProcedimientoElemento();
+    jsonToProcedimientoElemento(json: any): PasoProcedimientoElemento {
+        let procedimiento = new PasoProcedimientoElemento();
+        procedimiento.idPaso = json.idPaso ?? 0;
+        procedimiento.nombrePaso = json.nombrePaso?? "";
         procedimiento.idProcedimiento = json.idProcedimiento ?? 0;
         procedimiento.nombreProcedimiento = json.nombreProcedimiento ?? "";
         procedimiento.imagenes = json.imagenes ? json.imagenes.map((imagen: any) => new Imagen().jsonToImagen(imagen)): [];

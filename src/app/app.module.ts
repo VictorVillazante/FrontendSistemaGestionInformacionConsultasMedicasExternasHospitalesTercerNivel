@@ -124,6 +124,9 @@ import { ActualizacionConsultorioComponent } from './components/actualizacion-co
 import { RegistroConsultorioComponent } from './components/registro-consultorio/registro-consultorio.component';
 import { GestionRolesComponent } from './components/gestion-roles/gestion-roles.component';
 import { GestionRolesUsuariosComponent } from './components/gestion-roles-usuarios/gestion-roles-usuarios.component';
+import { GestionProcedimientosElementosComponent } from './components/gestion-procedimientos-elementos/gestion-procedimientos-elementos.component';
+import { GestionProcedimientosElementosPasosComponent } from './components/gestion-procedimientos-elementos-pasos/gestion-procedimientos-elementos-pasos.component';
+import { GestionProcedimientosElementosRequisitosComponent } from './components/gestion-procedimientos-elementos-requisitos/gestion-procedimientos-elementos-requisitos.component';
 
 @NgModule({
   declarations: [
@@ -242,7 +245,10 @@ import { GestionRolesUsuariosComponent } from './components/gestion-roles-usuari
     ActualizacionConsultorioComponent,
     RegistroConsultorioComponent,
     GestionRolesComponent,
-    GestionRolesUsuariosComponent
+    GestionRolesUsuariosComponent,
+    GestionProcedimientosElementosComponent,
+    GestionProcedimientosElementosPasosComponent,
+    GestionProcedimientosElementosRequisitosComponent
   ],
   imports: [
     BrowserModule,

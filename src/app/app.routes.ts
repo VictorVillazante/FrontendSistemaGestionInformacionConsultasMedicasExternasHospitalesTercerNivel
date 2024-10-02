@@ -79,6 +79,7 @@ import { GestionRequerimientosComponent } from "./components/gestion-requerimien
 import { RegistroConsultorioComponent } from "./components/registro-consultorio/registro-consultorio.component";
 import { ActualizacionConsultorioComponent } from "./components/actualizacion-consultorio/actualizacion-consultorio.component";
 import { GestionRolesUsuariosComponent } from "./components/gestion-roles-usuarios/gestion-roles-usuarios.component";
+import { GestionProcedimientosElementosComponent } from "./components/gestion-procedimientos-elementos/gestion-procedimientos-elementos.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -197,12 +198,15 @@ const APP_ROUTES: Routes = [
 
 
     { path: 'administracion/gestion-procedimientos', component:  GestionProcedimientosComponent},
+    { path: 'administracion/gestion-procedimientos-elementos/:tipo/:id', component:  GestionProcedimientosElementosComponent},
+
+
     { path: 'administracion/actualizacion-procedimiento-admision', component:  ActualizacionProcedimientoAdmisionComponent},
 
     
-    { path: 'administracion/gestion-pasos-procedimiento/:id', component:  GestionPasosComponent},
+    { path: 'administracion/gestion-pasos', component:  GestionPasosComponent},
 
-    { path: 'administracion/gestion-requisitos-procedimiento/:id', component:  GestionRequerimientosComponent},
+    { path: 'administracion/gestion-requisitos', component:  GestionRequerimientosComponent},
 
     
     { path: 'administracion/gestion-especialidades', component:  GestionEspecialidadesComponent},
