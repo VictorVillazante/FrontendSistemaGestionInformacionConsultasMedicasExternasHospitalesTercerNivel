@@ -80,6 +80,10 @@ import { RegistroConsultorioComponent } from "./components/registro-consultorio/
 import { ActualizacionConsultorioComponent } from "./components/actualizacion-consultorio/actualizacion-consultorio.component";
 import { GestionRolesUsuariosComponent } from "./components/gestion-roles-usuarios/gestion-roles-usuarios.component";
 import { GestionProcedimientosElementosComponent } from "./components/gestion-procedimientos-elementos/gestion-procedimientos-elementos.component";
+import { RegistroProcedimientoComponent } from "./components/registro-procedimiento/registro-procedimiento.component";
+import { ActualizacionProcedimientoComponent } from "./components/actualizacion-procedimiento/actualizacion-procedimiento.component";
+import { GestionProcedimientosElementosPasosComponent } from "./components/gestion-procedimientos-elementos-pasos/gestion-procedimientos-elementos-pasos.component";
+import { GestionProcedimientosElementosRequisitosComponent } from "./components/gestion-procedimientos-elementos-requisitos/gestion-procedimientos-elementos-requisitos.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -198,7 +202,15 @@ const APP_ROUTES: Routes = [
 
 
     { path: 'administracion/gestion-procedimientos', component:  GestionProcedimientosComponent},
+    { path: 'administracion/registro-procedimiento', component:  RegistroProcedimientoComponent},
+    { path: 'administracion/modificar-procedimiento/:id', component:  ActualizacionProcedimientoComponent},
+
+
     { path: 'administracion/gestion-procedimientos-elementos/:tipo/:id', component:  GestionProcedimientosElementosComponent},
+
+    { path: 'administracion/gestion-procedimientos-elementos-pasos/procedimientos/:idProcedimiento/:tipoElemento/:idElemento', component:  GestionProcedimientosElementosPasosComponent},
+
+    { path: 'administracion/gestion-procedimientos-elementos-requisitos/procedimientos/:idProcedimiento/:tipoElemento/:idElemento', component:  GestionProcedimientosElementosRequisitosComponent},
 
 
     { path: 'administracion/actualizacion-procedimiento-admision', component:  ActualizacionProcedimientoAdmisionComponent},

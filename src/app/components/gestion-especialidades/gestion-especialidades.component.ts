@@ -9,7 +9,10 @@ import { AlertasService } from '../../services/alertas.service';
   templateUrl: './gestion-especialidades.component.html',
   styleUrls: ['./gestion-especialidades.component.css']
 })
-export class GestionEspecialidadesComponent implements OnInit{
+  export class GestionEspecialidadesComponent implements OnInit{
+  redireccionarGestionarProcedimientosElemento(id: number) {
+    this.router.navigate([`administracion/gestion-procedimientos-elementos/especialidades/${id}`]);
+  }
   redireccionarRegistroEspecialidad() {
     this.router.navigate(["administracion/registro-especialidad"]);
   }

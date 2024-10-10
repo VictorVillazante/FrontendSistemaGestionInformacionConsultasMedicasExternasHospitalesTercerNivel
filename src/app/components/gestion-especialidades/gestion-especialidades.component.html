@@ -31,6 +31,7 @@
         <p ngProjectAs="dato-info">Nombre:{{especialidad?.nombre}}</p>
         <i ngProjectAs="botones-crud" class="fas fa-edit me-2" (click)="redireccionarActualizarEspecialidad(especialidad.idEspecialidad)"></i>
         <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarEspecialidad(especialidad.idEspecialidad)"></i>
+        <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionarProcedimientosElemento(especialidad.idEspecialidad)">Gestionr procedimientos</button>
     </app-elementos-listado>
   </ul>
 </div>

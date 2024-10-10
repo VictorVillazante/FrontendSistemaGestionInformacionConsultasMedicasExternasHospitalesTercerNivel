@@ -10,17 +10,6 @@
       />
     </div>
   
-    <div class="mb-3">
-      <label for="descripcion" class="form-label">Descripcion</label>
-      <textarea
-        id="descripcion"
-        formControlName="descripcion"
-        class="form-control input-border-bottom"
-        rows="3"
-        required
-      ></textarea>
-    </div>
-  
     <app-input-imagenes
         [imagenes]="imagenes"
         (imagenesEvent)="handleImagenes($event)"

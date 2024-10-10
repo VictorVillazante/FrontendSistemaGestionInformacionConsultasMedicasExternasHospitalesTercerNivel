@@ -15,14 +15,13 @@ export class RegistroProcedimientoComponent {
   constructor(private alertasService:AlertasService,private fb: FormBuilder,private informacionCentroMedicoService:InformacionCentroMedicoService) {
     this.formularioProcedimiento = this.fb.group({
       titulo: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]],
     });
   }
   ngOnInits(): void { }
 
   onSubmit(): void {
     if (this.formularioProcedimiento.valid) {
-      this.informacionCentroMedicoService.registrarProcedimiento(this.formularioProcedimiento).subscribe(()=>{
+      this.informacionCentroMedicoService.registrarProcedimiento(this.formularioProcedimiento,this.imagenes).subscribe(()=>{
         this.alertasService.mensajeConfirmacion();      
       },(error:any)=>this.alertasService.mensajeError())
     }

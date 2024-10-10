@@ -17,25 +17,27 @@ export class ActualizacionProcedimientoComponent implements OnInit{
   constructor(private activatedRoute:ActivatedRoute,private alertasService:AlertasService,private fb: FormBuilder,private informacionCentroMedicoService:InformacionCentroMedicoService) {
     this.formularioProcedimiento = this.fb.group({
       titulo: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]],
     });
   }
   ngOnInit(): void { 
-    this.activatedRoute.params.subscribe(({params})=>{
+    this.activatedRoute.params.subscribe((params)=>{
       this.idProcedimiento = params['id'];
       this.obtenerProcedimiento(this.idProcedimiento);
     })
   }
   obtenerProcedimiento(idProcedimiento: any) {
-    this.informacionCentroMedicoService.obtenerProcedimientoElemento(idProcedimiento).subscribe((procedimiento:any)=>{
-      this.formularioProcedimiento.patchValue(procedimiento);
+    this.informacionCentroMedicoService.obtenerProcedimiento(idProcedimiento).subscribe((procedimiento:any)=>{
+      this.formularioProcedimiento.setValue({
+        titulo:procedimiento.nombreProcedimiento
+      });
+      this.imagenes=procedimiento.imagenes;
     })
   }
 
 
   onSubmit(): void {
     if (this.formularioProcedimiento.valid) {
-      this.informacionCentroMedicoService.actualizarProcedimiento(this.idProcedimiento,this.formularioProcedimiento).subscribe(()=>{
+      this.informacionCentroMedicoService.actualizarProcedimiento(this.idProcedimiento,this.formularioProcedimiento,this.imagenes).subscribe(()=>{
         this.alertasService.mensajeConfirmacion();      
       },(error:any)=>this.alertasService.mensajeError())
     }

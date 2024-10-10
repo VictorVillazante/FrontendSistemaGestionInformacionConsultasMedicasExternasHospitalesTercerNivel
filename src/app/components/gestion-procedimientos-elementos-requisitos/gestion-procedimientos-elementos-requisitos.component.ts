@@ -34,7 +34,7 @@ export class GestionProcedimientosElementosRequisitosComponent {
     })
   }
   requisitos:Requisito[]=[];
-  requisitosProcedimientoElemento:RequisitoProcedimientoElemento[]=[];
+  requisitosProcedimientoElemento:Requisito[]=[];
   idElemento!:number;
   tipoElemento!:string;
   idProcedimiento!:number;

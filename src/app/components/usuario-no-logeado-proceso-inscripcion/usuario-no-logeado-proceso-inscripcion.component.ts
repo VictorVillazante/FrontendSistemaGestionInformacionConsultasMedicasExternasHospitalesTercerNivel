@@ -17,8 +17,9 @@ export class UsuarioNoLogeadoProcesoInscripcionComponent implements OnInit {
   }
   obtenerProcesoInscripcionCentroSalud() {
     this.informacionCentroMedicoService.obtenerProcesoInscripcionCentroSalud().subscribe(centroSalud => {
-      this.listadoProcedimientoPasos = centroSalud.pasos;
-      this.listadoRequisitos = centroSalud.requisitos;
+      // TODO:obtener pasos y requisitos de procedimiento
+      // this.listadoProcedimientoPasos = centroSalud.;
+      // this.listadoRequisitos = centroSalud.requisitos;
     })
   }
 }

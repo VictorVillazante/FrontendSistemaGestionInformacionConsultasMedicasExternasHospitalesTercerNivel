@@ -5,14 +5,16 @@
     <ul class="list-group">
         <app-elementos-listado *ngFor="let procedimientoElemento of procedimientosElemento;let i=index" [i]="i">
             <p ngProjectAs="dato-info">Nombre:{{procedimientoElemento?.nombreProcedimiento}}</p>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionRequisitosProcedimientoElemento(procedimientoElemento.idProcedimiento,idElemento,tipoElemento)">Requisitos</button>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="redireccionarGestionPasosProcedimientoElemento(procedimientoElemento.idProcedimiento,idElemento,tipoElemento)">Pasos</button>
             <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarProcedimientoElemento(procedimientoElemento.idProcedimiento,idElemento,tipoElemento)"></i>
         </app-elementos-listado>
     </ul>
-    <h2 class="p-3">Procedimeintnos del sistema</h2>
+    <h2 class="p-3">Procedimientos del sistema</h2>
     <ul class="list-group">
         <app-elementos-listado *ngFor="let procedimiento of procedimientos;let i=index" [i]="i">
             <p ngProjectAs="dato-info">Nombre:{{procedimiento?.nombreProcedimiento}}</p>
-            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="registrarProcedimientoElemento(procedimiento.idProcedimiento,idElemento,tipoElemento)">Agregar rol a usuario</button>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="registrarProcedimientoElemento(procedimiento.idProcedimiento,idElemento,tipoElemento)">Agregar procedimiento a especialidad</button>
         </app-elementos-listado>
     </ul>
   </div>

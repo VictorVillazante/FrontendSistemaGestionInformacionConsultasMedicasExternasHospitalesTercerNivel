@@ -14,6 +14,12 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
   styleUrls: ['./gestion-procedimientos-elementos.component.css']
 })
 export class GestionProcedimientosElementosComponent {
+  redireccionarGestionPasosProcedimientoElemento(idProcedimiento: number,idElemento: number,tipoElemento: string) {
+    this.router.navigate([`administracion/gestion-procedimientos-elementos-pasos/procedimientos/${idProcedimiento}/${tipoElemento}/${idElemento}`]);
+  }
+  redireccionarGestionRequisitosProcedimientoElemento(idProcedimiento: number,idElemento: number,tipoElemento: string) {
+    this.router.navigate([`administracion/gestion-procedimientos-elementos-requisitos/procedimientos/${idProcedimiento}/${tipoElemento}/${idElemento}`]);
+  }
   registrarProcedimientoElemento(idProcedimiento:number,idElemento:number,tipoElemento:string) {
     this.alertasService.confirmarAccion(`Estas seguro de registrar procedimiento de ${tipoElemento.toLowerCase()}?`).then((result) => {
       if (result) {

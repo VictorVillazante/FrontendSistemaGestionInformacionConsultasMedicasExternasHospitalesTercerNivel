@@ -15,6 +15,7 @@ export class SectionNoticiasComponent implements OnInit{
   constructor(private scriptsService: ScriptsService,private informacionCentroMedicoService:InformacionCentroMedicoService) {
   }
   ngOnInit(): void {
+    // TODO: realizar endpoint obtener comunicados recientes
     this.informacionCentroMedicoService.obtenerNoticiasRecientes().subscribe(noticias=>{
       this.listadoComunicados=noticias;
     })

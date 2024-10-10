@@ -28,36 +28,36 @@ export class UsuariosService {
   listaRoles=RolesDataDev.listaRoles;
 
   obtenerRolesUsuario(idUsuario: number):Observable<RolUsuario[]> {
-    return of(this.listaRolesUsuario).pipe(
-      map(rolesUsuariosJson => rolesUsuariosJson.map(json => new RolUsuario().jsonToRolUsuario(json))),
-      catchError(error => {
-        console.error('Error al obtener roles de usuario:', error);
-        return of([]); 
-      })
-    );
-    // return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}/roles`).pipe(
-    //   map(rolesUsuariosJson => rolesUsuariosJson.map((json: any) => new RolUsuario().jsonToRolUsuario(json))),
+    // return of(this.listaRolesUsuario).pipe(
+    //   map(rolesUsuariosJson => rolesUsuariosJson.map(json => new RolUsuario().jsonToRolUsuario(json))),
     //   catchError(error => {
     //     console.error('Error al obtener roles de usuario:', error);
     //     return of([]); 
     //   })
     // );
-  }
-  obtenerRoles() :Observable<Rol[]>{
-    return of(this.listaRoles).pipe(
-      map(roles => roles.map(json => new Rol().jsonToRol(json))),
+    return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}/roles`).pipe(
+      map(rolesUsuariosJson => rolesUsuariosJson.map((json: any) => new RolUsuario().jsonToRolUsuario(json))),
       catchError(error => {
-        console.error('Error al obtener roles:', error);
+        console.error('Error al obtener roles de usuario:', error);
         return of([]); 
       })
     );
-    // return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/roles`).pipe(
-    //   map(roles => roles.map((json: any) => new Rol().jsonToRol(json))),
+  }
+  obtenerRoles() :Observable<Rol[]>{
+    // return of(this.listaRoles).pipe(
+    //   map(roles => roles.map(json => new Rol().jsonToRol(json))),
     //   catchError(error => {
     //     console.error('Error al obtener roles:', error);
     //     return of([]); 
     //   })
     // );
+    return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/roles`).pipe(
+      map(roles => roles.map((json: any) => new Rol().jsonToRol(json))),
+      catchError(error => {
+        console.error('Error al obtener roles:', error);
+        return of([]); 
+      })
+    );
 
   }
   restaurarUsuario(idUsuario: number) {
@@ -69,7 +69,7 @@ export class UsuariosService {
   usuarios:Usuario[]=UsuariosDataDev.listaUsuarios.map(json=>new Usuario().jsonToUsuario(json));
 
   obtenerUsuarios(): Observable<Usuario[]>{
-    return of(this.usuarios);
+    // return of(this.usuarios);
     return this.httpClient.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios`).pipe(
       map(usuariosJson => usuariosJson.map(json => new Usuario().jsonToUsuario(json))),
       catchError(error => {
@@ -103,7 +103,7 @@ export class UsuariosService {
     return this.httpClient.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}`,formData)
   }
   obtenerUsuario(id: any) : Observable<Usuario>{
-    return of(this.usuarios[0]);
+    // return of(this.usuarios[0]);
     return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${id}`).pipe(
       map(usuarioJson => new Usuario().jsonToUsuario(usuarioJson)),
       catchError(error => {
