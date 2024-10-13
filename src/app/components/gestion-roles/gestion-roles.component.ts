@@ -15,12 +15,12 @@ export class GestionRolesComponent {
       // TODO: utilizar id del token
     const idUsuario=1;
     this.usuariosService.registrarRolUsuario(idUsuario,rol.idRol).subscribe(() => {
-      this.obtenerRolesUsuario();
+      this.obtenerRoles();
     });
   }
   eliminarRolUsuario(rolUsuario: RolUsuario) {
     this.usuariosService.eliminarRolUsuario(rolUsuario.idUsuario,rolUsuario.idRol).subscribe(() => {
-      this.obtenerRolesUsuario();
+      this.obtenerRoles();
     });
   }
   roles:Rol[]=[];
@@ -31,7 +31,6 @@ export class GestionRolesComponent {
 
   ngOnInit(): void {
     this.obtenerRoles();
-    this.obtenerRolesUsuario();
   }
   obtenerRoles() {
     this.usuariosService.obtenerRoles().subscribe((roles) => {
@@ -39,12 +38,4 @@ export class GestionRolesComponent {
     });
   }
 
-  obtenerRolesUsuario() {
-    // TODO: utilizar id del token
-    const idUsuario=1;
-    this.usuariosService.obtenerRolesUsuario(idUsuario).subscribe((rolesUsuario) => {
-      this.rolesUsuario = rolesUsuario;
-    });
-    
-  }
 }

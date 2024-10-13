@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Rol } from 'src/app/models/Rol';
 import { RolUsuario } from 'src/app/models/RolUsuario';
 import { AlertasService } from 'src/app/services/alertas.service';
@@ -11,12 +11,11 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
   styleUrls: ['./gestion-roles-usuarios.component.css']
 })
 export class GestionRolesUsuariosComponent {
+  idUsuario!:number;
   registrarRolUsuario(rol: Rol) {
-    // TODO: utilizar id del token
-    const idUsuario=1;
     this.alertasService.confirmarAccion("Estas seguro de registrar rol?").then((result) => {
       if (result) {
-        this.usuariosService.registrarRolUsuario(idUsuario,rol.idRol).subscribe(() => {
+        this.usuariosService.registrarRolUsuario(this.idUsuario,rol.idRol).subscribe(() => {
           this.obtenerRolesUsuario();
           this.alertasService.mensajeConfirmacion();
         },(error)=>this.alertasService.mensajeError());
@@ -24,10 +23,10 @@ export class GestionRolesUsuariosComponent {
     })
    
   }
-  eliminarRolUsuario(rolUsuario: RolUsuario) {
+  eliminarRolUsuario(rolUsuario: Rol) {
     this.alertasService.confirmarAccion("Estas seguro de eliminar rol?").then((result) => {
       if (result) {
-        this.usuariosService.eliminarRolUsuario(rolUsuario.idUsuario,rolUsuario.idRol).subscribe(() => {
+        this.usuariosService.eliminarRolUsuario(this.idUsuario,rolUsuario.idRol).subscribe(() => {
           this.obtenerRolesUsuario();
           this.alertasService.mensajeConfirmacion();
         },(error)=>this.alertasService.mensajeError());
@@ -35,12 +34,15 @@ export class GestionRolesUsuariosComponent {
     })
   }
   roles:Rol[]=[];
-  rolesUsuario:RolUsuario[]=[];
+  rolesUsuario:Rol[]=[];
 
 
-  constructor(private alertasService:AlertasService,private router:Router,private usuariosService:UsuariosService) { }
+  constructor(private activatedRoute:ActivatedRoute,private alertasService:AlertasService,private router:Router,private usuariosService:UsuariosService) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.idUsuario = params['idUsuario'];
+    })
     this.obtenerRoles();
     this.obtenerRolesUsuario();
   }
@@ -51,9 +53,7 @@ export class GestionRolesUsuariosComponent {
   }
 
   obtenerRolesUsuario() {
-    // TODO: utilizar id del token
-    const idUsuario=1;
-    this.usuariosService.obtenerRolesUsuario(idUsuario).subscribe((rolesUsuario) => {
+    this.usuariosService.obtenerRolesUsuario(this.idUsuario).subscribe((rolesUsuario) => {
       this.rolesUsuario = rolesUsuario;
     });
     

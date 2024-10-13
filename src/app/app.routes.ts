@@ -193,7 +193,7 @@ const APP_ROUTES: Routes = [
     { path: 'administracion/registro-usuario', component:  RegistroUsuarioComponent},
     { path: 'administracion/modificar-usuario/:id', component:  ActualizacionUsuarioComponent},
 
-    { path: 'administracion/gestion-roles-usuarios', component:  GestionRolesUsuariosComponent},
+    { path: 'administracion/gestion-roles-usuarios/:idUsuario', component:  GestionRolesUsuariosComponent},
 
 
     { path: 'administrador/gestion-turnos-atencion', component:  GestionTurnosAtencionMedicaComponent},

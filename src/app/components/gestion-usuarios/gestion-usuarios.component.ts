@@ -51,8 +51,8 @@ export class GestionUsuariosComponent implements OnInit{
   redireccionarRegistroUsuario() {
     this.router.navigate(['/administracion/registro-usuario']);
   }
-  redireccionarGestionRoles(arg0: any) {
-
+  redireccionarGestionRoles(idUsuario: any) {
+    this.router.navigate(['administracion/gestion-roles-usuarios',idUsuario]);
   }
 
   eliminarUsuario(idUsuario: any) {

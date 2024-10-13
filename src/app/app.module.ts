@@ -127,7 +127,8 @@ import { GestionRolesUsuariosComponent } from './components/gestion-roles-usuari
 import { GestionProcedimientosElementosComponent } from './components/gestion-procedimientos-elementos/gestion-procedimientos-elementos.component';
 import { GestionProcedimientosElementosPasosComponent } from './components/gestion-procedimientos-elementos-pasos/gestion-procedimientos-elementos-pasos.component';
 import { GestionProcedimientosElementosRequisitosComponent } from './components/gestion-procedimientos-elementos-requisitos/gestion-procedimientos-elementos-requisitos.component';
-
+import { HttpNgRokInterceptor } from './interceptors/http-ngrok.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -260,7 +261,12 @@ import { GestionProcedimientosElementosRequisitosComponent } from './components/
     CommonModule
   ],
   providers: [
-    ScriptsService
+    ScriptsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpNgRokInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

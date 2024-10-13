@@ -27,7 +27,7 @@ export class UsuariosService {
   listaRolesUsuario=RolesUsuariosDataDev.listaRolesUsuarios;
   listaRoles=RolesDataDev.listaRoles;
 
-  obtenerRolesUsuario(idUsuario: number):Observable<RolUsuario[]> {
+  obtenerRolesUsuario(idUsuario: number):Observable<Rol[]> {
     // return of(this.listaRolesUsuario).pipe(
     //   map(rolesUsuariosJson => rolesUsuariosJson.map(json => new RolUsuario().jsonToRolUsuario(json))),
     //   catchError(error => {
@@ -36,7 +36,7 @@ export class UsuariosService {
     //   })
     // );
     return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${idUsuario}/roles`).pipe(
-      map(rolesUsuariosJson => rolesUsuariosJson.map((json: any) => new RolUsuario().jsonToRolUsuario(json))),
+      map(rolesUsuarioJson => rolesUsuarioJson.map((json: any) => new Rol().jsonToRol(json))),
       catchError(error => {
         console.error('Error al obtener roles de usuario:', error);
         return of([]); 
