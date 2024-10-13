@@ -64,6 +64,7 @@ export class ActualizacionUsuarioComponent {
   }
 
   onSubmit(): void {
+    console.log(this.formularioUsuario.value);
     if (this.formularioUsuario.valid) {
       this.usuariosService.actualizarUsuario(this.formularioUsuario,this.imagenes,this.idUsuario).subscribe(()=>{
         this.alertasService.mensajeConfirmacion();      

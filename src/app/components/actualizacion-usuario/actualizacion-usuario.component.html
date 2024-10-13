@@ -3,6 +3,7 @@
       <h1 class="text-center mb-4">Actualizar usuario</h1>
   
       <app-formulario-detalle-usuario
+        [idUsuario]="idUsuario"
         [formularioUsuario]="formularioUsuario"
         [imagenes]="imagenes"
         (imagenesEvent)="handleImagenes($event)"

@@ -11,6 +11,7 @@ import { Imagen } from 'src/app/models/Imagen';
   styleUrls: ['./formulario-detalle-usuario.component.css']
 })
 export class FormularioDetalleUsuarioComponent {
+  @Input() idUsuario!: number;
   @Input() formularioUsuario!: FormGroup;
   @Input() onSubmit!: ()=>void;
   @Input() imagenes!: Imagen[];

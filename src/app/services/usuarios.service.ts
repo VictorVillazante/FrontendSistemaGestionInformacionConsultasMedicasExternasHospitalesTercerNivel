@@ -104,7 +104,7 @@ export class UsuariosService {
   }
   obtenerUsuario(id: any) : Observable<Usuario>{
     // return of(this.usuarios[0]);
-    return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/${id}`).pipe(
+    return this.httpClient.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios/id/${id}`).pipe(
       map(usuarioJson => new Usuario().jsonToUsuario(usuarioJson)),
       catchError(error => {
         console.error('Error al obtener usuarios:', error);
@@ -124,8 +124,8 @@ export class UsuariosService {
       apellidoPaterno: formularioUsuario.value.apellidoPaterno,
       apellidoMaterno: formularioUsuario.value.apellidoMaterno,
       fechaNacimiento: formularioUsuario.value.fechaNacimiento,
+      estadoCivil: formularioUsuario.value.estadoCivil,
       sexo: formularioUsuario.value.sexo,
-      estado_civil: formularioUsuario.value.estado_civil,
       edad: formularioUsuario.value.edad,
       diasSancionPeticionFichaPresencial: formularioUsuario.value.diasSancionPeticionFichaPresencial,
       telefono: formularioUsuario.value.telefono
@@ -134,7 +134,7 @@ export class UsuariosService {
     formData.append('data', jsonString);
     formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
     console.log(formData);
-    return this.httpClient.post<any>("${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios",formData);
+    return this.httpClient.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/v1.0/usuarios`,formData);
   }
 
   constructor(private httpClient:HttpClient) { }
