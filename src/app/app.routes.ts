@@ -84,6 +84,7 @@ import { RegistroProcedimientoComponent } from "./components/registro-procedimie
 import { ActualizacionProcedimientoComponent } from "./components/actualizacion-procedimiento/actualizacion-procedimiento.component";
 import { GestionProcedimientosElementosPasosComponent } from "./components/gestion-procedimientos-elementos-pasos/gestion-procedimientos-elementos-pasos.component";
 import { GestionProcedimientosElementosRequisitosComponent } from "./components/gestion-procedimientos-elementos-requisitos/gestion-procedimientos-elementos-requisitos.component";
+import { UsuarioNoLogeadoElementosProcedimientoComponent } from "./components/usuario-no-logeado-elementos-procedimiento/usuario-no-logeado-elementos-procedimiento.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -92,6 +93,9 @@ const APP_ROUTES: Routes = [
     { path: 'horarios-atencion', component:  UsuarioNoLogeadoHorariosAtencionComponent},
     { path: 'especialidades-atencion', component:  UsuarioNoLogeadoEspecialidadedesComponent},
     { path: 'medicos-especialistas', component:  UsuarioNoLogeadoMedicosEspecialistasComponent},
+    { path: 'procedimientos', component:  UsuarioNoLogeadoProcedimientosComponent},
+    { path: 'procedimientos/:idProcedimiento', component:  UsuarioNoLogeadoElementosProcedimientoComponent},
+
     { path: 'procedimientos/:idProcedimiento/elementos/:idElemento/tipo-elemento/:tipo/requisitos', component:  UsuarioNoLogeadoRequisitosComponent},
     { path: 'procedimientos/:idProcedimiento/elementos/:idElemento/tipo-elemento/:tipo/pasos', component:  UsuarioNoLogeadoProcedimientosComponent},
     { path: 'proceso-inscripcion', component:  UsuarioNoLogeadoProcesoInscripcionComponent},

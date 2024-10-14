@@ -1,7 +1,7 @@
 <div class="contenedor-proceso-inscripcion">
   <div class="banner-proceso-inscripcion">
     <div class="descripcion-proceso-inscripcion">
-      <h1>Proceso de inscripcion</h1>
+      <h1 *ngIf="procesoInscripcion">{{procesoInscripcion.nombreProcedimiento}}</h1>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -16,13 +16,13 @@
   <div class="proceso-inscripcion">
     <h2>Pasos procedimiento de inscripcion</h2>
     <div class="pasos-proceso-inscripcion">
-      <app-card-paso-procedimiento *ngFor="let pasoProcedimiento of listadoProcedimientoPasos" [pasoProcedimiento]="pasoProcedimiento"/>
+      <app-card-paso-procedimiento *ngFor="let pasoProcedimiento of pasosProcedimientoElemento" [pasoProcedimiento]="pasoProcedimiento"/>
     </div>
   </div>
   <div class="proceso-inscripcion">
     <h2>Requisitos inscripcion</h2>
     <div class="pasos-proceso-inscripcion">
-      <app-card-requisito-procedimiento *ngFor="let requisito of listadoRequisitos" [requisito]="requisito"/>
+      <app-card-requisito-procedimiento *ngFor="let requisito of requisitosProcedimientoElemento" [requisito]="requisito"/>
     </div>
   </div>
   <div class="contactos-proceso-inscripcion">

@@ -1,9 +1,19 @@
-<!-- <div class="contenedor-procedimiento">
-    <div class="banner-img">
-        <img src="../../../assets/images/banner-procedimiento.jpg" alt="">
+<div class="contenedor-procedimientos">
+    <h1>Procedimientos</h1>
+    <div class="procedimientos">
+      <div
+        class="procedimiento"
+        *ngFor="let procedimiento of listadoProcedimientos"
+      >
+        <div class="card" style="width: 18rem;">
+            <img *ngIf="procedimiento.imagenes.length>0" [src]="procedimiento.imagenes[0].url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{procedimiento.nombreProcedimiento}}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a (click)="redireccionarVerElementosProcedimiento(procedimiento.idProcedimiento)" class="btn btn-success-hospital">Ver procedimiento</a>
+            </div>
+        </div>
+      </div>
     </div>
-    <div class="procedimiento-pasos">
-        <h2>{{titulo}}</h2>
-        <app-card-paso-procedimiento *ngFor="let pasoProcedimiento of listadoProcedimientoPasos" [pasoProcedimiento]="pasoProcedimiento"/>
-    </div>
-</div> -->
+  </div>
+  
