@@ -17,7 +17,7 @@ export class MedicosService {
     return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos/${id}`,medicoAux);
   }
   obtenerMedico(idMedico: any) {
-    return of(this.listaMedicos[0]).pipe(
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos/${idMedico}`).pipe(
       map((medicoJson:any)=>new MedicoEspecialista().jsonToMedicoEspecialista(medicoJson)),
       catchError(error => {
         console.error('Error al obtener medicos:', error);
@@ -115,14 +115,21 @@ export class MedicosService {
   listaMedicos=MedicosDataDev.medicos;
 
   obtenerMedicos() {
-    return of(this.listaMedicos).pipe(
+    // return of(this.listaMedicos).pipe(
+    //   map(medicosJson => medicosJson.map((medicoJson:any)=>new MedicoEspecialista().jsonToMedicoEspecialista(medicoJson))),
+    //   catchError(error => {
+    //     console.error('Error al obtener medicos:', error);
+    //     return of([]); 
+    //   })
+    // );
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos`).pipe(
       map(medicosJson => medicosJson.map((medicoJson:any)=>new MedicoEspecialista().jsonToMedicoEspecialista(medicoJson))),
       catchError(error => {
         console.error('Error al obtener medicos:', error);
         return of([]); 
       })
     );
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos`);
+    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos`);
     // return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/medicos`);
     // return of([]);
     // throw new Error('Method not implemented.');

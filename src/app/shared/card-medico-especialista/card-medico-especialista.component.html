@@ -1,6 +1,6 @@
 <div class="contenedor-medico-especialista">
     <div class="contenedor-img-medico-especialista">
-        <img *ngIf="medicoEspecialista.imagenes[0].url!=''" class="img-medico-especialista" [src]="medicoEspecialista.imagenes[0].url" alt="">
+        <img *ngIf="medicoEspecialista.imagenes.length" class="img-medico-especialista" [src]="medicoEspecialista.imagenes[0].url" alt="">
     </div>
     <div class="datos-medico-especialista">
         <p class="nombre-completo">{{medicoEspecialista.nombres}} {{medicoEspecialista.apellidoPaterno}} {{medicoEspecialista.apellidoMaterno}}</p>

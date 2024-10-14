@@ -224,19 +224,6 @@ export class InformacionCentroMedicoService {
     // return of([]);
     // throw new Error('Method not implemented.');
   }
-  obtenerMedicos() {
-    return of(this.listaMedicos).pipe(
-      map(medicosJson => medicosJson.map((medicoJson:any)=>new MedicoEspecialista().jsonToMedicoEspecialista(medicoJson))),
-      catchError(error => {
-        console.error('Error al obtener medicos:', error);
-        return of([]); 
-      })
-    );
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-usuarios/medicos`);
-    // return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/medicos`);
-    // return of([]);
-    // throw new Error('Method not implemented.');
-  }
   // MGICMespecialidades-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

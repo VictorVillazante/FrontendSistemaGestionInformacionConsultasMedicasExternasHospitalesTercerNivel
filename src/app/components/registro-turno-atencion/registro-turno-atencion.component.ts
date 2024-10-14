@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { MedicosService } from 'src/app/services/medicos.service';
 
 @Component({
   selector: 'app-registro-turno-atencion',
@@ -17,7 +18,7 @@ export class RegistroTurnoAtencionComponent {
   filteredSuggestionsConsultorioEspecialidad: any[] = [];
   formularioTurnoAtencionMedica: FormGroup<any>;
 
-  constructor(private fb: FormBuilder, private informacionCentroMedicoService: InformacionCentroMedicoService) {
+  constructor(private fb: FormBuilder, private informacionCentroMedicoService: InformacionCentroMedicoService,private medicosService:MedicosService) {
     this.formularioTurnoAtencionMedica = this.fb.group({
       nombreConsultorio:[''],
       idConsultorio: [''],
@@ -35,7 +36,7 @@ export class RegistroTurnoAtencionComponent {
     this.obtenerTurnos();
   }
   obtenerMedicos() {
-    this.informacionCentroMedicoService.obtenerMedicos().subscribe((data) => {
+    this.medicosService.obtenerMedicos().subscribe((data) => {
       this.medicos = data;
     });
   }

@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="contenedor-imagen">
-            <img [src]="medico.imagenes[0].url" alt="">
+            <img *ngIf="medico.imagenes.length>0" [src]="medico.imagenes[0].url" alt="">
         </div>
     </div>
     <p>{{medico.descripcion}}</p>
