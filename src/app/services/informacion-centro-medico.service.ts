@@ -128,19 +128,7 @@ export class InformacionCentroMedicoService {
       "descripcion":formularioPasoProcedimiento.value.descripcion
     });
   }
-  actualizarProcedimientoElementoAdmision(formularioProcedimiento: FormGroup<any>, imagenes:Imagen[]) {
-    let formData=new FormData();
-    const jsonData = {
-      "titulo": formularioProcedimiento.value.titulo,
-    };
-    const jsonString = JSON.stringify(jsonData);
-    formData.append('data', jsonString);
-    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
-    console.log(formData);
-    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${apiUrlEnviroment.procedimientoAdmsion}`,formData)
-  }
 
-  
   
 
   listaMedicos=MedicosDataDev.medicos;
@@ -484,6 +472,19 @@ export class InformacionCentroMedicoService {
     console.log(formData);
     return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}`,formData);
   }
+  actualizarProcedimientoElementoAdmision(formularioProcedimiento: FormGroup<any>, imagenes:Imagen[]) {
+    let formData=new FormData();
+    const jsonData = {
+      "nombreProcedimiento": formularioProcedimiento.value.titulo,
+    };
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${apiUrlEnviroment.idProcedimientoAdmsion}`,formData)
+  }
+
+  
   registrarProcedimiento(formularioProcedimiento: FormGroup<any>,imagenes:Imagen[]) {
     let formData = new FormData();
     const jsonData = {
@@ -541,6 +542,7 @@ export class InformacionCentroMedicoService {
   eliminarProcedimientoElemento(idProcedimiento:number,idElemento: any, tipoElemento: string) {
     return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}`,{});
   }
+  
      // MGICMprocedimientos-elementos-requisitos-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
