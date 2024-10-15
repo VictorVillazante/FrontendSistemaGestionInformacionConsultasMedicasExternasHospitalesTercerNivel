@@ -4,8 +4,7 @@
 
     <ul class="list-group">
         <app-elementos-listado *ngFor="let pasoProcedimientoElemento of pasosProcedimientoElemento;let i=index" [i]="i">
-            <p ngProjectAs="dato-info">Paso:{{pasoProcedimientoElemento?.nombrePaso}}</p>
-            <p ngProjectAs="dato-info">Procedimiento:{{pasoProcedimientoElemento?.nombreProcedimiento}}</p>
+            <p ngProjectAs="dato-info">Paso:{{pasoProcedimientoElemento?.nombre}}</p>
             <i ngProjectAs="botones-crud" class="fas fa-trash me-2" (click)="eliminarPasoProcedimientoElemento(pasoProcedimientoElemento.idPaso,idProcedimiento,idElemento,tipoElemento)"></i>
         </app-elementos-listado>
     </ul>
@@ -13,7 +12,7 @@
     <ul class="list-group">
         <app-elementos-listado *ngFor="let paso of pasos;let i=index" [i]="i">
             <p ngProjectAs="dato-info">Nombre:{{paso?.nombre}}</p>
-            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="registrarPasoProcedimientoElemento(paso.idPaso,idProcedimiento,idElemento,tipoElemento)">Agregar rol a usuario</button>
+            <button class="btn btn-success-hospital" ngProjectAs="botones-adicionales" (click)="registrarPasoProcedimientoElemento(paso.idPaso,idProcedimiento,idElemento,tipoElemento)">Agregar paso al procedimiento</button>
         </app-elementos-listado>
     </ul>
   </div>

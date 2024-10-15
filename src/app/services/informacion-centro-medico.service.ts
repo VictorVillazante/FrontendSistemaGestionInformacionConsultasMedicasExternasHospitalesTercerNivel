@@ -28,63 +28,11 @@ import { Requisito } from '../models/Requisito';
 })
 export class InformacionCentroMedicoService {
   
-  eliminarPasoProcedimientoElemento(idPaso: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
-    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}/pasos/${idPaso}`,{});
-  }
-  registrarPasoProcedimientoElemento(idPaso: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/tipo-elemento/${tipoElemento}/elementos/${idElemento}/pasos/${idPaso}`,{});
-  }
+
 
   requisitos:any[]=RequisitosDataDev.listaRequisitos;
   
-  modificarPaso(idPaso: number, formularioPaso: FormGroup<any>, imagenes: Imagen[]) {
-    let formData=new FormData();
-    const jsonData = {
-      nombre:formularioPaso.value.nombre,
-      descripcion:formularioPaso.value.descripcion
-    }
-    const jsonString = JSON.stringify(jsonData);
-    formData.append('data', jsonString);
-    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
-    console.log(formData);
-
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos/${idPaso}`,formData);
-
-  }
-  eliminarPaso(idPaso: number) {
-    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos/${idPaso}`);
-  }
-  registrarPaso(idPaso: number, formularioPaso: FormGroup<any>, imagenes: Imagen[]) {
-    let formData=new FormData();
-    const jsonData = {
-      nombre:formularioPaso.value.nombre,
-      descripcion:formularioPaso.value.descripcion
-    }
-    const jsonString = JSON.stringify(jsonData);
-    formData.append('data', jsonString);
-    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
-    console.log(formData);
-
-    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos`,formData);
-  }
-
-  pasos:any[]=PasosDataDev.listaPasos;
-  obtenerPasos():Observable<Paso[]> {
-    return of(this.procedimientos).pipe(
-      map(pasosJson => pasosJson.map(json => new Paso().jsonToPaso(json))),
-      catchError(error => {
-        console.error('Error al obtener procedimientos:', error);
-        return of([]); 
-      })
-    );
-    // return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos`).pipe(
-    //   map(procedimientosJson => procedimientosJson.map((json:any) => new Paso().jsonToPaso(json))),
-    //   catchError(error => {
-    //     console.error('Error al obtener procedimientos:', error);
-    //     return of([]); 
-    //   })
-    // );
-  }
+ 
 
  
 
@@ -624,16 +572,73 @@ export class InformacionCentroMedicoService {
    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/requisitos/${idRequisito}`,formData);
  }
 
-//MGIMprocedimiento-elemento-paso
- obtenerPasosProcedimientoElemento(idProcedimiento: number,idElemento:number,tipo:string){
-  //return of(ProcedimientosElementosDataDev.listaProcedimientosElementos[0].pasos);
-  return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/elementos/${idElemento}/tipo-elemento/${tipo}/pasos`).pipe(
-    map(pasosJson => pasosJson.map((pasoJson:any)=>new Paso().jsonToPaso(pasoJson))),
-    catchError(error => {
-      console.error('Error al obtener pasos:', error);
-      return of([]); 
-    })
-  );
-}
+
+  // MGPIpasos
+
+  modificarPaso(idPaso: number, formularioPaso: FormGroup<any>, imagenes: Imagen[]) {
+    let formData=new FormData();
+    const jsonData = {
+      nombre:formularioPaso.value.nombre,
+      descripcion:formularioPaso.value.descripcion
+    }
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos/${idPaso}`,formData);
+
+  }
+  eliminarPaso(idPaso: number) {
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos/${idPaso}`);
+  }
+  registrarPaso(idPaso: number, formularioPaso: FormGroup<any>, imagenes: Imagen[]) {
+    let formData=new FormData();
+    const jsonData = {
+      nombre:formularioPaso.value.nombre,
+      descripcion:formularioPaso.value.descripcion
+    }
+    const jsonString = JSON.stringify(jsonData);
+    formData.append('data', jsonString);
+    formData = ImagenesService.agregarImagenesAFormData(formData, imagenes);
+    console.log(formData);
+
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos`,formData);
+  }
+
+  pasos:any[]=PasosDataDev.listaPasos;
+  obtenerPasos():Observable<Paso[]> {
+    // return of(this.procedimientos).pipe(
+    //   map(pasosJson => pasosJson.map(json => new Paso().jsonToPaso(json))),
+    //   catchError(error => {
+    //     console.error('Error al obtener procedimientos:', error);
+    //     return of([]); 
+    //   })
+    // );
+    return this.http.get<any[]>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/pasos`).pipe(
+      map(procedimientosJson => procedimientosJson.map((json:any) => new Paso().jsonToPaso(json))),
+      catchError(error => {
+        console.error('Error al obtener procedimientos:', error);
+        return of([]); 
+      })
+    );
+  }
+  // MGIMprocedimiento-elemento-paso
+  eliminarPasoProcedimientoElemento(idPaso: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
+    return this.http.delete<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/elementos/${idElemento}/tipo-elemento/${tipoElemento}/pasos/${idPaso}`,{});
+  }
+  registrarPasoProcedimientoElemento(idPaso: number, idProcedimiento: number, idElemento: number, tipoElemento: string) {
+    return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/elementos/${idElemento}/tipo-elemento/${tipoElemento}/pasos/${idPaso}`,{});
+  }
+  obtenerPasosProcedimientoElemento(idProcedimiento: number,idElemento:number,tipo:string){
+    //return of(ProcedimientosElementosDataDev.listaProcedimientosElementos[0].pasos);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/v1.0/procedimientos/${idProcedimiento}/elementos/${idElemento}/tipo-elemento/${tipo}/pasos`).pipe(
+      map(pasosJson => pasosJson.map((pasoJson:any)=>new Paso().jsonToPaso(pasoJson))),
+      catchError(error => {
+        console.error('Error al obtener pasos:', error);
+        return of([]); 
+      })
+    );
+  }
   constructor(private http:HttpClient) { }
 }

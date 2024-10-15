@@ -34,7 +34,7 @@ export class GestionProcedimientosElementosPasosComponent {
     })
   }
   pasos:Paso[]=[];
-  pasosProcedimientoElemento:PasoProcedimientoElemento[]=[];
+  pasosProcedimientoElemento:Paso[]=[];
   idElemento!:number;
   tipoElemento!:string;
   idProcedimiento!:number;
