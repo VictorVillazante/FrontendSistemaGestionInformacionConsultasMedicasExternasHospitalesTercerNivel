@@ -1,0 +1,40 @@
+.contenedor-procedimientos {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-procedimientos h2 {
+    padding: 20px 0px;
+}
+
+.procedimientos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.procedimiento {
+    width: calc(100%/3);
+    padding: 10px;
+    background-color: transparent;
+}
+
+app-card-medico-especialista {
+    background-color: transparent;
+}
+
+@media (max-width:1280px) {
+    .procedimiento {
+        width: calc(100%/2);
+    }
+}
+@media (max-width:414px) {
+    .procedimiento {
+        width: calc(100%);
+    }
+}

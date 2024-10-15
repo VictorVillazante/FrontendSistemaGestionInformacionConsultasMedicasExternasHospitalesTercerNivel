@@ -12,7 +12,7 @@ import { InformacionCentroMedicoService } from 'src/app/services/informacion-cen
 })
 export class UsuarioNoLogeadoProcedimientosComponent {
   redireccionarVerElementosProcedimiento(idProcedimiento: number) {
-    this.router.navigate(['/procedimientos',idProcedimiento]);
+    this.router.navigate([`/procedimientos/${idProcedimiento}/elementos`]);
   }
   listadoProcedimientos:Procedimiento[]=[];
   listadoProcedimientosAux:Procedimiento[]=[];

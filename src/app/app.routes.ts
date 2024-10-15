@@ -85,6 +85,7 @@ import { ActualizacionProcedimientoComponent } from "./components/actualizacion-
 import { GestionProcedimientosElementosPasosComponent } from "./components/gestion-procedimientos-elementos-pasos/gestion-procedimientos-elementos-pasos.component";
 import { GestionProcedimientosElementosRequisitosComponent } from "./components/gestion-procedimientos-elementos-requisitos/gestion-procedimientos-elementos-requisitos.component";
 import { UsuarioNoLogeadoElementosProcedimientoComponent } from "./components/usuario-no-logeado-elementos-procedimiento/usuario-no-logeado-elementos-procedimiento.component";
+// import { UsuarioNoLogeadoDescripcionProcedimientoElementoComponent } from "./components/usuario-no-logeado-descripcion-procedimiento-elemento/usuario-no-logeado-descripcion-procedimiento-elemento.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -98,6 +99,9 @@ const APP_ROUTES: Routes = [
 
     { path: 'procedimientos/:idProcedimiento/elementos/:idElemento/tipo-elemento/:tipo/requisitos', component:  UsuarioNoLogeadoRequisitosComponent},
     { path: 'procedimientos/:idProcedimiento/elementos/:idElemento/tipo-elemento/:tipo/pasos', component:  UsuarioNoLogeadoProcedimientosComponent},
+    // { path: 'procedimientos/:idProcedimiento/elementos/:idElemento/tipo-elemento/:tipo', component:  UsuarioNoLogeadoDescripcionProcedimientoElementoComponent},
+    { path: 'procedimientos/:idProcedimiento/elementos', component:  UsuarioNoLogeadoElementosProcedimientoComponent},
+
     { path: 'proceso-inscripcion', component:  UsuarioNoLogeadoProcesoInscripcionComponent},
     { path: 'comunicados', component:  UsuarioNoLogeadoNoticiasComponent},
     { path: 'comunicado/:id', component:  UsuarioNoLogeadoDetalleNoticiaComponent},

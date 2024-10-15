@@ -1,0 +1,19 @@
+<div class="contenedor-procedimientos">
+    <h1>Procedimientos</h1>
+    <div class="procedimientos">
+      <div
+        class="procedimiento"
+        *ngFor="let procedimientoElemento of listadoElementosProcedimiento"
+      >
+        <div class="card" style="width: 18rem;">
+            <img *ngIf="procedimientoElemento.imagenes.length>0" [src]="procedimientoElemento.imagenes[0].url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{procedimientoElemento.tipoElemento}} - {{procedimientoElemento.nombreElemento}}</h5>
+                <p class="card-text">{{procedimientoElemento.descripcion}}</p>
+                <a (click)="redireccionarVerDetalleElementoProcedimiento(procedimientoElemento.idProcedimiento,procedimientoElemento.idElemento,procedimientoElemento.tipoElemento)" class="btn btn-success-hospital">Ver procedimiento del elemento</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
