@@ -164,15 +164,27 @@ export class InformacionCentroMedicoService {
     //     return of([]); 
     //   })
     // );
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/especialidades`);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/especialidades`).pipe(
+    map(especialidadesJson => especialidadesJson.map((especialidadJson:any)=>new Especialidad().jsonToEspecialidad(especialidadJson))),
+      catchError(error => {
+        console.error('Error al obtener especialidades:', error);
+        return of([]); 
+      })
+    );
     //return this.http.get<any>(`http://localhost:8088/api/microservicio-gestion-informacion-centro-medico/especialidades`);
     //throw new Error('Method not implemented.');
   }
   obtenerEspecialidad(idEspecialidad: number):Observable<Especialidad> {
     // let especialidadBuscada=this.listaEspecialidades.filter((e)=>e.idEspecialidad==idEspecialidad)[0]
     // return of(especialidadBuscada);
-    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/especialidades/${idEspecialidad}`);
-
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-gestion-informacion-centro-medico/especialidades/${idEspecialidad}`).pipe(
+    map(especialidadJson =>new Especialidad().jsonToEspecialidad(especialidadJson)),
+      catchError(error => {
+        console.error('Error al obtener especialidades:', error);
+        return of(new Especialidad()); 
+      })
+    );
+    
   }
 
   eliminarEspecialidad(idEspecialidad:number) {
