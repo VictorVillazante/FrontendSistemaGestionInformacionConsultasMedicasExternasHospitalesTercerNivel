@@ -1,6 +1,6 @@
 <div class="paso-procedimiento">
     <!-- TODO:HACER CAROUSEL DE IMAGENES -->
-    <div class="paso-procedimiento-img"><img [src]="pasoProcedimiento.imagenes[0]" alt="" *ngIf="pasoProcedimiento.imagenes.length"></div>
+    <div class="paso-procedimiento-img"><img *ngIf="pasoProcedimiento.imagenes.length>0"  [src]="pasoProcedimiento.imagenes[0].url" alt=""></div>
     <div class="paso-procedimiento-info">
         <h3>{{pasoProcedimiento.nombre}}</h3>
         <p>{{pasoProcedimiento.descripcion}}</p>
