@@ -1,0 +1,26 @@
+<div class="contenedor-proceso-inscripcion">
+    <div class="banner-proceso-inscripcion">
+      <div class="descripcion-proceso-inscripcion">
+        <h1 *ngIf="procedimiento">{{procedimiento.nombreProcedimiento}}</h1>
+        <p>
+          {{procedimiento.descripcion}}
+        </p>
+      </div>
+      <div class="img-proceso-inscripcion">
+        <img src="../../../assets/images/banner-proceso-inscripcion.png" alt="" />
+      </div>
+    </div>
+    <div class="proceso-inscripcion">
+      <h2>Pasos procedimiento de inscripcion</h2>
+      <div class="pasos-proceso-inscripcion">
+        <app-card-paso-procedimiento *ngFor="let pasoProcedimiento of pasosProcedimientoElemento" [pasoProcedimiento]="pasoProcedimiento"/>
+      </div>
+    </div>
+    <div class="proceso-inscripcion">
+      <h2>Requisitos inscripcion</h2>
+      <div class="pasos-proceso-inscripcion">
+        <app-card-requisito-procedimiento *ngFor="let requisito of requisitosProcedimientoElemento" [requisito]="requisito"/>
+      </div>
+    </div>
+  </div>
+  

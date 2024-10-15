@@ -130,7 +130,7 @@ import { GestionProcedimientosElementosRequisitosComponent } from './components/
 import { HttpNgRokInterceptor } from './interceptors/http-ngrok.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UsuarioNoLogeadoElementosProcedimientoComponent } from './components/usuario-no-logeado-elementos-procedimiento/usuario-no-logeado-elementos-procedimiento.component';
-// import { UsuarioNoLogeadoDescripcionProcedimientoElementoComponent } from './components/usuario-no-logeado-descripcion-procedimiento-elemento/usuario-no-logeado-descripcion-procedimiento-elemento.component';
+import { UsuarioNoLogeadoDescripcionProcedimientoElementoComponent } from './components/usuario-no-logeado-descripcion-procedimiento-elemento/usuario-no-logeado-descripcion-procedimiento-elemento.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -253,7 +253,7 @@ import { UsuarioNoLogeadoElementosProcedimientoComponent } from './components/us
     GestionProcedimientosElementosPasosComponent,
     GestionProcedimientosElementosRequisitosComponent,
     UsuarioNoLogeadoElementosProcedimientoComponent,
-    // UsuarioNoLogeadoDescripcionProcedimientoElementoComponent
+    UsuarioNoLogeadoDescripcionProcedimientoElementoComponent
   ],
   imports: [
     BrowserModule,
