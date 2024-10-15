@@ -27,7 +27,18 @@
 app-card-medico-especialista {
     background-color: transparent;
 }
-
+.card{
+    width: 90%;
+    margin: 0 auto;
+}
+.card-img-top{
+    height: 360px;
+    object-fit: cover;
+    object-position: center;    
+}
+.card-body{
+    text-align: center;
+}
 @media (max-width:1280px) {
     .procedimiento {
         width: calc(100%/2);

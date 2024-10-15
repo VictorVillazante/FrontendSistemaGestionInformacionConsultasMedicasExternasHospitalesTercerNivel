@@ -43,17 +43,22 @@
               >Admisiones</a
             >
           </li>
+          <li class="nav-item">
+            <a class="nav-link single-line" aria-current="page" routerLink="procedimientos"
+              >Procedimientos</a
+            >
+          </li>
           <li *ngIf="estaLogeado" class="nav-item" routerLink="/menu">
             <a class="nav-link single-line" aria-current="page" routerLink="/"
               >Menu</a
             >
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link d-flex ver-mas" aria-current="page" routerLink="/">
                 Mas
                 <i class="fas fa-chevron-down text-white me-2"></i>
             </a>
-          </li>
+          </li> -->
           <button
             *ngIf="!estaLogeado"
             class="btn btn-success-hospital"

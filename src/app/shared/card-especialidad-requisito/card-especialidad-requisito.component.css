@@ -7,20 +7,25 @@
     border-radius: 20px;
     margin: 0px 10px; 
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.747);
 }
 .card-especialidad-requisito img{
     position: absolute;
     object-fit: cover;
     width: 100%;
     height: 100%;
-    opacity: .9;   
+    opacity: .7;   
 }
 .nombre-especialidad{
     font-weight: bold;
-    color: var(--color4);
+    color: var(--color1);
     z-index: 2;
     padding: 5px;
 }
 .card-especialidad-requisito:hover{
-    background-color: white;
+    background-color: var(--color2);
+    color: black;
+}
+.card-especialidad-requisito:hover .nombre-especialidad{
+    color: black;
 }

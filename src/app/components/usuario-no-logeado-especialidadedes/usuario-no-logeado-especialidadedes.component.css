@@ -21,7 +21,7 @@
 }
 
 .contenedor-vacio {
-    background-color: #0a496e4a;
+    background-color: var(--color4);
     height: 400px;
 }
 @media (min-width:415px) and (max-width:1279px){
