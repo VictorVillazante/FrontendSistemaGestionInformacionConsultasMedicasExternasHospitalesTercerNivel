@@ -21,10 +21,15 @@ export class Comunicado{
         comunicado.cuerpo=json.cuerpo??"";
         comunicado.citas=json.citas??"";
         comunicado.datosContacto=json.datosContacto??"";
-        comunicado.imagenes = json.imagenes ? json.imagenes.map((imagen: any) => new Imagen().jsonToImagen(imagen)) : [];
+        comunicado.imagenes = json.imagenes && json.imagenes.length > 0 ? json.imagenes.map((imagen: any) => new Imagen().jsonToImagen(imagen)) : this.agregarImagenDefecto();
         comunicado.createdAt = json.createdAt ? new Date(json.createdAt) : null;
         comunicado.updatedAt = json.updatedAt ? new Date(json.updatedAt) : null;
         comunicado.deletedAt = json.deletedAt ? new Date(json.deletedAt) : null;
         return comunicado;
+    }
+    agregarImagenDefecto(): Imagen[] {
+        let imagen = new Imagen();
+        imagen.url="/assets/images/img-comunicado-defecto.jpg";
+        return [imagen];
     }
 }

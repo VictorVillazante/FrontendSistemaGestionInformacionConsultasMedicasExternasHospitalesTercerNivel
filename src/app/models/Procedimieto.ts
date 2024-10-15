@@ -13,10 +13,15 @@ export class Procedimiento{
         let procedimiento = new Procedimiento();
         procedimiento.idProcedimiento = json.idProcedimiento ?? 0;
         procedimiento.nombreProcedimiento = json.nombreProcedimiento ?? "";
-        procedimiento.imagenes = json.imagenes ? json.imagenes.map((imagen: any) => new Imagen().jsonToImagen(imagen)): [];
+        procedimiento.imagenes = json.imagenes  && json.imagenes.length > 0? json.imagenes.map((imagen: any) => new Imagen().jsonToImagen(imagen)): this.obtenerImagenesDefecto();
         procedimiento.createdAt = json.createdAt ? new Date(json.createdAt) : null;
         procedimiento.updatedAt = json.updatedAt ? new Date(json.updatedAt) : null;
         procedimiento.deletedAt = json.deletedAt ? new Date(json.deletedAt) : null;
         return procedimiento;
+    }
+    obtenerImagenesDefecto(): Imagen[] {
+        let imagen = new Imagen();
+        imagen.url="/assets/images/img-procedimiento-defecto.jpg";
+        return [imagen];
     }
 }

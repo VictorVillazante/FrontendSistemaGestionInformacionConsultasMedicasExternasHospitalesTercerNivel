@@ -26,10 +26,16 @@ export class MedicoEspecialista{
         medico.email = json.email ?? "";
         medico.celular = json.celular ?? "";
         medico.aniosExperiencia = json.aniosExperiencia ?? 0;
-        medico.imagenes = json.imagenes ? json.imagenes.map((img: any) => new Imagen().jsonToImagen(img)) : [];
+        medico.imagenes = json.imagenes && json.imagenes.length > 0 ? json.imagenes.map((img: any) => new Imagen().jsonToImagen(img)) : this.obtenerImagenesDefecto();
         medico.especialidades = json.especialidades ? json.especialidades.map((esp: any) => new Especialidad().jsonToEspecialidad(esp)) : [];
         medico.turnosAtencionMedica = json.turnosAtencionMedica ?? [];
         medico.descripcion = json.descripcion ?? "";
+        console.log(medico);
         return medico;
+    }
+    obtenerImagenesDefecto(): Imagen[] {
+        let imagen = new Imagen();
+        imagen.url="/assets/images/img-doctor-defecto.jpg";
+        return [imagen];
     }
 }
