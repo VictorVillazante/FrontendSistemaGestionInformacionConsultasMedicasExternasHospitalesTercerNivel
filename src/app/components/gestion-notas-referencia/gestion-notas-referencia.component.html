@@ -2,6 +2,7 @@
   <h1 class="text-center p-3">Gestion notas de referencia</h1>
   <app-formulario-filtrado-documentos
     [documentos]="notasReferencia"
+    [documentosAux]="notasReferenciaAux"
     (documentosEvent)="handleNotasReferencia($event)"
   ></app-formulario-filtrado-documentos>
   <button

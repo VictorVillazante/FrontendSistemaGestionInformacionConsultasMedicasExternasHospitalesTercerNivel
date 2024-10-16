@@ -19,6 +19,8 @@ export class GestionNotasReferenciaComponent implements OnInit{
   }
 
   notasReferencia: any[] = [];
+  notasReferenciaAux: any[] = [];
+
   constructor(private router: Router, private notasReferenciaService: NotasReferenciaService) {}
   ngOnInit(): void {
     this.obtenerNotasReferencia();    
@@ -26,6 +28,7 @@ export class GestionNotasReferenciaComponent implements OnInit{
   obtenerNotasReferencia() {
     this.notasReferenciaService.obtenerNotasReferencia().subscribe((data: any) => {
       this.notasReferencia = data;
+      this.notasReferenciaAux = data;
     });
   }
   verDetallesNotasReferencia(id: any) {

@@ -68,7 +68,7 @@ export class ActualizacionNotaReferenciaComponent {
         monitoreo:data.monitoreo,
         informeTrabajoSocial:data.informeTrabajoSocial,
         idPaciente:data.idPaciente,
-        ciPaciente:data.ciPaciente,
+        ciPaciente:data.ciPropietario,
         idHistoriaClinica:data.idHistoriaClinica,
         diagnosticoPresuntivo:data.diagnosticoPresuntivo
         
@@ -130,7 +130,7 @@ export class ActualizacionNotaReferenciaComponent {
       scrollbarPadding:true,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.notasReferenciaService.registrarNotaReferencia(this.formularioNotaReferencia).subscribe((data:any)=>{
+        this.notasReferenciaService.actualizarNotaReferencia(this.formularioNotaReferencia,this.id).subscribe((data:any)=>{
           Swal.fire({
             icon: 'success',
             text:"Se realizo la accion correctamente",
@@ -155,13 +155,12 @@ export class ActualizacionNotaReferenciaComponent {
   }
   seleccionarPaciente(paciente: any) {
     this.isAutocompletePacienteFocused = false;
-    this.formularioNotaReferencia.controls['idPaciente'].setValue(paciente.idPaciente);
+    this.formularioNotaReferencia.controls['idPaciente'].setValue(paciente.idUsuario);
     this.formularioNotaReferencia.controls['ciPaciente'].setValue(paciente.ci);
-    this.obtenerHistoriasClinicasPaciente(paciente.idPaciente);
   }
   seleccionarHistoriaClinica(historiaClinica: any) {
     this.isAutocompletePacienteFocused = false;
-    this.formularioNotaReferencia.controls['idHistoriaClinica'].setValue(historiaClinica.idHistoriaClinica);
+    this.formularioNotaReferencia.controls['idHistoriaClinica'].setValue(historiaClinica.id);
     this.formularioNotaReferencia.controls['diagnosticoPresuntivo'].setValue(historiaClinica.diagnosticoPresuntivo);
   }
   obtenerHistoriasClinicasPaciente(idPaciente: any) {
