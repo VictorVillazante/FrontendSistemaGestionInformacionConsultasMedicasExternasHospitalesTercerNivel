@@ -43,7 +43,7 @@ export class DetalleNotaReferenciaComponent {
   obtenerNotaReferencia(id: any) {
     this.notasReferenciaService.obtenerNotaReferencia(id).subscribe((data:any)=>{
       this.formularioNotaReferencia.patchValue({
-        idNotaReferencia:data.idNotaReferencia,
+        idNotaReferencia:data.id,
         datosClinicos:data.datosClinicos,
         datosIngreso:data.datosIngreso,
         datosEgreso:data.datosEgreso,
