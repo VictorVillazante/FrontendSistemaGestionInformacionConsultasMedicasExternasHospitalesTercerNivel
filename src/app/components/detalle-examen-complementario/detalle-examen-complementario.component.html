@@ -1,1 +1,147 @@
-<p>detalle-examen-complementario works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Nota de Evolucion</h1>
+    <form [formGroup]="examenComplementarioForm">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input 
+                id="nombre" 
+                formControlName="nombre" 
+                class="form-control" 
+                readonly
+            />
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea 
+                id="descripcion" 
+                formControlName="descripcion" 
+                class="form-control" 
+                readonly
+            ></textarea>
+        </div>
+        <div class="form-group">
+            <label for="resumenResultados">Resumen de Resultados</label>
+            <textarea 
+                id="resumenResultados" 
+                formControlName="resumenResultados" 
+                class="form-control" 
+                readonly
+            ></textarea>
+        </div>
+        <div class="form-group">
+            <label for="fechaResultado">Fecha de Resultado</label>
+            <input 
+                id="fechaResultado" 
+                type="date" 
+                formControlName="fechaResultado" 
+                class="form-control" 
+                [value]="examenComplementarioForm.get('fechaResultado')?.value | date:'yyyy-MM-dd'"
+                readonly
+            />
+        </div>
+        <div class="form-group">
+            <label for="fechaSolicitud">Fecha de Solicitud</label>
+            <input 
+                id="fechaSolicitud" 
+                formControlName="fechaSolicitud" 
+                type="date" 
+                class="form-control" 
+                readonly
+                [value]="examenComplementarioForm.get('fechaSolicitud')?.value | date:'yyyy-MM-dd'"
+            />
+        </div>
+      
+      <div class="mb-3">
+        <label for="idHistoriaClinica" class="form-label"
+          >ID historia clinica <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(examenComplementarioForm.value.idHistoriaClinica)"></i></label
+        >
+        <textarea
+          id="idHistoriaClinica"
+          class="form-control"
+          formControlName="idHistoriaClinica"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="diagnosticoPresuntivo" class="form-label"
+          >Diagnostico presuntivo</label
+        >
+        <textarea
+          id="diagnosticoPresuntivo"
+          class="form-control"
+          formControlName="diagnosticoPresuntivo"
+          readonly
+        ></textarea>
+      </div> 
+      <div class="mb-3">
+        <label for="idMedico" class="form-label"
+          >ID medico</label
+        >
+        <textarea
+          id="idMedico"
+          class="form-control"
+          formControlName="idMedico"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="nombreMedico" class="form-label"
+          >Nombre medico</label
+        >
+        <textarea
+          id="nombreMedico"
+          class="form-control"
+          formControlName="nombreMedico"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="ciPaciente" class="form-label"
+          >CI propietario</label
+        >
+        <textarea
+          id="ciPaciente"
+          class="form-control"
+          formControlName="ciPaciente"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="pacientePropietario" class="form-label"
+          >Paciente propietario</label
+        >
+        <textarea
+          id="pacientePropietario"
+          class="form-control"
+          formControlName="pacientePropietario"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="createdAt" class="form-label"
+          >Creacion</label
+        >
+        <textarea
+          id="createdAt"
+          class="form-control"
+          formControlName="createdAt"
+          [value]="examenComplementarioForm.get('createdAt')?.value | date:'yyyy-MM-dd'"
+
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="updatedAt" class="form-label"
+          >Ultima modificacion</label
+        >
+        <textarea
+          id="updatedAt"
+          class="form-control"
+          formControlName="updatedAt"
+          [value]="examenComplementarioForm.get('createdAt')?.value | date:'yyyy-MM-dd'"
+
+          readonly
+        ></textarea>
+      </div>
+    </form>
+  </div>
