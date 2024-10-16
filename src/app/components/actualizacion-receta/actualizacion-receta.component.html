@@ -1,1 +1,97 @@
-<p>actualizacion-receta works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Receta</h1>
+    <form [formGroup]="formularioReceta" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nombreGenericoMedicamentoPreescrito" class="form-label">Nombre generico del medicamento preescrito</label>
+        <textarea id="nombreGenericoMedicamentoPreescrito" class="form-control" formControlName="nombreGenericoMedicamentoPreescrito"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="viaCuidadoEspecialesAdministracion" class="form-label">Via cuidado especiales de administracion</label>
+        <textarea id="viaCuidadoEspecialesAdministracion" class="form-control" formControlName="viaCuidadoEspecialesAdministracion"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="concentracionDosificacion" class="form-label">Concentracion dosificacion</label>
+        <textarea id="concentracionDosificacion" class="form-control" formControlName="concentracionDosificacion"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="frecuenciaAdministracion24hrs" class="form-label">Frecuencia de administracion cada 24hrs</label>
+        <textarea id="frecuenciaAdministracion24hrs" class="form-control" formControlName="frecuenciaAdministracion24hrs"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="duracionTratamiento" class="form-label">Duracion de tratamiento</label>
+        <textarea id="duracionTratamiento" class="form-control" formControlName="duracionTratamiento"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="fechaVencimiento" class="form-label">Fecha de vencimiento</label>
+        <input type="date" class="form-control border-dark" id="fechaVencimiento" formControlName="fechaVencimiento" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="precaucionesEspeciales" class="form-label">Precauciones especiales</label>
+        <textarea id="precaucionesEspeciales" class="form-control" formControlName="precaucionesEspeciales"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="indicacionesEspeciales" class="form-label">Indicaciones especiales</label>
+        <textarea id="indicacionesEspeciales" class="form-control" formControlName="indicacionesEspeciales"></textarea>
+      </div>
+      
+      <div class="mb-3">
+        <label for="pacientes" class="form-label">Selecciona paciente para buscar historia clinica</label>
+        <input
+          (focus)="onFocusPaciente()"
+          (blur)="onBlurPaciente()"
+          type="text"
+          class="form-control"
+          formControlName="ciPaciente"
+          id="pacientes"
+          (input)="filterSuggestionsPaciente($event)"
+          name="pacienteInput"
+        />
+        <ul
+          *ngIf="isAutocompletePacienteFocused && filteredSuggestionsPacientes.length > 0"
+          class="list-group mt-2"
+          id="lista-opciones-alumno"
+        >
+          <li class="list-group-item" *ngFor="let paciente of filteredSuggestionsPacientes" (click)="seleccionarPaciente(paciente)">
+            {{ paciente.ci }}
+          </li>
+        </ul>
+      </div>
+      <a *ngIf="formularioReceta.value.ciPaciente!=''" class="btn btn-success-hospital" (click)="obtenerHistoriasClinicasPaciente(formularioReceta.value.idPaciente)">Buscar historias clinicas</a>
+      <div class="mb-3">
+        <label for="historiasClinicas" class="form-label">Historia clinica</label>
+        <input
+          (focus)="onFocusHistoriaClinica()"
+          (blur)="onBlurHistoriaClinica()"
+          type="text"
+          class="form-control"
+          formControlName="diagnosticoPresuntivo"
+          id="historiasClinicas"
+          (input)="filterSuggestionsHistoriaClinica($event)"
+          name="historiaClinicaInput"
+        />
+        <ul
+          *ngIf="isAutocompleteHistoriaClinicaFocused && filteredSuggestionsHistoriasClinicas.length > 0"
+          class="list-group mt-2"
+          id="lista-opciones-historia-clinica"
+        >
+          <li class="list-group-item" *ngFor="let historiaClinica of filteredSuggestionsHistoriasClinicas" (click)="seleccionarHistoriaClinica(historiaClinica)">
+            {{ historiaClinica.diagnosticoPresuntivo }}
+          </li>
+        </ul>
+      </div>
+      
+      <button
+        class="btn btn-success-hospital "
+        type="submit"
+      >
+        Actualizar
+      </button>
+    </form>
+    
+     
+      
+ </div>     
