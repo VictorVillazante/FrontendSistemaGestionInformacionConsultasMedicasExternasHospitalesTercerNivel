@@ -10,6 +10,7 @@ import { PapeletasInternacionService } from 'src/app/services/papeletas-internac
 })
 export class GestionPapeletasInternacionComponent implements OnInit {
   listadoPapeletasInternacion: any[] = [];
+  listadoPapeletasInternacionAux: any[] = [];
   constructor(private router:Router,private papeletasInternacionService: PapeletasInternacionService) { }
   handlePapeletasInternacion($event: any) {
     this.listadoPapeletasInternacion = $event;
@@ -17,12 +18,13 @@ export class GestionPapeletasInternacionComponent implements OnInit {
   ngOnInit(): void {
     this.papeletasInternacionService.obtenerPapeletasInternacion().subscribe((pi) => {
       this.listadoPapeletasInternacion = pi;
+      this.listadoPapeletasInternacionAux = pi;
     })
   }
   actualizarPapeletaInternacion(id:number){
-    this.router.navigate(["medico/modificar-papeleta-internacion",id]);
+    this.router.navigate(["/medico/modificar-papeleta-internacion",id]);
   }
   verDetallePapeletaInternacion(id:number){
-    this.router.navigate(["detalle-papeleta-internacion",id]);
+    this.router.navigate(["/detalle-papeleta-internacion",id]);
   }
 }

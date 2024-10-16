@@ -2,6 +2,7 @@
   <h1 class="p-3 text-center">Gestion papeletas de internacion</h1>
   <app-formulario-filtrado-documentos
     [documentos]="listadoPapeletasInternacion"
+    [documentosAux]="listadoPapeletasInternacionAux"
     (documentosEvent)="handlePapeletasInternacion($event)"
   ></app-formulario-filtrado-documentos>
   <button

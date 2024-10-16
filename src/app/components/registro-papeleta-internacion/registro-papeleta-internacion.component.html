@@ -1,1 +1,32 @@
-<p>registro-papeleta-internacion works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Papeleta de internacion</h1>
+    <form [formGroup]="papeletaInternacionForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="diagnostico">Diagnostico</label>
+            <textarea 
+                id="diagnostico" 
+                formControlName="diagnostico" 
+                class="form-control" 
+            ></textarea>
+        </div>
+        <div class="form-group">
+            <label for="fechaIngreso">Fecha de Ingreso</label>
+            <input 
+                id="fechaIngreso" 
+                type="date" 
+                formControlName="fechaIngreso" 
+                class="form-control" 
+            />
+        </div>
+        <app-input-historia-clinica-formulario-documentos-expediente
+            (idHistoriaClinicaEvent)="handleIdHistoriaClinica($event)"
+        >
+        </app-input-historia-clinica-formulario-documentos-expediente>
+        <button
+            class="btn btn-success-hospital "
+            type="submit"
+        >
+            Registrar
+        </button>
+    </form>
+ </div>     

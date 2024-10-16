@@ -1,1 +1,119 @@
-<p>detalle-papeleta-internacion works!</p>
+<div class="container mt-5">
+    <h1 class="text-center p-3">Detalle de Nota de Evolucion</h1>
+    <form [formGroup]="papeletaInternacionForm">
+      
+        <div class="form-group">
+            <label for="diagnostico">Diagnostico</label>
+            <textarea 
+                id="diagnostico" 
+                formControlName="diagnostico" 
+                class="form-control" 
+                readonly
+            ></textarea>
+        </div>
+        <div class="form-group">
+            <label for="fechaIngreso">Fecha de Ingreso</label>
+            <input 
+                id="fechaIngreso" 
+                type="date" 
+                formControlName="fechaIngreso" 
+                class="form-control" 
+                [value]="papeletaInternacionForm.get('fechaIngreso')?.value | date:'yyyy-MM-dd'"
+
+                readonly
+            />
+        </div>
+      <div class="mb-3">
+        <label for="idHistoriaClinica" class="form-label"
+          >ID historia clinica <i class="fas fa-share-square" (click)="verDetalleHistoriaClinica(papeletaInternacionForm.value.idHistoriaClinica)"></i></label
+        >
+        <textarea
+          id="idHistoriaClinica"
+          class="form-control"
+          formControlName="idHistoriaClinica"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="diagnosticoPresuntivo" class="form-label"
+          >Diagnostico presuntivo</label
+        >
+        <textarea
+          id="diagnosticoPresuntivo"
+          class="form-control"
+          formControlName="diagnosticoPresuntivo"
+          readonly
+        ></textarea>
+      </div> 
+      <div class="mb-3">
+        <label for="idMedico" class="form-label"
+          >ID medico</label
+        >
+        <textarea
+          id="idMedico"
+          class="form-control"
+          formControlName="idMedico"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="nombreMedico" class="form-label"
+          >Nombre medico</label
+        >
+        <textarea
+          id="nombreMedico"
+          class="form-control"
+          formControlName="nombreMedico"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="ciPropietario" class="form-label"
+          >CI propietario</label
+        >
+        <textarea
+          id="ciPropietario"
+          class="form-control"
+          formControlName="ciPropietario"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="pacientePropietario" class="form-label"
+          >Paciente propietario</label
+        >
+        <textarea
+          id="pacientePropietario"
+          class="form-control"
+          formControlName="pacientePropietario"
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="createdAt" class="form-label"
+          >Creacion</label
+        >
+        <textarea
+          id="createdAt"
+          class="form-control"
+          formControlName="createdAt"
+          [value]="papeletaInternacionForm.get('createdAt')?.value | date:'yyyy-MM-dd'"
+
+          readonly
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="updatedAt" class="form-label"
+          >Ultima modificacion</label
+        >
+        <textarea
+          id="updatedAt"
+          class="form-control"
+          formControlName="updatedAt"
+          [value]="papeletaInternacionForm.get('updatedAt')?.value | date:'yyyy-MM-dd'"
+
+          readonly
+        ></textarea>
+      </div>
+    </form>
+  </div>
