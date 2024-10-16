@@ -131,6 +131,7 @@ import { HttpNgRokInterceptor } from './interceptors/http-ngrok.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UsuarioNoLogeadoElementosProcedimientoComponent } from './components/usuario-no-logeado-elementos-procedimiento/usuario-no-logeado-elementos-procedimiento.component';
 import { UsuarioNoLogeadoDescripcionProcedimientoElementoComponent } from './components/usuario-no-logeado-descripcion-procedimiento-elemento/usuario-no-logeado-descripcion-procedimiento-elemento.component';
+import { InputHistoriaClinicaFormularioDocumentosExpedienteComponent } from './shared/input-historia-clinica-formulario-documentos-expediente/input-historia-clinica-formulario-documentos-expediente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -253,7 +254,8 @@ import { UsuarioNoLogeadoDescripcionProcedimientoElementoComponent } from './com
     GestionProcedimientosElementosPasosComponent,
     GestionProcedimientosElementosRequisitosComponent,
     UsuarioNoLogeadoElementosProcedimientoComponent,
-    UsuarioNoLogeadoDescripcionProcedimientoElementoComponent
+    UsuarioNoLogeadoDescripcionProcedimientoElementoComponent,
+    InputHistoriaClinicaFormularioDocumentosExpedienteComponent
   ],
   imports: [
     BrowserModule,

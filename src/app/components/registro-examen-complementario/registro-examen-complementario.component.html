@@ -1,1 +1,57 @@
-<p>registro-examen-complementario works!</p>
+<div class="container mt-5">
+  <h1 class="text-center p-3">Detalle de Examen Complementario</h1>
+  <form [formGroup]="examenComplementarioForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input 
+              id="nombre" 
+              formControlName="nombre" 
+              class="form-control" 
+          />
+      </div>
+      <div class="form-group">
+          <label for="descripcion">Descripción</label>
+          <textarea 
+              id="descripcion" 
+              formControlName="descripcion" 
+              class="form-control" 
+          ></textarea>
+      </div>
+      <div class="form-group">
+          <label for="resumenResultados">Resumen de Resultados</label>
+          <textarea 
+              id="resumenResultados" 
+              formControlName="resumenResultados" 
+              class="form-control" 
+          ></textarea>
+      </div>
+      <div class="form-group">
+          <label for="fechaResultado">Fecha de Resultado</label>
+          <input 
+              id="fechaResultado" 
+              type="date" 
+              formControlName="fechaResultado" 
+              class="form-control" 
+          />
+      </div>
+      <div class="form-group">
+          <label for="fechaSolicitud">Fecha de Solicitud</label>
+          <input 
+              id="fechaSolicitud" 
+              type="date" 
+              formControlName="fechaSolicitud" 
+              class="form-control" 
+          />
+      </div>
+      <app-input-historia-clinica-formulario-documentos-expediente
+          (idHistoriaClinicaEvent)="handleIdHistoriaClinica($event)"
+      >
+      </app-input-historia-clinica-formulario-documentos-expediente>
+      <button
+          class="btn btn-success-hospital "
+          type="submit"
+      >
+          Registrar examen complementario
+      </button>
+  </form>
+</div>     
