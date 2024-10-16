@@ -42,7 +42,7 @@ export class DetalleNotaEvolucionComponent {
       this.formularioNotaEvolucion.patchValue({
         cambiosPacienteResultadosTratamiento:data.cambiosPacienteResultadosTratamiento,
         idHistoriaClinica:data.idHistoriaClinica,
-        idNotaEvolucion:data.idNotaEvolucion,
+        idNotaEvolucion:data.id,
         idMedico:data.idMedico,
         idPropietario:data.idPropietario,
         ciPropietario:data.ciPropietario,

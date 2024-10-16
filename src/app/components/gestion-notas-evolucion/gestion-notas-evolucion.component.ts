@@ -11,7 +11,10 @@ export class GestionNotasEvolucionComponent implements OnInit {
   handleDocumentos($event: any) {
     this.notasEvolucion = $event;
   }
+  cargando: boolean = true;
   notasEvolucion: any[] = [];
+  notasEvolucionAux: any[] = [];
+  
   constructor(private router: Router, private notaEvolucionService: NotaEvolucionService) {
   }
   ngOnInit(): void {
@@ -26,6 +29,8 @@ export class GestionNotasEvolucionComponent implements OnInit {
   obtenerNotasEvolucion() {
     this.notaEvolucionService.obtenerNotasEvolucion().subscribe((data: any) => {
       this.notasEvolucion = data;
+      this.notasEvolucionAux = data;
+      this.cargando = false;
     });
   }
   verDetalles(id: any) {

@@ -115,13 +115,12 @@ export class RegistroNotaEvolucionComponent {
   }
   seleccionarPaciente(paciente: any) {
     this.isAutocompletePacienteFocused = false;
-    this.formularioNotaEvolucion.controls['idPaciente'].setValue(paciente.idPaciente);
+    this.formularioNotaEvolucion.controls['idPaciente'].setValue(paciente.idUsuario);
     this.formularioNotaEvolucion.controls['ciPaciente'].setValue(paciente.ci);
-    this.obtenerHistoriasClinicasPaciente(paciente.idPaciente);
   }
   seleccionarHistoriaClinica(historiaClinica: any) {
     this.isAutocompletePacienteFocused = false;
-    this.formularioNotaEvolucion.controls['idHistoriaClinica'].setValue(historiaClinica.idHistoriaClinica);
+    this.formularioNotaEvolucion.controls['idHistoriaClinica'].setValue(historiaClinica.id);
     this.formularioNotaEvolucion.controls['diagnosticoPresuntivo'].setValue(historiaClinica.diagnosticoPresuntivo);
   }
   obtenerHistoriasClinicasPaciente(idPaciente: any) {

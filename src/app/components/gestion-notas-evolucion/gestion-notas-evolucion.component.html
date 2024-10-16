@@ -2,6 +2,7 @@
   <h1 class="text-center p-3">Gestion notas de evolucion</h1>
   <app-formulario-filtrado-documentos
     [documentos]="notasEvolucion"
+    [documentosAux]="notasEvolucionAux"
     (documentosEvent)="handleDocumentos($event)"
   />
   <button

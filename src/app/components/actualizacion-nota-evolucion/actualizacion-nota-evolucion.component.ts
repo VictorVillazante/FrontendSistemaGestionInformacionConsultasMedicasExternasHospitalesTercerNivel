@@ -41,13 +41,12 @@ export class ActualizacionNotaEvolucionComponent {
   }
   obtenerDetalleNotaEvolucion(id:any){
     this.notaEvolucionService.obtenerNotaEvolucion(id).subscribe((data)=>{
-      let diagnostivoPresentivoObtenido=this.historiasClinicas.filter(historiaClinica=>historiaClinica.idHistoriaClinica==data.idHistoriaClinica);
       this.formularioNotaEvolucion.patchValue({
         cambiosPacienteResultadosTratamiento:data.cambiosPacienteResultadosTratamiento,
         idPaciente:data.idPaciente,
         idHistoriaClinica:data.idHistoriaClinica,
-        diagnosticoPresuntivo:diagnostivoPresentivoObtenido,
-        ciPaciente:data.ciPaciente,
+        diagnosticoPresuntivo:data.diagnosticoPresuntivo,
+        ciPaciente:data.ciPropietario	,
       });
     });
   }
@@ -131,29 +130,20 @@ export class ActualizacionNotaEvolucionComponent {
     });
   }
   seleccionarPaciente(paciente: any) {
+    console.log(paciente);
     this.isAutocompletePacienteFocused = false;
-    this.formularioNotaEvolucion.controls['idPaciente'].setValue(paciente.idPaciente);
+    this.formularioNotaEvolucion.controls['idPaciente'].setValue(paciente.idUsuario);
     this.formularioNotaEvolucion.controls['ciPaciente'].setValue(paciente.ci);
-    this.obtenerHistoriasClinicasPaciente(paciente.idPaciente);
   }
   seleccionarHistoriaClinica(historiaClinica: any) {
     this.isAutocompletePacienteFocused = false;
-    this.formularioNotaEvolucion.controls['idHistoriaClinica'].setValue(historiaClinica.idHistoriaClinica);
+    this.formularioNotaEvolucion.controls['idHistoriaClinica'].setValue(historiaClinica.id);
     this.formularioNotaEvolucion.controls['diagnosticoPresuntivo'].setValue(historiaClinica.diagnosticoPresuntivo);
   }
   obtenerHistoriasClinicasPaciente(idPaciente: any) {
     this.historiasClinicasService.obtenerHistoriasClinicasDePaciente(idPaciente).subscribe((data)=>{
       this.historiasClinicas=data;
     });
-  }
-  buscarCiEnPaciente(data: any): any {
-    let pacienteBuscado=this.pacientes.filter((paciente)=>{paciente.idPaciente==data.idPaciente});
-    return pacienteBuscado[0].ciPaciente;
-  }
-  
-  buscarDiagnosticoEnHistoriasClinicas(data: any): any {
-    let historiaClinicaBuscada=this.historiasClinicas.filter((historiaClinica)=>{historiaClinica.idHistoriaClinica==data.idHistoriaClinica});
-    return historiaClinicaBuscada[0].diagnosticoPresuntivo;
   }
   
 }
