@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
 })
 export class GestionRecetasComponent implements OnInit {
   recetas: any[] = [];
+  recetasAux: any[] = [];
+
   constructor(private router: Router, private recetasService: RecetasService) {
   }
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class GestionRecetasComponent implements OnInit {
   obtenerRecetas() {
     this.recetasService.obtenerRecetas().subscribe((data: any) => {
       this.recetas = data;
+      this.recetasAux = data;
     });
   }
   verDetalleReceta(id: any) {

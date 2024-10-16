@@ -16,6 +16,13 @@ export class RecetasService {
     //return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`,receta);
     return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`,recetaAux);
   }
+  actualizarReceta(receta: any, idReceta:number) {
+    let idMedico=1;
+    let recetaAux=receta.value;
+    recetaAux.idMedico=idMedico;
+    //return this.http.post<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`,receta);
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/${idReceta}`,recetaAux);
+  }
   obtenerReceta(id: any) {
     // let token=localStorage.getItem('token');
     // return of({
@@ -82,12 +89,9 @@ export class RecetasService {
     //   }
     // ]
     // );
-    return of(this.listadoRecetas.filter(receta=>receta.idPaciente==3));
+    // return of(this.listadoRecetas.filter(receta=>receta.idPaciente==3));
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/paciente/${idPaciente}`);
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas/paciente/${idPaciente}`);
-  }
-  eliminarReceta(id: any) {
-    throw new Error('Method not implemented.');
   }
   obtenerRecetas() {
     // let token=localStorage.getItem('token');
@@ -149,7 +153,7 @@ export class RecetasService {
     // ]
     // );
     //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`);
-    return of(this.listadoRecetas);
+    // return of(this.listadoRecetas);
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-recetas/recetas`);
 
   }

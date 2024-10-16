@@ -86,6 +86,7 @@ import { GestionProcedimientosElementosPasosComponent } from "./components/gesti
 import { GestionProcedimientosElementosRequisitosComponent } from "./components/gestion-procedimientos-elementos-requisitos/gestion-procedimientos-elementos-requisitos.component";
 import { UsuarioNoLogeadoElementosProcedimientoComponent } from "./components/usuario-no-logeado-elementos-procedimiento/usuario-no-logeado-elementos-procedimiento.component";
 import { UsuarioNoLogeadoDescripcionProcedimientoElementoComponent } from "./components/usuario-no-logeado-descripcion-procedimiento-elemento/usuario-no-logeado-descripcion-procedimiento-elemento.component";
+import { ActualizacionRecetaComponent } from "./components/actualizacion-receta/actualizacion-receta.component";
 
 const APP_ROUTES: Routes = [ 
     { path: '', component:  HomeComponent},
@@ -185,7 +186,7 @@ const APP_ROUTES: Routes = [
        
     { path: 'medico/gestion-recetas', component:  GestionRecetasComponent},
     { path: 'medico/registro-receta', component:  RegistroRecetaComponent},
-    { path: 'medico/modificar-receta/:id', component:  ActualizacionNotaReferenciaComponent},
+    { path: 'medico/modificar-receta/:id', component:  ActualizacionRecetaComponent},
 
     { path: 'medico/gestion-notas-evolucion', component:  GestionNotasEvolucionComponent},
     { path: 'medico/registro-nota-evolucion', component:  RegistroNotaEvolucionComponent},

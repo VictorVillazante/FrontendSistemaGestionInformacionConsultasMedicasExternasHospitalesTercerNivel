@@ -125,13 +125,12 @@ export class RegistroRecetaComponent {
 
   seleccionarPaciente(paciente: any) {
     this.isAutocompletePacienteFocused = false;
-    this.formularioReceta.controls['idPaciente'].setValue(paciente.idPaciente);
+    this.formularioReceta.controls['idPaciente'].setValue(paciente.idUsuario);
     this.formularioReceta.controls['ciPaciente'].setValue(paciente.ci);
-    this.obtenerHistoriasClinicasPaciente(paciente.idPaciente);
   }
   seleccionarHistoriaClinica(historiaClinica: any) {
     this.isAutocompletePacienteFocused = false;
-    this.formularioReceta.controls['idHistoriaClinica'].setValue(historiaClinica.idHistoriaClinica);
+    this.formularioReceta.controls['idHistoriaClinica'].setValue(historiaClinica.id);
     this.formularioReceta.controls['diagnosticoPresuntivo'].setValue(historiaClinica.diagnosticoPresuntivo);
   }
   obtenerHistoriasClinicasPaciente(idPaciente: any) {

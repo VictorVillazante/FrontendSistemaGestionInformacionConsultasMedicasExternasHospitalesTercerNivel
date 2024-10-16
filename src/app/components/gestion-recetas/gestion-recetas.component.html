@@ -2,6 +2,7 @@
   <h1 class="text-center p-3">Gestion recetas</h1>
   <app-formulario-filtrado-documentos
     [documentos]="recetas"
+    [documentosAux]="recetasAux"
     (documentosEvent)="handleRecetas($event)"
   ></app-formulario-filtrado-documentos>
   <button class="btn btn-success-hospital" routerLink="/medico/registro-receta">
