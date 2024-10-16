@@ -13,12 +13,15 @@ export class GestionHistoriasClinicasComponent {
   }
 
   historiasClinicas: any[] = [];
+  historiasClinicasAux: any[] = [];
+
   constructor(private router:Router,private historiasClinicasService:HistoriasClinicasService) {
     this.obtenerHistoriasClinicas();
    }
    obtenerHistoriasClinicas(){
     this.historiasClinicasService.obtenerHistoriasClinicas().subscribe((data:any)=>{
       this.historiasClinicas=data;
+      this.historiasClinicasAux=data;
     });
   }
   verDetallerHistoriaClinica(id:any){

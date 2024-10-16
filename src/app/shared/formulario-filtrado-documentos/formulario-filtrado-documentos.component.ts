@@ -1,26 +1,34 @@
 import { formatDate } from '@angular/common';
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-formulario-filtrado-documentos',
   templateUrl: './formulario-filtrado-documentos.component.html',
   styleUrls: ['./formulario-filtrado-documentos.component.css']
 })
-export class FormularioFiltradoDocumentosComponent implements OnInit{
+export class FormularioFiltradoDocumentosComponent{
   @Input() documentos!:any;
+  @Input() documentosAux!:any;
+
   @Output() documentosEvent = new EventEmitter<any>();
-  documentosAux:any[]=[];
   cambiarTipoBusqueda(){
     this.esBusquedaAvanzada=!this.esBusquedaAvanzada;
   }
-  ngOnInit(): void {
-      this.documentosAux=this.documentos;
-  }
+  // ngOnInit() {
+  //   console.log("ng on init");
+  //   console.log(this.documentos);
+  //   this.documentosAux=this.documentos;
+  // }
+  // ngAfterViewInit() {
+  //   console.log("");
+  //   this.documentosAux=this.documentos;
+  // }
   emitEventCambiarDocumentos(documentos:any) {
     this.documentosEvent.emit(documentos);
   }
   filtrarNotasEvolucion() {
     console.log("filtrar")
+    console.log(this.documentosAux);
     let documentosAuxAFiltrar=this.documentosAux;
     if(this.fechaInicio && this.fechaFin){
       documentosAuxAFiltrar=documentosAuxAFiltrar.filter((notaEvolucion:any)=>{
@@ -31,14 +39,14 @@ export class FormularioFiltradoDocumentosComponent implements OnInit{
         return fechaFormateadaDate>=fechaInicioDate && fechaFormateadaDate<=fechaFinDate;
       })
     }
-    if(this.ciPaciente){
+    if(this.ciPropietario){
       documentosAuxAFiltrar=documentosAuxAFiltrar.filter((notaEvolucion:any)=>{
-        return notaEvolucion.ciPropietario.includes(this.ciPaciente);
+        return notaEvolucion.ciPropietario.includes(this.ciPropietario);
       })
     }
-    if(this.nombrePaciente){
+    if(this.pacientePropietario){
       documentosAuxAFiltrar=documentosAuxAFiltrar.filter((notaEvolucion:any)=>{
-        return this.quitarAcentos(notaEvolucion.pacientePropietario.toLowerCase()).includes(this.quitarAcentos(this.nombrePaciente.toLowerCase()));
+        return this.quitarAcentos(notaEvolucion.pacientePropietario.toLowerCase()).includes(this.quitarAcentos(this.pacientePropietario.toLowerCase()));
       })
     }
     if(this.nombreMedico){
@@ -57,7 +65,7 @@ export class FormularioFiltradoDocumentosComponent implements OnInit{
       })
     }
     this.documentos=documentosAuxAFiltrar;
-    if(!this.fechaInicio && !this.ciPaciente && !this.fechaFin && !this.nombrePaciente && !this.nombrePaciente && !this.nombreEspecialidad && !this.diagnosticoPresuntivo){
+    if(!this.fechaInicio && !this.ciPropietario && !this.fechaFin && !this.pacientePropietario && !this.nombreEspecialidad && !this.diagnosticoPresuntivo && !this.nombreMedico){
       this.documentos=this.documentosAux;
     } 
     this.emitEventCambiarDocumentos(this.documentos);
@@ -65,8 +73,8 @@ export class FormularioFiltradoDocumentosComponent implements OnInit{
 
   constructor(){}
   esBusquedaAvanzada:boolean=false;
-  ciPaciente:any;
-  nombrePaciente:any;
+  ciPropietario:any;
+  pacientePropietario:any;
   nombreMedico:any;
   nombreEspecialidad:any;
   diagnosticoPresuntivo:any;

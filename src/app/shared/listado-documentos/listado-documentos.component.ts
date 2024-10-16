@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./listado-documentos.component.css']
 })
 export class ListadoDocumentosComponent implements OnChanges{
+  verDetalleMedico(arg0: any) {
+  }
+  verDetalleEspecialidad(arg0: any) {
+  }
+  verDetallePaciente(arg0: any) {
+  }
   @Input() tipoDocumento:string="";
   @Input() documentos:any[]=[];
   @Input() verDetalleDocumento!: (id:number) => void;

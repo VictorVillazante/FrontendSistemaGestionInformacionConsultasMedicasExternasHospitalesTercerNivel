@@ -25,21 +25,21 @@
     <div class="mb-3">
       <div class="row">
         <div class="col-md-6">
-          <label for="ciPaciente" class="form-label">CI paciente</label>
+          <label for="ciPropietario" class="form-label">CI paciente</label>
           <input
             type="text"
             class="form-control input-border-bottom"
-            id="ciPaciente"
-            [(ngModel)]="ciPaciente"
+            id="ciPropietario"
+            [(ngModel)]="ciPropietario"
           />
         </div>
         <div class="col-md-6" *ngIf="esBusquedaAvanzada">
-          <label for="nombrePaciente" class="form-label">Nombre paciente</label>
+          <label for="pacientePropietario" class="form-label">Nombre paciente</label>
           <input
             type="text"
             class="form-control input-border-bottom"
-            id="nombrePaciente"
-            [(ngModel)]="nombrePaciente"
+            id="pacientePropietario"
+            [(ngModel)]="pacientePropietario"
           />
         </div>
       </div>

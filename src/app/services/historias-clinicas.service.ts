@@ -13,12 +13,12 @@ export class HistoriasClinicasService {
   }
 
   obtenerHistoriasClinicasDePaciente(idPaciente:any) {
-    return of(this.listadoHistoriasClinicas.filter(hc=>hc.idPaciente==3));
-    //return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/paciente/${idPaciente}`);
+    // return of(this.listadoHistoriasClinicas.filter(hc=>hc.idPaciente==3));
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/paciente/${idPaciente}`);
   }
   obtenerHistoriasClinicas() {
-    return of(this.listadoHistoriasClinicas);
-    // return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`);
+    // return of(this.listadoHistoriasClinicas);
+    return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas`);
   }
   obtenerHistoriaClinicas(idHistoriaClinica:any) {
     // return of({
@@ -42,7 +42,24 @@ export class HistoriasClinicasService {
     return this.http.get<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/`+idHistoriaClinica);
   }
   actualizarHistoriaClinica(idHistoriaClinica:any,historiaClinica:any) {
-    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/`+idHistoriaClinica,historiaClinica);
+    let historiaClinicaAux=historiaClinica.value;
+    return this.http.put<any>(`${apiUrlEnviroment.apiUrl}/api/microservicio-historias-clinicas/historias-clinicas/`+idHistoriaClinica,{
+      amnesis: historiaClinicaAux.amnesis,
+      antecedentesFamiliares: historiaClinicaAux.antecedentesFamiliares,
+      antecedentesGinecoobstetricos: historiaClinicaAux.antecedentesGinecoobstetricos,
+      antecedentesNoPatologicos: historiaClinicaAux.antecedentesNoPatologicos,
+      antecedentesPatologicos: historiaClinicaAux.antecedentesPatologicos,
+      antecedentesPersonales: historiaClinicaAux.antecedentesPersonales,
+      diagnosticoPresuntivo: historiaClinicaAux.diagnosticoPresuntivo,
+      diagnosticosDiferenciales: historiaClinicaAux.diagnosticosDiferenciales,
+      examenFisico: historiaClinicaAux.examenFisico,
+      examenFisicoEspecial: historiaClinicaAux.examenFisicoEspecial,
+      propuestaBasicaDeConducta: historiaClinicaAux.propuestaBasicaDeConducta,
+      tratamiento: historiaClinicaAux.tratamiento,
+      idPaciente: historiaClinicaAux.idPaciente,
+      idMedico: 1,
+      idEspecialidad: historiaClinicaAux.idEspecialidad
+    });
   }
   registrarHistoriaClinica(historiaClinica:any){
     let historiaClinicaAux=historiaClinica.value;
@@ -60,8 +77,8 @@ export class HistoriasClinicasService {
       propuestaBasicaDeConducta: historiaClinicaAux.propuestaBasicaDeConducta,
       tratamiento: historiaClinicaAux.tratamiento,
       idPaciente: historiaClinicaAux.idPaciente,
-      idMedico: historiaClinicaAux.idMedico,
-      idEspecialidad: 1
+      idMedico: 1,
+      idEspecialidad: historiaClinicaAux.idEspecialidad
     });
   }
 }

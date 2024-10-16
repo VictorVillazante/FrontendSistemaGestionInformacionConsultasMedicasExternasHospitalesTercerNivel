@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HistoriasClinicasService } from 'src/app/services/historias-clinicas.service';
 import { PacientesService } from '../../services/pacientes.service';
 import Swal from 'sweetalert2';
+import { InformacionCentroMedicoService } from '../../services/informacion-centro-medico.service';
 @Component({
   selector: 'app-registro-historia-clinica',
   templateUrl: './registro-historia-clinica.component.html',
@@ -14,8 +15,10 @@ export class RegistroHistoriaClinicaComponent {
   id:any;
   clinicalHistoryForm: FormGroup;
   pacientes:any[]=[];
+  especialidades:any[]=[];
   filteredSuggestionsPacientes:any[]=[];
-  constructor(private pacientesService:PacientesService,private fb: FormBuilder,private historiasClinicasService:HistoriasClinicasService) { 
+  filteredSuggestionsEspecialidades:any[]=[];
+  constructor(private informacionCentroMedicoService:InformacionCentroMedicoService,private pacientesService:PacientesService,private fb: FormBuilder,private historiasClinicasService:HistoriasClinicasService) { 
     this.clinicalHistoryForm = this.fb.group({
       amnesis: [''],
       antecedentesFamiliares: [''],
@@ -30,15 +33,29 @@ export class RegistroHistoriaClinicaComponent {
       propuestaBasicaDeConducta: [''],
       tratamiento: [''],
       idPaciente:[''],
-      ciPaciente:['']
+      ciPaciente:[''],
+      idEspecialidad:[''],
+      nombreEspecialidad:['']
     });
   }
   ngOnInit(){
+    this.obtenerPacientes();
+    this.obtenerEspecialidades();
+   
+  }
+  obtenerEspecialidades() {
+    this.informacionCentroMedicoService.obtenerEspecialidades().subscribe((data)=>{
+      this.especialidades=data;
+    })
+  }
+  obtenerPacientes() {
     this.pacientesService.obtenerPacientes().subscribe((data)=>{
       this.pacientes=data;
     });
   }
   isAutocompletePacienteFocused:boolean=false;
+  isAutocompleteEspecialidadFocused:boolean=false;
+
   onFocusPaciente() {
     this.isAutocompletePacienteFocused = true;
   }
@@ -46,6 +63,16 @@ export class RegistroHistoriaClinicaComponent {
   onBlurPaciente() {
     setTimeout(() => {
       this.isAutocompletePacienteFocused = false;
+    }, 500);
+  }
+
+  onFocusEspecialidad() {
+    this.isAutocompleteEspecialidadFocused = true;
+  }
+
+  onBlurEspecialidad() {
+    setTimeout(() => {
+      this.isAutocompleteEspecialidadFocused = false;
     }, 500);
   }
 
@@ -59,7 +86,16 @@ export class RegistroHistoriaClinicaComponent {
       this.filteredSuggestionsPacientes = [];
     }
   }
-
+  filterSuggestionsEspecialidad(event: Event): void {
+    const inputText = (event.target as HTMLInputElement)?.value ?? '';
+    if (inputText) {
+      this.filteredSuggestionsEspecialidades = this.especialidades.filter(especilidad =>
+        especilidad.nombre.toLowerCase().includes(inputText.toLowerCase())
+      );
+    } else {
+      this.filteredSuggestionsEspecialidades = [];
+    }
+  }
 
   onSubmit() {
     //let historiaClinica=this.clinicalHistoryForm.value;
@@ -104,8 +140,13 @@ export class RegistroHistoriaClinicaComponent {
 
   seleccionarPaciente(paciente: any) {
     this.isAutocompletePacienteFocused = false;
-    this.clinicalHistoryForm.controls['idPaciente'].setValue(paciente.idPaciente);
+    this.clinicalHistoryForm.controls['idPaciente'].setValue(paciente.idUsuario);
     this.clinicalHistoryForm.controls['ciPaciente'].setValue(paciente.ci);
 
+  }
+  seleccionarEspecialidad(especialidad: any) {
+    this.isAutocompleteEspecialidadFocused = false;
+    this.clinicalHistoryForm.controls['idEspecialidad'].setValue(especialidad.idEspecialidad);
+    this.clinicalHistoryForm.controls['nombreEspecialidad'].setValue(especialidad.nombre);
   }
 }

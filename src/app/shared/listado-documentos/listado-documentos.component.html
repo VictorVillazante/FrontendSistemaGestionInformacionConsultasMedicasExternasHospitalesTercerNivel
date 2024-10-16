@@ -25,8 +25,29 @@
             (click)="verDetalleHistoriaClinica(dato.idHistoriaClinica)"
           ></i>
         </p>
-        <p>Paciente propietario: {{ dato.pacientePropietario }}</p>
+        <p>Diagnostico presuntivo: {{dato.diagnosticoPresuntivo}}</p>
+        <p>
+          Paciente propietario: {{ dato.pacientePropietario }}
+          <i
+            class="fas fa-share-square"
+            (click)="verDetallePaciente(dato.idUsuario)"
+          ></i>
+        </p>
         <p>CI paciente propietario: {{ dato.ciPropietario }}<br /></p>
+        <p>
+          Especialidad: {{ dato.nombreEspecialidad }}
+          <i
+          class="fas fa-share-square"
+          (click)="verDetalleEspecialidad(dato.idEspecialidad)"
+          ></i>
+        </p>
+        <p>
+          MedicoElaborador: {{ dato.nombreMedico }}
+          <i
+          class="fas fa-share-square"
+          (click)="verDetalleMedico(dato.idMedico)"
+        ></i>
+        </p>
       </div>
       <div class="botones-opciones">
         <i *ngIf="actualizarDocumento" class="fas fa-edit me-2" (click)="actualizarDocumento(dato.id)"></i>

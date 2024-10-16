@@ -37,7 +37,7 @@ export class DetalleHistoriaClinicaComponent {
   obtenerDetalleHistoriaClinica(idHistoriaClinica:any){
     this.historiasClinicasService.obtenerHistoriaClinicas(idHistoriaClinica).subscribe((data:any)=>{
       this.clinicalHistoryForm.patchValue({
-        idHistoriaClinica: data.idHistoriaClinica,
+        idHistoriaClinica: data.id,
         amnesis: data.amnesis,
         antecedentesFamiliares: data.antecedentesFamiliares,
         antecedentesGinecoobstetricos: data.antecedentesGinecoobstetricos,

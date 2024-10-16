@@ -2,6 +2,7 @@
   <h1 class="text-center p-3">Gestion historias clinicas</h1>
   <app-formulario-filtrado-documentos
     [documentos]="historiasClinicas"
+    [documentosAux]="historiasClinicasAux"
     (documentosEvent)="handleHistoriasClinicas($event)"
   ></app-formulario-filtrado-documentos>
   <button
