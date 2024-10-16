@@ -12,6 +12,7 @@ export class GestionExamenesComplementariosComponent implements OnInit{
   ngOnInit(): void {
       this.examenesComplementariosService.obtenerExamenesComplementarios().subscribe(ec=>{
         this.listadoExamenesComplementarios=ec;
+        this.listadoExamenesComplementariosAux=ec;
       })
   }
   handleExamenesComplementarios($event: any) {
@@ -24,4 +25,5 @@ export class GestionExamenesComplementariosComponent implements OnInit{
     this.router.navigate(['/detalle-examen-complementario',id]);
   }
   listadoExamenesComplementarios:any[]=[];
+  listadoExamenesComplementariosAux:any[]=[];
 }
